@@ -1,0 +1,9 @@
+---
+backShop : 'catalog.back_to_shop'
+yourProfile : 'user_info.your_profile'  
+yourOrders : 'user_info.your_orders'
+yourAddress : 'user_info.your_address'
+yourCommission : 'user_info.your_commission'
+readyForPickupOrders : 'user_info.ready_for_pickup_orders'
+commissionLabel : 'profile.commission_label'
+signOut : 'user_info.sign_out'

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flash-deployment
+  namespace: stage-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flash-app
+  template:
+    metadata:
+      labels:
+        project: deligram
+        app: flash-app
+    spec:
+      containers:
+        - name: flash-app
+          image: harbor.deligram.com/flash/flash-app:develop-afddb8e3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: flash-port
+              protocol: TCP
+      imagePullSecrets:
+        - name: regcred

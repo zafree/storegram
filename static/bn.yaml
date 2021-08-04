@@ -1,0 +1,878 @@
+---
+switch_language: "English"
+please_wait: অনুগ্রহ করে অপেক্ষা করুন...
+preferred_delivery_point:
+  place_location: লোকেশন
+  place_area: এলাকা
+  Agent: ডেলিগ্রাম এজেন্ট
+  Locker: ডেলিগ্রাম লকার
+  Hub: ডেলিগ্রাম হাব
+  Home: আপনার বাসা
+  select_location_and_area_multiselect: আপনার লোকেশন এবং এলাকা নির্বাচন করুন
+  select_delivery_point: আপনার ডেলিভারি পয়েন্ট নির্বাচন করুন
+  set_delivery_point: ডেলিভারি পয়েন্ট সেট করুন
+  # unset_delivery_point: এই ডেলিভারি পয়েন্ট বাতিল করুন
+  select_location_and_area: আপনার সবচেয়ে কাছের {deliveryMethod} পয়েন্ট সহজে খুঁজে পাবার জন্যে উপরে আপনার লোকেশন এবং এলাকা নির্বাচন করতে পারেন।
+  select_area: আপনার সবচেয়ে কাছের {deliveryMethod} পয়েন্ট সহজে খুঁজে পাবার জন্যে উপরে আপনার এলাকা নির্বাচন করতে পারেন।
+  selected_address: "নির্বাচিত {deliveryMethod} পয়েন্ট:"
+  selected_home_delivery_address: "নির্বাচিত ঠিকানা:"
+  address_found: আপনার নির্বাচিত এলাকার জন্য নিম্নোক্ত {deliveryMethod} খুঁজে পাওয়া গেছে। আপনার কাছাকাছি {deliveryMethod} নির্বাচন করুনঃ
+  no_address_found: দুঃখিত, আপনার নির্বাচিত এলাকায় কোন {deliveryMethod} খুঁজে পাওয়া যায়নি। আপনার কাছাকাছি {deliveryMethod} দেখতে চান? আমাদের মেইল করুন
+  login_to_see_home_addresses: দয়া করে সাইন ইন করুন আপনার একাউন্টে সেইভ করা বাসার ঠিকানা দেখার জন্য বা আপনার একাউন্টে বাসার ঠিকানা যোগ করার জন্য।
+  found_no_home_address: আপনার একাউন্টে কোন সেইভ করা বাসার ঠিকানা নেই।
+  click_here_to_create_home_address: ঠিকানা যোগ করুন
+  your_home_addresses: 'আপনার ডেলিভারি ঠিকানা:'
+deliverable_info:
+  agent_store: এজেন্টদের দোকান
+  agent: এজেন্ট
+  locker: লকার
+  hub: হাব
+  home: আপনার বাসা
+  deliverable_to: ডেলিভার করা যাবেঃ
+  not_deliverable_to: ডেলিভার করা যাবে নাঃ
+  not_deliverable_to_preferred_point: এই প্রডাক্টটি ডেলিভার করা যাবে না আপনার পছন্দের ঠিকানায়
+  not_deliverable_to_agent_point: এই প্রডাক্টটি ডেলিভার করা যাবে না এজেন্ট ঠিকানায়
+  but_you_can_still_add: কিন্তু তারপরেও আপনি কার্টে প্রডাক্টটি যোগ করতে পারেন এবং অর্ডার করার সময় অন্য কোন ডেলিভারি পয়েন্ট ব্যবহার করতে পারেন।
+no_product:
+  # in_category_list: "এই ক্যাটাগরি তালিকার সাথে যুক্ত কোন পণ্য পাওয়া যায়নি"
+  in_category: "এই ক্যাটাগরিতে কোন পণ্য পাওয়া যায়নি"
+search:
+  title: "পণ্য খুঁজুন"
+  key_title: "খোঁজা হয়েছে"
+  result: "সর্বমোট {field}টি পণ্য পাওয়া গিয়েছে"
+  no_result: "দুঃখিত! কোন পণ্য পাওয়া যায়নি।"
+  searching: খোঁজা হচ্ছে
+user_info:
+  hi: "হ্যালো"
+  your_profile: "আপনার প্রোফাইল"
+  your_orders: "আপনার অর্ডার"
+  your_address: "আপনার ঠিকানা"
+  sign_out: "সাইন আউট"
+  brand_shop: ব্রান্ড শপ
+  address_label: "ঠিকানা {index}"
+  agent_info_label: "এজেন্ট তথ্য"
+  your_commission: "আপনার কমিশন"
+  support_tickets: "বিক্রয়োত্তর সেবা"
+  search_for_brands: ব্র্যান্ড খুঁজুন
+  ready_for_pickup_orders: "পিকাপ এর জন্য রেডি অর্ডারগুলো"
+  enter: এন্টার
+  no_brand_found: কোন ব্র্যান্ড পাওয়া যায়নি!
+profile:
+  your_profile: "আপনার প্রোফাইল"
+  name_field: "নাম"
+  mobile_number: "মোবাইল নাম্বার"
+  add: "যুক্ত করুন"
+  edit: "এডিট"
+  save: "সেইভ"
+  cancel: "বাতিল"
+  yes: "হ্যাঁ"
+  no: "না"
+  delete: "ডিলিট"
+  delete_warning: "এই নম্বরটি ডিলিট করতে চান?"
+  set_primary: "প্রাইমারি করুন"
+  verify: "যাচাই করুন"
+  add_another: "আরেকটি যুক্ত করুন"
+  fb_connect: "কানেক্ট"
+  fb_disconnect: "ডিসকানেক্ট"
+  mobile_number_placeholder: "এখানে ফোন নম্বর লিখুন"
+  mobile_number_init_message: "আপনাকে ভালভাবে সেবা দেয়ার জন্য আপনার মোবাইল নাম্বারটি যুক্ত করুন"
+  invoice_email: "ইনভয়েস ইমেইল"
+  invoice_email_init_message: "আপনার অর্ডারের ইনভয়েস ইমেইলের মাধ্যমে পান যাতে করে পরবর্তীতে সহজে খুঁজে পান"
+  invoice_email_placeholder: "এখানে আপনার ইমেইল ঠিকানা লিখুন"
+  otp_label: "OTP কোড"
+  otp_placeholder: "OTP কোড দিন"
+  otp_sent_message: "৬ ডিজিটের ওয়ান টাইম পাসওয়ার্ড পাঠানো হয়েছে আপনার এই নাম্বারে:"
+  did_not_get_otp: "SMS পাননি?"
+  request_otp_again: "আবার অনুরোধ করুন"
+  request_otp_again_after: "আবার অনুরোধ করুন {field} সেকেন্ড পরে"
+  address_init_message: "আপনার ঠিকানা সেভ করে রাখুন যাতে করে পরবর্তীতে সহজে এই ঠিকানায় আবার অর্ডার করতে পারেন"
+  add_address: "ঠিকানা যুক্ত করুন"
+  delete_address_warning: "ঠিকানাটি ডিলিট করতে চান?"
+  change_password_label: 'পাসওয়ার্ড পরিবর্তন'
+  current_password_label: 'বর্তমান পাসওয়ার্ড'
+  new_password_label: 'নতুন পাসওয়ার্ড'
+  confirm_password_label: 'পুনরায় নতুন পাসওয়ার্ড'
+  commission_label: 'কমিশন'
+  show_details: 'বিস্তারিত দেখাও'
+  hide_details: 'বিস্তারিত লুকাও'
+  show: 'দেখাও'
+  hide: 'লুকাও'
+  preferred_delivery_point: পছন্দের ডেলিভারি পয়েন্ট
+  preferred_delivery_point_guided_text: আপনার পছন্দের ডেলিভারি পয়েন্ট সেইভ করা হবে এবং অর্ডার নিশ্চিত করার সময় স্বয়ংক্রিয়ভাবে ডেলিভারি ঠিকানা হিসেবে সেট করা হবে। আপনি যে কোন সময়ে আপনার পছন্দের ঠিকানা পরিবর্তন ও করতে পারবেন।
+  set_delivery_point: ডেলিভারি পয়েন্ট সেট করুন
+  use_different_delivery_point: অন্য ডেলিভারি পয়েন্ট সেট করুন
+catalog:
+  all_categories: "সকল ক্যাটাগরি"
+  back_to_shop: "শপিং-এ ফিরে যান"
+  view_more: "বিস্তারিত দেখুন"
+  view_options: "অপশন দেখুন"
+sidebar:
+  nav:
+    category_link: "ক্যাটাগরি সমূহ"
+    sign_in: "সাইন ইন"
+    sign_up: "বা সাইন আপ"
+  cart:
+    apply_coupon: "কুপন দিন"
+    title: " শপিং কার্ট"
+    save_on_item_1: "এই আইটেম এ আপনি"
+    save_on_item_2: "টাকা ছাড় পাচ্ছেন"
+    sub_total: "সাব-টোটাল"
+    total: "অর্ডার টোটাল"
+    place_order: "অর্ডার দিন"
+    no_item_title: "ফাঁকা কার্ট"
+    no_item_text_one: "কিছুই পছন্দ করতে পারেননি এখনো"
+    back_to_shop_button: "ফিরে যান"
+    promo_code_placeholder: "আপনার কুপন এখানে দিন"
+    # promo_code_button_label_hide: "লুকান"
+    # promo_code_button_label_show: "দেখান"
+    apply_coupon_button_label: "প্রয়োগ করুন"
+    applied_coupon: বর্তমান কুপন
+    remove_applied_coupon: মুছে ফেলুন
+    coupon_discount: "কুপন ছাড়"
+    coupon_guide: "অর্ডার নিশ্চিত করার সময় কুপন ব্যবহার করতে পারবেন।"
+    discount: "ছাড়"
+    delivery_charge: "ডেলিভারি চার্জ"
+    free_delivery: "ফ্রি ডেলিভারি"
+    qty: "সংখ্যা"
+    current_balance: "বর্তমান কমিশন ব্যাল্যান্স"
+    adjusted_balance: "কমিশন সমন্বিত করার পর"
+    net_payable: "সর্বমোট দিতে হবে"
+    issue_warning: "আপনার কার্টের এক বা একাধিক আইটেম এর সমস্যা রয়েছে। চালিয়ে যেতে সেগুলো সংশোধন করুন।"
+    line_item_deliverable_warning_1: আপনার কার্টে যোগ করা কিছু প্রডাক্ট আপনার পছন্দের ডেলিভারি পয়েন্টে ({field}) ডেলিভার করা সম্ভব নয়। হয় এই প্রডাক্ট কার্ট থেকে বাদ দিন অথবা অন্য কোন টাইপের
+    line_item_deliverable_warning_1_agentmode: আপনার কার্টে যোগ করা কিছু প্রডাক্ট আপনার এজেন্ট ঠিকানায় ডেলিভার করা সম্ভব নয়। হয় এই প্রডাক্ট কার্ট থেকে বাদ দিন অথবা অন্য কোন টাইপের
+    line_item_deliverable_warning_2: ডেলিভারি পয়েন্ট
+    line_item_deliverable_warning_3: নির্বাচন করুন এই অর্ডার কনফার্ম করার জন্য।
+
+  lineitem_error:
+    delete: "ডিলিট"
+    update: "হালনাগাদ"
+    request: "অনুরোধ করুন"
+    desired_quantity: "আপনার পছন্দসই পরিমাণ এই পণ্যের জন্য নেই।"
+    product_requested: "এই পণ্য অনুরোধ করা হয়েছে"
+    out_of_stock: "সোল্ড আউট"
+    product_discontinued: "দুঃখিত এই পণ্যটি ডিসকন্টিনিউ করা হয়েছে।"
+    price_changed: "মূল্য পরিবর্তন হয়েছে। আপনার পণ্য আপডেট করুন দয়া করে।"
+    commission_changed: "কমিশন পরিবর্তন হয়েছে। আপনার পণ্য আপডেট করুন দয়া করে।"
+    not_in_inventory: "দুঃখিত এই পণ্য আমাদের ইনভেন্টরিতে পাওয়া যায়নি।"
+    not_deliverable_to_agent: এই প্রোডাক্টটি এজেন্টের কাছে ডেলিভার করা সম্ভব নয়, হয় ডেলিভারি পদ্ধতি পরিবর্তন করুন অথবা এই প্রোডাক্টটি কার্ট থেকে বাদ দিন।
+    not_deliverable_to_locker: এই প্রোডাক্টটি লকারে ডেলিভার করা সম্ভব নয়, হয় ডেলিভারি পদ্ধতি পরিবর্তন করুন অথবা এই প্রোডাক্টটি কার্ট থেকে বাদ দিন।
+  lineitem_warning:
+    not_deliverable_to_agent_title: এজেন্টের দোকানে ডেলিভার করা সম্ভব নয়।
+    not_deliverable_to_agent: আপনার পছন্দের ডেলিভারি পয়েন্টে (এজেন্টের দোকান) ডেলিভার করা সম্ভব নয়। হয় প্রোডাক্টটি কার্ট থেকে বাদ দিন অথবা অন্য কোন ডেলিভারি পদ্ধতি নির্বাচন করুন।
+    not_deliverable_to_agent_agent: আপনার এজেন্ট ঠিকানায় ডেলিভার করা সম্ভব নয়। হয় প্রোডাক্টটি কার্ট থেকে বাদ দিন অথবা অন্য কোন ডেলিভারি পদ্ধতি নির্বাচন করুন।
+    not_deliverable_to_locker_title: লকারে ডেলিভার করা সম্ভব নয়।
+    not_deliverable_to_locker:  আপনার পছন্দের ডেলিভারি পয়েন্টে (লকার) ডেলিভার করা সম্ভব নয়। হয় প্রোডাক্টটি কার্ট থেকে বাদ দিন অথবা অন্য কোন ডেলিভারি পদ্ধতি নির্বাচন করুন।
+location_selector:
+  placeholder: "আপনার লোকেশন দিন"
+  coming_soon: "শীঘ্রই আসছি"
+  no_service_message: "দুঃখিত, {field} এলাকায় আমাদের ডেলিভারি সার্ভিস এখনো চালু হয় নাই কিন্তু আমরা প্রতিজ্ঞাবদ্ধ শীঘ্রই এই সেবা চালু করার ব্যাপারে"
+area_selector:
+  placeholder: "আপনার এলাকা দিন"
+content_top:
+  # go: "গো"
+  # why_location: "কেন লোকেশন?"
+  # skip: "স্কিপ"
+  slider:
+    agent_content_copy1: অনলাইনে অর্ডার করুন এবং পিকাপ করুন আপনার নিকটস্থ
+    # agent_content_copy2: ডেলিগ্রাম এজেন্টের কাছ থেকে
+    agent_content_copy3: "{field} টি বিশ্বস্ত এজেন্ট পয়েন্ট থেকে"
+    agent_content_copy4: নিকটস্থ এজেন্ট পয়েন্ট সেট করুন
+    locker_content_copy1: অনলাইনে অর্ডার করুন এবং পিকাপ করুন আপনার নিকটস্থ
+    # locker_content_copy2: ডেলিগ্রাম লকার থেকে
+    locker_content_copy3: "{field} টি বিশ্বস্ত লকার পয়েন্ট থেকে"
+    locker_content_copy4: নিকটস্থ লকার পয়েন্ট সেট করুন
+    hub_content_copy1: অনলাইনে অর্ডার করুন এবং পিকাপ করুন আপনার নিকটস্থ
+    # hub_content_copy2: ডেলিগ্রাম হাব থেকে
+    hub_content_copy3: "{field} টি বিশ্বস্ত হাব পয়েন্ট থেকে"
+    hub_content_copy4: নিকটস্থ হাব পয়েন্ট সেট করুন
+    home_content_copy1: অনলাইনে অর্ডার করুন এবং ডেলিভারি নিন
+    # home_content_copy2: আপনার বাসায়
+    home_content_copy3: ""
+    home_content_copy4: ডেলিভারি ঠিকানা সেট করুন
+# primary_promo_top:
+#   title: "শপিং এর ভবিষ্যতে স্বাগতম"
+# primary_promo_bottom:
+#   point1: "নতুন নতুন প্রডাক্ট খুঁজে পান"
+#   brief1: "হাজার হাজার ইউনিক দেশি ও বিদেশি পণ্য এক্সপ্লোর করুন"
+#   point2: "টাকা বাঁচান"
+#   brief2: "বাজারে সেরা পণ্য সেরা দামে খুঁজে নিন"
+#   point3: "সহজ ডেলিভারি ও সেবা"
+#   brief3: "আমাদের হাবে আসুন ডেলিভারি বুঝে নেয়া ও বিক্রয়োত্তর সেবার জন্য"
+# location:
+#   not_selected: "লোকেশন নির্বাচন করা হয়নি"
+#   title: "আপনার লোকেশনটি নির্বাচন করুন"
+#   select_label: "নির্বাচন করুন"
+boolean:
+  yes: "Yes"
+  no: "No"
+cart:
+  label: "শপিং ব্যাগ"
+  add_to_cart: "এড টু কার্ট"
+  view_details: "বিস্তারিত দেখুন"
+  buy_now: "এখন কিনুন"
+  buy_now_with_emi: "EMI দিয়ে কিনুন"
+  coupon_code_required: "কুপন কোড প্রয়োজন"
+  order_summary: অর্ডার সামারি
+product:
+  request: "অনুরোধ করুন"
+  requested: "অনুরোধ করা হয়েছে"
+  out_of_stock: "সোল্ড আউট"
+  offers: "অফার"
+  save: "বাঁচান"
+  more: "আরও"
+  option: "অপশন"
+  description_label: "বর্ণনা"
+  features_label: "ফিচারস"
+  emi_from: EMI শুরু ৳{amount} প্রতি মাসে
+  view_plans: EMI প্ল্যান দেখুন
+  coupon: কুপন
+emi_modal:
+  title: EMI প্ল্যান
+  supported_banks: অনুমোদিত ব্যাংক সমূহ
+  plans: প্ল্যান
+  zero_percent_per_month: মাসে @ ০%
+  per_month: প্রতি মাসে
+product_request_modal:
+  request_hint: "পণ্য অনুরোধ করতে আপনাকে  সাইন ইন করতে হবে।"
+login_modal:
+  facebook_login_hint: "আপনার একাউন্ট ফেসবুকের সাথে যুক্ত থাকলে এক ক্লিক এই ডেলিগ্রামে সাইন ইন কিংবা সাইন আপ করুন"
+  # login_with_existing_account_hint: "{mobile} নাম্বারটি ইতিমধ্যে একটি একাউন্টে ব্যবহৃত হচ্ছে, যদি সেই একাউন্টে লগিন করতে চান তাহলে, "
+  click_here: "ক্লিক করুন এইখানে"
+  product_request_login_hint: "প্লিজ ডেলিগ্রাম এ সাইন ইন কিংবা সাইন আপ করুন যাতে প্রোডাক্টটি স্টকে আসা মাত্রই আমরা আপনাকে জানাতে পারি"
+  verification_hint: "আপনার অর্ডার নিশ্চিত করার জন্য আমাদের আপনার মোবাইল নম্বর প্রয়োজন"
+  agent_verification_hint: "কাস্টমারের অর্ডার নিশ্চিত করতে তাঁর মোবাইল নম্বর প্রয়োজন"
+  product_request_verification_hint: "SMS এর মাধ্যমে আমরা আপনাকে জানাবো যখন <b>{field}</b> স্টকে আসবে। এজন্য আপনার ফোন নাম্বারটি প্রয়োজন"
+  continue_with_facebook: "ফেসবুকের মাধ্যমে কন্টিনিউ করুন"
+  signin_signup_with_facebook: "ফেসবুকের মাধ্যমে সাইন ইন কিংবা সাইন আপ করুন"
+  signin_signup_with_phone: "ফোন নাম্বারের মাধ্যমে সাইন ইন কিংবা সাইন আপ করুন"
+  phone_label: "মোবাইল নাম্বার"
+  phone_placeholder: "আপনার মোবাইল নাম্বারটি দিন"
+  agent_phone_placeholder: "কাস্টমারের মোবাইল নাম্বারটি দিন"
+  customer_phone_number: "আপনার ফোন নাম্বারটি দিন"
+  password_label: "পাসওয়ার্ড"
+  verify_password_placeholder: "ভেরিফিকেশনের জন্য আপনার পাসওয়ার্ডটি দিন"
+  password_placeholder: "আপনার পাসওয়ার্ডটি দিন"
+  forgot_password_hint: "পাসওয়ার্ড ভুলে গেছি"
+  change_password_info: "পাসওয়ার্ড পরিবর্তনের জন্য ০১৮৭৯-৪৭৪৭৪৭ নাম্বারে কল করুন"
+  name_label: "নাম"
+  name_placeholder: "আপনার নাম দিন"
+  otp_label: "OTP কোড"
+  otp_placeholder: "OTP কোড দিন"
+  otp_sent_message: "৬ ডিজিটের ওয়ান টাইম পাসওয়ার্ড পাঠানো হয়েছে আপনার এই নাম্বারে:"
+  did_not_get_otp: "SMS পাননি?"
+  request_otp_again: "আবার অনুরোধ করুন"
+  request_otp_again_after: "আবার OTP অনুরোধ করতে ১ মিনিট অপেক্ষা করুন"
+  button_text_signin_signup: "সাইন ইন / সাইন আপ"
+  button_text_continue: "কন্টিনিউ"
+  button_text_verify: "যাচাই করুন"
+  button_text_signin: "সাইন ইন"
+  button_text_signup: "সাইন আপ"
+  go_back: "ফিরে যান"
+  verify: "যাচাই করুন"
+validation:
+  required: "{field} প্রয়োজন"
+  invalid_mobile_number: "{value} বৈধ ফোন নম্বর নয়।"
+  invalid_email: "{value} বৈধ ইমেইল ঠিকানা নয়"
+  otp_length: "{field} ৬ সংখ্যার নম্বর হতে হবে।"
+  trxid_length: "{field} ১০ ক্যারেক্টার বিশিষ্ট হবে"
+  number_in_use: "{value} ইতিমধ্যে ব্যবহৃত হচ্ছে"
+  mismatch: "{field1} আর {field2} মিলেনি"
+  password_length: "{field} অবশ্যই অন্তত {value} ক্যারেক্টার হতে হবে"
+  fields_same_value: "{field1} এবং {field2} এর মান একই হতে পারবেনা"
+  name_length: "সর্বোচ্চ ৫০ বর্ণ দিতে পারবেন"
+  name_contain: "শুধুমাত্র বর্ণমালা গ্রহণযোগ্য"
+delivery_process:
+  # free: "ফ্রি"
+  location_label: "লোকেশন"
+  location_placeholder: "লোকেশন নির্বাচন করুন"
+  # area_palceholder: "এলাকা নির্বাচন করুন"
+  area_label: "এলাকা"
+  delivery_method: "ডেলিভারি পদ্ধতি"
+  pickup_label: "নিকটতম ডেলিগ্রাম হাব থেকে পিকআপ"
+  pickup_sub_label: "সবচেয়ে সহজে এবং কম খরচে ঢাকার বাইরে পণ্য ডেলিভারি, আপনার অর্ডার পিকাপের জন্য তৈরি হওয়া মাত্রই আপনাকে কল করা হবে"
+  locker_pickup_label: "নিকটতম ডেলিগ্রাম লকার থেকে পিকআপ"
+  locker_pickup_sub_label: "অনলাইনে অর্ডার করুন, আমরা আপনার নিকটতম ডেলিগ্রাম লকারে অর্ডার সরবরাহ করব। আপনি 6-ডিজিট গোপন কোডটি SMSের মাধ্যমে পাবেন যা আপনি আপনার লকার আনলক করতে এবং আপনার অর্ডারটি 24 ঘন্টার মধ্যে সংগ্রহ করতে ব্যবহার করতে পারেন।"
+  locker_error_single: "এই লকারে নতুন কোন অর্ডার নেয়া সম্ভব নয়, অনুগ্রহ করে অন্য কোন ডেলিভারি মেথড নির্বাচন করুন"
+  locker_error_multiple: "এই লকারে নতুন কোন অর্ডার নেয়া সম্ভব নয়, অনুগ্রহ করে অন্য কোন লকার বা ডেলিভারি মেথড নির্বাচন করুন"
+  agent_pickup_label: "নিকটতম ডেলিগ্রাম এজেন্ট থেকে পিকআপ"
+  agent_pickup_sub_label: "অনলাইনে অর্ডার করুন, আমরা আপনার নিকটতম ডেলিগ্রাম এজেন্টকে অর্ডার সরবরাহ করব। যত তাড়াতাড়ি আপনার অর্ডার পিকআপ জন্য প্রস্তুত আমরা আপনাকে কল করা হবে।"
+  agent_pickup_address_label: "ঠিকানা"
+  agent_pickup_contact_label: "যোগাযোগ"
+  pickup_address_label: "ঠিকানা"
+  pickup_contact_label: "যোগাযোগ"
+  # agents_delivery_label: "নিকটতম ডেলিগ্রাম এজেন্ট থেকে পিকআপ"
+  # agents_delivery_sub_label: "অনলাইনে অর্ডার করুন, আমরা আপনার নিকটতম ডেলিগ্রাম এজেন্টকে অর্ডার সরবরাহ করব। যত তাড়াতাড়ি আপনার অর্ডার পিকআপ জন্য প্রস্তুত আমরা আপনাকে কল করা হবে।"
+  home_delivery_label: "বাসায় ডেলিভারি সেবা"
+  home_delivery_sub_label: "আমাদের ডেলিভারি টিম দ্বারা আপনার অর্ডার আপনার দোরগোড়ায় পৌঁছে দেয়া হবে"
+  home_delivery_location: "লোকেশন"
+  home_delivery_area: "এলাকা"
+  home_delivery_address_label: "ডেলিভারি ঠিকানা"
+  home_delivery_address_placeholder: "আপনার ডেলিভারি ঠিকানা দিন"
+  home_delivery_contact_name: "যোগাযোগকারীর নাম"
+  home_delivery_contact_name_placeholder: "যোগাযোগকারীর নাম দিন"
+  home_delivery_mobile_number: "ফোন নাম্বার"
+  home_delivery_mobile_number_placeholder: "যোগাযোগকারীর ফোন নাম্বার দিন"
+  delivery_additional_note: "অতিরিক্ত নোট"
+  additional_note_placeholder: "আপনার অর্ডার বা আপনার ডেলিভারি সম্পর্কে কোন অতিরিক্ত তথ্য এখানে দিন"
+  confirm_order: "অর্ডার নিশ্চিত করুন"
+  use_another_address: "অন্য ঠিকানা ব্যবহার করুন"
+  use_previous_address: "পূর্ববর্তী ঠিকানা ব্যবহার করুন"
+  address_label: "ঠিকানা"
+  receiver_label: "যোগাযোগকারী"
+  contact_name_label: "যোগাযোগকারীর নাম"
+  contact_number_label: "যোগাযোগকারীর ফোন"
+  use_another: "অন্য একটি ব্যবহার করুন"
+  send_invoice: "ইনভয়েস পাঠান"
+  invoice_email: "ইনভয়েস ইমেইল"
+  invoice_email_placeholder: "এখানে আপনার ইমেইল ঠিকানা দিন"
+  terms_of_service_1: "আমি এই পরিষেবার"
+  terms_of_service_2: "শর্তাদির"
+  terms_of_service_3: "সঙ্গে একমত"
+  new_customer: নতুন কাস্টমার
+  use_different_delivery_point: ভিন্ন ডেলিভারি পয়েন্ট ব্যবহার করুন
+  go_back: ফিরে যান
+  select_location_area_to_see_delivery_options: বিভিন্ন ডেলিভারি অপশন দেখার জন্য আপনার লোকেশন এবং এলাকা নির্বাচন করুন!
+  # select_nearest_hub: নিকটস্থ হাব নির্বাচন করুন
+  # nearest_hub: নিকটস্থ হাব
+  # select_nearest_agent: নিকটস্থ এজেন্ট নির্বাচন করুন
+  # nearest_agent: নিকটস্থ এজেন্ট
+  # select_nearest_locker: নিকটস্থ লকার নির্বাচন করুন
+  # nearest_locker: নিকটস্থ লকার
+  full_advance_payment_for_agent_pickup: নিকটস্থ এজেন্ট পিকাপের ক্ষেত্রে ১০০% অগ্রিম মূল্য পরিশোধ জরুরী।
+  full_advance_payment_for_locker_pickup: নিকটস্থ লকার পিকাপের ক্ষেত্রে ১০০% অগ্রিম মূল্য পরিশোধ জরুরী।
+  cart_issue_warning: "আপনার কার্টের এক বা একাধিক আইটেম এর সমস্যা রয়েছে। চালিয়ে যেতে ইস্যুগুলো দেখুন এবং সেগুলো সংশোধন করুন।"
+  free_delivery: ফ্রি
+  current_customer: "এই মুহূর্তে লগিন করা কাস্টমার"
+  another_customer: "অন্য কাস্টমারকে লগিন করাতে চান?"
+  click_here: "ক্লিক করুন"
+  change: "পরিবর্তন করুন"
+  select_agent_address: এজেন্ট নির্বাচন করুন
+  select_locker_address: লকার নির্বাচন করুন
+  select_hub_address: হাব নির্বাচন করুন
+payment:
+  # page_title: "পেমেন্ট"
+  payment_option: "পেমেন্ট অপশন নির্বাচন করুন"
+  payment_method: "পেমেন্ট পদ্ধতি নির্বাচন করুন"
+  due_payment_label: "বাকি টাকা"
+  due_payment_sub_label: "আগাম বাকি টাকা দিন, নিশ্চিন্ত থাকুন"
+  full_payment_label: "এখন পরিশোধ করুন"
+  full_payment_sub_label: "ডেলিভারির সময় কোন পেমেন্ট প্রয়োজন নেই।"
+  booking_payment_label: "ন্যূনতম বুকিং ফি"
+  booking_payment_sub_label: "বাকি {value} টাকা ডেলিভারির সময় পে করুন"
+  emi_label: EMI দিয়ে চেকআউট করুন
+  emi_sub_label: EMI শুরু প্রতিমাসে ৳ {amount} থেকে
+  emi_due_payment: ইতিমধ্যে আপনি ৳ {paidAmount} পরিশোধ করেছেন। বাকি ৳ {dueAmount} EMI দিয়ে পরিশোধ করুন
+  full_emi: সম্পূর্ণ EMI তে পে করুন
+  partial_emi: আংশিক EMI তে পে করুন
+  partial_emi_error: আংশিক EMI এর পরিমান অবশ্যই ৳ {mininumPartialEmiAmount} থেকে ৳ {totalAmount} এর মাঝে হতে হবে
+  cash_on_delivery_label: "হোম ডেলিভারিতে পে করুন"
+  cash_on_delivery_sub_label: "ডেলিভারির সময় পেমেন্ট করুন "
+  bkash_on_delivery_label: "বিকাশ ডেলিভারিতে পে করুন"
+  bkash_on_delivery_sub_label: "ডেলিভারির সময় আপনার বিকাশ ব্যক্তিগত একাউন্ট দিয়ে পেমেন্ট করুন এবং ৳ ৫০ ইনস্ট্যান্ট ক্যাশব্যাক পান"
+  credit_debit_card_label: "অনলাইন পেমেন্ট"
+  credit_debit_card_sub_label: "বিশ্বস্ত উত্স, খুবই নিরাপদ"
+  option_one: "অপশন ১"
+  option_two: "অপশন ২"
+  bkash_label: "বিকাশ"
+  bkash_hint_option1: "দ্রুত কেনাকাটা জন্য পার্সোনাল বিকাশ অ্যাকাউন্ট দিয়ে অনলাইনে টাকা পরিশোধ করুন।"
+  bkash_hint_option2: "বিকাশ অ্যাপ অথবা মেনু (*247#) ব্যবহার করে টাকা পরিশোধ করুন পার্সোনাল বিকাশ একাউন্টের মাধ্যমে।"
+  bKash_checkout: "বিকাশের মাধ্যমে টাকা পরিশোধ করুন"
+  bKash_show_details: "বিস্তারিত দেখুন"
+  click_here: "এখানে ক্লিক করুন"
+  for_more_details: "বিস্তারিত জানার জন্য।"
+  pay_with_credit_debit_card: "পেমেন্ট করুন"
+  pay_now: "পে করুন"
+  details: "বিস্তারিত"
+  click_here_when_confirmation: "কনফার্মেশন SMS পেলে এখানে ক্লিক করুন"
+  confirm_cash_on_delivery: "ডেলিভারিতে ক্যাশ নিশ্চিত করুন"
+  confirm_bkash_on_delivery: "ডেলিভারিতে বিকাশ নিশ্চিত করুন"
+  # confirm_order: "অর্ডার কনফার্ম করুন"
+  order: "অর্ডার"
+  date: "তারিখ"
+  total: "মোট"
+  order_status: "অর্ডারের অবস্থা"
+  action: "একশন"
+  # commission: "কমিশন"
+  payment_unsuccessful: "দুঃখিত, আপনার পেমেন্ট সফল হয়নি, দয়া কড়ে আবার চেষ্টা করুন অথবা কল করুন আমাদের কাস্টমার কেয়ার সারভিসে - ০১৮৭৯-৪৭৪৭৪৭"
+  advanced_payment_agent: "নিকটস্থ এজেন্ট পিকাপের ক্ষেত্রে ১০০% অগ্রিম মূল্য পরিশোধ জরুরী। ক্যাশ অন ডেলিভারির জন্য এজেন্টের দোকান থেকে অর্ডার করুন।"
+  advanced_payment_locker: "নিকটস্থ লকার পিকাপের ক্ষেত্রে ১০০% অগ্রিম মূল্য পরিশোধ জরুরী।"
+bkash_verification:
+  bkash_hint: "আমরা আপনার পেমেন্ট সম্পর্কে নিশ্চিত নই আমরা আপনার ফোনটিতে একটি TrxID পাঠিয়েছি এবং সেই কোডটি ব্যবহার করে আবার চেষ্টা করুন।"
+  try_again: "আবার চেষ্টা করুন"
+  trxid: "TrxID"
+  invalid: "অবৈধ"
+  trxid_placeholder: "এখানে আপনার trxID লিখুন"
+bkash_diagram:
+  step: "ধাপ {value}"
+  dial: "ডায়াল করুন"
+  # select: "নির্বাচন করুন"
+  step_two_1: "Payment এর জন্য"
+  step_two_2: "নির্বাচন করুন"
+  step_three_1: "Merchant bKash Account Number হিসাবে"
+  step_three_2: "প্রবেশ করান"
+  step_four_1: "Amount হিসেবে"
+  step_four_2: "প্রবেশ করান"
+  step_five_1: "Reference হিসেবে"
+  step_five_2: "প্রবেশ করান"
+  step_six_1: "Counter number হিসাবে"
+  step_six_2: "প্রবেশ করান"
+  enter_secret_pin: "আপনার গোপন PIN দিন"
+  wait_for_confirmation: "এবং কনফার্মেশন SMS এর জন্য অপেক্ষা করুন।"
+  final_step_message: "অবশেষে, আপনি একটি পেমেন্ট কনফার্মেশন SMS পাবেন। এবং আপনার TrxID গোপন রাখুন।"
+bkash_instruction:
+  dial: "ডায়াল করুন"
+  step_two_1: "পেমেন্টের জন্য"
+  step_two_2: "নির্বাচন করুন"
+  step_three_1: "Merchant bKash Account Number হিসাবে"
+  step_three_2: "প্রবেশ করান"
+  step_four_1: "Amount হিসেবে"
+  step_four_2: "প্রবেশ করান"
+  step_five_1: "Reference হিসেবে"
+  step_five_2: "প্রবেশ করান"
+  step_six_1: "Counter number হিসাবে"
+  step_six_2: "প্রবেশ করান"
+  enter_your_secret_pin: "আপনার গোপন PIN দিন"
+  wait_for_confirmation: "এবং কনফার্মেশন SMS এর জন্য অপেক্ষা করুন।"
+  # finally_title: "পরিশেষে"
+  # finally_msg: "আপনি একটি পেমেন্ট কনফার্মেশন SMS পাবেন। এবং আপনার TrxID গোপন রাখুন।"
+  # visual_diagram_button: "চাক্ষুষ ডায়াগ্রামে প্রক্রিয়া শিখতে এখানে ক্লিক করুন"
+  # verify_text: "ধাপ শেষ হওয়ার পরে, আপনার পেমেন্ট স্ট্যাটাস যাচাই করতে এখানে ক্লিক করুন।"
+  # verify_your_bkash_payment: "আপনার বিকাশ পেমেন্ট যাচাই করুনt"
+checkout_steps:
+  step1: "১"
+  step2: "২"
+  step3: "৩"
+  customer_details: "ক্রেতার বিস্তারিত"
+  delivery_details: "ডেলিভারি বিবরণ"
+  payment: "পেমেন্ট"
+cusotmer_orders:
+  order_page_title: "আপনার অর্ডার সমূহ"
+  no_order_yet: "আপনি এখনও কিছু অর্ডার করেননি"
+  no_order_yet_ops: "ওহ! এখনও কোন অর্ডার নেই"
+  order: "অর্ডার"
+  order_date: "অর্ডার তারিখ"
+  order_details: "অর্ডার বিবরণী"
+  order_summary: "সংক্ষিপ্ত অর্ডার বিবরণী"
+  payment_details: "পেমেন্ট বিবরণী"
+  payment_status: "পেমেন্ট অবস্থা"
+  paid_at: "পেমেন্ট সময়"
+  method: "পদ্ধতি"
+  amount: "পরিমাণ"
+  paid_amount: "প্রদত্ত পরিমাণ"
+  due_amount: "বাকির পরিমান"
+  customer_information: "কাস্টমারের তথ্য"
+  delivery_information: "ডেলিভারি তথ্য"
+  cancel_this_order: "এই অর্ডার বাতিল করুন"
+  address: "ঠিকানা"
+  go_back_to_orders: "আপনার অর্ডার সমূহে ফিরে যান"
+  pay_due_amount: "প্রদেয় অর্থ পে করুন"
+  pay_now: "এখন পেমেন্ট করুন"
+  no_payment_yet: "আপনি এখনও কোন পেমেন্ট করেননি"
+  reason_for_cancellation: "বাতিলের কারণ?"
+  leave_feedback: "প্রতিক্রিয়া দিন"
+  cancellation_feedback: "বাতিলের প্রতিক্রিয়া"
+  back: "ফিরে যান"
+  continue: "আগান"
+ready_for_pickup_orders:
+  page_title: "পিক আপ এর জন্য রেডি অর্ডারগুলো"
+  search_placeholder: "অর্ডার ID অথবা ফোন নাম্বার দিয়ে খুঁজুন"
+  order: "অর্ডার"
+  name: "নাম"
+  order_total: "অর্ডার টোটাল"
+  due_amount : "বাকি টাকা"
+  action : "একশন"
+  enter_otp: "OTP দিন"
+  verify: "যাচাই করুন"
+  resend_otp: "পুনরায় OTP পাঠান"
+  no_order: "এখনও কোন অর্ডার নেই"
+agent_commission:
+  is_online_order: "অনলাইন অর্ডার?"
+  commission_page_title: "আপনার কমিশন"
+  from_order: "অর্ডার থেকে"
+  from_delivery_charge: "ডেলিভারি থেকে"
+  order: "অর্ডার"
+  date: "তারিখ"
+  pending: "অনিষ্পন্ন"
+  paid: "পেইড"
+  cancelled: "বাতিল"
+  sales_commission: "সেলস কমিশন"
+  delivery_commission: "ডেলিভারি কমিশন"
+  balance: "ব্যাল্যান্স"
+  all: "সব কমিশন"
+# agentCommissionStatus:
+#   pending: "অনিষ্পন্ন"
+#   paid: "পেইড"
+#   cancelled: "বাতিল"
+# orderStatus:
+#   pending: "অনিষ্পন্ন"
+#   confirmed: "নিশ্চিত"
+#   shipped: "পাঠানো হয়েছে"
+#   pick_up_ready: "পিক আপ প্রস্তুত"
+#   delivery_ready: "ডেলিভারি প্রস্তুত"
+#   returned: "ফেরতক্রিত"
+#   cancelled: "বাতিল হয়েছে"
+#   delivered: "ডেলিভারি হয়েছে"
+#   unknown: "অজানা"
+advanced_payment:
+  minimum_booking_amount: "ন্যূনতম বুকিং এর পরিমাণ"
+  amount: " {amount}"
+paymentStatus:
+  no_payment: "কোন পেমেন্ট হয়নি"
+  cash_on_delivery: "ক্যাশ অন ডেলিভারি"
+  incomplete: "অসম্পূর্ণ"
+  complete: "সম্পূর্ণ"
+# paymentMethod:
+#   cash: "নগদ"
+#   bkash: "বিকাশ"
+#   rocket: "রকেট"
+#   port_wallet: "পোর্ট ওয়ালেট"
+#   bank: "ব্যাংক"
+#   cheque: "চেক"
+#   commission: "কমিশন"
+static:
+  translation_not_found: "এই পেইজের কন্টেন্ট বাংলায় অনুবাদ করা হয়নি"
+api_errors:
+  facebook_exists: "যেই ফেসবুক একাউন্টটি আপনি যুক্ত করতে চাচ্ছেন সেটি অন্য একটি একাউন্ট এর সাথে সংযুক্ত আছে।"
+  default_error: 'কিছু একটা সমস্যা হয়েছে'
+  number_in_use: "{field} ইতিমধ্যে অন্য একাউন্টের সাথে লিঙ্ক করা হয়েছে"
+  account_not_found: "{field} নাম্বার ব্যবহার করা কোনও অ্যাকাউন্ট পাওয়া যায় নি"
+  otp_mismatch: "{field} ভুল বা মেয়াদ শেষ"
+  otp_mismatch_pickup_orders: "ভুল {field}."
+  mismatch_password: 'পাসওয়ার্ড মিলেনি'
+  invalid_coupon: "কুপন কোডটি সঠিক নয়!"
+  user_coupon_not_match_with_products: "বর্তমান কার্টের আইটেম এর জন্য কুপনটি প্রযোজ্য নয়"
+  coupon_expired: "মেয়াদ উত্তীর্ণ কুপন"
+  coupon_rules_validation_fails: এই কুপনটি যোগ করা সম্ভব না।
+  total_usage_limit_exceeded: "মেয়াদ উত্তীর্ণ কুপন"
+  user_usage_limit_exceeded: "মেয়াদ উত্তীর্ণ কুপন"
+  coupon_code_required: "কুপন কোড প্রয়োজন"
+  fixed_coupon_min_subtotal_not_match: "আরও ৳ {restAmount} শপিং করুন নির্দিষ্ট  ৳ {discountAmount} ছাড়ের জন্য"
+  free_delivery_coupon_min_subtotal_not_match: "আরও ৳ {restAmount} শপিং করুন ফ্রি ডেলিভারি পাওয়ার জন্য"
+  percentage_of_subtotal_coupon_min_subtotal_not_match: "আরও ৳ {restAmount} শপিং করুন প্রোডাক্ট সাবটোটালের {discountAmount}% ডিস্কাউন্ট পাবার জন্য"
+  percentage_of_subtotal_or_max_coupon_min_subtotal_not_match: "আরও ৳ {restAmount} শপিং করুন প্রোডাক্ট সাবটোটালের {discountAmount}% অথবা সর্ব্বোচ্চ ৳ {maxDiscountmount} ডিস্কাউন্ট পাবার জন্য"
+  number_not_found: "{field} নাম্বার ব্যবহার করা কোনও অ্যাকাউন্ট পাওয়া যায় নি"
+  user_not_found: "{field} নাম্বার ব্যবহার করা কোনও অ্যাকাউন্ট পাওয়া যায় নি"
+  order_not_found: "অর্ডারটি পাওয়া যায় নি "
+  order_not_in_pickup_ready_status: "অর্ডারটি পিকাপ রেডি স্ট্যাটাস এ নেই।"
+  location_not_found: "লোকেশন পাওয়া যায়নি"
+  bad_params: "ভুল তথ্য দেয়া হয়েছে"
+  validation_failed: "ভ্যালিডেশন ঠিক হয়নি"
+  unauthorized: "অনুমতি নেই"
+  access_denied: "আপনার প্রবেশাধিকার নেই"
+  not_found: "পাওয়া যায়নি"
+  unexpected_exception: "কিছু একটা সমস্যা হয়েছে"
+  otp_not_found: "এককালীন পাসওয়ার্ড পাওয়া যায়নি"
+  invalid_mobile_number: "মোবাইল নাম্বার ঠিক নেই"
+  number_exists: "এই মোবাইল নাম্বার ইতিমধ্যেই আছে"
+  otp_expired: "এককালীন পাসওয়ার্ডের মেয়াদ শেষ"
+  otp_creation_failed: "এককালীন পাসওয়ার্ড তৈরি করা যায়নি"
+  invalid_facebook_token: "ফেসবুকের কিছু একটা হয়েছে"
+  no_other_number: "অন্য কোন নাম্বার নেই"
+  cannot_delete_primary_number: "প্রাইমারি নাম্বার মুছে ফেলা যাবে না"
+  cannot_delete_address: "এই ঠিকানায় ইতিমধ্যে একটি অর্ডার করা হয়েছে, তাই ঠিকানা মুছা যাবে না।"
+  already_requested: "ইতিমধ্যে একবার অনুরোধ করা হয়েছে"
+  no_error: "কোন এরর নেই"
+  out_of_stock: "সোল্ড আউট"
+  not_enough_qty: "অপর্যাপ্ত স্টক"
+  discontinued: "এই পণ্য আর নেই"
+  price_changed: "মূল্য পরিবর্তন হয়েছে"
+  invalid_quantity: "পরিমাণ সঠিক নয়"
+  agent_not_found: "এই মোবাইল দিয়ে কোন রেজিস্টার্ড এজেন্ট পাওয়া যায়নি"
+  bkash_error_invalid: "TrxId বৈধ নয়, দয়া করে আপনার পেমেন্ট কনফার্মেশন মেসেজ আবার চেক করে দেখুন"
+  bkash_error_failed: "বিকাশ সার্ভার বলছে পেমেন্ট হয়নি, আপনি কি বিকাশ থেকে কোন কনফার্মেশন এস এম এস পেয়েছেন?"
+  wait_before_next_call: "আপনার {minutes} মিনিট {seconds} সেকেন্ড অপেক্ষা করতে হবে এই TrxId দিয়ে আবার চেষ্টা করার জন্য, দয়া করে সঠিক TrxId দিন অথবা অপেক্ষা করুন"
+  payment_exists: "এই {field} আইডি ইতিমধ্যে একবার ব্যবহার করা হয়ে গেছে একটি পেমেন্টের জন্য। এটি দিয়ে আর চেষ্টা করবেন না, নতুবা আপনার একাউন্ট ব্লক করে দেয়া হবে"
+page_notifications:
+  success:
+    default: অপারেশন সফল হয়েছে।
+    payment_done: পেমেন্ট সফল হয়েছে, আমাদের থেকে শপিং করার জন্য আপনাকে ধন্যবাদ। দয়া করে আপনার অর্ডারের বিবরণ নিচে দেখুন।
+    commission_adjusted: ধন্যবাদ আমাদের সাথে শপিং করার জন্য। মোট প্রদেয় পরিমাণ আপনার কমিশন ব্যাল্যান্স থেকে সমন্বয় করে নেয়া হয়েছে, বিস্তারিত নিচে দেখুন।
+    cod_confirmed: ক্যাশ অন ডেলিভারি নিশ্চিত হয়েছে, ধন্যবাদ আমাদের থেকে শপিং করার জন্য। দয়া করে আপনার অর্ডারের বিবরণ নিচে দেখুন।
+    bod_confirmed: বিকাশ অন ডেলিভারি নিশ্চিত হয়েছে, ধন্যবাদ আমাদের থেকে শপিং করার জন্য। দয়া করে আপনার অর্ডারের বিবরণ নিচে দেখুন।
+    pickup_order_verified: অর্ডার {field} ডেলিভারি হয়েছে।
+  error:
+    default: অজানা কারনে অপারেশন ফেইল করেছে, দয়া করে আবার চেষ্টা করুন অথবা কাস্টমার সারভিসে ফোন করুন - ০১৮৭৯-৪৭৪৭৪৭
+    payment_failed: দুঃখিত, আপনার পেমেন্ট সফল হয়নি - দয়া করে আবার চেষ্টা করুন অথবা কাস্টমার কেয়ারে ফোন করুন - ০১৮৭৯-৪৭৪৭৪৭১
+    agent_balance_updated: আপনার ব্যাল্যান্স আপডেট হয়েছে এবং এই অর্ডারের সাথে সমন্বয় করা হয়েছে। দয়া করে আবার অর্ডার কনফার্ম করুন।
+    bkash_server: দুঃখিত, বিকাশ সার্ভারের সাথে যোগাযোগে সমস্যা হচ্ছে, দয়া করে আবার চেষ্টা করুন অথবা কাস্টমার কেয়ারে ফোন করুন - ০১৮৭৯-৪৭৪৭৪৭
+    invalid_coupon: "কুপন {field} আর প্রযোজ্য নয়, তাই এটি মুছে ফেলা হয়েছে।"
+    coupon_expired: "কুপন {field} আর প্রযোজ্য নয়, তাই এটি মুছে ফেলা হয়েছে।"
+    total_usage_limit_exceeded: "কুপন {field} আর প্রযোজ্য নয়, তাই এটি মুছে ফেলা হয়েছে।"
+    user_usage_limit_exceeded: "কুপন {field} আর প্রযোজ্য নয়, তাই এটি মুছে ফেলা হয়েছে।"
+    user_coupon_not_match_with_products: "কুপন {field} আর প্রযোজ্য নয়, তাই এটি মুছে ফেলা হয়েছে।"
+    invalid_coupon_discount: " কুপন {field} এর ছাড় পরিবর্তন করা হয়েছে। দয়া করে কি পরিবর্তন হয়েছে তা চেক করুন।"
+    invalid_total_price: কোথাও কিছু একটা সমস্যা হয়েছে তাই অর্ডার নিশ্চিত করা যায়নি। দয়া করে আবার চেষ্টা করুন।
+    cart_item_mismatch: আপনার অর্ডার করা পণ্যগুলোর মাঝে কোন একটিতে সমস্যা হয়েছে, দয়া করে কি সমস্যা হয়েছে তা জানার জন্য আপনার কার্ট চেক করুন।
+    coupon_rules_validation_fails: এই কুপনটি যোগ করা সম্ভব না।
+    invalid_delivery_address: "এই ডেলিভারি এড্রেসে কিছু একটা সমস্যা হয়েছে। অন্য আরেকটি এড্রেস নির্বাচন করুন।"
+  warning:
+    ref_mismatch: আমাদের সার্ভারে পেমেন্ট স্ট্যাটাস পরিবর্তন হয়ে গেছে - দয়া করে নিচের পেমেন্ট বিবরণ আবার দেখুন এবং যদি জরুরী হয় তবে আমাদের কাস্টমার কেয়ার সার্ভিসে ফোন করুন - ০১৮৭৯-৪৭৪৭৪৭
+    amount_mismatch: আমরা প্রত্যাশিত পরিমানের চেয়ে ভিন্ন কিছু পেয়েছি - দয়া করে নিচের পেমেন্ট বিবরণ দেখুন এবং যদি জরুরী হয় তবে আমাদের কাস্টমার কেয়ারে ফোন করুন - ০১৮৭৯-৪৭৪৭৪৭
+    payment_pending: আমরা পেন্ডিং স্ট্যাটাসের একটি পেমেন্ট পেয়েছি কিন্তু বিস্তারিত বিবরণ পাইনি - দয়া করে ৫ মিনিট পরে আবার চেষ্টা করুন অথবা আমাদের কাস্টোমার কেয়ার সার্ভিসে ফোন দিন - ০১৮৭৯-৪৭৪৭৪৭
+  info:
+    cart_items_restored: আপনার আগের কার্ট আইটেম পুনরুদ্ধার করা হয়েছে
+    emi_cart_with_no_backup: EMI দিয়ে শুধুমাত্র একটি প্রডাক্ট অর্ডার করা যাবে। আপনার বর্তমান EMI প্রডাক্ট কার্ট টি মুছে যাবে অর্ডার তৈরি করার পরে অথবা যদি অন্য পেইজে চলে যান
+    emi_cart_with_backup: EMI দিয়ে শুধুমাত্র একটি প্রডাক্ট অর্ডার করা যাবে। আপনার কার্ট আইটেম পুনরুদ্ধার করা হবে অর্ডার তৈরি করার পরে অথবা যদি অন্য পেইজে চলে যান
+footer:
+  footer_about: "ডেলিগ্রাম একটি অনলাইন শপ যা আপনার শপিং অভিজ্ঞতাকে করে আনন্দদায়ক। অনলাইনে অর্ডার করুন অথবা আপনার নিকটস্থ আমাদের কোন হাব বা এজেন্টের কাছে গিয়ে আপনার অর্ডার দিন, সেখান থেকেই আপনার ডেলিভারি সংগ্রহ করুন অথবা যে কোন  বিক্রয়োত্তর সেবা গ্রহণ করুন"
+  heading_deligram: "ডেলিগ্রাম"
+  extra_link_text_about: "সম্বন্ধে"
+  extra_link_text_contact: "যোগাযোগ"
+  extra_link_text_jobs: "চাকরি"
+  extra_link_text_press: "প্রেস"
+  heading_help: "সাহায্য"
+  extra_link_text_cancellation_and_returns: "ফেরত ও পরিবর্তন নীতিমালা"
+  extra_link_text_payment: "পেমেন্ট"
+  extra_link_text_delivery: "ডেলিভারি"
+  extra_link_text_faq: "FAQ"
+  extra_link_text_customer_care: "গ্রাহক সেবা"
+  heading_payment: "পেমেন্ট"
+  payment_note: "Lorem Ipsum শুধু মুদ্রণ এবং typesetting শিল্পের ডামি টেক্সট।"
+  return_policy: "প্রত্যাবর্তন নীতিমালা"
+  term_of_use: "ব্যবহারের শর্ত"
+  privacy_policy: "গোপনীয়তা নীতি"
+  copy_right: "© {field} ডেলিগ্রাম টেকনোলজি লিমিটেড।"
+  affiliated_1: "একটি"
+  affiliated_2: "প্রতিষ্ঠান"
+  address: "৭০৫ নাখালপাড়া, তেজগাঁও, ঢাকা ১২১৫"
+  phone: "ফোনঃ ০১৮৭৯-৪৭৪৭৪৭"
+enums:
+  # PaymentStatus:
+  #   CRETAED: "Created"
+  #   CONFIRMED: "Confirmed"
+  OrderPaymentStatus:
+    NO_PAYMENT: "কোন পেমেন্ট হয়নি"
+    CONFIRMED: "ক্যাশ অন ডেলিভারি"
+    PARTIALLY_PAID: "আংশিকভাবে পেমেন্ট হয়েছে"
+    COMPLETE: "সম্পূর্ণ"
+    REFUNDED: "ফেরত দেয়া হয়েছে"
+  PrefferedPaymentChannel:
+    CASH_ON_DELIVERY: "ক্যাশ অন ডেলিভারি"
+    BKASH_ON_DELIVERY: "বিকাশ অন ডেলিভারি"
+  PaymentChannel:
+    CASH: "নগদ"
+    BKASH: "বিকাশ"
+    ROCKET: "রকেট"
+    PORT_WALLET: "অনলাইন পেমেন্ট"
+    BANK: "ব্যাংক"
+    CHEQUE: "চেক"
+    COMMISSION: "নগদ"
+    BRAC_BANK_POS: "কার্ড"
+    BKASH_CHECKOUT: "বিকাশ"
+  OrderStatus:
+    CREATED: "অনিষ্পন্ন"
+    CONFIRMED: "নিশ্চিত"
+    PENDING_FULFILMENT: "নিশ্চিত"
+    STOCK_CONFIRMED: "নিশ্চিত"
+    FULFILLED: "নিশ্চিত"
+    PARTIALLY_PACKED: "নিশ্চিত"
+    PACKED: "নিশ্চিত"
+    PARTIALLY_BUNDLED: "নিশ্চিত"
+    BUNDLED: "নিশ্চিত"
+    PARTIALLY_SHIPPED: "পাঠানো হয়েছে"
+    SHIPPED: "পাঠানো হয়েছে"
+    PARTIALLY_RECEIVED_AT_HUB: "পাঠানো হয়েছে"
+    RECEIVED_AT_HUB: "পাঠানো হয়েছে"
+    PICK_UP_READY: "পাঠানো হয়েছে"
+    DELIVERY_READY: "পাঠানো হয়েছে"
+    DELIVERED: "ডেলিভারি হয়েছে"
+    REPLACEMENT_REQUESTED: "অজানা"
+    REPLACEMENT_APPROVED: "অজানা"
+    REPLACEMENT_PENDING: "অজানা"
+    REPLACEMENT_DENIED: "অজানা"
+    RETURN_REQUESTED: "অজানা"
+    RETURN_APPROVED: "অজানা"
+    RETURN_DENIED: "অজানা"
+    REFUND_PENDING: "বাতিল হয়েছে"
+    FULFILMENT_FAILED: "নিশ্চিত"
+    ITEM_LOST: "অজানা"
+    PACKAGE_LOST: "অজানা"
+    RETURNED: "বাতিল হয়েছে"
+    REFUNDED: "বাতিল হয়েছে"
+    REJECTED: "বাতিল হয়েছে"
+    CANCELLED: "বাতিল হয়েছে"
+  FrontEndOrderStatus:
+    UNKNOWN: "অজানা"
+    PENDING: "অনিষ্পন্ন"
+    CONFIRMED: "নিশ্চিত"
+    SHIPPED: "পাঠানো হয়েছে"
+    CANCELLED: "বাতিলকৃত"
+    DELIVERED: "ডেলিভারি হয়েছে"
+    ALL: "সকল"
+  SupportTicketStatus:
+    PENDING: "পেন্ডিং"
+    ACCEPTED: "এপ্রুভড"
+    INPROGRESS: "ইন প্রোগ্রেস"
+    SUCCESSFUL: "সাক্সেসফুল"
+    CANCELLED: "কেন্সেল"
+    CLOSED: "ক্লোজড"
+  SupportTicketsApprovedStatus:
+    REFUND: "রিফান্ড"
+    REPLACEMENT: "রিপ্লেস্মেন্ট"
+    WARRENTY: "ওয়ারেন্টি"
+    UNKNOWN: "-"
+  SupportTicketOrderStatus:
+    SUPPLY: ডি জি সাপ্লাই
+    REGULAR: রেগুলার
+    REFUND: রিফান্ড
+    REPLACEMENT: রিপ্লেসমেন্ট
+    WARRENTY: ওয়ারেন্টি
+    UNKNOWN: অজানা
+  # AddressTypes:
+  #   CUSTOMER: 'গ্রাহক'
+  #   HUB: 'হাব'
+  #   AGENT: 'এজেন্ট'
+  #   LOCKER: 'লকার'
+  #   CRETAED: "তৈরি হয়েছে"
+  #   CONFIRMED: "নিশ্চিত হয়েছে"
+  OrderCommissionStatus:
+    PENDING: "অনিষ্পন্ন"
+    PAID: "পেমেন্ট করা হয়েছে"
+    CANCELLED: "বাতিল হয়েছে"
+  # CartItemStatus:
+  #   NO_ERROR: "কোন ভুল নেই"
+  #   OUT_OF_STOCK: "পণ্য স্টকে নেই"
+  #   NOT_ENOUGH_QTY: "পণ্যটি যথেষ্ট পরিমাণ স্টকে নেই"
+  #   DISCONTINUED: "পণ্যটি এখন থেকে আর পাওয়া যাবে না"
+  #   NOT_FOUND: "পণ্যটি খুঁজে পাওয়া যায়নি"
+  #   PRICE_CHANGED: "এই পণ্যের দাম পরিবর্তন হয়ে গেছে"
+  #   INVALID_QUANTITY: "পণ্যের পরিমাণ সঠিক নয়"
+  #   COMMISSION_CHANGED: "এই পণ্যের কমিশন পরিবর্তন হইয়ে গেছে"
+  #   NOT_DELIVERABLE_TO_CHOSEN_ADDRESS: "নির্বাচিত ঠিকানায় পণ্যটি ডেলিভারি দেয়া সম্ভব নয়"
+error_page:
+  # code: কোড
+  button:
+    default: পুনরায় চেষ্টা করুন
+    _404: হোম পেইজে ফেরত যান
+  title:
+    default: অপ্রত্যাশিত এরর
+    _404: পেইজটি পাওয়া যায় নি
+    _500: নেটওয়ার্ক এরর
+  message:
+    default: একটি অপ্রত্যাশিত এরর হয়েছে।
+    _404: আপনি সম্ভবত এমন একটি লিংকে ক্লিক করেছেন, যা এখন আর সঠিক নয়।.
+    _500: ইন্টার্নেট সংযোগটি সম্ভবত বিচ্ছিন্ন হয়েছে।.
+  offline:
+    agent: অনুগ্রহপূর্বক ইন্টার্নেট সংযোগ পুনস্থাপিত হওয়ার জন্য অপেক্ষা করুন। কিছুক্ষণের মধ্যে একটি বাটন দেখতে না পেলে ডিভাইসটি রিস্টার্ট করুন। তাতেও সমস্যার সমাধান না হলে, আপনার জন্য নির্ধারিত ইন্টার্নেট কানেকশনটির ডাটা প্যাক শেষ হয়ে গেছে কিনা, জানতে ডেলিগ্রাম প্রতিনিধির সাথে যোগাযোগ করুন।
+    customer: অনুগ্রহপূর্বক ইন্টার্নেট সংযোগ পুনস্থাপিত হওয়ার জন্য অপেক্ষা করুন।
+# vacation:
+#   title: "প্রিয় গ্রাহকবৃন্দ"
+#   sub_title: "একাদশ জাতীয় সংসদ নির্বাচন উপলক্ষে"
+#   message: '<span class="highlighter">২৮শে ডিসেম্বর ২০১৮ থেকে ২রা জানুয়ারি ২০১৯</span> পর্যন্ত ডেলিগ্রাম এর ডেলিভারি অপারেশন বন্ধ থাকবে।'
+#   notice: 'প্রিয় গ্রাহকবৃন্দ, একাদশ জাতীয় সংসদ নির্বাচন উপলক্ষে ২৮শে ডিসেম্বর ২০১৮ থেকে ২রা জানুয়ারি ২০১৯ পর্যন্ত আমাদের সকল ডেলিভারি কার্যক্রম বন্ধ থাকবে। তবে অর্ডার প্লেস করতে পারবেন। ৩রা জানুয়ারি থেকে আমরা আমাদের স্বাভাবিক কার্যক্রম শুরু করবো।'
+# vacation:
+#   title: "ঈদ মুবারক!"
+#   sub_title: "আপনার ও আপনার পরিবারের জন্য রইল ঈদের শুভেচ্ছা।"
+#   message: 'সম্মানিত গ্রাহক, পবিত্র ইদ-উল-আযহা উপলক্ষে <span class="highlighter">১০ আগস্ট থেকে ১৭ আগস্ট</span> ২০১৯ পর্যন্ত আমাদের সকল ডেলিভারি কার্যক্রম বন্ধ থাকবে। ১৮ আগস্ট ২০১৯ তারিখ হতে আমরা আমাদের নিয়মিত কার্যক্রম শুরু করবো।'
+#   notice: 'ঈদ মুবারক! সম্মানিত গ্রাহক, পবিত্র ইদ-উল-আযহা উপলক্ষে ১০ আগস্ট থেকে ১৭ আগস্ট ২০১৯ পর্যন্ত আমাদের সকল ডেলিভারি কার্যক্রম বন্ধ থাকবে। ১৮ আগস্ট ২০১৯ তারিখ হতে আমরা আমাদের নিয়মিত কার্যক্রম শুরু করবো। আপনার ও আপনার পরিবারের জন্য রইল ঈদের শুভেচ্ছা।'
+vacation:
+  title: "ঘরে থাকুন!"
+  sub_title: "করোনা ভাইরাস থেকে নিজে ও আশেপাশের মানুষকে সুরক্ষিত রাখতে নিতান্ত প্রয়োজন ছাড়া বাসার বাইরে বের হবেন না"
+  message: 'করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।'
+  notice: 'করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।'
+network_offline:
+  title: "ইন্টারনেট কানেকশন নেই"
+  copy: "ইন্টারনেট কানেকশন পেলে এই মেসেজটি নিজে নিজেই চলে যাবে এবং আপনি পুনরায় কাজ শুরু করতে পারবেন।"
+coupon_offer:
+  heading: কুপন
+  line1:  এই পণ্যের জন্য একটি কুপন আছে।
+  line2: চেকআউটের সময় পণ্যটির জন্য কুপন স্বয়ংক্রিয়ভাবে প্রয়োগ হতে পারে।
+  line3: একবারে একটি কুপনই ব্যাবহার করা যাবে।
+general_conditions:
+  heading: সাধারণ শর্ত
+  line1: একজন গ্রাহক একই সময়ে শুধুমাত্র একটি প্রমোশন নিতে পারবেন।
+  line2: ইএমআই দিয়ে কিনলে ক্যাশব্যাক অফার প্রযোজ্য হবে না।
+bkash_offer:
+  heading: বিকাশ ক্যাশব্যাক অফার শর্তাবলী
+  line1: ডেলিগ্রামের গ্রাহকগণ বিকাশ অ্যাপ অথবা অনলাইন পেমেন্ট গেটওয়ের মাধ্যমে পেমেন্ট করলে ১০% ক্যাশব্যাক পাবেন।
+  line2: বিকাশ অ্যাপ অথবা অনলাইন পেমেন্ট গেটওয়েতে পেমেন্টে প্রতি অর্ডারে সর্বোচ্চ ৩০০ টাকা এবং পুরো ক্যাম্পেইন পিরিয়ডে সর্বমোট ১,৫০০ টাকা ক্যাশব্যাক পাবেন।
+  line3: যদি অর্ডার ক্যানসেল হলে,সেই ক্ষেত্রে সর্বোচ্চ ১৪ কর্মদিবসের মধ্যে গ্রাহক রিফান্ড পেয়ে যাবেন।
+  line4: অর্ডার টোটাল থেকে ক্যাশব্যাক বিয়োগ করে অবশিষ্ট অর্থ রিফান্ড করা হবে।
+  line5: অফারটির মেয়াদঃ ১০ই অক্টোবর ২০১৯ থেকে ৩০ই অক্টোবর ২০১৯ পর্যন্ত।
+citybank_american_express_offer:
+  heading: সিটি ব্যাংক আমেরিকান এক্সপ্রেস ক্যাশব্যাক অফার শর্তাবলী
+  line1: এই অফারটি শুধুমাত্র সিটি ব্যাংকের আমেরিকান এক্সপ্রেস ডেবিট এবং ক্রেডিট কার্ড মেম্বারদের ক্ষেত্রে  প্রযোজ্য।
+  line2: একজন গ্রাহক প্রতি অর্ডারে সর্বোচ্চ ১০% পর্যন্ত ক্যাশব্যাক পাবেন।
+  line3: প্রতি অর্ডারে সর্বোচ্চ ক্যাশব্যাকের পরিমাণ ১০০০ টাকা।
+  line4: একজন কার্ডমেম্বার পুরো ক্যাম্পেইন পিরিয়ডে সর্বমোট ৩ টি ক্যাশব্যাক পাবেন।
+  line5: ক্যাম্পেইন শেষে সিটি ব্যাংক সর্বোচ্চ ১৫ কর্মদিবসের মধ্যে ক্যাশব্যাকটি কার্ডমেম্বারের স্টেস্টমেন্ট এর সাথে সমন্বয় করবে।
+  line6: যদি অর্ডার ক্যানসেল হয়, সেই ক্ষেত্রে গ্রাহক সর্বোচ্চ ১৫ কর্মদিবসের মধ্যে রিফান্ড পেয়ে যাবেন।
+  line7: অফারটির মেয়াদঃ ইদ-উল-আযহা ২০১৯ পর্যন্ত।
+ebl_offer:
+  heading: ইবিএল মাস্টার এবং ভিসা কার্ড ক্যাশব্যাক অফারের শর্তাবলী
+  line1: এই অফারটি শুধুমাত্র ইবিএল মাস্টার এবং ভিসা কার্ডে পেমেন্টের ক্ষেত্রে প্রযোজ্য।
+  line2: একজন গ্রাহক প্রতি অর্ডারে সর্বোচ্চ ১০% পর্যন্ত ক্যাশব্যাক পাবেন।
+  line3: প্রতি অর্ডারে সর্বোচ্চ ক্যাশব্যাকের পরিমাণ ১০০০ টাকা।
+  line4: একজন কার্ডমেম্বার পুরো ক্যাম্পেইন পিরিয়ডে সর্বমোট ৩ টি ক্যাশব্যাক পাবেন।
+  line5: ক্যাম্পেইন শেষে ইবিএল সর্বোচ্চ ১৫ কর্মদিবসের মধ্যে ক্যাশব্যাকটি গ্রাহকের স্টেস্টমেন্ট এর সাথে সমন্বয় করবে।
+  line6: যদি অর্ডার ক্যানসেল হয়, সেই ক্ষেত্রে সর্বোচ্চ ১৫ কর্মদিবসের মধ্যে গ্রাহক রিফান্ড পেয়ে যাবেন।
+  line7: অফারটির মেয়াদঃ ১৮ই জুলাই ২০১৯ থেকে ১২ই আগস্ট ২০১৯ পর্যন্ত।
+mastercard_offer:
+  heading: মাস্টার কার্ড ডিসকাউন্ট অফারের শর্তাবলী
+  line1: ডেলিগ্রামের গ্রাহকগণ অনলাইন পেমেন্ট গেটওয়ের মাধ্যমে পেমেন্ট করলে ১০% ডিসকাউন্ট পাবেন।
+  line2: প্রতি অর্ডারে সর্বোচ্চ ডিসকাউন্টের পরিমাণ ৩০০ টাকা।
+  line3: অর্ডার ক্যানসেল হলে, সেই ক্ষেত্রে সর্বোচ্চ ১৪ কর্মদিবসের মধ্যে গ্রাহক রিফান্ড পেয়ে যাবেন।
+  line4: অফারটির মেয়াদঃ ১০ই অক্টোবর ২০১৯ থেকে ৩০ই অক্টোবর ২০১৯ পর্যন্ত।
+donation:
+  permission: আমি আমার অতিরিক্ত জামাকাপড় ডোনেট করতে চাই ডেলিভারি নেয়ার সময়।
+  success_message: অসাধারণ। আপনি আপনার অতিরিক্ত জামাকাপড় ডোনেট করতে চাচ্ছেন ডেলিভারি নেয়ার সময়। যদি আপনি আপনার ডোনেশন বাতিল করতে চান, তাহলে
+  click_here: এখানে ক্লিক করুন।
+  show_details: বিস্তারিত দেখুন
+  brief: এই ইদে আপনি আপনার বাড়তি কাপড় ডোনেট করুন ডেলিভারি নেয়ার সময় এবং হাঁসি ফোটান অন্য কারো মুখে, গড়ুন মানবতার দেয়াল। আপনার হয়ে আমরা সুবিধা বঞ্চিতদের মাঝে সেগুলো কাপড় বিতরণ করে দিব।
+  confirm_to_donate: আমি ডোনেট করতে চাই
+  donate: ডোনেট
+  donation_modal: ডোনেশন
+  modal_close: বন্ধ করুন
+support_ticket:
+  details: বিস্তারিত
+  support_tickets: সাপোর্ট টিকেট
+  order: অর্ডার
+  ticket: টিকেট
+  order_type: অর্ডারের ধরন
+  received_requests: প্রাপ্ত অনুরোধ গুলো
+  request: অনুরোধ
+  update: আপডেট
+  upc: ইউপিসি
+  requested_for: অনুরোধ করা হয়েছে
+  appreoved_for: অনুমোদিত হয়েছে
+  status: অনুরোধের অবস্থা
+  action: একশন
+  request_details: অনুরোধের বর্ণনা
+  order_date: অর্ডারের তারিখ
+  reason: কারণ
+  additional_charge: অতিরিক্ত চার্জ
+  received: গৃহীত
+  cancelled: বাতিলক্রিত
+  update_request: অনুরোধ আপডেট
+  customer_information: গ্রাহকের তথ্য
+  delivery_address: সরবরাহের ঠিকানা
+  pickup_address: পিক-আপের ঠিকানা
+  alert: অনুগ্রহ করে এটা নিশ্চিত করুন যে আপনি সঠিক ব্যক্তি থেকে সঠিক পণ্যটি গ্রহণ করছেন। নিশ্চিত হবার জন্য ইউপিসি অথবা অর্ডার নম্বর যাচাই করে দেখুন, সেইসাথে ক্রেতার তথ্যও মিলিয়ে নিন।
+service_review:
+  question: আমাদের সাথে সর্বশেষ অর্ডার নিয়ে আপনার অভিজ্ঞতা কেমন ছিল?
+  skip: বন্ধ করুন
+rating_page:
+  thanks: ধন্যবাদ!
+  reivew_us: রিভিউ দিন
+  rate_experience: আপনার অভিজ্ঞতা রেট করুন
+  experience_with_us: আপনার অভিজ্ঞতার কথা আমাদের জানান
+  done: হয়েছে
+  order: অর্ডার
+  placeholder: এখানে লিখুন
+  experience:
+    terrible: ভয়াবহ
+    bad: খারাপ 
+    disappointing: হতাশ 
+    good: ভালই, তবে ... 
+    great: অসাধারণ 
+shipping_info:
+  agent_pickup: "এজেন্ট পিকাপ"
+  free: "ফ্রি"
+  home_delivery: "হোম ডেলিভারি "
+  estimated_title: "আনুমানিক ডেলিভারি সময়"
+  inside_dhaka: "ঢাকার ভেতরে"
+  outside_dhaka: "ঢাকার বাইরে"
+  one_day: "১ দিন"
+  multiple_days: "{days} দিন"
+  set_point: "আপনার পিকাপ পয়েন্ট সেট করুন"
+  

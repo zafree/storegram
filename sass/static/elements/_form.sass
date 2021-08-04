@@ -1,0 +1,82 @@
+.FieldWaitList
+    &:not(:first-child)
+        margin-top: 22px
+    &__control
+        position: relative
+        text-align: left
+
+    &__input
+        align-items: center
+        border: 1px solid transparent
+        border-radius: 500px
+        box-shadow: none
+        display: inline-flex
+        font-size: 1rem
+        height: 50px
+        justify-content: flex-start
+        line-height: 1.5
+        // padding: 0 165px 0 30px
+        padding: 0 100px 0 30px
+        position: relative
+        vertical-align: top
+        background-color: #fcfcfc
+        // border-color: #dbdbdb
+        border-color: #e5e5e5
+        color: #333
+        fill: #333
+        box-shadow: none
+        max-width: 100%
+        width: 100%
+        font-size: 14px
+        font-weight: 400
+        // letter-spacing: .06em
+        transition: all .1s ease-out
+        +phablet
+            font-size: 14px
+            letter-spacing: .06em
+        &:focus,
+        &:active
+            border-color: #777
+            box-shadow: none
+            outline: none
+            background-color: #fff
+
+        +placeholder
+            color: #bbbbbb
+
+        &--danger
+            border-color: $red
+
+    &__inlineButton
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        background-color: transparent
+        .Button
+            height: 40px
+            // display: inline-flex
+            background-color: $red
+            display: inline-flex
+            font-size: 14px
+            letter-spacing: .06em
+            margin-top: 5px
+            margin-right: 5px
+            padding-left: 30px
+            padding-right: 30px
+            border-radius: 500px
+            color: $white
+            fill: $white
+            transition: all .3s ease-out
+            &:hover
+                background-color: lighten($red, 5%)
+            &:active
+                background-color: $red
+            &:focus
+                // background-color: $green
+            &__textWaitlist
+                display: none
+                +desktop
+                    display: block
+                    padding-left: 5px
+                    

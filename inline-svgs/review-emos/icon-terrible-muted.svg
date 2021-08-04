@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="icon-terrible-muted" transform="translate(-0.142 -0.142)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="16" cy="16" r="16" transform="translate(0.142 0.142)" fill="#e9eff4"/>
+    <path id="Path_3" data-name="Path 3" d="M85.226,69.2A16.029,16.029,0,0,1,56.72,79.26,16.029,16.029,0,0,0,79.26,56.72,16.011,16.011,0,0,1,85.226,69.2Z" transform="translate(-53.083 -53.083)" fill="#dee4e9"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="2.515" cy="2.515" r="2.515" transform="translate(19.495 11.695)" fill="#3e4347"/>
+    <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="0.761" cy="0.493" rx="0.761" ry="0.493" transform="matrix(-0.914, -0.405, 0.405, -0.914, 23.22, 13.855)" fill="#5a5f63"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="2.515" cy="2.515" r="2.515" transform="translate(7.702 11.695)" fill="#3e4347"/>
+    <ellipse id="Ellipse_10" data-name="Ellipse 10" cx="0.761" cy="0.493" rx="0.761" ry="0.493" transform="matrix(-0.914, -0.405, 0.405, -0.914, 11.426, 13.855)" fill="#5a5f63"/>
+    <path id="Path_4" data-name="Path 4" d="M147.6,338.924a.751.751,0,1,0,1.03,1.094,8.087,8.087,0,0,1,11.072,0,.751.751,0,1,0,1.03-1.094A9.591,9.591,0,0,0,147.6,338.924Z" transform="translate(-138.047 -315.181)" fill="#3e4347"/>
+  </g>
+</svg>

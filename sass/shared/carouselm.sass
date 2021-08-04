@@ -1,0 +1,30 @@
+.carousel
+  position: relative
+  margin-top: 10px
+  margin-bottom: 10px
+  padding-top: 15px
+  padding-bottom: 15px
+  background-color: $white
+  overflow-y: hidden
+  &__slider
+    white-space: nowrap
+    overflow-x: auto
+    overflow-y: hidden
+    &::-webkit-scrollbar
+      -webkit-appearance: none
+      display: none
+  &__cell
+    display: inline-block
+    vertical-align: top
+    white-space: normal
+    width: 50%
+    position: relative
+    &:not(:last-child)
+      margin-right: 10px
+    &:first-child
+      box-sizing: content-box
+      padding-left: 14px
+    &:last-child
+      box-sizing: content-box
+      padding-right: 14px
+

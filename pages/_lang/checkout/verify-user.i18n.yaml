@@ -1,0 +1,7 @@
+---
+step1 : 'checkout_steps.step1'  
+customerDetails : 'checkout_steps.customer_details'
+step2 : 'checkout_steps.step2'
+deliveryDetails : 'checkout_steps.delivery_details'
+step3 : 'checkout_steps.step3'
+payment : 'checkout_steps.payment'

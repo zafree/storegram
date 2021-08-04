@@ -1,0 +1,10 @@
+---
+orderPageTitle : 'cusotmer_orders.order_page_title'  
+order : 'payment.order'
+date : 'payment.date'
+total : 'payment.total'
+orderStatus : 'payment.order_status'
+action : 'payment.action'
+payNow : 'payment.pay_now'
+details : 'payment.details'
+orderType: 'support_ticket.order_type'

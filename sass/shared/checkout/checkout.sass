@@ -1,0 +1,87 @@
+.checkout
+  position: relative
+  padding-bottom: 100px
+  &__container
+    +container
+  &__row
+    position: relative
+    +tablet
+      margin-left: 110px
+      max-width: 450px
+  &__step
+    position: relative
+    &:not(:first-child)
+      margin-top: 30px
+
+.process
+  position: relative
+  &__title
+    display: flex
+    align-items: center
+  &__body
+    position: relative
+    padding-top: 20px
+    padding-bottom: 30px
+    // &::before,
+    // &::after
+    //   content: ""
+    //   position: absolute
+    //   top: 0
+    //   height: 3px
+    //   width: 15px
+    //   margin-top: -2px
+    //   background-color: white
+    //   +phablet
+    //     display: none
+    // &::before
+    //   left: 0
+    // &::after
+    //   right: 0
+
+.title
+  font-size: 18px
+  font-weight: 400
+  // font-family: $family-display
+  &__step
+    position: relative
+    width: 32px
+    height: 32px
+    border: 1px solid $black
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    font-size: inherit
+    font-weight: inherit
+    &--success
+      background-color: $green
+      color: $white
+      fill: $white
+  &__text
+    font-size: inherit
+    font-weight: inherit
+    padding-left: 20px
+
+
+  &.active
+    color: $primary
+    .title__step
+      border-color: $primary
+    .title__text
+      padding-left: 40px
+  &.done
+    .title__step
+      color: $white
+      background-color: $primary
+      border-color: $primary
+      svg
+        width: 20px
+        height: 20px
+        position: absolute
+        top: 5px
+        left: 0
+        margin-left: -13px
+        background-color: $primary
+        fill: $white
+        border-radius: 20px
+        border: 1px solid $white
+

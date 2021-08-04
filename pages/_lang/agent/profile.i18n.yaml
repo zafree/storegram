@@ -1,0 +1,8 @@
+---
+profile : 'profile.your_profile'
+cancel : 'profile.cancel'
+agentInfoLabel : 'user_info.agent_info_label'
+changePassword : 'profile.change_password_label'
+currentPassword : 'profile.current_password_label'
+newPassword : 'profile.new_password_label'
+confirmPassword : 'profile.confirm_password_label'

@@ -1,0 +1,61 @@
+.Svg
+    display: inline-block
+    vertical-align: top
+    position: relative
+    &--10px
+        height: 10px
+        line-height: 10px
+    &--16px
+        height: 16px
+        line-height: 16px
+    &--20px
+        height: 20px
+        line-height: 20px
+    &--26px
+        height: 26px
+        line-height: 26px
+    &--34px
+        height: 34px
+        line-height: 34px
+
+
+.Button
+    display: inline-block
+    position: relative
+    text-align: center
+    text-decoration: none
+    cursor: pointer
+    border: 0
+    background-color: transparent
+    vertical-align: top
+    white-space: nowrap
+    text-rendering: auto
+    user-select: none
+    letter-spacing: 0
+    font-weight: 400
+    font-style: normal
+    box-shadow: none
+    padding: 0
+    height: 36px
+    // font-size: 14px
+    color: $black
+    fill: $black
+    &:hover,
+    &:focus
+        color: inherit
+        fill: inherit
+
+    &:focus,
+    &:active
+        outline: none
+
+    &__icon
+        position: relative
+        display: inline-block
+        vertical-align: middle
+    &__label
+        position: relative
+        display: inline-block
+        vertical-align: middle
+        line-height: 1em
+        margin-left: 3px

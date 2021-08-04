@@ -1,0 +1,875 @@
+---
+switch_language: "বাংলা"
+please_wait: Please wait...
+preferred_delivery_point:
+  place_location: Location
+  place_area: Area
+  Agent: dgAgent
+  Locker: dgLocker
+  Hub: Outlet
+  Home: your Home
+  select_location_and_area_multiselect: Please select your location and area
+  select_delivery_point: Select your delivery point
+  set_delivery_point: Set delivery point
+  # unset_delivery_point: Unset this delivery point
+  select_location_and_area: You can select your location and area above, to find your nearest {deliveryMethod} point easily.
+  select_area: You can select your area above, to find your nearest {deliveryMethod} point easily.
+  selected_address: "Selected {deliveryMethod}:"
+  selected_home_delivery_address: "Selected delivery address"
+  address_found: 'We found the following {deliveryMethod}s for {place}. Please select your nearest one:'
+  no_address_found: 'Sorry, no {deliveryMethod}s found in selected {place}. Want to see a {deliveryMethod} near you? Email us at'
+  login_to_see_home_addresses: Please sign in to add your home delivery address or see your saved addresses
+  found_no_home_address: There are no saved addresses in your profile.
+  click_here_to_create_home_address: Add address
+  your_home_addresses: 'Your delivery addresses:'
+deliverable_info:
+  agent_store: dgAgent stores
+  agent: dgAgent
+  locker: dgLockers
+  hub: Outlets
+  home: your Home
+  deliverable_to: Deliverable to
+  not_deliverable_to: Not deliverable to
+  not_deliverable_to_preferred_point: Not deliverable to your preferred delivery point
+  not_deliverable_to_agent_point:  Not deliverable to your Agent delivery point
+  but_you_can_still_add: But you can still add this item in your cart and use a different delivery point while placing order.
+no_product:
+  # in_category_list: "No product yet for this category list"
+  in_category: "No product yet for this category"
+search:
+  title: "Search for products"
+  key_title: "Search result for"
+  result: "Total {field} Result found"
+  no_result: "Oops! No products found."
+  searching: "Searching..."
+user_info:
+  hi: "Hi"
+  your_profile: "Your Profile"
+  your_orders: "Your Orders"
+  brand_shop: Brand shop
+  your_address: "Your Addresses"
+  sign_out: "Sign Out"
+  address_label: "Address {index}"
+  agent_info_label: "Agent Info"
+  your_commission: "Your Commission"
+  support_tickets: "After Sales Service"
+  ready_for_pickup_orders: "Ready for Pickup Orders"
+  search_for_brands: Search for Brands
+  enter: Enter
+  no_brand_found: No brand found!
+profile:
+  your_profile: "Your Profile"
+  name_field: "Name"
+  mobile_number: "Mobile Number"
+  add: "Add"
+  edit: "Edit"
+  save: "Save"
+  cancel: "Cancel"
+  yes: "Yes"
+  no: "No"
+  delete: "Delete"
+  delete_warning: "Remove this number?"
+  set_primary: "Set Primary"
+  verify: "Verify"
+  add_another: "Add another"
+  fb_connect: "Connect"
+  fb_disconnect: "Disconnect"
+  mobile_number_placeholder: "Enter phone number here"
+  mobile_number_init_message: "Add your mobile number, so that we can give you and serve you our best."
+  invoice_email: "Invoice Email"
+  invoice_email_init_message: "Receive order invoices by email so that you can find them easily later on"
+  invoice_email_placeholder: "Write your mail address here"
+  otp_label: "OTP code"
+  otp_placeholder: "Enter OTP code here"
+  otp_sent_message: "We’ve sent 6-digit one time password in your phone:"
+  did_not_get_otp: "Didn't get SMS?"
+  request_otp_again: "Request Again"
+  request_otp_again_after: "Request Again in {field} seconds"
+  address_init_message: "Save your address so that you can easily checkout when placing an order"
+  add_address: "Add address"
+  delete_address_warning: "Remove this address?"
+  change_password_label: 'Change Password'
+  current_password_label: 'Current Password'
+  new_password_label: 'New Password'
+  confirm_password_label: 'Confirm Password'
+  commission_label: 'Commission'
+  show_details: 'Show Details'
+  hide_details: 'Hide Details'
+  show: 'Show'
+  hide: 'Hide'
+  preferred_delivery_point: Preferred Delivery Point
+  preferred_delivery_point_guided_text: Your preferred delivery point will be saved & automatically set as your delivery address during checkout. You can change this anytime.
+  set_delivery_point: Set delivery point
+  use_different_delivery_point: Use different delivery point
+catalog:
+  all_categories: "All Categories"
+  back_to_shop: "Back to shop"
+  view_more: "More"
+sidebar:
+  nav:
+    category_link: "Categories"
+    sign_in: "Sign-in"
+    sign_up: "or signup"
+  cart:
+    apply_coupon: "Apply Coupon"
+    title: "Shopping Cart"
+    save_on_item_1: "You saved"
+    save_on_item_2: "on this item"
+    sub_total: "Subtotal"
+    total: "Total"
+    place_order: "Place Order"
+    no_item_title: "Empty Cart"
+    no_item_text_one: "Looks like you haven't made your choice yet"
+    back_to_shop_button: "Back to shop"
+    promo_code_placeholder: "Have coupon code? Enter here"
+    # promo_code_button_label_hide: "hide"
+    # promo_code_button_label_show: "show"
+    apply_coupon_button_label: "Apply"
+    applied_coupon: Applied Coupon
+    remove_applied_coupon: Remove
+    coupon_discount: "Coupon Discount"
+    coupon_guide: "Coupon can be applied during checkout."
+    # discount: "Discount"
+    delivery_charge: "Delivery charge"
+    free_delivery: "Free delivery"
+    qty: "Qty"
+    current_balance: "Current Commission Balance"
+    adjusted_balance: "Adjustable Commission Amount"
+    net_payable: "Net Payable"
+    issue_warning: "One or more items in your cart has issues. Please fix those to continue."
+    line_item_deliverable_warning_1: Some of the products in cart, are not deliverable to your preferred delivery point ({field}). You need to remove those products or select a different type of
+    line_item_deliverable_warning_1_agentmode: Some of the products in cart, are not deliverable to your Agent delivery point. You need to remove those products or select a different type of
+    line_item_deliverable_warning_2: delivery point
+    line_item_deliverable_warning_3: before confirming the order.
+
+  lineitem_error:
+    delete: "Delete"
+    update: "Update"
+    request: "Request"
+    desired_quantity: "Your desired quantity is not available for this product."
+    product_requested: "This product has been requested"
+    out_of_stock: "Sold out"
+    product_discontinued: "Sorry to say this product has been discontinued."
+    price_changed: "Price changed. Please update your product."
+    commission_changed: "Commission changed. Please update your product."
+    not_in_inventory: "Sorry to say that this product is not found in our inventory."
+    not_deliverable_to_agent: This item can not be delivered to agent, either change delivery method or remove this item.
+    not_deliverable_to_locker: This item can not be delivered to locker, either change delivery method or remove this item.
+  lineitem_warning:
+    not_deliverable_to_agent_title: Not deliverable to Agent stores.
+    not_deliverable_to_agent: Not deliverable to your preferred delivery point (Agent stores). You need to remove it or select a different type of delivery point before confirming the order.
+    not_deliverable_to_agent_agent: আপনার এজেন্ট ঠিকানায় ডেলিভার করা সম্ভব নয়। হয় প্রোডাক্টটি কার্ট থেকে বাদ দিন অথবা অন্য কোন ডেলিভারি পদ্ধতি নির্বাচন করুন।
+    not_deliverable_to_locker_title: Not deliverable to Lockers.
+    not_deliverable_to_locker: Not deliverable to your preferred delivery point (Lockers). You need to remove it or select a different type of delivery point before confirming the order.
+location_selector:
+  placeholder: "Set your location"
+  coming_soon: "Coming Soon!"
+  no_service_message: "Sorry, our delivery services are not yet active in {field} but we promise to see you soon!!"
+area_selector:
+  placeholder: "Set your area"
+content_top:
+  # go: "go"
+  # why_location: "Why location?"
+  # skip: "Skip"
+  slider:
+    agent_content_copy1: Order online and pickup from your nearest
+    # agent_content_copy2: dgAgent
+    agent_content_copy3: "{field} trusted agent points"
+    agent_content_copy4: Find your nearest dgAgent
+    locker_content_copy1: Order online and pickup from your nearest
+    # locker_content_copy2: dgLocker
+    locker_content_copy3: "{field} trusted locker points"
+    locker_content_copy4: Find your nearest dgLocker
+    hub_content_copy1: Order online and pickup from your nearest
+    # hub_content_copy2: dgHub
+    hub_content_copy3: "{field} trusted hub points"
+    hub_content_copy4: Find your nearest dgHub
+    home_content_copy1: Order online and get easy
+    # home_content_copy2: Home Delivery
+    home_content_copy3: ""
+    home_content_copy4: Set delivery address
+# primary_promo_top:
+#   title: "Welcome to the future of shopping"
+# primary_promo_bottom:
+  # point1: "Explore New Products"
+  # brief1: "Browse hundreds of unique local & import products"
+  # point2: "Save Money"
+  # brief2: "Find the best products at the best prices"
+  # point3: "Easy Delivery & Service"
+  # brief3: "Visit our hubs for delivery pickup or after sales service"
+# location:
+#   not_selected: "Location not set"
+#   title: "Please select your location"
+#   select_label: "Select location"
+boolean:
+  yes: "Yes"
+  no: "No"
+cart:
+  label: "Cart"
+  add_to_cart: "Add to cart"
+  view_details: "View Details"
+  buy_now: "Buy now"
+  buy_now_with_emi: "Buy now with EMI"
+  coupon_code_required: "Coupon Code Required"
+  order_summary: Order Summary
+product:
+  request: "Request"
+  requested: "Requested"
+  out_of_stock: "Sold out"
+  offers: "Offers"
+  save: "Save"
+  more: "more"
+  option: "options"
+  description_label: "Description"
+  features_label: "Features"
+  emi_from: EMIs from ৳{amount}/month
+  view_plans: View Plans
+  coupon: Coupon
+emi_modal:
+  title: EMI Plans
+  supported_banks: Supported Banks
+  plans: Plans
+  zero_percent_per_month: months @ 0%
+  per_month: /month
+product_request_modal:
+  request_hint: "You need to sign in to request the product."
+login_modal:
+  facebook_login_hint: "One-click sign in if your account is connected to Facebook."
+  # login_with_existing_account_hint: "{mobile} is already linked with another account. If you want to login with this number, "
+  click_here: "Click here"
+  product_request_login_hint: "You need to sign in or sign up to Deligram, so that we can notify you on product arrival"
+  verification_hint: "We need your mobile number to confirm your order."
+  agent_verification_hint: "We need customer's mobile number to confirm their order"
+  product_request_verification_hint: "We need your verified mobile number to notify you via SMS when <b>{field}</b> is available."
+  continue_with_facebook: "Continue with facebook"
+  signin_signup_with_facebook: "Continue with facebook"
+  signin_signup_with_phone: "Sign in with phone number"
+  phone_label: "Mobile number"
+  phone_placeholder: "Enter your mobile number"
+  agent_phone_placeholder: "Enter customer's mobile number"
+  customer_phone_number: "Enter your phone number"
+  password_label: "Password"
+  verify_password_placeholder: "Please enter your password to verify"
+  password_placeholder: "Enter your password"
+  forgot_password_hint: "Forgot password"
+  change_password_info: "Call 01841-232270 to reset your password"
+  name_label: "Name"
+  name_placeholder: "Enter your name"
+  otp_label: "OTP code"
+  otp_placeholder: "Enter OTP code here"
+  otp_sent_message: "We’ve sent 6-digit one time password in your phone:"
+  did_not_get_otp: "Didn't get SMS?"
+  request_otp_again: "Request Again"
+  request_otp_again_after: "To request new OTP, please wait for 1 minute"
+  button_text_signin_signup: "Sign In"
+  button_text_continue: "Continue"
+  button_text_verify: "Verify"
+  button_text_signin: "Sign In"
+  button_text_signup: "Sign Up"
+  go_back: "Go Back"
+  verify: "Verify"
+validation:
+  required: "{field} is required."
+  invalid_mobile_number: "{value} is not a valid contact number."
+  invalid_email: "{value} is not a valid email address."
+  otp_length: "{field} must be a 6 digit number."
+  trxid_length: "{field} must be 10 character."
+  number_in_use: "{value} is already in use."
+  mismatch: "{field1} and {field2} doesn't match"
+  password_length: "The {field} must be at least {value} characters"
+  fields_same_value: "{field1} and {field2} value can't be same"
+  name_length: "Too long. Maximum length is 50"
+  name_contain: "Only alphabets are allowed"
+delivery_process:
+  # free: "FREE"
+  location_label: "Location"
+  location_placeholder: "Select Location"
+  # area_palceholder: "Select Area"
+  area_label: "Area"
+  delivery_method: "Delivery Method"
+  pickup_label: "Pickup from Nearest Outlet"
+  pickup_sub_label: "The fastest option to receive your orders. Plus, it's free! We will call you as soon as your order is ready for pickup"
+  locker_pickup_label: "Pickup from Nearest Deligram Locker"
+  locker_pickup_sub_label: "Order online, we will deliver the order to your nearest Deligram Locker. You will receive a 6-digit secret code by SMS that you can use to unlock your locker & collect your order within 24 hours."
+  locker_error_single: "This locker can not take any new order, please select another delivery method"
+  locker_error_multiple: "This locker can not take any new order, please select another locker or another delivery method"
+  agent_pickup_label: "Pickup from Nearest Deligram Agent"
+  agent_pickup_sub_label: "Order online, we will deliver the order to your nearest Deligram Agent. We will call you as soon as your order is ready for pickup"
+  agent_pickup_address_label: "Address"
+  agent_pickup_contact_label: "Contact"
+  pickup_address_label: "Address"
+  pickup_contact_label: "Contact"
+  # agents_delivery_label: "Pickup from Nearest Deligram Agent"
+  # agents_delivery_sub_label: "Order online, we will deliver the order to your nearest Deligram Agent. We will call you as soon as your order is ready for pickup"
+  home_delivery_label: "Home Delivery Service"
+  home_delivery_sub_label: "Your order will be delivered right to your doorstep by our delivery team!"
+  home_delivery_location: "Location"
+  home_delivery_area: "Area"
+  home_delivery_address_label: "Delivery Address"
+  home_delivery_address_placeholder: "Enter your delivery address"
+  home_delivery_contact_name: "Contact name"
+  home_delivery_contact_name_placeholder: "Write contact name"
+  home_delivery_mobile_number: "Contact number"
+  home_delivery_mobile_number_placeholder: "Write contact number"
+  delivery_additional_note: "Additional Note"
+  additional_note_placeholder: "Leave any additional notes"
+  confirm_order: "Confirm Order"
+  use_another_address: "Use Another Address"
+  use_previous_address: "Use Previous Address"
+  address_label: "Address"
+  receiver_label: "Contact"
+  contact_name_label: "Contact Name"
+  contact_number_label: "Contact Phone"
+  use_another: "Use another"
+  send_invoice: "Send Invoice"
+  invoice_email: "Invoice Email"
+  invoice_email_placeholder: "Enter your email here"
+  terms_of_service_1: "I hereby agree with the"
+  terms_of_service_2: "Terms of Service"
+  terms_of_service_3: ""
+  new_customer: New Customer
+  use_different_delivery_point: Use different delivery point
+  go_back: Go back
+  select_location_area_to_see_delivery_options: Please select your location and area to see delivery options!
+  # select_nearest_hub: Select Nearest Hub
+  # nearest_hub: Nearest Hub
+  # select_nearest_agent: Select Nearest Agent
+  # nearest_agent: Nearest Agent
+  # select_nearest_locker: Select Nearest Locker
+  # nearest_locker: Nearest Locker
+  full_advance_payment_for_agent_pickup: 100% advance payment is required for Nearest Agent Pickup.
+  full_advance_payment_for_locker_pickup: 100% advance payment is required for Nearest Locker Pickup.
+  cart_issue_warning: "One or more items in your cart has issues. Please review and fix those to continue."
+  free_delivery: "FREE"
+  current_customer: "Currently logged in customer"
+  another_customer: "Not this customer?"
+  click_here: "Click here"
+  change: 'Change'
+  select_agent_address: Select Agent
+  select_locker_address: Select Locker
+  select_hub_address: Select Hub
+payment:
+  # page_title: "Payment"
+  payment_option: "Select payment option"
+  payment_method: "Select payment method"
+  due_payment_label: "Due Amount"
+  due_payment_sub_label: "Clear dues in advance, stay relaxed."
+  full_payment_label: "Pay Now"
+  full_payment_sub_label: "No payment required during delivery!"
+  booking_payment_label: "Minimum Booking Fee"
+  booking_payment_sub_label: "Pay remaining {value} on delivery"
+  emi_label: Checkout with EMI
+  emi_sub_label: Starting from ৳ {amount}/month
+  emi_due_payment: You have already paid ৳ {paidAmount}, You can pay rest ৳ {dueAmount} on EMI
+  full_emi: Full Amount
+  partial_emi: Partial Amount
+  partial_emi_error: partial emi amount must be between ৳ {mininumPartialEmiAmount} and ৳ {totalAmount}
+  cash_on_delivery_label: "Cash on Delivery"
+  cash_on_delivery_sub_label: "Pay during receiving delivery"
+  bkash_on_delivery_label: "bKash on Delivery"
+  bkash_on_delivery_sub_label: "Pay with your bKash personal account during receiving delivery"
+  credit_debit_card_label: "Online Payment"
+  credit_debit_card_sub_label: "Trusted source, super safe"
+  option_one: "Option 1"
+  option_two: "Option 2"
+  bkash_label: "bKash"
+  bkash_hint_option1: "Pay online with your bKash personal account, and complete purchase immediately."
+  bkash_hint_option2: "Pay with your bKash personal account using bKash App or Menu (*247#)."
+  bKash_checkout: "Pay with bKash"
+  bKash_show_details: "Show details"
+  click_here: "Click here"
+  for_more_details: "for more details."
+  pay_with_credit_debit_card: "Make Payment"
+  pay_now: "Pay Now"
+  details: "Details"
+  click_here_when_confirmation: "Click here when confirmation SMS received"
+  confirm_cash_on_delivery: "Confirm Cash on Delivery"
+  confirm_bkash_on_delivery: "Confirm bKash on Delivery"
+  order: "Order"
+  date: "Date"
+  total: "Total"
+  order_status: "Order Status"
+  action: "Actions"
+  # commission: "Commission"
+  payment_unsuccessful: "Sorry your payment was unsuccessful - please try again or call our customer service - 01841232270"
+  advanced_payment_agent: "100% advance payment is required for Nearest Agent Pickup. To order Cash on Delivery, please place your order from Agent's shop."
+  advanced_payment_locker: "100% advance payment is required for Nearest Locker Pickup."
+bkash_verification:
+  bkash_hint: "We could not verify your transaction using automatic method. Please input the TrxID, that you received in confirmation SMS from bKash."
+  try_again: "Try Again"
+  trxid: "TrxID"
+  invalid: "Invalid"
+  trxid_placeholder: "Enter your trxID here"
+bkash_diagram:
+  step: "Step {value}"
+  dial: "Dial"
+  # select: "Select"
+  step_two_1: "Select"
+  step_two_2: "for Payment"
+  step_three_1: "Enter"
+  step_three_2: "as Merchant bKash Account number."
+  step_four_1: "Enter"
+  step_four_2: "as Amount."
+  step_five_1: "Enter"
+  step_five_2: "as Reference."
+  step_six_1: "Enter"
+  step_six_2: "as Counter No."
+  enter_secret_pin: "Enter your secret PIN."
+  wait_for_confirmation: "And wait for confirmation SMS."
+  final_step_message: "Finally, you will recieve a Payment confirmation SMS. And keep secret your TrxID."
+bkash_instruction:
+  dial: "Dial"
+  step_two_1: "Select"
+  step_two_2: "for Payment"
+  step_three_1: "Enter"
+  step_three_2: "as Merchant bKash Account number."
+  step_four_1: "Enter"
+  step_four_2: "as Amount."
+  step_five_1: "Enter"
+  step_five_2: "as Reference."
+  step_six_1: "Enter"
+  step_six_2: "as Counter No."
+  enter_your_secret_pin: "Enter your secret PIN."
+  wait_for_confirmation: "And wait for confirmation SMS."
+  # finally_title: "Finally"
+  # finally_msg: "You will recieve a Payment confirmation SMS. And keep secret your TrxID."
+  # visual_diagram_button: "Click here to learn the process in visual diagrams"
+  # verify_text: "After finishing steps, click here to verify your payment status."
+  # verify_your_bkash_payment: "Verify your bKash payment"
+checkout_steps:
+  step1: "1"
+  step2: "2"
+  step3: "3"
+  customer_details: "Customer Details"
+  delivery_details: "Delivery Details"
+  payment: "Payment"
+cusotmer_orders:
+  order_page_title: "Your Orders"
+  no_order_yet: "You haven't ordered anything yet"
+  no_order_yet_ops: "Ops! No order yet."
+  order: "Order"
+  order_date: "Order date"
+  order_details: "Order details"
+  order_summary: "Order Summary"
+  payment_details: "Payment details"
+  payment_status: "Payment status"
+  paid_at: "Paid at"
+  method: "Method"
+  amount: "Amount"
+  paid_amount: "Paid amount"
+  due_amount: "Due amount"
+  customer_information: "Customer Information"
+  delivery_information: "Delivery Information"
+  cancel_this_order: "Cancel this order"
+  address: "Address"
+  go_back_to_orders: "go back to your orders"
+  pay_due_amount: "Pay due amount"
+  pay_now: "Pay now"
+  no_payment_yet: "You haven’t made any payment yet"
+  reason_for_cancellation: "Reason for cancellation?"
+  leave_feedback: "Leave an feedback"
+  cancellation_feedback: "Cancellation feedback"
+  back: "Back"
+  continue: "Continue"
+ready_for_pickup_orders:
+  page_title: "Ready for Pickup Orders"
+  search_placeholder: "Search by Order Id or Phone number"
+  order: "Order"
+  name: "Name"
+  order_total: "Total"
+  due_amount : "Due Amount"
+  action : "Actions"
+  enter_otp: "Enter OTP"
+  verify: "Verify"
+  resend_otp: "Re-send OTP"
+  no_order: "No order yet!"
+agent_commission:
+  is_online_order: "Online Order?"
+  commission_page_title: "Your Commission"
+  from_order: "From Order"
+  from_delivery_charge: "From Delivery"
+  order: "Order"
+  date: "Date"
+  pending: "Pending"
+  paid: "Paid"
+  cancelled: "Cancelled"
+  sales_commission: "Sales Commission"
+  delivery_commission: "Delivery Commission"
+  balance: "Balance"
+  all: "All"
+# agentCommissionStatus:
+#   pending: "Pending"
+#   paid: "Paid"
+#   cancelled: "Cancelled"
+# orderStatus:
+#   pending: "Pending"
+#   confirmed: "Confirmed"
+#   shipped: "Shipped"
+#   pick_up_ready: "Pick up ready"
+#   delivery_ready: "Delivery ready"
+#   returned: "Returned"
+#   cancelled: "Cancelled"
+#   delivered: "Delivered"
+#   unknown: "Unknown"
+advanced_payment:
+  minimum_booking_amount: "Minimum Booking Amount"
+  amount: " {amount}"
+paymentStatus:
+  no_payment: "No Payment"
+  cash_on_delivery: "Cash on delivery"
+  incomplete: "Incomplete"
+  complete: "Complete"
+# paymentMethod:
+#   cash: "Cash"
+#   bkash: "bKash"
+#   rocket: "Rocket"
+#   port_wallet: "Port Wallet"
+#   bank: "Bank"
+#   cheque: "Cheque"
+#   commission: "Commission"
+static:
+  translation_not_found: "No translation found."
+api_errors:
+  facebook_exists: "The facebook account you are trying to connect with is associated with another account."
+  default_error: 'Something went wrong'
+  number_in_use: "{field} is already linked with another account"
+  account_not_found: "No account found using provided {field}"
+  otp_mismatch: "{field} is incorrect or expired."
+  otp_mismatch_pickup_orders: "Incorrect {field}."
+  mismatch_password: "Password didn't match!"
+  invalid_coupon: "Invalid Coupon Code!"
+  user_coupon_not_match_with_products: "Coupon code is not applicable for current cart item/s"
+  coupon_expired: "Coupon Expired"
+  coupon_rules_validation_fails: This coupon not is applicable.
+  total_usage_limit_exceeded: "Coupon Expired"
+  user_usage_limit_exceeded: "Coupon Expired"
+  coupon_code_required: "Coupon Code Required"
+  fixed_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail fixed ৳ {discountAmount} discount"
+  free_delivery_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail Free delivery"
+  percentage_of_subtotal_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail {discountAmount}% discount of subtotal"
+  percentage_of_subtotal_or_max_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail {discountAmount}% discount of subtotal or max ৳ {maxDiscountmount} discount"
+  number_not_found: "No account found using provided {field}"
+  user_not_found: "No account found using provided {field}"
+  order_not_found: "Order not found"
+  order_not_in_pickup_ready_status: "Order is not in pickup ready status"
+  location_not_found: "Location not found"
+  bad_params: "Bad Params"
+  validation_failed: "Validation Failed"
+  unauthorized: "Unauthorized"
+  access_denied: "Access Denied"
+  not_found: "Not found"
+  unexpected_exception: "Something Unexpected Happened"
+  otp_not_found: "OTP not found"
+  invalid_mobile_number: "Mobile number invalid"
+  number_exists: "Number allready exists"
+  otp_expired: "OTP expired"
+  otp_creation_failed: "Couldn't create an OTP, please try again"
+  invalid_facebook_token: "Something wrong happened with Facebook"
+  no_other_number: "No other number"
+  cannot_delete_primary_number: "Can't delete primary number"
+  cannot_delete_address: "An order has already been created with this address, so this cannot be deleted."
+  already_requested: "Already Requested"
+  no_error: "No error"
+  out_of_stock: "Sold out"
+  not_enough_qty: "Not enough quantity"
+  discontinued: "Discontinued"
+  price_changed: "Price changed"
+  invalid_quantity: "Invalid quantity"
+  agent_not_found: "No agent found registered with this mobile"
+  bkash_error_invalid: "This TrxId is not valid, please recheck with the payment confirmation SMS."
+  bkash_error_failed: "bKash server reported the payment as failed, did you really get a confirmation SMS from bKash?"
+  wait_before_next_call: "You need to wait {minutes} minutes {seconds} seconds to retry with this TrxId - please enter correct TrxId or wait."
+  payment_exists: "This {field} was already used for another payment! Do not try it again - otherwise your account will be blocked."
+page_notifications:
+  success:
+    default: Operation successful.
+    payment_done: Payment Successful, thank you for shopping with us. Please see the order details below.
+    commission_adjusted: Thank you for shopping with us. Net payable amount has been adjusted using your commission balance, please see details below.
+    cod_confirmed: Cash on delivery confirmed, thank you for shopping with us. Please see the order details below.
+    bod_confirmed: bKash on delivery confirmed, thank you for shopping with us. Please see the order details below.
+    pickup_order_verified: The order {field} is delivered.
+  error:
+    default: Operation failed due to unknown error, please try again or call our customer service - 01841-232270
+    payment_failed: Sorry, your payment was unsuccessful - please try again or call our customer service - 01841-232270
+    agent_balance_updated: Your balance has been updated and re adjusted with this order, please re confirm order again
+    bkash_server: Sorry, we are facing issues to communicate with bKash server - please try again or call our customer service - 01841-232270
+    invalid_coupon: "Coupon {field} is not valid anymore! So it has been removed."
+    coupon_expired: "Coupon {field} is not valid anymore! So it has been removed."
+    total_usage_limit_exceeded: "Coupon {field} is not valid anymore! So it has been removed."
+    user_usage_limit_exceeded: "Coupon {field} is not valid anymore! So it has been removed."
+    user_coupon_not_match_with_products: "Coupon {field} is not valid anymore! So it has been removed."
+    invalid_coupon_discount: "Discount for Coupon {field} is changed! Please review the changes."
+    invalid_total_price: Something went wrong. Couldn't create order, Please try again.
+    cart_item_mismatch: There is something wrong with the ordered item, Please check the cart to see what went wrong
+    coupon_rules_validation_fails: This coupon not is applicable.
+    invalid_delivery_address: "Delivery address does not exist anymore! Please selected another address"
+  warning:
+    ref_mismatch: Payment status has changed in our server - please review payments section below and call our customer service - 01841-232270 if necessary
+    amount_mismatch: We've received a different amount than expected - please review payments section below or call our customer service - 01841-232270 if necessary
+    payment_pending: We've found a payment with pending status but could not get the details - please try again after 5 minutes or call our customer service - 01841-232270
+  info:
+    cart_items_restored: Your previous cart items are restored
+    emi_cart_with_no_backup: Only one order can be created per EMI product, your current EMI cart will be removed after you create the order or go back to previous page
+    emi_cart_with_backup: Only one order can be created per EMI product, your previous cart items will be restored once you create the order or go back to previous page
+
+footer:
+  footer_about: "Deligram is an online shop that makes shopping easy. Order online or visit one of our Hubs or Agents to place your order, pick up your delivery or get any after sales service you need!"
+  heading_deligram: "Deligram"
+  extra_link_text_about: "About"
+  extra_link_text_contact: "Contact"
+  extra_link_text_jobs: "Jobs"
+  extra_link_text_press: "Press"
+  heading_help: "Help"
+  extra_link_text_cancellation_and_returns: "Cancellation & Returns"
+  extra_link_text_payment: "Payment"
+  extra_link_text_delivery: "Delivery"
+  extra_link_text_faq: "FAQ"
+  extra_link_text_customer_care: "Customer Care"
+  heading_payment: "Payment"
+  payment_note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  return_policy: "Return Policy"
+  term_of_use: "Term of Use"
+  privacy_policy: "Privacy Policy"
+  copy_right: "© {field} Bronx Colors Urban Cosmetics"
+  affiliated_1: "A"
+  affiliated_2: "affiliated company"
+  address: "705 Nakhalpara, Tejgaon, Dhaka 1215"
+  phone: "Phone: 01841-232270"
+enums:
+  # PaymentStatus:
+  #   CRETAED: "Created"
+  #   CONFIRMED: "Confirmed"
+  PaymentChannel:
+    CASH: "Cash"
+    BKASH: "bKash"
+    ROCKET: "Rocket"
+    PORT_WALLET: "Online Payment"
+    BANK: "Bank"
+    CHEQUE: "Cheque"
+    COMMISSION: "Cash"
+    BRAC_BANK_POS: "Card"
+    BKASH_CHECKOUT: "bKash"
+  OrderPaymentStatus:
+    NO_PAYMENT: "No payment"
+    CONFIRMED: "Cash on Delivery"
+    PARTIALLY_PAID: "Partially paid"
+    COMPLETE: "Complete"
+    REFUNDED: "Refunded"
+  PrefferedPaymentChannel:
+    CASH_ON_DELIVERY: "Cash on Delivery"
+    BKASH_ON_DELIVERY: "bKash on Delivery"
+  OrderCommissionStatus:
+    PENDING: "Pending"
+    PAID: "Paid"
+    CANCELLED: "Cancelled"
+  # CartItemStatus:
+  #   NO_ERROR: "No error"
+  #   OUT_OF_STOCK: "Product is out of stock"
+  #   NOT_ENOUGH_QTY: "Product does not have enough quantity"
+  #   DISCONTINUED: "Product is not available any more"
+  #   NOT_FOUND: "Product not found"
+  #   PRICE_CHANGED: "Price for this product has changed"
+  #   INVALID_QUANTITY: "Product quantity is invalid"
+  #   COMMISSION_CHANGED: "Commission has changed for this product"
+  #   NOT_DELIVERABLE_TO_CHOSEN_ADDRESS: "Product cannot be delivered to chosen address"
+  OrderStatus:
+    CREATED: "Pending"
+    CONFIRMED: "Confirmed"
+    PENDING_FULFILMENT: "Confirmed"
+    STOCK_CONFIRMED: "Confirmed"
+    FULFILLED: "Confirmed"
+    PARTIALLY_PACKED: "Confirmed"
+    PACKED: "Confirmed"
+    PARTIALLY_BUNDLED: "Confirmed"
+    BUNDLED: "Confirmed"
+    PARTIALLY_SHIPPED: "Shipped"
+    SHIPPED: "Shipped"
+    PARTIALLY_RECEIVED_AT_HUB: "Shipped"
+    RECEIVED_AT_HUB: "Shipped"
+    PICK_UP_READY: "Shipped"
+    DELIVERY_READY: "Shipped"
+    DELIVERED: "Delivered"
+    REPLACEMENT_REQUESTED: "Unknown"
+    REPLACEMENT_APPROVED: "Unknown"
+    REPLACEMENT_PENDING: "Unknown"
+    REPLACEMENT_DENIED: "Unknown"
+    RETURN_REQUESTED: "Unknown"
+    RETURN_APPROVED: "Unknown"
+    RETURN_DENIED: "Unknown"
+    REFUND_PENDING: "Cancelled"
+    FULFILMENT_FAILED: "Confirmed"
+    ITEM_LOST: "Unknown"
+    PACKAGE_LOST: "Unknown"
+    RETURNED: "Cancelled"
+    REFUNDED: "Cancelled"
+    REJECTED: "Cancelled"
+    CANCELLED: "Cancelled"
+  FrontEndOrderStatus:
+    UNKNOWN: "Unknown"
+    PENDING: "Pending"
+    CONFIRMED: "Confirmed"
+    SHIPPED: "Shipped"
+    CANCELLED: "Cancelled"
+    DELIVERED: "Delivered"
+    ALL: "All"
+  SupportTicketStatus:
+    PENDING: "Pending"
+    ACCEPTED: "Approved"
+    INPROGRESS: "In Progress"
+    SUCCESSFUL: "Successful"
+    CANCELLED: "Cancelled"
+    CLOSED: "Closed"
+  SupportTicketsApprovedStatus:
+    REFUND: "Refund"
+    REPLACEMENT: "Replacement"
+    WARRENTY: "Warrenty"
+    UNKNOWN: "-"
+  SupportTicketOrderStatus:
+    SUPPLY: dgSupply
+    REGULAR: Regular
+    REFUND: Refund
+    REPLACEMENT: Replacement
+    WARRENTY: Warrenty
+    UNKNOWN: Unknown
+  # AddressTypes:
+  #   CUSTOMER: 'Home'
+  #   HUB: 'Hub'
+  #   AGENT: 'Agent'
+  #   LOCKER: 'Locker'
+error_page:
+  code: Code
+  button:
+    default: Retry
+    _404: Go back to home page
+  title:
+    default: Unknown Error
+    _404: Page not found
+    _500: Network error
+  message:
+    default: An unexpected error has occurred.
+    _404: You might have followed an old link.
+    _500: Internet connection might have been interrupted.
+  offline:
+    agent: Please wait until internet connection is up. If you do not see a button within a few minutes, please contact deligram representitive to check data pack status of your internet connection.
+    customer: Please wait until internet connection is up to retry.
+# vacation:
+#   title: "Dear customers"
+#   sub_title: "Due to the 11th national parliamentary election"
+#   message: 'All Delivery Operations of Deligram will be closed from <span class="highlighter">28th December 2018 to 2nd January 2019</span>.'
+#   notice: 'Dear customers, due to the 11th national parliamentary election, all our delivery activities will be closed from 28th December 2018  to 2nd January 2019. We will get back on our regular activities from 3rd January onwards. However, orders can still be placed within this period.'
+# vacation:
+#   title: "EID MUBARAK!"
+#   sub_title: "We wish you a happy eid with your family."
+#   message: 'Dear customer, all our delivery operations will be closed from <span class="highlighter">August 10th to 17th</span>, 2019 due to Eid vacation. We shall resume our regular operation on 18th August 2019.'
+#   notice: 'Eid Mubarak! Dear customer, all our delivery operations will be closed from August 10th to 17th, 2019 due to Eid vacation. We shall resume our regular operation on 18th August 2019. We wish you a happy eid with your family.'
+vacation:
+  title: "ঘরে থাকুন!"
+  sub_title: "করোনা ভাইরাস থেকে নিজে ও আশেপাশের মানুষকে সুরক্ষিত রাখতে নিতান্ত প্রয়োজন ছাড়া বাসার বাইরে বের হবেন না"
+  message: 'করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।'
+  notice: 'করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।'
+network_offline:
+  title: "No Internet Connection"
+  copy: "This message will be removed automatically when internet connection is available again."
+coupon_offer:
+  heading: Coupon
+  line1: There is a coupon which is applicable for this product.
+  line2: Coupon might be auto applied in this product during checkout.
+  line3: Only one coupon can be applied at a time.
+general_conditions:
+  heading: General Conditions
+  line1: One customer can avail only one promotion at a time.
+  line2: Cashback offers are not applicable for EMI purchase.
+bkash_offer:
+  heading: bKash Cashback Offer for 10-10 Campaign
+  line1: Deligram Customers will be able to avail 10% cashback up to while paying through bKash App or Online Payment Gateway.
+  line2: Maximum Cashback amount will be BDT 300 per order and BDT 1500 per campaign across all eCom participants in the 10-10 campaign if payment is made using bKash App or Online Payment Gateway.
+  line3: All refunds during the cashback campaign will be processed within 14 working days.
+  line4: If the order is canceled, the refund will be processed after subtracting the cashback amount.
+  line5: The offer is valid from 10th October 2019, 00:00 to 30th October 2019, 23:59.
+
+citybank_american_express_offer:
+  heading: City Bank American Express Cashback Offer Conditions
+  line1: This cash back offer can be availed through City Bank American Express Debit & Credit Cardmembers only.
+  line2: Customers can avail maximum 10% cash back in each purchase.
+  line3: Maximum Cashback amount will be BDT 1000.
+  line4: Each cardmember can avail cashback maximum 3 times during the campaign period.
+  line5: Customers will get the Cashback Amount adjusted in their within 15 working days statements after the campaign ends.
+  line6: If the order gets cancelled, the customer will be refunded within 15 working days of the campaign.
+  line7: The offer is valid from 12th July 2019 to Eid-ul-Adha Day 2019.
+ebl_offer:
+  heading: EBL Master & Visa Card Cashback Offer Conditions
+  line1: This cash back offer can be availed through all EBL Master & Visa Cards.
+  line2: Customers can avail maximum 10% cash back in each purchase.
+  line3: Maximum Cashback amount will be BDT 1000.
+  line4: Each card holder can avail cashback maximum 3 times during the campaign period.
+  line5: Customers will get the Cashback Amount adjusted in their within 15 working days statements after the campaign ends.
+  line6: If the order gets cancelled, the customer will be refunded within 15 working days of the campaign.
+  line7: The offer is valid till from 15th July 2019 to 12th August 2019.
+mastercard_offer:
+  heading: Master Card Discount Offer Conditions
+  line1: Deligram Customers will be able to avail discount of 10% while paying through Mastercard cards on our Online Payment Gateway.
+  line2: Maximum discount amount will be BDT 300 per order.
+  line3: All refunds during the cashback campaign will be processed within 14 working days.
+  line4: The offer is valid from 10th October 2019, 00:00 to 30th October 2019, 23:59.
+donation:
+  permission: I want to donate my extra clothes while receiving the delivery.
+  success_message: This is great. You want to donate your extra clothes while receiving the delivery. if you want to cancel you donation, then
+  click_here: click here.
+  show_details: Show details
+  brief: Rejoice in the spirit of giving this Eid by donating your extra clothes while receiving your delivery. We will be distributing the clothes among the less privileged through our 'wall of humanity'.
+  confirm_to_donate: I agree to donate
+  donate: Donate
+  donation_modal: Donation
+  modal_close: Close
+support_ticket:
+  details: Deatils
+  order: Order
+  ticket: Ticket
+  order_type: Order Type
+  support_tickets: Support Tickets
+  received_requests: Received Requests
+  request: Request
+  update: Update
+  upc: UPC
+  requested_for: Requested for
+  appreoved_for: Approved for
+  status: Request Status
+  action: Action
+  request_details: Request Details
+  order_date: Order Date
+  reason: Reason
+  additional_charge: Additional Charge
+  received: Received
+  cancelled: Cancelled
+  update_request: Update Request
+  customer_information: Customer Information
+  delivery_address: Delivery Address
+  pickup_address: Pickup Address
+  alert: Please make sure you're receiving the product in right condition from right person. Check the UPC or Order Number and Customer Information before receiving the product.
+service_review:
+  question: How was your experience with the last order?
+  skip: SKIP
+rating_page:
+  thanks: Thank You!
+  reivew_us: Review Us
+  rate_experience: Please rate your experience
+  experience_with_us: Please write your experience with us
+  done: Done
+  order: Order
+  placeholder: Write here
+  experience:
+    terrible: Terrible
+    bad: Bad
+    disappointing: Disappointing
+    good: Ok, but had a problem
+    great: Great
+shipping_info:
+  agent_pickup: "Outlet Pickup"
+  free: "Free"
+  home_delivery: "Home Delivery"
+  estimated_title: "Estimated delivery time"
+  inside_dhaka: "Inside Dhaka"
+  outside_dhaka: "Outside Dhaka"
+  one_day: "1 Day"
+  multiple_days: "{days} Days"
+  set_point: "Set your pickup point"

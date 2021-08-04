@@ -1,0 +1,6 @@
+---
+reasonCancellation : 'cusotmer_orders.reason_for_cancellation'  
+back : 'cusotmer_orders.back'
+continue : 'cusotmer_orders.continue'
+leaveFeedback : 'cusotmer_orders.leave_feedback'
+cancellationFeedback : 'cusotmer_orders.cancellation_feedback'

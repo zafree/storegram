@@ -1,0 +1,9 @@
+---
+hi : 'user_info.hi'  
+yourProfile : 'user_info.your_profile'
+yourOrders : 'user_info.your_orders'
+yourAddress : 'user_info.your_address'
+signOut : 'user_info.sign_out'
+yourCommission : 'user_info.your_commission'
+readyForPickupOrders : 'user_info.ready_for_pickup_orders'
+commissionLabel : 'profile.commission_label'

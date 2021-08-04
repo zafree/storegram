@@ -1,0 +1,222 @@
+=container
+  position: relative
+  margin-right: auto
+  margin-left: auto
+  padding-right: $gutter
+  padding-left: $gutter
+  min-height: 1px
+  +desktop
+    max-width: $desktop + ($gutter*2)
+
+=container960
+  position: relative
+  margin-right: auto
+  margin-left: auto
+  padding-right: 15px
+  padding-left: 15px
+  min-height: 1px
+  +phablet
+    max-width: $phablet - 20
+  +tablet
+    max-width: $tablet - 20
+  +desktop
+    max-width: $desktop - 20
+
+=clearfix
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+=placeholder
+  $placeholders: ':-moz' ':-webkit-input' '-moz' '-ms-input'
+  @each $placeholder in $placeholders
+    &:#{$placeholder}-placeholder
+      @content
+
+=button
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  box-sizing: border-box
+  font-family: $family-base
+  border: none
+  padding: 0
+  overflow: hidden
+  cursor: pointer
+  vertical-align: baseline
+  transition: all .15s ease-in-out
+  // position: relative
+  // text-align: center
+  // text-decoration: none
+  // cursor: pointer
+  // padding: 0
+  // border: 0
+  // background-color: transparent
+  // vertical-align: top
+  // white-space: nowrap
+  // text-rendering: auto
+  // user-select: none
+  // letter-spacing: 0
+  // font-weight: 400
+  // font-style: normal
+  // box-shadow: none
+  // &:focus,
+  // &:active
+  //   outline: none
+
+// Breakpoints
+
+=phablet
+  @media screen and (min-width: $phablet)
+    @content
+
+=tablet
+  @media screen and (min-width: $tablet)
+    @content
+
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+=widescreen
+  @media screen and (min-width: $widescreen)
+    @content
+
+// keyframes
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+// new button
+=buttonPrimary
+  background-color: $primary
+  color: $black
+  border-radius: 2px
+  &:hover
+    color: $primary
+    background-color: $black
+
+=buttonPrimaryLine
+  background-color: $white
+  border: 1px solid $primary
+  color: $primary
+  &:hover
+    color: $primary
+
+=buttonBlack
+  background-color: $black
+  color: $white
+  &:hover
+    color: $white
+
+=buttonBlackLine
+  background-color: $white
+  border: 1px solid $black
+  color: $black
+  border-radius: 2px
+  &:hover
+    color: $white
+    background-color: $black
+
+// button
+=btnDefault
+  border-style: solid
+  border-width: 1px
+  color: $btn-default-color
+  fill: $btn-default-color
+  background-color: $btn-default
+  border-color: darken($btn-default, 5%) darken($btn-default, 10%) darken($btn-default, 15%)
+  background: linear-gradient(to bottom, lighten($btn-default, 18%), $btn-default)
+  box-shadow: 0 1px 0 rgba($white, 0.4) inset
+  &:hover
+    color: $btn-default-color
+    fill: $btn-default-color
+    background-color: darken($btn-default, 5%)
+    background: linear-gradient(to bottom, $btn-default, $btn-default)
+
+=btnDark
+  border-style: solid
+  border-width: 1px
+  color: $btn-dark-color
+  fill: $btn-dark-color
+  background-color: $btn-dark
+  border-color: darken($btn-dark, 5%) darken($btn-dark, 10%) darken($btn-dark, 15%)
+  background: linear-gradient(to bottom, lighten($btn-dark, 18%), $btn-dark)
+  box-shadow: 0 1px 0 rgba($white, 0.4) inset
+  &:hover
+    color: $btn-dark-color
+    fill: $btn-dark-color
+    background-color: darken($btn-dark, 5%)
+    background: linear-gradient(to bottom, $btn-dark, $btn-dark)
+
+=btnYellow
+  border-style: solid
+  border-width: 1px
+  color: $btn-yellow-color
+  fill: $btn-yellow-color
+  background-color: $btn-yellow
+  border-color: darken($btn-yellow, 5%) darken($btn-yellow, 10%) darken($btn-yellow, 15%)
+  background: linear-gradient(to bottom, lighten($btn-yellow, 18%), $btn-yellow)
+  box-shadow: 0 1px 0 rgba($white, 0.4) inset
+  &:hover
+    color: $btn-yellow-color
+    fill: $btn-yellow-color
+    background-color: darken($btn-yellow, 5%)
+    background: linear-gradient(to bottom, $btn-yellow, $btn-yellow)
+
+=btnPurple
+  border-style: solid
+  border-width: 1px
+  color: $btn-purple-color
+  fill: $btn-purple-color
+  background-color: $btn-purple
+  border-color: darken($btn-purple, 5%) darken($btn-purple, 10%) darken($btn-purple, 15%)
+  background: linear-gradient(to bottom, lighten($btn-purple, 18%), $btn-purple)
+  box-shadow: 0 1px 0 rgba($white, 0.4) inset
+  &:hover
+    color: $btn-purple-color
+    fill: $btn-purple-color
+    background-color: darken($btn-purple, 5%)
+    background: linear-gradient(to bottom, $btn-purple, $btn-purple)
+
+=btnGreen
+  border-style: solid
+  border-width: 1px
+  color: $btn-green-color
+  fill: $btn-green-color
+  background-color: $btn-green
+  border-color: darken($btn-green, 5%) darken($btn-green, 10%) darken($btn-green, 15%)
+  background: linear-gradient(to bottom, lighten($btn-green, 7%), $btn-green)
+  box-shadow: 0 1px 0 rgba($white, 0.4) inset
+  &:hover
+    color: $btn-green-color
+    fill: $btn-green-color
+    background-color: darken($btn-green, 5%)
+    background: linear-gradient(to bottom, $btn-green, $btn-green)
+
+=btnRed
+  border-style: solid
+  border-width: 1px
+  color: $btn-red-color
+  fill: $btn-red-color
+  background-color: $btn-red
+  border-color: darken($btn-red, 5%) darken($btn-red, 10%) darken($btn-red, 15%)
+  background: linear-gradient(to bottom, lighten($btn-red, 7%), $btn-red)
+  box-shadow: 0 1px 0 rgba($white, 0.4) inset
+  &:hover
+    color: $btn-red-color
+    fill: $btn-red-color
+    background-color: darken($btn-red, 5%)
+    background: linear-gradient(to bottom, $btn-red, $btn-red)

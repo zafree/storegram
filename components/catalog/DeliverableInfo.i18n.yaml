@@ -1,0 +1,10 @@
+---
+deliverable : 'deliverable_info.deliverable_to'
+notDeliverable : 'deliverable_info.not_deliverable_to'
+agentStore : 'deliverable_info.agent_store'
+locker : 'deliverable_info.locker'
+hub : 'deliverable_info.hub'
+home : 'deliverable_info.home'
+notDeliverableToPreffered : 'deliverable_info.not_deliverable_to_preferred_point'
+notDeliverableToAgent : 'deliverable_info.not_deliverable_to_agent_point'
+butYouCanStillAdd : 'deliverable_info.but_you_can_still_add'

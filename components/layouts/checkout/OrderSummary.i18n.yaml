@@ -1,0 +1,7 @@
+---
+orderSummary : 'cusotmer_orders.order_summary'  
+total : 'sidebar.cart.total'
+subTotal : 'sidebar.cart.sub_total'
+deliveryCharge : 'sidebar.cart.delivery_charge'
+freeDelivery : 'sidebar.cart.free_delivery'
+couponDiscount : 'sidebar.cart.coupon_discount'

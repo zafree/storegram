@@ -1,0 +1,628 @@
+.Container
+    +container
+    
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+    margin: 0
+    font-weight: normal
+
+.heading
+    font-size: 32px
+    line-height: 1.11
+    font-weight: 700
+    text-transform: uppercase
+    +phablet
+        font-size: 36px
+    +desktop
+        font-size: 42px
+    +widescreen
+        font-size: 52px
+
+.subheading
+    font-size: 32px
+    line-height: 1.11
+    color: #9ea0a6
+    fill: #9ea0a6
+    font-weight: 700
+    text-transform: uppercase
+    +phablet
+        font-size: 36px
+    +desktop
+        font-size: 42px
+    +widescreen
+        font-size: 52px
+
+.brief
+    font-size: 15px
+    letter-spacing: .025em
+    line-height: 1.66
+    margin-top: 15px
+    max-width: 23em
+    +phablet
+        font-size: 16px
+    +tablet
+        font-size: 18px
+    +widescreen
+        font-size: 21px
+        margin-top: 20px
+        // margin-top: 30px
+    &--lg
+        max-width: 25em
+
+.crief
+    max-width: 37em
+    margin-top: 10px
+    font-size: 14px
+    line-height: 2
+    +phablet
+    +tablet
+        font-size: 15px
+    +widescreen
+        font-size: 16px
+        margin-top: 15px
+
+.byline
+    font-size: 11px
+    color: #9ea0a6
+    fill: #9ea0a6
+    margin-top: 15px
+    line-height: 2
+    +desktop
+        margin-top: 20px
+        font-size: 14px
+
+
+
+.Herocase
+    margin-top: 25px
+    margin-bottom: 25px
+    +phablet
+        margin-top: 50px
+        margin-bottom: 30px
+    +tablet
+        margin-top: 70px
+        margin-bottom: 40px
+    +desktop
+        margin-top: 80px
+        margin-bottom: 50px
+        // border: 1px solid green
+    +widescreen
+        // margin-top: 90px
+        // margin-bottom: 60px
+        // border: 1px solid red
+
+    &__container
+        position: relative
+        display: flex
+        flex-flow: row wrap
+        +container
+    &__row
+        margin-left: -15px
+        margin-right: -15px
+    &__colContent
+        padding-left: 15px
+        padding-right: 15px
+    &__header
+
+    &__image
+        flex: 1
+
+    &--graf
+        margin-top: 45px
+        margin-bottom: 35px
+        +phablet
+            margin-top: 80px
+            margin-bottom: 45px
+        +widescreen
+            margin-top: 120px
+            margin-bottom: 80px
+        .Herocase__header
+            +desktop
+                padding-left: 120px
+        .brief
+            +widescreen
+                margin-top: 30px
+
+
+.Static
+    position: relative
+    +clearfix
+
+    &__contain
+        position: relative
+    &__container
+        +container
+    &__row
+        margin-left: -15px
+        margin-right: -15px
+        +phablet
+            margin-left: 0
+            margin-right: 0
+    &--graf
+        margin-bottom: 10px
+        +widescreen
+            margin-bottom: 30px
+
+.RegionHalve
+    &--broaden
+        margin-left: 0
+        +phablet
+            margin-right: calc((100vw - 473px)/-2)
+        +tablet
+            margin-right: calc((100vw - 700px)/-2)
+        +desktop
+            margin-right: calc((100vw - 960px)/-2)
+        +widescreen
+            margin-right: calc((100vw - 1200px)/-2)
+
+    &--broadenLeft
+        margin-right: 0
+        +phablet
+            margin-left: calc((100vw - 473px)/-2)
+        +tablet
+            margin-left: calc((100vw - 700px)/-2)
+        +desktop
+            margin-left: calc((100vw - 960px)/-2)
+        +widescreen
+            margin-left: calc((100vw - 1200px)/-2)
+    &__contain
+        display: block
+        max-width: 100%
+        height: auto
+        overflow: hidden
+
+    &__height
+        background-color: #d9eff9
+        position: relative
+        width: 100%
+        background: 50% no-repeat
+        background-size: cover
+        background-repeat: no-repeat
+        &--featured
+            height: 450px
+        &--about
+            height: 550px
+        &--cover
+            height: 630px
+        .image
+            margin-left: 0
+            margin-right: 0
+            position: relative
+            z-index: 1
+            width: 100%
+            height: 100%
+            object-fit: cover
+            background-color: #d9eff9
+        .image__aspect-ratio
+            height: 100%
+        .image__canvas,
+        .image__original
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.textion
+    position: relative
+    padding-top: 25px
+    padding-bottom: 25px
+    +phablet
+        padding-top: 30px
+        padding-bottom: 30px
+    +tablet
+        padding-top: 40px
+        padding-bottom: 40px
+    +desktop
+        padding-top: 50px
+        padding-bottom: 50px
+    + .textion
+        border-top: 1px solid #eee
+    &__container
+        +container960
+    &__row
+        display: flex
+        flex-wrap: wrap
+        align-items: stretch
+        flex-direction: row
+        justify-content: flex-start
+        margin-left: -15px
+        margin-right: -15px
+        + .textion__row
+            margin-top: 40px
+            +desktop
+                margin-top: 50px
+            &:last-child
+                margin-bottom: 40px
+                +desktop
+                    margin-bottom: 50px
+
+
+    &__col
+        align-self: stretch
+        padding-left: 15px
+        padding-right: 15px
+        width: 100%
+
+    &__heading
+        font-size: 22px
+        line-height: 1.33
+        font-weight: 700
+        +desktop
+            font-size: 28px
+    &__subheading
+        font-size: 22px
+        line-height: 1.33
+        color: #9ea0a6
+        fill: #9ea0a6
+        +desktop
+            font-size: 28px
+
+    &__text
+        margin-top: 15px
+        font-size: 14px
+        line-height: 2
+        +phablet
+            margin-top: 20px
+        +desktop
+            font-size: 16px
+
+        h4
+            font-size: 18px
+            line-height: 1.44
+            margin-top: 20px
+            font-weight: 700
+            +phablet
+                // margin-top: 30px
+            &:not(:first-child)
+                margin-top: 30px
+            +desktop
+                font-size: 21px
+        p
+            font-size: inherit
+            line-height: inherit
+            &:not(:last-child)
+                margin-bottom: 15px
+                +phablet
+                    margin-top: 20px
+
+        a
+            text-decoration: none
+            color: #4285f4
+            fill: $cyan
+            &:hover
+                text-decoration: underline
+
+        ul,
+        ol
+            font-size: inherit
+            line-height: inherit
+            margin: 0
+            padding: 0 0 0 18px
+            margin-top: 15px
+            // +phablet
+            //     margin-top: 20px
+            // // &:not(:last-child)
+            // //     margin-bottom: 50px
+
+        ul
+            list-style: none
+            > li
+                list-style: outside
+                padding-left: 15px
+                &:not(:last-child)
+                    margin-bottom: 10px
+                    +phablet
+                        margin-bottom: 20px
+
+        ol
+            > li
+                list-style: outside decimal
+                padding-left: 10px
+                &:not(:last-child)
+                    margin-bottom: 10px
+                    +phablet
+                        margin-bottom: 20px
+
+        table
+            margin: 0
+            width: 100%
+            min-width: 100%
+            border-spacing: 0
+            border-collapse: collapse
+            margin-top: 20px
+            thead
+                display: block
+                th
+                    min-height: 30px
+            tbody
+                tr
+                    min-height: 45px
+                    border-top: 1px solid rgba($black, .06)
+                    &:hover
+                        background-color: rgba($black, .04)
+            
+            tr
+                display: flex
+                flex-flow: row wrap
+                // align-items: center
+
+
+            th
+                flex: 1
+                display: table-cell
+                padding-right: 15px
+                max-width: 30%
+                line-height: 1.3
+                font-size: 13px
+                color: rgba(0,0,0,.4)
+                font-weight: 400
+                text-align: left
+                &:last-child
+                    max-width: 70%
+                    padding-right: 0
+
+            td
+                font-size: 14px
+                line-height: 1.5
+                display: table-cell
+                vertical-align: top
+                flex: 1
+                max-width: 30%
+                padding-right: 15px
+                line-height: 1.3
+                padding-top: 15px
+                padding-bottom: 15px
+                &:last-child
+                    max-width: 70%
+                    padding-right: 0
+
+                ul
+                    margin-top: 0
+                    > li
+                        &:not(:last-child)
+                            margin-bottom: 10px
+
+
+
+
+    &__image
+        // max-width: 960px
+        margin-left: -15px
+        margin-right: -15px
+        margin-top: 30px
+        +clearfix
+        +phablet
+            margin-left: auto
+            margin-right: auto
+
+        + .textion__row
+            margin-top: 10px
+
+    &--alignWithVedio
+        .textion__container
+
+        .textion__row
+            +tablet
+                max-width: 700px
+                padding-left: 200px
+            +desktop
+                padding-left: 125px
+                margin-left: auto
+                margin-right: auto
+
+    &--beautify
+        .textion__row
+            +tablet
+                max-width: 700px
+            +desktop
+                // padding-left: 125px
+                margin-left: auto
+                margin-right: auto
+
+    &--firstElem
+        +phablet
+            padding-top: 0
+        // padding-top: 15px
+
+.videoQuote
+    +container
+    padding-left: 0
+    padding-right: 0
+    margin-top: 30px
+    margin-bottom: 30px
+    +phablet
+        margin-top: 40px
+        margin-bottom: 15px
+        padding-left: 15px
+        padding-right: 15px
+    +tablet
+        margin-bottom: 10px
+    &__row
+        position: relative
+        display: flex
+        flex-wrap: wrap
+        align-items: stretch
+        justify-content: flex-start
+        flex-direction: row
+        // flex-wrap: nowrap
+        margin-left: -15px
+        margin-right: -15px
+    &__colLeft
+        position: relative
+        flex: none
+        align-self: stretch
+        position: static
+        // width: 100%
+        width: 175px
+        margin-bottom: 10px
+        // +phablet
+        //     width: 160px
+        //     margin-bottom: 10px
+        +tablet
+            margin-bottom: 0
+        +desktop
+            width: 230px
+    &__colRight
+        flex: none
+        width: 100%
+        padding-left: 80px
+        padding-right: 20px
+        align-self: stretch
+        // background-color: rgba(black, .2)
+        // +phablet
+        //     flex: 1
+        //     // padding-left: 90px
+        //     // padding-right: 90px
+        +tablet
+            flex: 1
+            max-width: 450px
+            padding-left: 30px
+            padding-right: 30px
+        +desktop
+            max-width: 500px
+            padding-left: 40px
+            padding-right: 40px
+
+    &__video
+        position: relative
+        background-color: rgba(red, .1)
+        width: 100%
+        cursor: pointer
+        // +tablet
+        //     width: 165px
+        //     transition: width .66s 0s
+        // +desktop
+        //     width: 230px
+
+    &__play
+        position: absolute
+        width: 44px
+        height: 44px
+        background-color: $white
+        bottom: 0
+        left: 0
+        border-radius: 50%
+        margin-bottom: 10px
+        margin-left: 10px
+
+    + .textion__row
+        margin-top: 25px
+
+    &--play
+        .videoQuote__video
+            +tablet
+                position: absolute
+                width: 700px
+                transition: width 1s 0s
+            +desktop
+                width: 960px
+        .quote
+            transition: padding-top .66s 0s
+            +tablet
+                padding-top: 425px
+            +desktop
+                padding-top: 585px
+
+.quote
+    transition: padding-top 1s 0s
+    &__inner
+        padding: 0
+        margin: 0
+        font-family: inherit
+        font-style: inherit
+        font-size: inherit
+        font-weight: inherit
+        line-height: inherit
+        vertical-align: baseline
+        border: 0
+        margin: 0 auto
+    &__quote
+        font-size: 17px
+        line-height: 1.6
+        color: #999999
+        fill: #999999
+        font-style: italic
+        +phablet
+            margin-top: 5px
+        // +tablet
+        +desktop
+            font-size: 19px
+
+        &::before
+            content: open-quote
+            margin-left: -8px
+            margin-right: 1px
+        &::after
+            content: close-quote
+
+    &__footer
+        font-size: 14px
+        margin-top: 10px
+        letter-spacing: 0.02em
+        font-style: italic
+        +tablet
+            margin-top: 20px
+        +desktop
+
+.WaitList
+    margin-bottom: 0
+    +phablet
+        margin-bottom: 40px
+    &__container
+        +container960
+    &__row
+        background-color: $red
+        border-radius: 2px
+        margin-left: -15px
+        margin-right: -15px
+        padding: 30px 0
+        text-align: center
+        +phablet
+            margin-left: 0
+            margin-right: 0
+            padding: 30px 40px
+        +tablet
+            display: flex
+            flex-flow: row wrap
+            text-align: left
+        +desktop
+            padding: 50px 60px
+
+    &__colLeft
+        padding-left: 15px
+        padding-right: 15px
+        +phablet
+            padding-left: 0
+            padding-right: 0
+        +tablet
+            flex: 1
+
+    &__colRight
+        padding-left: 15px
+        padding-right: 15px
+        margin-top: 10px
+        // background-color: rgba($black, .1)
+        +phablet
+            padding-left: 0
+            padding-right: 0
+        +tablet
+            margin-top: 0
+            width: 330px
+        +desktop
+            width: 550px
+
+    &__title
+        font-size: 21px
+        font-weight: 700
+        line-height: 1.33
+        color: $white
+        fill: $white
+    &__brief
+        font-size: 14px
+        line-height: 1.8
+        color: rgba($black, .5)
+        fill: rgba($black, .5)

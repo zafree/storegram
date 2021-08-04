@@ -1,0 +1,11 @@
+<svg id="icon-disappointing" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="16" cy="16" r="16" fill="#ffd93b"/>
+  <path id="Path_1" data-name="Path 1" d="M85.175,69.175A16,16,0,0,1,56.72,79.22a16,16,0,0,0,22.5-22.5A15.983,15.983,0,0,1,85.175,69.175Z" transform="translate(-53.175 -53.175)" fill="#f4c534"/>
+  <g id="Group_1" data-name="Group 1" transform="translate(8.523 10.559)">
+    <path id="Path_2" data-name="Path 2" d="M155.745,331.35a.869.869,0,0,1-.87.87H142.294a.87.87,0,1,1,0-1.74h12.581A.869.869,0,0,1,155.745,331.35Z" transform="translate(-141.108 -320.384)" fill="#3e4347"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="2.384" cy="2.384" r="2.384" fill="#3e4347"/>
+  </g>
+  <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="0.626" cy="0.405" rx="0.626" ry="0.405" transform="translate(11.966 12.713) rotate(-126.653)" fill="#5a5f63"/>
+  <circle id="Ellipse_4" data-name="Ellipse 4" cx="2.384" cy="2.384" r="2.384" transform="translate(18.706 10.559)" fill="#3e4347"/>
+  <ellipse id="Ellipse_5" data-name="Ellipse 5" cx="0.626" cy="0.405" rx="0.626" ry="0.405" transform="matrix(-0.597, -0.802, 0.802, -0.597, 22.148, 12.716)" fill="#5a5f63"/>
+</svg>

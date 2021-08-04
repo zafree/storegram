@@ -1,0 +1,12 @@
+---
+orderPageTitle : 'ready_for_pickup_orders.page_title'
+order: 'ready_for_pickup_orders.order'
+searchPlaceholder: 'ready_for_pickup_orders.search_placeholder'
+name : 'ready_for_pickup_orders.name'
+orderTotal : 'ready_for_pickup_orders.order_total'
+dueAmount : 'ready_for_pickup_orders.due_amount'
+action : 'ready_for_pickup_orders.action'
+enterOtp: 'ready_for_pickup_orders.enter_otp'
+verify: "ready_for_pickup_orders.verify"
+resendOtp: "ready_for_pickup_orders.resend_otp"
+noOrder: 'ready_for_pickup_orders.no_order'

@@ -1,0 +1,8 @@
+request: support_ticket.request
+update: support_ticket.update
+upc: support_ticket.upc
+requestedFor: support_ticket.requested_for
+approvedFor: support_ticket.appreoved_for
+status: support_ticket.status
+action: support_ticket.action
+details: support_ticket.details

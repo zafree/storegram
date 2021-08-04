@@ -1,0 +1,8 @@
+---
+EVENTS:
+  VIEW_CONTENT: 'ViewContent'
+  SEARCH: 'Search'
+  COMPLETE_REGISTRATION: 'CompleteRegistration'
+  ADD_TO_CART: 'AddToCart'
+  ADD_PAYMENT_INFO: 'AddPaymentInfo'
+  

@@ -1,0 +1,409 @@
+select::-ms-expand
+    display: none
+
+
+.Field
+    &:not(:last-child)
+        margin-bottom: 20px
+
+    $root: &;
+
+    &__label
+        display: block
+        color: #333
+        fill: #333
+        font-size: 14px
+        font-weight: 400
+        margin-bottom: 6px
+        letter-spacing: 0.04em
+        padding-left: 15px
+        padding-right: 15px
+        &--uppercase
+            text-transform: uppercase
+            font-size: 13px
+            letter-spacing: 0.06em
+        &--bold
+            font-weight: 700
+        &--12px
+            font-size: 12px
+
+    &__control
+        position: relative
+        text-align: left
+        font-size: 14px
+        &--multiselect
+            display: flex
+            flex-flow: row wrap
+            height: 42px
+            .multiselect--location,
+            .multiselect--area,
+                flex: 1
+                width: 47%
+                position: absolute
+                +phablet
+                    width: 48%
+                &.multiselect--active
+                    width: 100%                  
+            .multiselect--location
+                left: 0
+                top: 0
+                margin-right: 6%
+                +phablet
+                    margin-right: 4%
+            .multiselect--area
+                right: 0
+                top: 0
+        &--select
+            &::before
+                content: ""
+                position: absolute
+                pointer-events: none
+                // top: 0
+                right: 0
+                z-index: 1
+                color: #999
+                border-style: solid
+                border-width: 5px 5px 0 5px
+                border-color: #999999 transparent transparent transparent
+                // margin-top: 18px
+                margin-right: 16px
+                top: 50%
+                transform: translateY(-50%)
+
+
+    &__input
+        align-items: center
+        border: 1px solid transparent
+        border-radius: 2px
+        box-shadow: none
+        display: inline-flex
+        font-size: 1rem
+        height: 36px
+        justify-content: flex-start
+        line-height: 1.5
+        padding: 6px 15px
+        position: relative
+        vertical-align: top
+        background-color: #fcfcfc
+        border-color: #e5e5e5
+        color: #333
+        fill: #333
+        box-shadow: none
+        max-width: 100%
+        width: 100%
+        font-size: 14px
+        font-weight: 400
+        transition: all 0.1s ease-out
+
+        &:focus,
+        &:active
+            // border-color: #777
+            border-color: $purple
+            box-shadow: none
+            outline: none
+            background-color: #fff
+
+        +placeholder
+            color: #bbbbbb
+
+        &--textarea
+            height: auto
+            min-height: 36px
+            outline: none
+            overflow: auto
+            white-space: nowrap
+            resize: none
+        &--select
+            cursor: pointer
+            appearance: none
+
+    &--error
+        #{$root}__input
+            border-color: $red
+    &--success
+        #{$root}__input
+            border-color: $green
+    &--info
+        #{$root}__input
+            border-color: $cyan
+            
+
+    &__help,
+    &__validation
+        display: block
+        font-size: 12px
+        margin-top: 6px
+        margin-bottom: 0
+        padding-left: 15px
+        padding-right: 15px
+        color: #777
+        fill: #777
+
+    &__help
+        font-size: 13px
+        color: #999
+        margin-bottom: 0
+        .link
+            color: #3f9ca8
+            cursor: pointer
+            text-decoration: none
+            transition: all .2s ease
+            &:hover,
+            &:focus
+                color: darken(#3f9ca8, 10%)
+                fill: darken(#3f9ca8, 10%)
+
+            &--muted
+                color: #aaa
+                fill: #aaa
+                cursor: not-allowed
+                // pointer-events: none
+                &:hover,
+                &:focus
+                    color: #aaa
+                    fill: #aaa
+
+
+    &--error
+        #{$root}__validation
+            color: $red
+            fill: $red
+            background-color: rgba($red, 0.12)
+            border: 1px solid rgba($red, 0.2)
+            border-radius: 2px
+            padding: 8px 15px
+
+    &--success
+        #{$root}__validation
+            color: $green
+            fill: $green
+            background-color: rgba($green, 0.12)
+            border: 1px solid rgba($green, 0.2)
+            border-radius: 2px
+            padding-top: 8px
+            padding-bottom: 8px
+    &--info
+        #{$root}__validation
+            color: darken($cyan, 30%)
+            fill: darken($cyan, 30%)
+            background-color: rgba($cyan, 0.12)
+            border: 1px solid rgba($cyan, 0.2)
+            border-radius: 2px
+            padding-top: 8px
+            padding-bottom: 8px
+
+    &--secondary
+        #{$root}__label
+            font-size: 13px
+            color: #555
+            fill: #555
+        #{$root}__input
+            background-color: $white
+
+    // inline
+    &--inline
+        display: flex
+        align-items: center
+        #{$root}__label
+            margin-bottom: 0
+        // #{$root}__control
+
+.radio
+    &:not(:first-child)
+        margin-top: -1px
+
+    &__input[type=radio]
+        position: absolute
+        visibility: hidden
+
+    &__label
+        display: block
+        position: relative
+        cursor: pointer
+        padding: 15px 15px 15px 40px
+
+        // background-color: rgba(black, .02)
+
+.lable
+    position: relative
+    $root: &;
+    &--withSpanLabel
+        #{$root}__price
+            margin-top: 8px
+            +phablet
+                margin-top: 0
+                top: 50%
+                transform: translateY(-50%)
+            +tablet
+                margin-top: 8px
+                top: 0
+                transform: none
+            +desktop
+                margin-top: 0
+                top: 50%
+                transform: translateY(-50%)
+        #{$root}__sub
+            +phablet
+                padding-right: 80px
+            +tablet
+                padding-right: 0
+            +desktop
+                padding-right: 80px
+
+    &__title
+        font-size: 14px
+        line-height: 1.44
+        font-weight: 700
+        color: #555
+        fill: #555
+        padding-right: 50px
+    &__sub
+        font-size: 13px
+        line-height: 1.66
+        font-weight: 400
+        color: #aaa
+        margin-top: 5px
+        +tablet
+            padding-right: 90px
+        &--dark
+            font-size: 14px
+            line-height: 1.66
+            font-weight: 400
+            margin-top: -15px 
+            color: $black
+            +tablet
+                padding-right: 0px
+    &__price
+        font-size: 20px
+        font-weight: 400
+        color: #fe5175
+        position: absolute
+        top: 0
+        right: 0
+        margin-right: 15px
+        margin-top: 15px
+        text-align: right
+        +tablet
+            margin-top: 0
+            top: 50%
+            transform: translateY(-50%)
+        &__paynow
+            font-size: 12px
+            color: #555
+            display: block
+    &__image
+        position: absolute
+        top: 50%
+        right: 0
+        margin-right: 15px
+        transform: translateY(-50%)
+        border: 1px solid #ddd
+        background-color: $white
+        overflow: hidden
+        border-radius: 4px
+        background-position: 0 center
+        background-repeat: no-repeat
+        background-size: 56px auto
+        display: inline-block
+        vertical-align: middle
+        height: 36px
+        width: 58px
+        &--bkash
+            background-image: url(/svg/payment/bkash.svg)
+        &--bkashPercentOff
+            width: 107px
+            height: 40px
+            display: inline-flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            // position: relative
+            overflow: visible
+            .SvgIconBkash
+                position: absolute
+                bottom: 0
+                left: 0
+                &--logo
+                    top: 0
+                    margin-top: -4px
+                    bottom: auto
+                    z-index: 1
+
+    
+                       
+            
+        // &--portwallet
+            // background-image: url(/svg/payment/portwallet.svg)
+
+            // background-image: url(/svg/payment/portwallet.svg)
+    &__imageGroup
+        position: relative
+        display: block
+        margin-bottom: -5px
+        margin-top: 5px
+
+.option
+    position: relative
+    border: 1px solid #e5e5e5
+    background-color: #fcfcfc
+
+    &__check
+        position: absolute
+        top: 0
+        left: 0
+        margin-top: 16px
+        margin-left: 15px
+        width: 16px
+        height: 16px
+        border-radius: 4px
+        border-width: 2px 
+        border-style: solid
+        background-color: $white
+        border-color: $green
+        transition: none $speed $easing $speed*0.5
+        transition-property: border-color
+        &::before,
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            width: 15px
+            height: 4px
+            border-style: solid 
+            border-top: 0
+            border-right: 0
+            transform-origin: center center
+            transform: rotate(310deg)
+            opacity: 0
+            visibility: hidden
+            transition: none $speed $easing $speed*0.25
+            transition-property: opacity, visibility
+        &::before
+            border-width: 7px 
+            border-color: $white
+            margin-left: -2px + 1
+            margin-top: -2px - 3
+            border-radius: 3px
+        &::after
+            border-width: 3px 
+            border-color: darken($green, 5%)
+            margin-left: 1px
+            margin-top: -3px
+        &--active
+            border-color: $btn-green
+            &::before,
+            &::after
+                opacity: 1
+                visibility: visible
+
+    &__title
+
+    &__body
+        padding: 0 15px 15px 40px
+    &__hint
+        font-size: 13px
+        line-height: 1.33
+        // padding-top: 7px
+        // padding-bottom: 7px
+        // margin-bottom: 8px

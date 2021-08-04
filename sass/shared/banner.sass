@@ -1,0 +1,83 @@
+.CategoryBanner
+  position: relative
+  &__container
+    +container
+  &__row
+    position: relative
+
+.Banner
+  position: relative
+  overflow: hidden
+  background-color: $white
+  // box-shadow: 0 1px 3px rgba($black, .1)
+  // border: 1px solid #d9d9d9
+  +phablet
+    margin-left: 0
+    margin-right: 0
+    // border-top: none
+  +tablet
+    height: 420px
+
+  &--purple
+    background-color: rgba($purple, .5)
+  &--yellow
+    background-color: rgba($yellow, .5)
+  &--red
+    background-color: rgba($red, .5)
+  &--green
+    background-color: rgba($green, .5)
+  &--cyan
+    background-color: rgba($cyan, .5)
+
+  &--purpleLt
+    background-color: rgba($purple, .4)
+  &--yellowLt
+    background-color: rgba($yellow, .4)
+  &--redLt
+    background-color: rgba($red, .4)
+  &--greenLt
+    background-color: rgba($green, .4)
+  &--cyanLt
+    background-color: rgba($cyan, .4)
+
+  &--purpleDk
+    background-color: rgba($purple, .6)
+  &--yellowDk
+    background-color: rgba($yellow, .6)
+  &--redDk
+    background-color: rgba($red, .6)
+  &--greenDk
+    background-color: rgba($green, .6)
+  &--cyanDk
+    background-color: rgba($cyan, .6)
+
+  &__link
+      display: block
+      height: 100%
+
+  &__image
+    position: relative
+    +tablet
+      top: 50%
+      transform: translateY(-50%)
+
+  &__imageText
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    max-width: 100%
+    background-color: rgba($white, .1)
+    color: $white
+    padding: 30px
+    font-size: 20px
+    font-weight: $weight-bold
+    line-height: 1.22
+    +tablet
+      font-size: 40px
+
+  // &__imageSvg
+  //   position: absolute
+  //   top: 50%
+  //   left: 50%
+  //   transform: translate(-50%, -50%)

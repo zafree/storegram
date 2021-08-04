@@ -1,0 +1,56 @@
+---
+GA_CATEGORIES:
+  CART: 
+    NAME: 'Cart'
+    ACTIONS:
+      PLACE_ORDER: 'Place Order'
+      PLUS_ICON: 'Increase Item Qty'
+      MINUS_ICON: 'Decrease Item Qty'
+      REMOVE_ICON: 'Remove Item'
+  PRODUCT_CARD:
+    NAME: 'Product Thumbnail'
+    ACTIONS:
+      ADD_TO_CART: 'Add to Cart'
+      BUY_NOW: 'Buy now'
+      REQUEST: 'Request Product'
+      IMAGE_ZOOM: 'Click to zoom Product Image'
+      VIEW_DETAILS_VIA_IMAGE: 'View Details via Image'
+      VIEW_DETAILS_VIA_NAME: 'View Details via Name Link'
+      VIEW_DETAILS_VIA_BUTTON: 'View Details via Button'
+      VIEW_DETAILS_VIA_OPTIONS_LINK: 'View Details via Options Link'
+      VIEW_DETAILS_VIA_CONTAINER_DIV: 'View Details on Product Card Click'
+  PRODUCT_SEARCH:
+    NAME: 'Product Search'
+    ACTIONS:
+      SEARCH: 'Search'
+      NAVIGATE_TO_PRODUCT_DETAILS: 'Navigate to Product details'
+  PRODUCT_LIST:
+    NAME: 'Product List'
+    ACTIONS:
+      TOGGLE_VIEW_MODE: 'Switch view mode of product list'
+  DELIVERY_OPTION:
+    NAME: 'Delivery option'
+    ACTIONS:
+      CONFIRM_ORDER: 'Confirm Order'
+  TRANSACTIONS:
+    NAME: 'Transactions'
+    ACTIONS:
+      PAID_TRANSACTION: 'Paid transactions'
+ENHANCE_ECOM:
+  ACTIONS:
+    CLICK: 'click'
+    DETAIL: 'detail'
+    ADD: 'add'
+    REMOVE: 'remove'
+    CHECKOUT: 'checkout'
+    CHECKOUT_OPTION: 'checkout_option'
+    PURCHASE: 'purchase'
+    REFUND: 'refund'
+    PROMO_CLICK: 'promo_click'
+  COMMANDS:
+    PAGEVIEW: 'pageview'
+    SEND: 'send'
+  TEXT:
+    NOT_APPLICABLE: 'N/A'
+    STOP_GA_WHEN_RELOAD: '#stopGaWhenReload'
+  
