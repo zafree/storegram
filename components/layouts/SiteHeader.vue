@@ -7,7 +7,7 @@
         type="button" name="button"
         @click.stop="toggleOverlay(overlays.aside1)">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-          <use xlink:href="/clients/miniso/svg/icons.svg?#i-menu"></use>
+          <use xlink:href="/svg/icons.svg?#i-menu"></use>
         </svg>
         <span>Menu</span>
       </button>

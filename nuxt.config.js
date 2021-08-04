@@ -199,7 +199,7 @@ let nuxtConfig = {
         }
         sassLoader.sassOptions.includePaths.push(path.resolve(__dirname, 'sass'))
         if (loaderName === 'sass') {
-          sassLoader.prependData = '@import "clients/' + dotEnvConfig.PROJECT_NAME + '/sass-vars"'
+          sassLoader.prependData = '@import "sass-vars"'
         }
       })
 
