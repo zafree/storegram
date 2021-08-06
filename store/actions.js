@@ -74,7 +74,7 @@ import {
 } from '~/store/constants.yaml'
 
 import {
-  getCategories,
+  // getCategories,
   getLocationsWithArea,
   getUserByAuthToken,
   getAgentByAuthToken,
@@ -94,6 +94,10 @@ import {
   deleteCustomerAddress,
   getAgentCommission
 } from '~/api'
+
+import {
+  getCategories
+} from '~/api/mock'
 
 import {
   getCookieValue
@@ -132,6 +136,8 @@ const actions = {
     if (platform) {
       commit(SET_PLATFORM, parseInt(platform))
     }
+
+    console.log('getCategories FROM ACTION', getCategories)
     actions.push(dispatch(LOAD_CATEGORIES, agentAccessToken))
     return Promise.all(actions)
   },
