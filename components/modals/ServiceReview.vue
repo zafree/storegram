@@ -213,7 +213,7 @@ export default {
         &:focus 
           outline: none
   .Button 
-    background-color: $gray
+    background-color: $black
     color: #fff 
     height: 52px
     width: 100% 
@@ -221,7 +221,7 @@ export default {
     border-radius: 4px
     margin-top: 40px
     &--active
-      background-color: $purple
+      background-color: $primary
 </style>
 
 <style lang="sass" scoped>

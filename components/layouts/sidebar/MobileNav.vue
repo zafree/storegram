@@ -181,7 +181,7 @@
       vertical-align: middle
       text-align: center
       text-decoration: none
-      color: $gray
+      color: $black
       line-height: 1.5
       // background-color: rgba($black, .1)
       min-height: 50px
@@ -206,7 +206,7 @@
     width: 30px
     height: 30px
     border-radius: 30px
-    background-color: lighten($purple, 26%)
+    background-color: lighten($primary, 26%)
     margin-right: 5px
     overflow: hidden
     &__svgIcon

@@ -1,5 +1,6 @@
 <template>
   <div class="HomeHero" v-if="pageMode.homePage && (blockIsLoading || (!imageLinkBroken && offers.length))">
+    <!-- HERO -->
     <div class="HomeHero__container">
       <div class="HomeHero__block" v-if="blockIsLoading"></div>
       <flickity v-else-if="!imageLinkBroken && offers.length" class="carousel" ref="flickity" :options="flickityOptions">
@@ -38,29 +39,6 @@
       </template>
     </div>
   </div>
-  <!-- <div v-if="pageMode.homePage && (blockIsLoading || (!imageLinkBroken && offers.length))" class="HomeHero">
-    <div class="HomeHero__container">
-      <div class="HomeHero__imageWrapper" v-if="blockIsLoading"></div>
-      <div class="HomeHero__imageWrapper" v-else-if="!imageLinkBroken && offers.length">
-        <i18n-link :to="offers[0].internal_link" v-if="offers[0].internal_link">
-          <computed-image :class="['HomeHero__image', {'HomeHero__image--loaded': imageIsLoaded}, {bannerBgColor: !imageIsLoaded}]"
-            :src="offers[0].banner_image" :animate="false"
-            @imageLoaded="imageIsLoaded = true"
-            @imageIsNotLoaded="imageLinkBroken = true" :defaultImage="defaultImage"/>
-        </i18n-link>
-        <a :href="offers[0].external_link" v-else-if="offers[0].external_link">
-          <computed-image :class="['HomeHero__image', {'HomeHero__image--loaded': imageIsLoaded}, {bannerBgColor: !imageIsLoaded}]"
-            :src="offers[0].banner_image" :animate="false"
-            @imageLoaded="imageIsLoaded = true"
-            @imageIsNotLoaded="imageLinkBroken = true" :defaultImage="defaultImage"/>
-        </a>
-        <computed-image v-else :class="['HomeHero__image', {'HomeHero__image--loaded': imageIsLoaded}, {bannerBgColor: !imageIsLoaded}]"
-          :src="offers[0].banner_image" :animate="false"
-          @imageLoaded="imageIsLoaded = true"
-          @imageIsNotLoaded="imageLinkBroken = true" :defaultImage="defaultImage"/>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <script>
@@ -158,7 +136,7 @@
 <style lang="sass" scoped>
   .carousel
     margin-bottom: 30px
-    +phablet
+    // +phablet
       padding-bottom: 20px
     &-cell
       width: 100%

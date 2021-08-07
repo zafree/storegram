@@ -125,15 +125,15 @@ export default {
     padding: 15px 15px 30px
     box-shadow: 0 1px 3px rgba($black, 0.1)
     height: 100%
-    +phablet
+    // +phablet
       margin-left: 0
       margin-right: 0
       padding: 20px 30px 30px
     &__title,
-    &__body 
+    &__body
       position: relative
-      +tablet 
-        margin-left: -15px 
+      +tablet
+        margin-left: -15px
         margin-right: -15px
     &__title
       font-size: 24px
@@ -165,7 +165,7 @@ export default {
         min-height: 50px
         padding: 0 10px
         border-bottom: none
-      +desktop 
+      +desktop
         padding: 0 20px
       &:hover
         background-color: rgba($black, .04)
@@ -297,7 +297,7 @@ export default {
         background-color: #BFBFBF
     &--arrowEdit
       margin-right: 5px
-    &--details 
-      +btnDark
+    &--details
+      +button
 
 </style>

@@ -1,306 +1,129 @@
 <template>
-  <div :class="$style.item" v-if="currentVariant">
-    <div :class="$style.product">
+  <div :class="$style.product" v-if="currentVariant">
 
-      <!-- Details Mode Images -->
-      <div :class="$style.hero">
-        <template v-if="productImages.length > 2">
-          <flickity class="FPDCarousel" ref="FPCarouselOptions" :options="FPCarouselOptions">
-            <div class="FPDCarousel__cell"
-              v-for="(img) in productImages"
-              :key="img.url">
-              <div class="image">
-                <div class="image-placeholder"></div>
-                <lazy-image
-                  :class="['image-image', {'image-loaded': imageIsLoaded}]"
-                  :meta="img"
-                  :animate="false"
-                  :alt="name"
-                  :title="name"
-                  @click="openProductImageZoomMode()"
-                  @imageLoaded="imageIsLoaded = true"/>
-              </div>
-            </div>
-          </flickity>
-        </template>
-        <template v-else>
-          <div class="image image-zoom">
-            <div class="image-placeholder"></div>
+    <div :class="$style.productName">
+      <span :class="$style.label">ID# {{currentVariant.id}}</span>
+      <h1 :class="$style.title">{{ name }}</h1>
+    </div>
+    <div :class="$style.productDetails">
+      <div :class="[$style.productGallery, $style.gallery]">
+        <div :class="[$style.img]">
+          <div :class="$style.imgAspectRatio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+              <use xlink:href="/svg/icons.svg?#i-camera"></use>
+            </svg>
+          </div>
+          <div :class="$style.imgImage">
             <lazy-image
               :meta="currentImage"
-              :class="['image-image', {'image-loaded': imageIsLoaded}]"
+              :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
               :animate="false"
               @click="openProductImageZoomMode()"
               :alt="name"
               :title="name"
               @imageLoaded="imageIsLoaded = true"/>
           </div>
-        </template>
-
-        <template v-if="productImages.length > 2">
-          <div :class="$style.gallery">
-            <div :class="$style.galleryHero">
-              <div :class="$style.heroImageAspectRatio"></div>
-              <lazy-image
-                :meta="currentImage"
-                :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
-                :animate="false"
-                @click="openProductImageZoomMode()"
-                :alt="name"
-                :title="name"
-                @imageLoaded="imageIsLoaded = true"/>
-            </div>
-            <ul :class="$style.galleryList">
-              <li
-                v-for="(img, index) in productImages"
-                :key="img.url"
-                :class="[$style.galleryItem, {[$style.galleryItemActive]: (index === currentProductImageIndex)}]"
-                @click="changeProductHeroImg(index)">
-                <div :class="$style.heroImageAspectRatio"></div>
-                <lazy-image :class="[$style.galleryImage, $style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
-                  :meta="img"
-                  :animate="false"
-                  :alt="name"
-                  :title="name"/>
-              </li>
-            </ul>
-          </div>
-        </template>
-
-        <div id="ProductDetails" :class="['modal', 'modal--visible']" v-show="productImageInZoomMode">
-          <div class="modal__overlay" @click="closeProductImageZoomMode()"></div>
-          <div class="modal__content">
-            <div class="image">
-              <div class="image-placeholder"></div>
-              <lazy-image
-                :meta="currentImage"
-                :class="['image-image', {'image-loaded': imageIsLoaded}]"
-                :animate="false"
-                :alt="name"
-                :title="name"
-                @imageLoaded="imageIsLoaded = true"/>
-            </div>
-
-            <button class="modal__close" @click="closeProductImageZoomMode()">
-              <svg viewBox="0 0 32 32">
-                <path d="M26.3,7.9l-2.1-2.1L16,13.9L7.9,5.7L5.7,7.9l8.1,8.1l-8.1,8.1l2.1,2.1l8.1-8.1l8.1,8.1l2.1-2.1
-                  L18.1,16L26.3,7.9z"/>
-              </svg>
-            </button>
-            <button class="prev" v-if="productImages.length > 1" @click="prevProductHeroImage()">
-              <svg viewBox="0 0 32 32">
-                <path id="Path_22" d="M4.6,16L15,5.6v8.2h12.4v4.3H15v8.2L4.6,16z"/>
-              </svg>
-            </button>
-            <button class="next" v-if="productImages.length > 1" @click="nextProductHeroImage()">
-              <svg viewBox="0 0 32 32">
-                <path id="Path_22" d="M4.6,16L15,5.6v8.2h12.4v4.3H15v8.2L4.6,16z" transform="translate(32, 32) rotate(180) "/>
-              </svg>
-            </button>
-          </div>
         </div>
-
-        <!-- <div :class="$style.overlay" v-show="productImageInZoomMode">
-          <div @click="closeProductImageZoomMode()" :class="$style.overlayLayer"></div>
-          <button @click="closeProductImageZoomMode()" :class="[$style.button, $style.overlayClose]">
-            <img :class="$style.overlayCloseDetails" src="/svg/cancel.svg" alt="">
-          </button>
-          <div :class="$style.overlayContent">
-            <ul :class="$style.overlayNav">
-              <li :class="$style.overlayNavPrev">
-                <button v-if="productImages.length > 1" @click="prevProductHeroImage()" :class="[$style.button, $style.buttonOverlayprev]" type="button">
-                  <span :class="$style.buttonIcon">
-                    <img :class="$style.svgIcon" src="/svg/carousel-prev.svg" alt="">
-                  </span>
-                </button>
-              </li>
-              <li :class="$style.overlayNavNext">
-                <button v-if="productImages.length > 1" @click="nextProductHeroImage()" :class="[$style.button, $style.buttonOverlaynext]" type="button">
-                  <span :class="$style.buttonIcon">
-                    <img :class="$style.svgIcon" src="/svg/carousel-next.svg" alt="">
-                  </span>
-                </button>
-              </li>
-            </ul>
-            <div :class="$style.overlayMain">
-              <div :class="$style.overlayTheImage">
-                <div :class="$style.heroImageAspectRatio"></div>
-                <lazy-image
-                  :meta="currentImage"
-                  :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
-                  :animate="false"
-                  :alt="name"
-                  :title="name"
-                  @imageLoaded="imageIsLoaded = true"/>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
+        <ul :class="$style.galleryList" v-if="productImages.length > 2">
+          <li
+            v-for="(img, index) in productImages"
+            :key="img.url"
+            :class="[$style.galleryItem, {[$style.galleryItemActive]: (index === currentProductImageIndex)}]"
+            @click="changeProductHeroImg(index)">
+            <div :class="$style.heroImageAspectRatio"></div>
+            <lazy-image :class="[$style.galleryImage, $style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
+              :meta="img"
+              :animate="false"
+              :alt="name"
+              :title="name"/>
+          </li>
+        </ul>
       </div>
-
-      <div :class="$style.stream">
-        <!-- product id -->
-        <span :class="$style.id">ID# {{currentVariant.id}}</span>
-        <!-- coupon  -->
-        <span :class="$style.coupon" v-if="currentVariant.coupon_details">
-          <span :class="$style.couponText">{{ i18nText.coupon }}</span>
-        </span>
-        <!-- product offers -->
-        <div :class="$style.offers" v-if="product.offers && product.offers.length">
-          <div v-for="(offer, index) in product.offers" :key="index" :class="[$style.offersItem, {[ $style.offersItemIsActive ]: showBkashLogo }]">
-            <offer-logo-image v-if="offer.logo_image" :imageLink="offer.logo_image"></offer-logo-image>
-          </div>
-        </div>
-        <!-- product title -->
-        <h1 :class="$style.title">{{name}}</h1>
-
-        <template v-if="hasVariant">
-          <div :class="$style.variant" v-for='attr in varyingAttributes' :key="attr.code">
-            <label :class="$style.variantLabel">{{ __(attr.name) }}</label>
-            <div :class="$style.variantList">
-              <div
-                :class="[$style.variantItem, $style.variantItemText, { [$style.variantItemActive]: data.active, [$style.variantItemMuted]: data.muted } ]"
-                v-for="data in attr.values"
-                :key="attr.code + ':' + data.value"
-                v-if="data.linkPath">
-                <i18n-link :class="$style.link" :to="data.linkPath">{{ __(data.i18n_value) }} {{ __(data.i18n_unit) }}</i18n-link>
-              </div>
-            </div>
-          </div>
-        </template>
-
-        <!-- varient select in Mobile Devices -->
-        <!-- <div v-if="hasVariant" :class="[$style.productVariantSelect, $style.variantSelect]">
-          <button
-            v-for='attr in varyingAttributes'
-            :key="attr.code"
-            :class="$style.variantSelectRow"
-            type="button"
-            @click="openVariantModalForSmallDevice"
-          >
-            <label :class="$style.variantSelectTitle">
-              {{__$(attr.values.length)}} {{__(attr.name)}} :
-            </label>
-            <div :class="$style.variantSelectSelected">
-              <div :class="$style.variantSelectName">{{ currentAttribute(attr.code) }}</div>
-              <div :class="$style.variantSelectArrow">
-                <img class="hello" src="/svg/arrow-right-mored.svg" alt="">
-              </div>
-            </div>
-          </button>
-        </div> -->
-
-        <!-- <div v-if="hasVariant" :class="[$style.productVariant, {[$style.productVariantOpen]: showVariantModalForSmallDevice}]">
-          <div :class="$style.variantOverlay" @click="closeVariantModalForSmallDevice"></div>
-          <button :class="[$style.button, $style.variantCloseButton]" @click="closeVariantModalForSmallDevice">Done</button>
-          <div :class="$style.variantDialog">
-            <div :class="$style.variant" v-for='attr in varyingAttributes' :key="attr.code">
-              <label :class="$style.variantLabel">{{ __(attr.name) }}</label>
-              <div :class="$style.variantScroll">
-                <div :class="$style.variantContainer">
-                  <div :class="$style.variantRow">
-                    <div
-                      :class="[$style.variantItem, $style.variantItemText, { [$style.variantItemActive]: data.active, [$style.variantItemMuted]: data.muted } ]"
-                      v-for="data in attr.values"
-                      :key="attr.code + ':' + data.value"
-                      v-if="data.linkPath">
-                      <i18n-link :class="$style.link" :to="data.linkPath">{{ __(data.i18n_value) }} {{ __(data.i18n_unit) }}</i18n-link>
-                    </div>
-                  </div>
+      <div :class="$style.productInfo">
+        <div :class="$style.productAppearance">
+          <template v-if="hasVariant">
+            <div :class="[$style.productVariant, $style.variant]" v-for='attr in varyingAttributes' :key="attr.code">
+              <label :class="$style.variantLabel">{{ __(attr.name) }}:</label>
+              <div :class="$style.variantList">
+                <div
+                  :class="[$style.variantItem, $style.variantItemText, { [$style.variantItemActive]: data.active, [$style.variantItemMuted]: data.muted } ]"
+                  v-for="data in attr.values"
+                  :key="attr.code + ':' + data.value"
+                  v-if="data.linkPath">
+                  <i18n-link :class="$style.link" :to="data.linkPath">{{ __(data.i18n_value) }} {{ __(data.i18n_unit) }}</i18n-link>
                 </div>
               </div>
             </div>
-          </div>
-        </div> -->
-
-        <!-- product price -->
-        <div :class="$style.price">
-          <span :class="$style.priceDiscounted">Tk. {{ __$(currentVariant.discounted_price) }}</span>
-          <template v-if="!currentVariant.out_of_stock && discount">
-            <span :class="$style.priceUnit">{{ __$(currentVariant.unit_price) }}</span>
-            <!-- <span :class="$style.priceDiscount">{{ i18nText.save }} {{ __$(discount) }}</span> -->
           </template>
-          <span :class="$style.priceStockOut" v-if="currentVariant.out_of_stock">{{ i18nText.outStock  }}</span>
-          <span :class="$style.priceAgentCommission" v-else-if="toggleCommission && !currentVariant.out_of_stock">{{ i18nText.commissionLabel }} {{ __$(currentVariant.commission) }}</span>
         </div>
-
-        <div class="BookingAmount" v-if="isAdvancePaymentEnabled">
-          <span class="BookingAmount__image">
-            <!-- <svg-icon file-name="arrow-right" :generate-inline-style="false"></svg-icon> -->
-            <img class="BookingAmount__image--icon" src="/svg/icon-lock.svg" alt="">
-          </span>
-          <div class="BookingAmount__content">
-            <span class="BookingAmount__content--price" v-if="addTkSign">৳{{ translatedAmount }}</span>
-            <span class="BookingAmount__content--price" v-if="addPercentSign">{{ translatedAmount }}%</span>
-            <p class="BookingAmount__content--copy">{{ $t('advanced_payment.minimum_booking_amount') }}</p>
+        <div :class="[$style.productPrice, $style.price]">
+          <div :class="$style.priceTopBlock">
+            <template v-if="!currentVariant.out_of_stock && discount">
+              <span :class="$style.priceUnit">{{ __$(currentVariant.unit_price) }}</span>
+              <span :class="$style.priceDiscount">{{ i18nText.save }} {{ __$(discount) }}</span>
+            </template>
+            <div :class="$style.priceStockOut" v-if="currentVariant.out_of_stock">{{ i18nText.outStock  }}</div>
           </div>
-          <!-- <span v-if="addTkSign">৳</span>{{ translatedAmount }} <span v-if="addPercentSign">%</span>
-          {{ $t('advanced_payment.minimum_booking_amount') }} -->
-        </div>
+          <div :class="$style.priceDiscounted">Tk. {{ __$(currentVariant.discounted_price) }}</div>
 
-        <div v-if="currentVariant.out_of_stock" :class="$style.actions">
-            <div v-if="productRequestMsg" :class="$style.requestedMsg">
-              {{productRequestMsg}}
-            </div>
-            <button v-else
-              :class="[$style.button, $style.buttonRequest]"
-              @click="requestForProduct()">
-              {{ i18nText.request }}
-            </button>
-        </div>
-
-        <div v-else :class="$style.actions">
-          <!-- <div class="DispatchedDays">
-            <svg viewBox="0 0 15 15" width="15px" height="15px">
-              <path id="Path_192" d="M7.5,0C3.4,0,0,3.4,0,7.5S3.4,15,7.5,15S15,11.6,15,7.5C15,3.4,11.6,0,7.5,0z M7.5,13.5
-                c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6C13.5,10.8,10.8,13.5,7.5,13.5z"/>
-              <path id="Path_191" d="M7.5,7.5V3.8H6v5.1h4.1V7.5L7.5,7.5z"/>
-            </svg>
-            <span>Dispatched in 7 working days</span>
-          </div> -->
-          <div :class="$style.buttonGroup">
-            <button
-              :class="[$style.button, $style.buttonBuyNow, {[$style.buttonBuyNowWithEmi]: checkoutWithEMI}]"
-              @click.stop="buyNow()">
-              {{ checkoutWithEMI ? i18nText.buyNowWithEMI : i18nText.buyNow }}
-            </button>
-            <button v-if="!checkoutWithEMI"
-              :class="[$style.button, $style.buttonAddToCart]"
-              @click="addToCart()">
-              {{ i18nText.addCart }}
-            </button>
-          </div>
-
-
-
-          <!-- <div class="emi" v-if="emiStartsFrom">
-            <div class="checkbox" @click="checkoutWithEMI = !checkoutWithEMI">
-              <div :class="['checkbox__check', {'checkbox__check--active': checkoutWithEMI}]" ></div>
-              <div class="checkbox__title">
-                <label class="checkbox__label" for="emi_enable">
-                  <span class="emiBadge">{{ $t('product.emi_from',{ amount: __$(emiStartsFrom)}) }}</span>
-                </label>
+          <div :class="$style.productAction">
+            <template v-if="currentVariant.out_of_stock">
+              <div v-if="productRequestMsg" :class="$style.requestedMsg">
+                {{productRequestMsg}}
               </div>
-            </div>
-            <button :class="[$style.button, $style.buttonViewPlans]" @click="viewPlans">{{ i18nText.viewPlans }}
-              <img src="/svg/arrow-right-mored.svg" alt="">
-            </button>
-          </div> -->
+              <button v-else
+                :class="[$style.btn, $style.btnLight]"
+                @click="requestForProduct()">
+                {{ i18nText.request }}
+              </button>
+            </template>
+            <template v-else>
+              <button
+                :class="[$style.btn, $style.btnPrimary]"
+                @click.stop="buyNow()">
+                {{ i18nText.buyNow }}
+              </button>
+              <button v-if="!checkoutWithEMI"
+                :class="[$style.btn, $style.btnLine]"
+                @click="addToCart()">
+                {{ i18nText.addCart }}
+              </button>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- <deliverable-info :currentVariant="currentVariant" /> -->
-
+    <div :class="[$style.modal, $style.modalZoomImage]" v-show="productImageInZoomMode">
+      <div :class="$style.modalOverlay" @click="closeProductImageZoomMode()"></div>
+      <div :class="$style.modalContent">
+        <div :class="$style.image">
+          <div :class="$style.imagePlaceholder"></div>
+          <lazy-image
+            :meta="currentImage"
+            :class="[$style.imageImage, {[$style.imageLoaded]: imageIsLoaded}]"
+            :animate="false"
+            :alt="name"
+            :title="name"
+            @imageLoaded="imageIsLoaded = true"/>
         </div>
 
-        <div class="lovingbadge">
-          <div class="lovingbadge__image" v-if="isVegan">
-            <img src="/clients/bronx/image/label-veganfriendly-150x150.png" alt="">
-          </div>
-          <div class="lovingbadge__image" v-if="isCrueltyFree">
-            <img src="/clients/bronx/image/label-crueltyfree-150x150.png" alt="">
-          </div>
-        </div>
-
+        <button :class="$style.modalClose" @click="closeProductImageZoomMode()">
+          <svg viewBox="0 0 32 32">
+            <path d="M26.3,7.9l-2.1-2.1L16,13.9L7.9,5.7L5.7,7.9l8.1,8.1l-8.1,8.1l2.1,2.1l8.1-8.1l8.1,8.1l2.1-2.1
+              L18.1,16L26.3,7.9z"/>
+          </svg>
+        </button>
+        <button :class="$style.prev" v-if="productImages.length > 1" @click="prevProductHeroImage()">
+          <svg viewBox="0 0 32 32">
+            <path id="Path_22" d="M4.6,16L15,5.6v8.2h12.4v4.3H15v8.2L4.6,16z"/>
+          </svg>
+        </button>
+        <button :class="$style.next" v-if="productImages.length > 1" @click="nextProductHeroImage()">
+          <svg viewBox="0 0 32 32">
+            <path id="Path_22" d="M4.6,16L15,5.6v8.2h12.4v4.3H15v8.2L4.6,16z" transform="translate(32, 32) rotate(180) "/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -418,6 +241,20 @@
           selectedAttraction: 0.15,
           friction: 0.8
           // arrowShape: 'M14.5,50l32.3-32.3v25.7h38.6v13.3H46.8v25.7L14.5,50z'
+        },
+        mainImgOtions: {
+          initialIndex: 0,
+          prevNextButtons: false,
+          // pageDots: false,
+          wrapAround: false
+        },
+        navImgOtions: {
+          asNavFor: '.targetGallery',
+          freeScroll: false,
+          contain: true,
+          prevNextButtons: false,
+          pageDots: false,
+          wrapAround: true
         }
         // FPCarouselNavOptions: {
         //   contain: true,
@@ -792,71 +629,21 @@
 
 <style lang="sass" module>
   @import "shared/button"
-  @import "shared/category_summary/product_details"
-</style>
-<style lang="sass" scoped>
-  .lovingbadge
-    margin-top: 20px
-    display: flex
-    &__image
-      height: 100px
-      width: 100px
-      margin-right: 10px
-  .FPDCarousel
-    position: relative
-    margin-bottom: 50px
-    +desktop
-      display: none
-    &__cell
-      width: 100%
-      background-color: $white
-
-  .DispatchedDays
-    font-size: 14px
-    color: #666
-    fill: #666
-    display: flex
-    flex-flow: row wrap
-    align-items: center
-    margin-bottom: 15px
-    span
-      margin-top: 2px
-      margin-left: 6px
-
-  // .FPDCarouselNav
-  //   position: relative
-  //   margin-bottom: 50px
-  //   &__cell
-  //     height: 120px
-  //     width: 120px
-  //     margin-right: 10px
-  //     background: #ED2
-  //     &.is-nav-selected
-  //       background: pink
-</style>
-
-<style lang="sass" scoped>
   @import "shared/modal"
+  @import "shared/img"
+  @import "shared/category_summary/product_details"
 
-  .image
-    position: relative
-    &-placeholder
-      padding-bottom: 100%
-      background-color: #f9f9f9
-    &-image
-      position: absolute
-      top: 0
-      left: 0
-      opacity: 0
-      visibility: hidden
-      transition: 0.6s all ease-out
-    &-loaded
+  .modal
+    &--zoomImage
       opacity: 1
       visibility: visible
-    &-zoom
-      cursor: zoom-in
-
-  #ProductDetails
+      overflow: auto
+      @media screen and (min-width: 800px)
+        display: flex
+        justify-content: center
+      @media (min-height: 904px)
+        display: flex
+        align-items: center
     .modal__overlay
       background-color: rgba($black, 0.77)
       cursor: zoom-out
@@ -881,16 +668,6 @@
         height: 100%
         width: 100%
         position: relative
-    &.modal--visible
-      opacity: 1
-      visibility: visible
-      overflow: auto
-      @media screen and (min-width: 800px)
-        display: flex
-        justify-content: center
-      @media (min-height: 904px)
-        display: flex
-        align-items: center
 
     .modal__close
       +button
@@ -947,118 +724,4 @@
         @media screen and (min-width: 968px)
           margin-left: 44px + 400
 
-</style>
-
-<style lang="sass" scoped>
-  @import "shared/button"
-  @import "shared/alerts"
-  @import "shared/form/field"
-  .imageNotLoaded
-    background-color: white
-    height: 20px
-    width: 60px
-  .emiBadge
-    background-color: darken($cyan, 15%)
-    color: white
-    padding: 2px 5px 1px
-    border-radius: 3px
-    font-size: inherit
-    display: inline-block
-    margin: 2px 0px 5px
-    &--sm
-      font-size: 12px
-
-  .emi
-    display: inline-flex
-    flex-flow: row wrap
-    margin-top: 5px
-
-  .checkbox
-    cursor: pointer
-    position: relative
-    &__input[type=checkbox]
-        position: absolute
-        visibility: hidden
-    &__check
-      position: absolute
-      top: 50%
-      left: 0
-      margin-top: -2px
-      transform: translateY(-50%)
-      width: 16px
-      height: 16px
-      border-radius: 4px
-      border-width: 2px
-      border-style: solid
-      background-color: $white
-      border-color: $purple
-      transition: none $speed $easing $speed*0.5
-      transition-property: border-color
-      z-index: 1
-      &::before,
-      &::after
-        content: ''
-        position: absolute
-        left: 0
-        top: 0
-        width: 15px
-        height: 4px
-        border-style: solid
-        border-top: 0
-        border-right: 0
-        transform-origin: center center
-        transform: rotate(310deg)
-        opacity: 0
-        visibility: hidden
-        transition: none $speed $easing $speed*0.25
-        transition-property: opacity, visibility
-      &::before
-        border-width: 7px
-        border-color: $white
-        margin-left: -2px + 1
-        margin-top: -2px - 3
-        border-radius: 3px
-      &::after
-        border-width: 3px
-        border-color: darken($purple, 5%)
-        margin-left: 1px
-        margin-top: -3px
-      &--active
-        border-color: $btn-purple
-        &::before,
-        &::after
-          opacity: 1
-          visibility: visible
-
-    &__label
-        display: inline-block
-        position: relative
-        cursor: pointer
-        padding: 2px 0px 2px 20px
-        font-size: 16px
-    &__title
-      position: relative
-  .BookingAmount
-    position: relative
-    display: flex
-    padding-top: 10px
-    &__image
-      border: 1px solid rgba($purple, 0.5)
-      width: 30px
-      height: 30px
-      border-radius: 50px
-      margin-right: 10px
-      margin-top: 3px
-      &--icon
-        padding: 2px 2px
-        color: rgba($purple, 0.9)
-        fill: rgba($purple, 0.9)
-    &__content
-      position: relative
-      &--price
-        color: $black
-        font-size: 12px
-        line-height: 16px
-      &--copy
-        color: $dark
 </style>

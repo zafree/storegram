@@ -1116,7 +1116,7 @@
     position: relative
     padding: 15px 15px 30px
     border-top: 1px solid #dddddd
-    +phablet
+    // +phablet
       padding: 15px 20px 30px
     +tablet
       position: relative
@@ -1132,7 +1132,7 @@
       width: 15px
       margin-top: -2px
       background-color: white
-      +phablet
+      // +phablet
         display: none
     &::before
       left: 0
@@ -1152,8 +1152,8 @@
       font-size: 16px
       line-height: 1.66
       font-weight: 400
-      color: $dark
-      fill: $dark
+      color: $text
+      fill: $text
     &__mobile
       font-size: 15px
       font-weight: inherit
@@ -1181,15 +1181,15 @@
       &__text
         font-size: 14px
         font-weight: 400
-        color: $dark
-        fill: $dark
+        color: $text
+        fill: $text
         flex: 1
 
     .Button
       &--click
         border: 1px solid #d9d9d9
-        color: $dark
-        fill: $dark
+        color: $text
+        fill: $text
         height: 32px
         padding: 0px 10px
         border-radius: 0
@@ -1228,7 +1228,7 @@
       height: 32px
       padding: 0 10px
       margin-left: auto
-      +btnDefault
+      +button
 
 
 
@@ -1255,7 +1255,7 @@
       margin-top: 0
       +tablet
         margin-top: -10px
-    // +phablet
+    // // +phablet
       // margin-bottom: 0
 
   .Field
@@ -1313,15 +1313,15 @@
     margin-bottom: 10px
     display: flex
     flex-flow: column-reverse wrap
-    +phablet
+    // +phablet
       flex-flow: row wrap
     &__select
-      +phablet
+      // +phablet
         flex: 1
         // padding-right: 20px
     &__useAnother
       margin-bottom: 10px
-      +phablet
+      // +phablet
         margin-bottom: 0
         flex: 180px 0
         margin-left: 20px
@@ -1367,10 +1367,10 @@
       width: 100%
       color: #555
       fill: #555
-      +btnDefault
+      +button
 
     &--confirmOrder
-      +buttonPrimary
+      +button
       width: 210px
       height: 44px
       font-size: 16px
@@ -1396,7 +1396,7 @@
       font-size: 13px
       font-weight: 400
       margin-bottom: 20px
-      +btnDark
+      +button
       .Button__icon
         display: inline-flex
         padding-right: 6px
@@ -1405,7 +1405,7 @@
       padding: 0 10px
       font-size: 13px
       // font-weight: $weight-medium
-      +buttonPrimary
+      +button
 
 
   .disabled

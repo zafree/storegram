@@ -1,10 +1,8 @@
 <template>
-  <div v-if="specialCategory">
+  <div :class="$style.wrapper" v-if="specialCategory">
     <div :class="$style.breadcrumb">
-      <div :class="$style.breadcrumbContainer">
-        <div :class="$style.breadcrumbTitle">{{ heading }}</div>
-        <breadcrumb></breadcrumb>
-      </div>
+      <div :class="$style.breadcrumbTitle">{{ heading }}</div>
+      <breadcrumb></breadcrumb>
     </div>
 
     <div :class="$style.categoryBanner">
@@ -132,4 +130,7 @@
 <style lang="sass" module>
   @import "shared/breadcrumb"
   @import "shared/banner"
+
+  .wrapper
+    +container
 </style>

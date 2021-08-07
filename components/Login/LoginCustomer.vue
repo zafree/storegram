@@ -451,8 +451,8 @@
       padding-left: 0
 
   .LinkPurple
-    color: $purple
-    fill: $purple
+    color: $primary
+    fill: $primary
 
   .SvgIconFacebook
     width: 22px
@@ -484,7 +484,7 @@
         color: $white
 
     &--loginWithPhone
-      +buttonPrimary
+      +button
       height: 56px
       width: 100%
       font-size: 18px
@@ -520,7 +520,7 @@
         color: $white
 
     &--login
-      +buttonPrimary
+      +button
       border-radius: 0
       height: 56px
       width: 100%

@@ -58,7 +58,7 @@
       position: relative
       text-align: center
       text-decoration: none
-      color: $gray
+      color: $black
       line-height: 1.5
       min-height: 50px
       padding: 11px 15px

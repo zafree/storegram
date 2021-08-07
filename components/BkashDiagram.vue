@@ -204,7 +204,7 @@
       font-weight: $weight-medium
       letter-spacing: -0.06em
       min-height: 26px
-      +btnRed
+      +button
 </style>
 
 <style lang="sass" module>
@@ -224,8 +224,8 @@
     &__step
       list-style: none
       margin-bottom: 50px
-      &:last-child 
-        margin-left: -25px 
+      &:last-child
+        margin-left: -25px
         margin-right: -25px
 
   .diagram

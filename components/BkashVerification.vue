@@ -178,5 +178,5 @@ export default {
       width: 100%
       font-weight: $weight-medium
       font-size: 15px
-      +btnRed
+      +button
 </style>

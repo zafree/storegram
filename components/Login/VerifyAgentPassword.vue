@@ -113,5 +113,5 @@ export default {
       justify-content: center
       align-item: center
       width: 100%
-      +btnGreen
+      +button
 </style>

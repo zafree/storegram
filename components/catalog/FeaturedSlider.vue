@@ -153,7 +153,7 @@
       width: 22px
       height: 22px
       fill: $white
-      +phablet
+      // +phablet
         width: 32px
         height: 32px
 </style>

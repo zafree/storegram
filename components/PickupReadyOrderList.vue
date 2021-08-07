@@ -6,7 +6,7 @@
       </span>
     </td>
     <td class="tableList__td" data-th="Name">
-      <span class="tableList__text">{{ order.customer.name }} ({{ customerSensoredPhoneNumber(order.customer.mobile)}})</span> 
+      <span class="tableList__text">{{ order.customer.name }} ({{ customerSensoredPhoneNumber(order.customer.mobile)}})</span>
     </td>
     <td class="tableList__td" data-th="Total">
       <span class="tableList__text">৳ {{ __$(order.total) }}</span>
@@ -24,7 +24,7 @@
                   <button class="Button Button--verify" type="button" @click="verifyCustomerWithOtp(order.id)">{{ i18nText.verify }}</button>
                 </div>
               </div>
-              <p class="Field__validation" v-if="errors.otp">{{ errors.otp }} 
+              <p class="Field__validation" v-if="errors.otp">{{ errors.otp }}
               <!-- --- <b @click="resetOtpError()">[x]</b> -->
                 <button class="Button, Button--close" @click="resetOtpError()">
                   <img class="Button__iconSvg Button__iconSvg--orderList" src="/svg/icon-pickuplist.svg" alt="">
@@ -55,7 +55,7 @@
   } from '~/api'
 
   import { mapGetters } from 'vuex'
-  
+
   import { otpCountdown } from '~/utils/otp_countdown_mixin'
   import i18nKeys from '~/pages/_lang/agent/ready-for-pickup-orders.i18n.yaml'
   import {
@@ -273,13 +273,13 @@
       #{$root}__validation,
       #{$root}__help
         text-align: left
-        
+
 
     &--error
       #{$root}__validation
         padding: 3px 6px
-        position: relative 
-        display: flex 
+        position: relative
+        display: flex
         align-items: center
         justify-content: space-between
         white-space: normal
@@ -297,13 +297,13 @@
     &--close
       margin-right: -8px
       background-color: transparent
-      background-color: none 
-      border: none 
+      background-color: none
+      border: none
       // margin-top: -10px
       flex: 0
       +widescreen
         background-color: transparent
-        border: none 
+        border: none
     &:not(:first-child)
       margin-left: 5px
     &--orderLink
@@ -325,11 +325,11 @@
         text-decoration: underline
         color: darken(#3a8bbb, 5%)
     &--verify
-      +btnYellow
+      +button
     &__iconSvg
       width: 12px
       height: 12px
-      +phablet 
+      // +phablet
         margin-top: 1px
       &--orderList
         margin-right: 10px

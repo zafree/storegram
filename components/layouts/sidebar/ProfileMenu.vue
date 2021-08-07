@@ -148,7 +148,7 @@
     margin-top: 30px
     &__title
       display: none
-      +phablet
+      // +phablet
         display: block
         font-size: 16px
       &__link
@@ -166,7 +166,7 @@
           background-color: rgba($black, .02)
   .isActive
     display: block
-    // +phablet
+    // // +phablet
     //   display: none
     // &::before
     //   content: ""
@@ -180,13 +180,13 @@
   // .notInCustomerPages
   //   // border: 1px solid pink
   //    display: none
-  //   // +phablet
+  //   // // +phablet
   //   //   display: none
 
   // .isInCustomerPages
   //   // border: 1px solid orange
   //   display: block
-  //   // +phablet
+  //   // // +phablet
   //   //   display: block
 
   .Nav
@@ -194,7 +194,7 @@
     display: block
     border-bottom: 1px solid $white
     z-index: 1
-    // +phablet
+    // // +phablet
       // display: none
     &__list
       padding: 0

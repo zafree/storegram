@@ -45,12 +45,12 @@ export default {
       letter-spacing: -0.06em
       height: 26px
       margin-bottom: 25px
-      +btnRed 
+      +button
     &--bKashCheckoutGreen
       justify-content: center
       width: 100%
       font-size: 15px
       height: 44px
       padding: 0 15px
-      +btnGreen
+      +button
 </style>

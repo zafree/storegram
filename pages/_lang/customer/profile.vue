@@ -777,7 +777,7 @@
     &__avatar
       width: 150px
       height: 150px
-      background-color: rgba($purple, .24)
+      background-color: rgba($primary, .24)
       border-radius: 50%
       overflow: hidden
       margin-left: auto

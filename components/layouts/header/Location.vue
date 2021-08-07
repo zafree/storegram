@@ -46,7 +46,7 @@
       position: absolute
       width: 220px
       margin-top: 12px
-      +phablet
+      // +phablet
         width: 260px
       // border-top: 1px solid red
 

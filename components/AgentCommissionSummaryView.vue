@@ -103,7 +103,7 @@
     &__col2
       background-color: rgba($yellow, 1)
     &__col3
-      background-color: rgba($purple, .7)
+      background-color: rgba($primary, .7)
     &__col4
       background-color: rgba($red, .7)
       border-radius: 0 0 2px 2px

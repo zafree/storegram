@@ -40,15 +40,15 @@ select::-ms-expand
                 flex: 1
                 width: 47%
                 position: absolute
-                +phablet
+                // +phablet
                     width: 48%
                 &.multiselect--active
-                    width: 100%                  
+                    width: 100%
             .multiselect--location
                 left: 0
                 top: 0
                 margin-right: 6%
-                +phablet
+                // +phablet
                     margin-right: 4%
             .multiselect--area
                 right: 0
@@ -98,7 +98,7 @@ select::-ms-expand
         &:focus,
         &:active
             // border-color: #777
-            border-color: $purple
+            border-color: $primary
             box-shadow: none
             outline: none
             background-color: #fff
@@ -125,8 +125,8 @@ select::-ms-expand
             border-color: $green
     &--info
         #{$root}__input
-            border-color: $cyan
-            
+            border-color: $blue
+
 
     &__help,
     &__validation
@@ -184,10 +184,10 @@ select::-ms-expand
             padding-bottom: 8px
     &--info
         #{$root}__validation
-            color: darken($cyan, 30%)
-            fill: darken($cyan, 30%)
-            background-color: rgba($cyan, 0.12)
-            border: 1px solid rgba($cyan, 0.2)
+            color: darken($blue, 30%)
+            fill: darken($blue, 30%)
+            background-color: rgba($blue, 0.12)
+            border: 1px solid rgba($blue, 0.2)
             border-radius: 2px
             padding-top: 8px
             padding-bottom: 8px
@@ -230,7 +230,7 @@ select::-ms-expand
     &--withSpanLabel
         #{$root}__price
             margin-top: 8px
-            +phablet
+            // +phablet
                 margin-top: 0
                 top: 50%
                 transform: translateY(-50%)
@@ -243,7 +243,7 @@ select::-ms-expand
                 top: 50%
                 transform: translateY(-50%)
         #{$root}__sub
-            +phablet
+            // +phablet
                 padding-right: 80px
             +tablet
                 padding-right: 0
@@ -269,7 +269,7 @@ select::-ms-expand
             font-size: 14px
             line-height: 1.66
             font-weight: 400
-            margin-top: -15px 
+            margin-top: -15px
             color: $black
             +tablet
                 padding-right: 0px
@@ -329,9 +329,9 @@ select::-ms-expand
                     bottom: auto
                     z-index: 1
 
-    
-                       
-            
+
+
+
         // &--portwallet
             // background-image: url(/svg/payment/portwallet.svg)
 
@@ -356,7 +356,7 @@ select::-ms-expand
         width: 16px
         height: 16px
         border-radius: 4px
-        border-width: 2px 
+        border-width: 2px
         border-style: solid
         background-color: $white
         border-color: $green
@@ -370,7 +370,7 @@ select::-ms-expand
             top: 0
             width: 15px
             height: 4px
-            border-style: solid 
+            border-style: solid
             border-top: 0
             border-right: 0
             transform-origin: center center
@@ -380,18 +380,18 @@ select::-ms-expand
             transition: none $speed $easing $speed*0.25
             transition-property: opacity, visibility
         &::before
-            border-width: 7px 
+            border-width: 7px
             border-color: $white
             margin-left: -2px + 1
             margin-top: -2px - 3
             border-radius: 3px
         &::after
-            border-width: 3px 
+            border-width: 3px
             border-color: darken($green, 5%)
             margin-left: 1px
             margin-top: -3px
         &--active
-            border-color: $btn-green
+            border-color: $black
             &::before,
             &::after
                 opacity: 1

@@ -835,11 +835,11 @@
       letter-spacing: -0.06em
       height: 26px
       margin-bottom: 25px
-      +btnRed
+      +button
 
     &--inlineLink
       padding: 0
-      color: $dark
+      color: $text
       text-decoration: underline
       line-height: inherit
     &--diagram
@@ -867,10 +867,10 @@
       border-radius: 6px
       font-size: 13px
       font-weight: $weight-medium
-      +btnRed
+      +button
 
     &--paywithCard
-      +buttonPrimary
+      +button
       justify-content: center
       width: 100%
       font-size: 15px
@@ -878,7 +878,7 @@
       padding: 0 15px
       margin-bottom: 10px
     &--bkashShowDetailsModal
-      +buttonPrimary
+      +button
       justify-content: center
       width: 100%
       font-size: 15px

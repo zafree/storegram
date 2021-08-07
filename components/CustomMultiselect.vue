@@ -224,7 +224,7 @@
         outline: none
       &--active
         outline: none 
-        border-color: $purple
+        border-color: $primary
     &__input
       position: relative
       width: 100%

@@ -117,7 +117,7 @@
     // &__hero
     //   display: none
     //   +tablet
-    //     // background-color: $purple
+    //     // background-color: $primary
     //     position: relative
     //     overflow: hidden
     //     display: flex

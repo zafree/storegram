@@ -65,7 +65,7 @@
   //   &__title
   //     font-size: 13px
   //     font-weight: $weight-medium
-  //     +phablet
+  //     // +phablet
   //       font-size: 16px
   //     &__link
   //       padding: 15px
@@ -88,6 +88,6 @@
 
   // .isInCustomerPages
   //   // border: 1px solid blue
-  //   +phablet
+  //   // +phablet
   //     display: none
 </style>

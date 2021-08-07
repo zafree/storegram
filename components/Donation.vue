@@ -82,7 +82,7 @@
       opacity: 0
       margin-left: -73px
       padding: 0 8px
-      +btnYellow
+      +button
     &--details
       text-decoration: underline
       font-size: 13px

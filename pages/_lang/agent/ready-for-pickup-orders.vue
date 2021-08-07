@@ -131,7 +131,7 @@
     margin-left: -15px
     margin-right: -15px
     height: 100%
-    +phablet
+    // +phablet
       margin-left: 0
       margin-right: 0
       padding: 20px 30px 30px
@@ -326,8 +326,8 @@
         text-decoration: underline
         color: darken(#3a8bbb, 5%)
     &--verify
-      +btnYellow
-      
+      +button
+
 
 </style>
 

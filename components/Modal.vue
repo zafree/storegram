@@ -64,20 +64,14 @@
     display: block
     text-align: center
     overflow: auto
-
     &::before
       content: ''
       display: inline-block
       vertical-align: top
       height: 100%
-      +phablet
+      +tablet
         margin-right: -.25em
         vertical-align: middle
-    &--onlyAgentMode
-      +phablet
-        padding-bottom: 200px
-      +tablet
-        padding-bottom: 0px
     &--fixedTop
       overflow-y: scroll
       .Overlay__dialog
@@ -97,10 +91,10 @@
       background-color: $white
       min-height: 100%
       text-align: left
-      box-shadow: 0 4px 14px 0 rgba(0,0,0,.3)
-      +phablet
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,.2)
+      +tablet
         min-height: 500px
-        border-radius: 3px
+        border-radius: 8px
         margin-top: 70px
         margin-bottom: 70px
 

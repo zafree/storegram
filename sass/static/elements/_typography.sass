@@ -1,6 +1,6 @@
 .Container
     +container
-    
+
 h1,
 h2,
 h3,
@@ -16,7 +16,7 @@ p
     line-height: 1.11
     font-weight: 700
     text-transform: uppercase
-    +phablet
+    // +phablet
         font-size: 36px
     +desktop
         font-size: 42px
@@ -30,7 +30,7 @@ p
     fill: #9ea0a6
     font-weight: 700
     text-transform: uppercase
-    +phablet
+    // +phablet
         font-size: 36px
     +desktop
         font-size: 42px
@@ -43,7 +43,7 @@ p
     line-height: 1.66
     margin-top: 15px
     max-width: 23em
-    +phablet
+    // +phablet
         font-size: 16px
     +tablet
         font-size: 18px
@@ -59,7 +59,7 @@ p
     margin-top: 10px
     font-size: 14px
     line-height: 2
-    +phablet
+    // +phablet
     +tablet
         font-size: 15px
     +widescreen
@@ -81,7 +81,7 @@ p
 .Herocase
     margin-top: 25px
     margin-bottom: 25px
-    +phablet
+    // +phablet
         margin-top: 50px
         margin-bottom: 30px
     +tablet
@@ -115,7 +115,7 @@ p
     &--graf
         margin-top: 45px
         margin-bottom: 35px
-        +phablet
+        // +phablet
             margin-top: 80px
             margin-bottom: 45px
         +widescreen
@@ -140,7 +140,7 @@ p
     &__row
         margin-left: -15px
         margin-right: -15px
-        +phablet
+        // +phablet
             margin-left: 0
             margin-right: 0
     &--graf
@@ -151,7 +151,7 @@ p
 .RegionHalve
     &--broaden
         margin-left: 0
-        +phablet
+        // +phablet
             margin-right: calc((100vw - 473px)/-2)
         +tablet
             margin-right: calc((100vw - 700px)/-2)
@@ -162,7 +162,7 @@ p
 
     &--broadenLeft
         margin-right: 0
-        +phablet
+        // +phablet
             margin-left: calc((100vw - 473px)/-2)
         +tablet
             margin-left: calc((100vw - 700px)/-2)
@@ -210,7 +210,7 @@ p
     position: relative
     padding-top: 25px
     padding-bottom: 25px
-    +phablet
+    // +phablet
         padding-top: 30px
         padding-bottom: 30px
     +tablet
@@ -222,7 +222,7 @@ p
     + .textion
         border-top: 1px solid #eee
     &__container
-        +container960
+        +container
     &__row
         display: flex
         flex-wrap: wrap
@@ -265,7 +265,7 @@ p
         margin-top: 15px
         font-size: 14px
         line-height: 2
-        +phablet
+        // +phablet
             margin-top: 20px
         +desktop
             font-size: 16px
@@ -275,7 +275,7 @@ p
             line-height: 1.44
             margin-top: 20px
             font-weight: 700
-            +phablet
+            // +phablet
                 // margin-top: 30px
             &:not(:first-child)
                 margin-top: 30px
@@ -286,13 +286,13 @@ p
             line-height: inherit
             &:not(:last-child)
                 margin-bottom: 15px
-                +phablet
+                // +phablet
                     margin-top: 20px
 
         a
             text-decoration: none
             color: #4285f4
-            fill: $cyan
+            fill: $blue
             &:hover
                 text-decoration: underline
 
@@ -303,7 +303,7 @@ p
             margin: 0
             padding: 0 0 0 18px
             margin-top: 15px
-            // +phablet
+            // // +phablet
             //     margin-top: 20px
             // // &:not(:last-child)
             // //     margin-bottom: 50px
@@ -315,7 +315,7 @@ p
                 padding-left: 15px
                 &:not(:last-child)
                     margin-bottom: 10px
-                    +phablet
+                    // +phablet
                         margin-bottom: 20px
 
         ol
@@ -324,7 +324,7 @@ p
                 padding-left: 10px
                 &:not(:last-child)
                     margin-bottom: 10px
-                    +phablet
+                    // +phablet
                         margin-bottom: 20px
 
         table
@@ -344,7 +344,7 @@ p
                     border-top: 1px solid rgba($black, .06)
                     &:hover
                         background-color: rgba($black, .04)
-            
+
             tr
                 display: flex
                 flex-flow: row wrap
@@ -395,7 +395,7 @@ p
         margin-right: -15px
         margin-top: 30px
         +clearfix
-        +phablet
+        // +phablet
             margin-left: auto
             margin-right: auto
 
@@ -424,7 +424,7 @@ p
                 margin-right: auto
 
     &--firstElem
-        +phablet
+        // +phablet
             padding-top: 0
         // padding-top: 15px
 
@@ -434,7 +434,7 @@ p
     padding-right: 0
     margin-top: 30px
     margin-bottom: 30px
-    +phablet
+    // +phablet
         margin-top: 40px
         margin-bottom: 15px
         padding-left: 15px
@@ -459,7 +459,7 @@ p
         // width: 100%
         width: 175px
         margin-bottom: 10px
-        // +phablet
+        // // +phablet
         //     width: 160px
         //     margin-bottom: 10px
         +tablet
@@ -473,7 +473,7 @@ p
         padding-right: 20px
         align-self: stretch
         // background-color: rgba(black, .2)
-        // +phablet
+        // // +phablet
         //     flex: 1
         //     // padding-left: 90px
         //     // padding-right: 90px
@@ -546,7 +546,7 @@ p
         color: #999999
         fill: #999999
         font-style: italic
-        +phablet
+        // +phablet
             margin-top: 5px
         // +tablet
         +desktop
@@ -570,10 +570,10 @@ p
 
 .WaitList
     margin-bottom: 0
-    +phablet
+    // +phablet
         margin-bottom: 40px
     &__container
-        +container960
+        +container
     &__row
         background-color: $red
         border-radius: 2px
@@ -581,7 +581,7 @@ p
         margin-right: -15px
         padding: 30px 0
         text-align: center
-        +phablet
+        // +phablet
             margin-left: 0
             margin-right: 0
             padding: 30px 40px
@@ -595,7 +595,7 @@ p
     &__colLeft
         padding-left: 15px
         padding-right: 15px
-        +phablet
+        // +phablet
             padding-left: 0
             padding-right: 0
         +tablet
@@ -606,7 +606,7 @@ p
         padding-right: 15px
         margin-top: 10px
         // background-color: rgba($black, .1)
-        +phablet
+        // +phablet
             padding-left: 0
             padding-right: 0
         +tablet

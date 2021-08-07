@@ -11,7 +11,7 @@ $gutter: 15px
         display: flex
         flex-direction: column
         padding-bottom: 5px
-        +phablet
+        // +phablet
             padding-bottom: 10px + 5
         +tablet
             padding-bottom: 5px + 3
@@ -30,7 +30,7 @@ $gutter: 15px
             //a
             padding-left: 5px
             padding-right: 5px
-            +phablet
+            // +phablet
                 padding-left: 10px
                 padding-right: 10px
             +tablet
@@ -47,7 +47,7 @@ $gutter: 15px
             display: none
             padding-left: 5px
             padding-right: 5px
-            +phablet
+            // +phablet
                 padding-left: 10px
                 padding-right: 10px
             +tablet
@@ -87,7 +87,7 @@ $gutter: 15px
                 transition: none $speed*5 $easing
                 transition-property: opacity
                 // background-color: rgba($white, .5)
-                +phablet
+                // +phablet
                     transform: translateY(-100%)
                     margin-left: -10px
                     margin-top: 0
@@ -116,7 +116,7 @@ $gutter: 15px
             margin-left: -18px + 5px
             margin-top: 3px - 5px
             box-shadow: 0 1px 6px rgba($black, .26)
-            +phablet
+            // +phablet
                 transform: translateY(-100%)
                 margin-left: 0
                 margin-top: -10px
@@ -135,7 +135,7 @@ $gutter: 15px
             overflow: hidden
             margin-top: 6px
             margin-bottom: 4px
-            +phablet
+            // +phablet
                 margin-top: 4px
                 margin-bottom: 5px
                 max-height: 38px
@@ -151,7 +151,7 @@ $gutter: 15px
         &__content
             flex: 0 0 auto
             margin-bottom: 10px
-            +phablet
+            // +phablet
                 margin-bottom: 0
             +tablet
                 margin-bottom: 5px
@@ -191,7 +191,7 @@ $gutter: 15px
             right: 0
             margin-bottom: 2px
             margin-right: 10px
-            +phablet
+            // +phablet
                 margin-bottom: 3px
             +tablet
                 margin-bottom: 1px
@@ -203,7 +203,7 @@ $gutter: 15px
             // right: 0
             // margin-right: 10px
             // margin-bottom: 15px
-            // +phablet
+            // // +phablet
             //     margin-bottom: 10px
             // +tablet
             //     margin-bottom: 15px
@@ -216,7 +216,7 @@ $gutter: 15px
             right: 0
             margin-right: 12px
             margin-top: 12px
-            +phablet
+            // +phablet
                 margin-right: 20px
                 margin-top: 20px
             +tablet
@@ -238,7 +238,7 @@ $gutter: 15px
         width: 60%
         &__isagent
             width: 40%
-        +phablet
+        // +phablet
             width: 50%
         +tablet
             width: 60%
@@ -248,7 +248,7 @@ $gutter: 15px
             width: 50%
         &__text
             font-size: 12px
-            +phablet
+            // +phablet
                 font-size: 13px
             +tablet
                 font-size: 12px
@@ -257,7 +257,7 @@ $gutter: 15px
 
         &:before
             left: -(($ribbon-height - 3)/2)
-            +phablet
+            // +phablet
                 left: -($ribbon-height/2)
             +tablet
                 left: -(($ribbon-height - 3)/2)

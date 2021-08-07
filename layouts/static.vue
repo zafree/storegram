@@ -127,7 +127,7 @@
     width: 72px
     height: 45px
     // background-color: rgba(green, 0.2)
-    +phablet
+    // +phablet
       order: 1
     +tablet
       width: 144px
@@ -137,7 +137,7 @@
   .login
     height: 44px
     // background-color: rgba(blue, 0.2)
-    +phablet
+    // +phablet
       order: 3
     +tablet
       height: 56px
@@ -160,7 +160,7 @@
     width: 100%
     margin-top: 10px
     // background-color: rgba(pink, 0.2)
-    +phablet
+    // +phablet
       order: 2
       flex: 1
       padding-left: 30px

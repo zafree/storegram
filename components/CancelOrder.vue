@@ -98,32 +98,4 @@ export default {
 <style lang="sass" scoped>
   @import "shared/form/field"
   @import "shared/button"
-
-  .button
-    // &--back
-    //     display: flex
-    //     justify-content: center
-    //     align-item: center
-    //     color: $btn-green-color
-    //     fill: $btn-green-color
-    //     background-color: $btn-green
-    //     width: 100%
-    //     &:hover,
-    //     &:focus
-    //       color: $btn-green-color-hover
-    //       fill: $btn-green-color-hover
-    //       background-color: $btn-green-hover
-    // &--continue
-    //     display: flex
-    //     justify-content: center
-    //     align-item: center
-    //     color: $btn-green-color
-    //     fill: $btn-green-color
-    //     background-color: $btn-green
-    //     width: 100%
-    //     &:hover,
-    //     &:focus
-    //       color: $btn-green-color-hover
-    //       fill: $btn-green-color-hover
-    //       background-color: $btn-green-hover
 </style>

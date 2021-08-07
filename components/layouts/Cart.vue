@@ -543,7 +543,7 @@
 
   .Button
     &--placeOrder
-      +buttonPrimary
+      +button
       border-radius: 50em
       font-size: 14px
       font-weight: $weight-medium
@@ -555,7 +555,7 @@
       align-items: center
       margin-top: 20px
     &--backToShopping
-      +buttonPrimary
+      +button
       width: 100%
       font-size: 16px
       height: 56px

@@ -422,10 +422,10 @@
         text-decoration: underline
         color: darken(#3a8bbb, 5%)
     &--pay
-      +buttonPrimary
+      +button
 
     &--details
-      +btnDark
+      +button
 
 </style>
 

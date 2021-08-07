@@ -81,8 +81,8 @@
     fill: $green
     background-color: rgba($green, 0.2)
   &.info
-    border-color: lighten($cyan, 10%)
-    color: darken($cyan, 25%)
-    fill: darken($cyan, 25%)
-    background-color: lighten($cyan, 25%)
+    border-color: lighten($blue, 10%)
+    color: darken($blue, 25%)
+    fill: darken($blue, 25%)
+    background-color: lighten($blue, 25%)
 </style>

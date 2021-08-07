@@ -108,7 +108,7 @@
     padding-left: 30px
     padding-right: 30px
     font-size: 16px
-    +btnYellow
+    +button
 
   .Offline
     margin-top: 30px
@@ -160,7 +160,7 @@
     position: fixed
     width: 100%
     min-width: 320px
-    background-color: $purple
+    background-color: $primary
     z-index: $z-index-2-header
     left: 0
     top: 0

@@ -274,7 +274,7 @@ export default {
       justify-content: center
       align-item: center
       width: 100%
-      +btnGreen
+      +button
 
   .oneClickStatement
     font-size: 13px
