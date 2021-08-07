@@ -17,8 +17,14 @@ import trim from 'lodash/trim'
 import logger from '~/utils/logger'
 
 import {
+  callMockApi
+} from '~/api/mock'
+
+import {
   getUrlFromTemplate
 } from '~/utils'
+
+const isMock = process.env.MOCK_API === 'true'
 
 /*
   Do not remove following functions that were commented our temporarily:
@@ -85,6 +91,10 @@ function chainCancellable (promise) {
 let cacheInvalidatingTimestamp = Date.now()
 
 function callApi (requestConfig) {
+  if (isMock) {
+    return callMockApi(requestConfig)
+  }
+
   if (process.env.API_ROOT) {
     if (isString(requestConfig)) {
       requestConfig = {
