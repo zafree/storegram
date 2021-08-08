@@ -52,14 +52,11 @@
   import {
     overlayMixin,
     i18nMixin,
-    makeDefaultImageMeta,
     getRandomColorCssClass,
     calculateEmi
   } from '~/utils'
 
   import { mapState, mapGetters } from 'vuex'
-
-  const DEFAULT_IMAGE_SVG = ('/clients/bronx/icons/default-image-md.svg')
 
   export default {
     mixins: [i18nMixin('ProductCardThumbnail'), overlayMixin],
@@ -125,9 +122,7 @@
         if (this.product && this.product.image_info && this.product.image_info.length) {
           return this.product.image_info
         } else {
-          return [
-            makeDefaultImageMeta(DEFAULT_IMAGE_SVG)
-          ]
+          return []
         }
       },
       randomColorClass () {

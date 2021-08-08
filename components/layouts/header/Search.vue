@@ -82,7 +82,7 @@ import { mixin as onClickOutside } from 'vue-on-click-outside'
 import ComputedImage from '~/components/ComputedImage'
 import i18nLink from '~/components/i18nLink'
 
-import { i18nRedirect } from '~/utils'
+import { i18nRedirect, overlayMixin } from '~/utils'
 
 const productRouteRE = /^(lang-)?product-/
 const searchRouteRE = /^(lang-)?search-/
@@ -92,7 +92,7 @@ import {
 } from '~/api'
 
 export default {
-  mixins: [onClickOutside],
+  mixins: [onClickOutside, overlayMixin],
   data () {
     return {
       searchInput: null,
@@ -175,6 +175,7 @@ export default {
       } else if (this.currentItem > -1) {
         this.goToSelectedResultPage(this.searchResult[this.currentItem])
       }
+      this.closeAnyOverlayIfOpen()
     },
     goToSelectedResultPage (value) {
       let clonedValue = cloneDeep(value)

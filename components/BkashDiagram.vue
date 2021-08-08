@@ -306,7 +306,7 @@
     background-color: rgba($red, .15)
     color: $red
     padding: 1px 5px
-    border-radius: 4px
+    border-radius: $gutter/4
     letter-spacing: .06em
     margin: 0 2px
   .gighlight

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['wrapper', {'isActive': isActive}]">
+  <div :class="[$style.category, {[$style.categoryActive]: isActive}]">
     <category-menu></category-menu>
     <side-bar-categories></side-bar-categories>
   </div>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
   import CategoryMenu from '~/components/layouts/CategoryMenu'
   import SideBarCategories from '~/components/layouts/SideBarCategories'
   import i18nLink from '~/components/i18nLink'
@@ -47,47 +46,11 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .wrapper
-    position: relative
-    margin-top: 30px
-    padding-bottom: 120px
-    display: none
-    &.isActive
-      display: block
-
-</style>
-
 <style lang="sass" module>
-  // .Sidebar
-  //   position: relative
-  //   display: none
-  //   &__title
-  //     font-size: 13px
-  //     font-weight: $weight-medium
-  //     // +phablet
-  //       font-size: 16px
-  //     &__link
-  //       padding: 15px
-  //       min-height: 54px
-  //       text-decoration: none
-  //       color: $text
-  //       fill: $text
-  //       flex: 1 100%
-  //       margin: 0
-  //       display: flex
-  //       align-items: center
-  //       flex-flow: row wrap
-  //       &:hover
-  //         background-color: rgba($black, .02)
-
-  //   // hidden on phablet, laptop, desktop and widescreen
-
-  // .isActive
-  //   display: block
-
-  // .isInCustomerPages
-  //   // border: 1px solid blue
-  //   // +phablet
-  //     display: none
+  .category
+    display: none
+    position: relative
+    padding: $gutter*2 0
+    &--active
+      display: block
 </style>

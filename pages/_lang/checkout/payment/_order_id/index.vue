@@ -723,7 +723,7 @@
     padding: 15px 15px 14px 20px
     margin-left: -20px
     margin-top: 25px
-    border-radius: 4px
+    border-radius: $gutter/4
     &__title
       position: absolute
       color: $red
@@ -751,7 +751,7 @@
       background-color: rgba($red, .15)
       color: $red
       padding: 1px 5px
-      border-radius: 4px
+      border-radius: $gutter/4
       letter-spacing: .06em
       margin: 0 2px
 
@@ -848,7 +848,7 @@
       border: 1px solid rgba($black, .5)
       color: $red
       fill: $red
-      border-radius: 4px
+      border-radius: $gutter/4
       margin-top: 20px
       white-space: normal
       text-align: left
@@ -897,7 +897,7 @@
       border: 1px solid #ddd
       background-color: $white
       overflow: hidden
-      border-radius: 4px
+      border-radius: $gutter/4
       background-position: 0 center
       background-repeat: no-repeat
       background-size: 56px auto

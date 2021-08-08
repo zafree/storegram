@@ -14,67 +14,7 @@
     background-color: $light
     color: $text
 
-.Button
-  display: inline-block
-  position: relative
-  text-align: center
-  text-decoration: none
-  cursor: pointer
-  border: none
-  border-radius: 2px
-  background-color: transparent
-  vertical-align: top
-  white-space: nowrap
-  text-rendering: auto
-  user-select: none
-  letter-spacing: 0
-  font-weight: 400
-  font-style: normal
-  box-shadow: none
-  padding-top: 10px
-  padding-bottom: 10px
-  color: rgba($black,.44)
-  fill: rgba($black,.44)
-  transition: all .2s ease
-  text-transform: uppercase
-  &:hover
-    color: rgba($black,.66)
-    fill: rgba($black,.66)
-
-  &:focus,
-  &:active
-    outline: none
-
-  &__iconSvg
-    width: 14px
-    height: 14px
-    &--left
-        margin-left: 13px
-
-  // close modal component
-  &--modalClose
-    // font-size: 31px
-    // line-height: 1.33em
-    position: absolute
-    right: 0
-    top: 0
-    height: 40px
-    width: 40px
-    padding: 0
-    color: rgba($white,.44)
-    fill: rgba($white,.44)
-    &:hover
-      color: rgba($white,.66)
-      fill: rgba($white,.66)
-    &:focus,
-    &:active
-      outline: none
-  &--close
-    color: rgba($black, .22)
-    fill: rgba($black, .22)
-    &:hover
-      color: rgba($black, .44)
-      fill: rgba($black, .44)
-  &--disable
+  &--muted
     cursor: not-allowed
-    opacity: .5
+    background-color: $light
+    color: rgba($black, 0.55)

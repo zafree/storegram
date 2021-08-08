@@ -68,9 +68,7 @@
 
           <div :class="$style.productAction">
             <template v-if="currentVariant.out_of_stock">
-              <div v-if="productRequestMsg" :class="$style.requestedMsg">
-                {{productRequestMsg}}
-              </div>
+              <p v-if="productRequestMsg" :class="$style.copy">{{productRequestMsg}}</p>
               <button v-else
                 :class="[$style.btn, $style.btnLight]"
                 @click="requestForProduct()">
@@ -143,7 +141,6 @@
     overlayMixin,
     i18nMixin,
     i18nRedirect,
-    makeDefaultImageMeta,
     getRandomColorCssClass,
     calculateEmi
   } from '~/utils'
@@ -208,7 +205,7 @@
     }
   }
 
-  const DEFAULT_IMAGE_SVG = ('/clients/bronx/icons/default-image.svg')
+  // const DEFAULT_IMAGE_SVG = ('/clients/bronx/icons/default-image.svg')
 
   export default {
     mixins: [i18nMixin('ProductDetails'), overlayMixin, enumMixinFactory('AdvancePayment'), ga, gaEnhancedEcom],
@@ -367,9 +364,7 @@
         if (this.currentVariant && this.currentVariant.image_info && this.currentVariant.image_info.length) {
           return this.currentVariant.image_info
         } else {
-          return [
-            makeDefaultImageMeta(DEFAULT_IMAGE_SVG)
-          ]
+          return []
         }
       },
       currentImage () {
@@ -456,8 +451,10 @@
       //   return this.product.offers[index].logo_image
       // },
       openProductImageZoomMode () {
-        this.openOverlay(OVERLAY_PRODUCT_IMAGE)
-        this.productImageInZoomMode = true
+        if (this.imageIsLoaded) {
+          this.openOverlay(OVERLAY_PRODUCT_IMAGE)
+          this.productImageInZoomMode = true
+        }
       },
       closeProductImageZoomMode () {
         this.closeOverlayIfOpen(OVERLAY_PRODUCT_IMAGE)
@@ -632,6 +629,9 @@
   @import "shared/modal"
   @import "shared/img"
   @import "shared/category_summary/product_details"
+
+  .copy
+    font-size: 14px
 
   .modal
     &--zoomImage

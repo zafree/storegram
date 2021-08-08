@@ -13,21 +13,6 @@
           </slot>
         </div>
 
-        <!-- sidebar -->
-        <div :class="[$style.appSidebar, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside1)}]" v-if="!pageMode.checkoutMode">
-          <div :class="$style.modalOverlay" @click="closeAside1"></div>
-          <div :class="$style.modalContent">
-            <button :class="[$style.modalClose, $style.btn]" @click="closeAside1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                <use xlink:href="/svg/icons.svg?#i-close"></use>
-              </svg>
-            </button>
-            <slot name="aside1">
-              <sidebar></sidebar>
-            </slot>
-          </div>
-        </div>
-
         <!-- <div :class="[$style.appHeaderClone, {[$style.appHeaderWithoutGlobalSearch]: pageMode.checkoutMode}]"></div> -->
         <!-- Content Top/Banner/Location Selector -->
         <notification type="error" v-if="isVacationMode && !pageMode.homePage">
@@ -52,10 +37,25 @@
           <loading-animation v-show="isNavigating"></loading-animation>
         </main>
 
-        <!-- Cart Sidebar -->
+        <!-- sidebar modal -->
+        <div :class="[$style.appSidebar, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside1)}]" v-if="!pageMode.checkoutMode">
+          <div :class="$style.modalOverlay" @click="closeAside1"></div>
+          <div :class="[$style.modalContent, $style.modalContentFullHeight, $style.modalContentFromLeft]">
+            <button :class="[$style.modalClose, $style.btn]" @click="closeAside1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <use xlink:href="/svg/icons.svg?#i-close"></use>
+              </svg>
+            </button>
+            <slot name="aside1">
+              <sidebar></sidebar>
+            </slot>
+          </div>
+        </div>
+
+        <!-- cart modal -->
         <div :class="[$style.appCart, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside2)}, {[$style.modalVisible]: pageMode.checkoutMode}]" v-if="!pageMode.paymentMode">
           <div :class="$style.modalOverlay" @click="closeAside2"></div>
-          <div :class="$style.modalContent">
+          <div :class="[$style.modalContent, $style.modalContentFullHeight, $style.modalContentFromRight]">
             <button :class="[$style.modalClose, $style.btn]" @click="closeAside2">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                 <use xlink:href="/svg/icons.svg?#i-close"></use>
@@ -68,10 +68,10 @@
           </div>
         </div>
 
-        <!-- Search modal -->
+        <!-- search modal -->
         <div :class="[$style.appSearch, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside3)}]" v-if="!pageMode.checkoutMode">
           <div :class="$style.modalOverlay" @click="closeAside3"></div>
-          <div :class="$style.modalContent">
+          <div :class="[$style.modalContent, $style.modalContentFromTop]">
             <button :class="[$style.modalClose, $style.btn]" @click="closeAside3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                 <use xlink:href="/svg/icons.svg?#i-close"></use>
@@ -111,7 +111,7 @@
 
           <!-- Login -->
           <slot name="login" v-if="!pageMode.checkoutMode">
-            <transition name="fade">
+            <transition>
               <login v-if="isOverlayOpen(overlays.loginModal)" :success-callback="checkForReview"></login>
             </transition>
           </slot>
@@ -373,7 +373,9 @@
       background-color: $white
       margin-top: 80px
     &__sidebar
-      width: 283px
+      width: 100%
+      max-width: 320px
+      // height: 100%
     &__cart
       width: 320px
       margin-left: auto
@@ -386,6 +388,9 @@
     &__close
       height: 44px
       width: 44px
+      margin-left: auto
+      margin-top: $gutter
+      margin-right: $gutter
     // &__content
       height: 100%
 

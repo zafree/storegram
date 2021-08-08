@@ -25,6 +25,11 @@
     &:#{$placeholder}-placeholder
       @content
 
+=text-ellipsis
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
 =button
   position: relative
   display: flex
@@ -36,7 +41,7 @@
   font-size: 14px
   font-family: $family-base
   font-weight: $weight-bold
-  border-radius: 4px
+  border-radius: $gutter/4
   border: none
   padding: 0
   overflow: hidden

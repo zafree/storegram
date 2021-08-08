@@ -679,7 +679,7 @@
      max-width: 290px
      background-color: rgba($white, .8)
      padding: 20px 15px
-     border-radius: 4px
+     border-radius: $gutter/4
      +tablet
        font-size: 16px
        max-width: 500px

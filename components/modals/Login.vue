@@ -1,14 +1,7 @@
 <template>
   <modal :on-click-outside="closeLoginModal">
-    <template slot="hero">
-      <img :class="$style.heroImage" :src="brandLogo" alt="Hero Logo">
-    </template>
+    <template slot="title">Sign In</template>
     <login :success-callback="closeLoginModal"></login>
-    <template slot="actions">
-      <button :class="[$style.button, $style.buttonModalClose]" type="button" name="button" @click="closeLoginModal">
-        <img :class="[$style.buttonIconSvg, $style.buttonIconSvgLeft]" src="/svg/icon-times.svg" alt="Modal Close">
-      </button>
-    </template>
   </modal>
 </template>
 
@@ -64,8 +57,4 @@
 
 <style lang="sass" module>
   @import "shared/button"
-
-  .heroImage
-    width: auto
-    height: 80%
 </style>
