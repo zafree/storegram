@@ -18,5 +18,13 @@ module.exports = {
       "patterns": ["import/lodash/*"],
     }]
   },
+  overrides: [
+    {
+      "files": ["*.js", "*.json"],
+      "rules": {
+        "quotes": 0
+      }
+    }
+  ],
   globals: {}
 }

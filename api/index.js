@@ -24,8 +24,6 @@ import {
   getUrlFromTemplate
 } from '~/utils'
 
-const isMock = process.env.MOCK_API === 'true'
-
 /*
   Do not remove following functions that were commented our temporarily:
 
@@ -91,7 +89,7 @@ function chainCancellable (promise) {
 let cacheInvalidatingTimestamp = Date.now()
 
 function callApi (requestConfig) {
-  if (isMock) {
+  if (process.env.MOCK_API === 'true') {
     return callMockApi(requestConfig)
   }
 

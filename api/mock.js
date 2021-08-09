@@ -1,6 +1,6 @@
 import axios from '~/plugins/axios'
 import location from '~/api/mock/location.json'
-import categories from '~/api/mock/categories.js'
+import { categories } from '~/api/mock/categories'
 import {
   API_END_POINTS as API,
   FB_LOGIN_ERROR,
