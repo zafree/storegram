@@ -470,7 +470,7 @@ export function updateCustomer (authToken, attributes) {
 
 function validateCartItemsOfLocalStorage (authToken, cart) {
   const requestConfig = {
-    name: 'validateCartItemsOfLocalStorage',
+    name: 'saveOrValidateCart',
     access_token: authToken,
     url: API.CART_VALIDATE,
     method: 'post',
@@ -487,7 +487,7 @@ function validateCartItemsOfLocalStorage (authToken, cart) {
 
 function saveCart (authToken, cart) {
   const requestConfig = {
-    name: 'saveCart',
+    name: 'saveOrValidateCart',
     access_token: authToken,
     url: API.CART_SAVE,
     method: 'post',
