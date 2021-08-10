@@ -54,6 +54,7 @@ export default async function loadCategoriesByChunk (currentCategory, specialCat
     try {
       const result = await getSpecialCategoryProducts(category, context, agentToken, from, take)
 
+      console.log('result', result)
       if (result[category.id]) {
         if (vm.categoryProducts[category.id]) {
           result[category.id].forEach(p => {

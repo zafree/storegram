@@ -1,0 +1,30 @@
+{
+  "id":78595,
+  "name":{
+    "en":"ZAYYAN Contrast Red & White Stripe  Cotton Panjabi",
+    "bn":"ZAYYAN Contrast Red & White Stripe  Cotton Panjabi"
+  },
+  "slug":"zayyan-contrast-red-white-stripe-cotton-panjabi",
+  "variant_slug":"xxl-2190",
+  "emi_tenures":[],
+  "image_info":[
+    {
+        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/product-78592.png",
+        "width":1600,
+        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_1600_1200.png 1600w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_1338_1003.png 1338w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_1120_840.png 1120w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_937_702.png 937w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_783_587.png 783w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_655_491.png 655w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_548_411.png 548w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_459_344.png 459w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_384_288.png 384w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_321_240.png 321w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_268_201.png 268w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/responsive-images\/product-78592___medialibrary_original_224_168.png 224w",
+        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/472073\/product-78592.png"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":675,
+  "unit_price":1350,
+  "available_qty":1,
+  "out_of_stock":false,
+  "varies_on":[
+    "apparel-size"
+  ],
+  "variant_count":4,
+  "commission":null,
+  "primary_variant_id":78595,
+  "offers":[]
+}

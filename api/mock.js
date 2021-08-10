@@ -1,6 +1,8 @@
 import axios from '~/plugins/axios'
 import location from '~/api/mock/location.json'
 import { categories } from '~/api/mock/categories'
+import { getCategoryProducts } from '~/api/mock/products/getCategoryProducts'
+
 import {
   API_END_POINTS as API,
   FB_LOGIN_ERROR,
@@ -11,7 +13,7 @@ import isString from 'lodash/isString'
 import extend from 'lodash/extend'
 import omit from 'lodash/omit'
 import get from 'lodash/get'
-import map from 'lodash/map'
+// import map from 'lodash/map'
 import some from 'lodash/some'
 import trim from 'lodash/trim'
 
@@ -138,11 +140,13 @@ export function callMockApi (requestConfig) {
       // return getProductBySlug()
       return callApi(requestConfig)
     case 'getCategoryProducts':
-      // return getCategoryProducts()
-      return callApi(requestConfig)
+      return getCategoryProducts()
+      // return callApi(requestConfig)
     case 'getSpecialCategoryProducts':
-      // return getSpecialCategoryProducts()
-      return callApi(requestConfig)
+      console.log('am i getting called?')
+      console.log('getCategoryProducts', getCategoryProducts())
+      return getCategoryProducts()
+      // return callApi(requestConfig)
     case 'createOtp':
       // return createOtp()
       return callApi(requestConfig)
@@ -306,18 +310,18 @@ export function getProductBySlug (slug, authToken) {
   return callApi(requestConfig)
 }
 
-export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
-  const requestConfig = {
-    url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: (currentCategory ? currentCategory.id : null)}),
-    params: {
-      special_categories: map(specialCategories, 'id'),
-      sub_categories: map(subCategories, 'id')
-    }
-  }
-  authToken ? requestConfig.access_token = authToken : null
+// export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
+//   const requestConfig = {
+//     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: (currentCategory ? currentCategory.id : null)}),
+//     params: {
+//       special_categories: map(specialCategories, 'id'),
+//       sub_categories: map(subCategories, 'id')
+//     }
+//   }
+//   authToken ? requestConfig.access_token = authToken : null
 
-  return callApi(requestConfig)
-}
+//   return callApi(requestConfig)
+// }
 
 export function getSpecialCategoryProducts (specialCategory, currentCategory, authToken, from, take, brandId) {
   const requestConfig = {

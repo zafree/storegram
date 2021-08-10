@@ -63,6 +63,7 @@ async function loadProductsOfCategoryByBrand (vm, categoryIndex, resetProducts) 
 
   while (keepLoadingBrands && !vm.cancelCurrentApiCall) {
     const result = await getSpecialCategoryProducts(category, null, vm.$store.getters.agentToken, from, take, brandId)
+    console.log('result', result)
     keepLoadingBrands = result[category.id].length === take
     from += take
     result[category.id].forEach(x => {
