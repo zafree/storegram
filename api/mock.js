@@ -140,12 +140,10 @@ export function callMockApi (requestConfig) {
       // return getProductBySlug()
       return callApi(requestConfig)
     case 'getCategoryProducts':
-      return getCategoryProducts()
+      return getCategoryProducts(requestConfig)
       // return callApi(requestConfig)
     case 'getSpecialCategoryProducts':
-      console.log('am i getting called?')
-      console.log('getCategoryProducts', getCategoryProducts())
-      return getCategoryProducts()
+      return getCategoryProducts(requestConfig)
       // return callApi(requestConfig)
     case 'createOtp':
       // return createOtp()
