@@ -2,7 +2,7 @@
   <div :class="$style.root">
     <div :class="$style.rootKernel" :style="kernelStyles">
       <div :class="[$style.app, {[$style.appCordova]: isAgentMode && !isPlatformRBP}]">
-        <!-- header -->
+
         <div :class="[$style.appHeader, {[$style.appHeaderCheckout]: pageMode.checkoutMode}]">
           <slot name="header">
             <site-header>
@@ -13,31 +13,19 @@
           </slot>
         </div>
 
-        <!-- <div :class="[$style.appHeaderClone, {[$style.appHeaderWithoutGlobalSearch]: pageMode.checkoutMode}]"></div> -->
-        <!-- Content Top/Banner/Location Selector -->
         <notification type="error" v-if="isVacationMode && !pageMode.homePage">
           <p v-html="$t('vacation.notice')"></p>
-          <!-- <p v-html="$t('vacation.notice', 'bn')"></p> -->
         </notification>
 
         <notification v-if="pageNotification" :type="pageNotification.type">
           <p v-html="pageNotification.message"></p>
         </notification>
 
-
-        <!-- <div :class="$style.appBanner" v-if="!pageMode.checkoutMode && (isVacationMode || isCustomerMode)">
-          <div :class="$style.appBannerInner">
-            <content-top></content-top>
-            <img src="/imgs/image1@2x.png" alt="">
-          </div>
-        </div> -->
-
         <main :class="$style.appMain">
-          <template ><nuxt></nuxt></template>
+          <nuxt></nuxt>
           <loading-animation v-show="isNavigating"></loading-animation>
         </main>
 
-        <!-- sidebar modal -->
         <div :class="[$style.appSidebar, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside1)}]" v-if="!pageMode.checkoutMode">
           <div :class="$style.modalOverlay" @click="closeAside1"></div>
           <div :class="[$style.modalContent, $style.modalContentFullHeight, $style.modalContentFromLeft]">
@@ -52,8 +40,7 @@
           </div>
         </div>
 
-        <!-- cart modal -->
-        <div :class="[$style.appCart, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside2)}, {[$style.modalVisible]: pageMode.checkoutMode}]" v-if="!pageMode.paymentMode">
+        <div :class="[$style.appCart, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside2)}, {[$style.appCartCheckout]: pageMode.checkoutMode}]">
           <div :class="$style.modalOverlay" @click="closeAside2"></div>
           <div :class="[$style.modalContent, $style.modalContentFullHeight, $style.modalContentFromRight]">
             <button :class="[$style.modalClose, $style.btn]" @click="closeAside2">
@@ -68,8 +55,7 @@
           </div>
         </div>
 
-        <!-- search modal -->
-        <div :class="[$style.appSearch, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside3)}]" v-if="!pageMode.checkoutMode">
+        <div :class="[$style.appSearch, $style.modal, {[$style.modalOpen]: isOverlayOpen(overlays.aside3)}]">
           <div :class="$style.modalOverlay" @click="closeAside3"></div>
           <div :class="[$style.modalContent, $style.modalContentFromTop]">
             <button :class="[$style.modalClose, $style.btn]" @click="closeAside3">
@@ -88,7 +74,13 @@
           </div>
         </div>
 
-        <template>
+        <slot name="login">
+          <transition>
+            <login v-if="isOverlayOpen(overlays.loginModal)" :success-callback="checkForReview"></login>
+          </transition>
+        </slot>
+
+        <template v-if="!pageMode.checkoutMode">
           <!-- Network Offline -->
           <div :class="$style.offline" v-if="ui.isOffline && isAgentMode">
             <div :class="$style.offlineDialog">
@@ -109,12 +101,6 @@
             </transition>
           </slot>
 
-          <!-- Login -->
-          <slot name="login" v-if="!pageMode.checkoutMode">
-            <transition>
-              <login v-if="isOverlayOpen(overlays.loginModal)" :success-callback="checkForReview"></login>
-            </transition>
-          </slot>
 
           <!-- bKash Diagram-->
           <slot name="bkash" v-if="pageMode.checkoutMode">
@@ -174,7 +160,6 @@
 
         </template>
 
-        <!-- Footer -->
         <footer :class="$style.appFooter" v-if="!pageMode.checkoutMode">
           <site-footer></site-footer>
         </footer>
@@ -356,7 +341,6 @@
 
   .App
     position: relative
-    +clearfix
     $root: &
     &__header
       position: relative
@@ -365,6 +349,9 @@
       display: flex
       flex-direction: column
       margin-bottom: 20px
+      box-shadow: 0 0 6px rgba($black, .14)
+      // &--checkout
+      //   border: 1px solid red
     &__main
       position: relative
       width: 100%
@@ -374,11 +361,15 @@
       margin-top: 80px
     &__sidebar
       width: 100%
-      max-width: 320px
+      max-width: 380px
       // height: 100%
     &__cart
-      width: 320px
+      width: 100%
+      max-width: 380px
       margin-left: auto
+      &--checkout
+        +desktop
+          display: none
     &__search
       .modal__content
         height: auto

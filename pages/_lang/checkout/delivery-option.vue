@@ -1,47 +1,19 @@
 <template>
   <div :class="$style.checkout">
-    <div :class="$style.checkoutContainer">
-      <div :class="$style.checkoutRow">
-        <div :class="[$style.checkoutStep, $style.process]">
-          <div :class="[$style.processTitle, $style.title, $style.done]">
-            <div :class="$style.titleStep">
-              {{ i18nText.checkoutSteps1 }}
-              <svg viewBox="0 0 32 32">
-                <path d="M24.2,10.5c-0.4-0.4-1-0.4-1.4,0c0,0,0,0,0,0l-8.9,8.9l-4.7-4.7c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4
-	                l5.4,5.4c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0l9.6-9.6C24.6,11.5,24.6,10.9,24.2,10.5C24.2,10.5,24.2,10.5,24.2,10.5z"/>
-              </svg>
-            </div>
-            <div :class="$style.titleText">{{ i18nText.checkoutStepsCustomerDetails }}</div>
-          </div>
-          <!-- <div :class="[$style.processTitle, $style.title]">
-            <div :class="[$style.titleStep, $style.titleStepSuccess]">
-              <img src="/svg/checked.svg" alt="">
-            </div>
-            <div :class="$style.titleText" v-html="i18nText.checkoutStepsCustomerDetails"></div>
-          </div> -->
-          <!-- <div class="alert" v-if="isAgentMode">
-            <div class="customerinfo">
-              <label class="customerinfo__text">{{ i18nText.currentCustomer }}</label>
-              <p class="customerinfo__name">{{ customerInfoInAgentMode.name }}</p>
-              <p class="customerinfo__mobile">{{ customerInfoInAgentMode.mobile }}</p>
-            </div>
-            <div class="customer">
-              <div class="customer--body">
-                <label class="customer--body__text">{{ i18nText.anotherCustomer }}</label>
-                <button type="button" @click="logoutCustomer" class="Button Button--click">{{ i18nText.clickHere }}</button>
-              </div>
-            </div>
-          </div> -->
+    <h1 :class="$style.checkoutPageTitle">Checkout</h1>
+    <div :class="$style.checkoutRow">
+      <div :class="$style.checkoutCol1">
+        <cart :class="[$style.checkoutStep, $style.checkoutStepCart]"></cart>
+      </div>
+      <div :class="$style.checkoutCol2">
+        <div :class="$style.checkoutStep">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.checkoutStepsCustomerDetails }}</div>
         </div>
+        <div :class="[$style.checkoutStep, $style.checkoutStepActive]">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.checkoutStepsDeliveryDetails }}</div>
+          <div :class="$style.checkoutStepBody">
 
-        <div :class="[$style.checkoutStep, $style.process]">
-          <!--Step Label-->
-          <div :class="[$style.processTitle, $style.title, $style.active]">
-            <div :class="$style.titleStep">{{ i18nText.checkoutSteps2 }}</div>
-            <div :class="$style.titleText">{{ i18nText.checkoutStepsDeliveryDetails }}</div>
-          </div>
-          <!--Step Functionalities-->
-          <div :class="$style.processBody">
+
             <!-- Alert -->
             <div class="Alert Alert--danger Alert--hasCartError" v-if="cartErrorExists">
               <p class="Alert__copy" v-html="i18nText.cartIssueWarning"></p>
@@ -54,7 +26,7 @@
                 <p class="Alert__copy" v-html="i18nText.LockerErrorSingle"></p>
               </div>
               <preferred-delivery-point-display :showDeliveryCharge="true" :address="preferredDeliveryAddress" />
-              <button class="Button Button--useDifferentAddress" @click="togglePreferredAddress">{{ $t('delivery_process.use_different_delivery_point') }}</button>
+              <button :class="[$style.btn, $style.btnAuto]" @click="togglePreferredAddress">{{ $t('delivery_process.use_different_delivery_point') }}</button>
             </template>
             <!-- v-if="usePreferredDeliveryAddress" -->
 
@@ -62,87 +34,100 @@
             <template v-else>
 
               <!-- go back to pda button -->
-              <button v-if="preferredDeliveryAddress" class="Button Button--goBack" @click="togglePreferredAddress">
-                <span class="Button__icon">
-                  <img src="/svg/back-11x10.svg" alt="">
-                </span>
-                <span class="Button__label">{{ $t('delivery_process.go_back') }}</span>
+              <button :class="[$style.btn, $style.btnBack]" v-if="preferredDeliveryAddress" @click="togglePreferredAddress">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                  <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+                </svg>
+                <span>{{ $t('delivery_process.go_back') }}</span>
               </button>
 
               <!-- guided text -->
-              <div class="Alert Alert--info Alert--guidedText" v-if="!(deliveryLocation && deliveryArea)">
-                <p class="Alert__copy">{{ $t('delivery_process.select_location_area_to_see_delivery_options') }}</p>
+              <div :class="$style.field" v-if="!(deliveryLocation && deliveryArea)">
+                <p :class="$style.fieldInfo">{{ $t('delivery_process.select_location_area_to_see_delivery_options') }}</p>
               </div>
-              <div class="DeliveryLocation">
-                <div class="DeliveryLocation__city">
-                  <div v-if="isAgentMode" :class="['Field', {'Field--error': errors.location, 'Field--success': errors.location === false}]">
-                    <label v-html="i18nText.locationLabel" class="Field__label Field__label--uppercase Field__label--bold Field__label--12px"></label>
-                    <div class="Field__control">
-                      <input :value="translatedValue(deliveryLocation)" class="Field__input" type="text" disabled>
-                    </div>
-                  </div>
-                  <div v-else class="Field Field--info">
-                    <label class="Field__label Field__label--uppercase Field__label--bold" v-html="i18nText.locationLabel"></label>
-                    <div class="Field__control Field__control--multiselect">
-                      <custom-multiselect
-                        :selected="deliveryLocation"
-                        :options="allDeliveryLocationsSorted"
-                        :placeholder="i18nText.locationSelectorPlaceholder"
-                        @setSelectedOption="setSelectedLocationFromChild"
-                      ></custom-multiselect>
-                    </div>
-                    <p class="Field__validation" v-if="isLocationNotActive">{{noServiceMessage}}</p>
-                  </div>
-                </div>
-                <div class="DeliveryLocation__area">
-                  <div v-if="isAgentMode" :class="['Field', {'Field--error': errors.area, 'Field--success': errors.area === false}]">
-                    <label v-html="i18nText.areaLabel" class="Field__label Field__label--uppercase Field__label--bold Field__label--12px"></label>
-                    <div class="Field__control">
-                      <input :value="translatedValue(deliveryArea)" class="Field__input" type="text" disabled>
-                    </div>
-                  </div>
+              <div :class="$style.field">
+                <label :class="$style.fieldLabel">{{ i18nText.locationLabel }}</label>
+                <custom-multiselect
+                  :selected="deliveryLocation"
+                  :options="allDeliveryLocationsSorted"
+                  :placeholder="i18nText.locationSelectorPlaceholder"
+                  @setSelectedOption="setSelectedLocationFromChild"
+                ></custom-multiselect>
+                <p :class="$style.fieldValidation" v-if="isLocationNotActive">{{noServiceMessage}}</p>
+              </div>
 
-                  <div class="Field" v-else>
-                    <label class="Field__label Field__label--uppercase Field__label--bold" v-html="i18nText.areaLabel"></label>
-                    <div class="Field__control Field__control--multiselect">
-                      <custom-multiselect
-                        :selected="deliveryArea"
-                        :options="allAreas"
-                        :placeholder="i18nText.areaSelectorPlaceholder"
-                        @setSelectedOption="setSelectedAreaFromChild"
-                      ></custom-multiselect>
+              <div :class="$style.field">
+                <label :class="$style.fieldLabel">{{ i18nText.areaLabel }}</label>
+                <custom-multiselect
+                  :selected="deliveryArea"
+                  :options="allAreas"
+                  :placeholder="i18nText.areaSelectorPlaceholder"
+                  @setSelectedOption="setSelectedAreaFromChild"
+                ></custom-multiselect>
+              </div>
+
+
+              <!-- NWEEEEEEEEEEEEEEEEEEEEE -->
+              <!-- NWEEEEEEEEEEEEEEEEEEEEE -->
+              <!-- NWEEEEEEEEEEEEEEEEEEEEE -->
+              <template v-if="deliveryArea">
+                <div :class="$style.field">
+                  <label :class="$style.fieldLabel">{{ i18nText.deliveryMethod }}</label>
+                  <div :class="$style.dmOption">
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, $style.dmOptionBtnActive]">Home Delivery</button>
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine]">Pickup from outlet</button>
+                  </div>
+                  <div :class="$style.dmOptionBody">
+                    <p :class="[$style.copy, $style.copyDeliveryCharge]">Delivery charge Tk. 20</p>
+                    <div :class="[$style.field, {[$style.fieldError]: errors.delivery_address }, {[$style.fieldSuccess]: errors.delivery_address === false }]">
+                      <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryAddressLabel }}</label>
+                      <div :class="$style.fieldControl">
+                        <textarea :class="[$style.fieldInput, $style.fieldInputTextarea]" :placeholder="i18nText.homeDeliveryAddressPlaceholder" v-model="newDeliveryAddress.address" :rows="3"></textarea>
+                      </div>
+                      <p :class="$style.fieldValidation" v-if="errors.delivery_address">{{ errors.delivery_address }}</p>
+                    </div>
+                    <div :class="[$style.field, {[$style.fieldError]: errors.contact_name }, {[$style.fieldSuccess]: errors.contact_name === false }]">
+                      <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryRecieverName }}</label>
+                      <div :class="$style.fieldControl">
+                        <input :class="$style.fieldInput" type="text" :placeholder="i18nText.homeDeliveryRecieverNamePlaceholder" v-model="newDeliveryAddress.contact_name">
+                      </div>
+                      <p :class="$style.fieldValidation" v-if="errors.contact_name">{{ errors.contact_name }}</p>
+                    </div>
+                    <div :class="[$style.field, {[$style.fieldError]: errors.receiver_number }, {[$style.fieldSuccess]: errors.receiver_number === false }]">
+                      <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryMobileNumber }}</label>
+                      <div :class="$style.fieldControl">
+                        <select :class="$style.fieldInput" v-model="newDeliveryAddress.contact_number" v-if="hasCustomerMultipleNumbers">
+                          <option
+                            v-for="number in mobileNumbers"
+                            :key="number.id"
+                            :value="number.number">{{ number.number }}</option>
+                          <option value="ADD_ANOTHER">{{ i18nText.useAnother }}</option>
+                        </select>
+                        <input v-else :class="$style.fieldInput" type="text" :placeholder="i18nText.homeDeliveryMobileNumberPlaceholder" v-model="newDeliveryAddress.contact_number">
+                      </div>
+                      <p :class="$style.fieldValidation" v-if="errors.receiver_number">{{ errors.receiver_number }}</p>
                     </div>
                   </div>
+                  <div>Input field</div>
                 </div>
-              </div>
+              </template>
+
+              <!-- <div :class="$style.field">
+                <label :class="$style.fieldLabel">{{ i18nText.areaLabel }}</label>
+                <div :class="$style.fieldControl">
+                  <input :class="$style.fieldInput" type="text" placeholder="Enter you delivery address">
+                </div>
+                <p :class="$style.fieldValidation">Error</p>
+              </div> -->
+
 
               <!-- delivery option -->
-              <div v-if="deliveryArea" class="Field">
-                <label class="Field__label Field__label--uppercase Field__label--bold" v-html="i18nText.deliveryMethod"></label>
-                <div class="Field__control">
 
-                  <!-- radio: agent-delivery -->
-                  <div class="radio option" v-if="loggedInAgentAddress && isAgentMode">
-                    <div class="option__check" :class="{'option__check--active': isDeliveryMethodAgent}"></div>
-                    <div class="option__title">
-                      <input
-                        class="radio__input"
-                        type="radio"
-                        id="radioOption0"
-                        v-model="pickedDeliveryMethod"
-                        value="Agent"
-                      >
-                      <label class="radio__label" for="radioOption0">
-                        <div class="lable__title" v-html="i18nText.agentPickupLabel"></div>
-                        <div class="lable__sub" v-html="i18nText.agentPickupSubLabel"></div>
-                        <div class="lable__price" v-if="agentDeliveryCharge">৳ {{ __$(agentDeliveryCharge) }}</div>
-                        <div class="lable__price" v-else>{{ i18nText.freeDelivery }}</div>
-                      </label>
-                    </div>
-                    <div class="option__body" v-if="isDeliveryMethodAgent && loggedInAgentAddress">
-                      <address-display :addressTitle="i18nText.agentPickupAddressLabel" :address="loggedInAgentAddress"/>
-                    </div>
-                  </div>
+              <div v-if="deliveryArea" :class="$style.field">
+                <label :class="$style.fieldLabel">{{ i18nText.deliveryMethod }}</label>
+                <div :class="$style.fieldControl">
+
+
 
                   <!-- radio: home-delivery -->
                   <div class="radio option">
@@ -260,43 +245,6 @@
                     </div>
                   </div>
 
-                  <!-- redio: agent-delivery-for-customer -->
-
-                  <!-- radio: locker-delivery -->
-                  <div class="radio option" v-if="isLockerDeliveryEnabledForCustomer">
-                    <div class="option__check" :class="{'option__check--active': isDeliveryMethodLocker}"></div>
-                    <div class="option__title">
-                      <input
-                        class="radio__input"
-                        type="radio"
-                        id="radioOption3"
-                        v-model="pickedDeliveryMethod"
-                        value="Locker"
-                      >
-                      <label class="radio__label" for="radioOption3">
-                        <div class="lable__title">{{ i18nText.LockerDeliveryLabel}}</div>
-                        <div class="lable__sub" v-html="i18nText.LockerDeliverySubLabel"></div>
-                        <div class="lable__price" v-if="lockerDeliveryCharge">৳ {{ __$(lockerDeliveryCharge) }}</div>
-                        <div class="lable__price" v-else>{{ i18nText.freeDelivery }}</div>
-                      </label>
-                    </div>
-
-                    <div class="option__body" v-if="isDeliveryMethodLocker">
-                      <slot v-if="selectedAddress && selectedAddress.owner_type === 'Locker'">
-                        <div class="selectedAddress">
-                          <address-display :addressTitle="i18nText.pickupAddressLabel" :address="selectedAddress"/>
-                        </div>
-                        <button class="Button Button--selectPDA" @click="openPreferredDeliveryPointModal('Locker')">{{ i18nText.changeButtonLabel }}</button>
-                      </slot>
-                      <slot v-else>
-                        <button class="Button Button--selectPDA" @click="openPreferredDeliveryPointModal('Locker')">{{ i18nText.locker }}</button>
-                      </slot>
-                      <p class="Field__validation" v-if="selectedAddress && selectedAddress.owner_type === 'Locker' && !selectedAddress.accept_new_orders">
-                        <slot>{{ i18nText.LockerErrorMultiple }}</slot>
-                      </p>
-                    </div>
-                  </div>
-
                   <!-- radio: hub pick-up -->
                   <div class="radio option" v-if="isHubDeliveryEnabledForCustomer">
                     <div class="option__check" :class="{'option__check--active': isDeliveryMethodPickup}"></div>
@@ -334,61 +282,42 @@
 
             <template v-if="(usePreferredDeliveryAddress && preferredDeliveryAddress) || deliveryArea">
               <!-- additional note -->
-              <div class="Field">
-                <label class="Field__label Field__label--uppercase Field__label--bold" v-html="i18nText.additionalNote"></label>
-                <div class="Field__control">
-                  <textarea
-                    class="Field__input Field__input--textarea"
-                    :placeholder="i18nText.additionalNotePlaceHolder"
-                    v-model="additional_note"
-                    rows="1"
-                  >
-                  </textarea>
-                </div>
-              </div>
-              <!-- invoice -->
-              <div class="invoice">
-                <div class="checkbox">
-                  <input class="checkbox__input" type="checkbox" v-model="customerWantsInvoice" id="invoice_permission">
-                  <label class="checkbox__label" for="invoice_permission" v-html="i18nText.sendInvoice"></label>
-                </div>
-                <div v-if="customerWantsInvoice" class="Field Field--invoice" :class="[{'Field--error': errors.invoice_email, 'Field--success': errors.invoice_email === false}]">
-                  <label class="Field__label Field__label--bold" v-html="i18nText.invoiceEmail"></label>
-                  <div class="Field__control">
-                    <input class="Field__input" type="text" :placeholder="i18nText.invoiceEmailPlaceholder" v-model="invoiceEmailData">
-                  </div>
-                  <p class="Field__validation" v-if="errors.invoice_email">{{errors.invoice_email}}</p>
+              <div :class="$style.field">
+                <label :class="$style.fieldLabel">{{ i18nText.additionalNote }}</label>
+                <div :class="$style.fieldControl">
+                  <textarea :class="[$style.fieldInput, $style.fieldInputTextarea]" :placeholder="i18nText.additionalNotePlaceHolder" v-model="additional_note" :rows="1"></textarea>
                 </div>
               </div>
 
-              <!-- alert message -->
-              <div class="Alert Alert--danger Alert--justPlaintext" v-if="showAgentPickUpAdvance && (isDeliveryMethodAgent || isDeliveryMethodAgents)">
-                <p class="Alert__copy">{{ $t('delivery_process.full_advance_payment_for_agent_pickup')}}</p>
+              <!-- <div :class="$style.field">
+                <label :class="$style.fieldLabel">{{ name }}</label>
+                <div :class="$style.fieldControl">
+                </div>
+              </div> -->
+
+              <!-- invoice -->
+              <div :class="$style.field">
+                <input id="invoice_permission" :class="$style.fieldCheckbox" type="checkbox" v-model="customerWantsInvoice">
+                <label for="invoice_permission" :class="$style.fieldLabel">{{ i18nText.sendInvoice }}</label>
               </div>
-              <div class="Alert Alert--danger Alert--justPlaintext" v-if="isDeliveryMethodLocker">
-                <p class="Alert__copy">{{ $t('delivery_process.full_advance_payment_for_locker_pickup')}}</p>
+              <div v-if="customerWantsInvoice" :class="[$style.field, $style.mt0, {[$style.fieldError]: errors.invoice_email}, {[$style.fieldSuccess]: errors.invoice_email === false}]">
+                <label :class="$style.fieldLabel">{{ i18nText.invoiceEmail }}</label>
+                <div :class="$style.fieldControl">
+                  <input :class="$style.fieldInput" type="text" :placeholder="i18nText.invoiceEmailPlaceholder" v-model="invoiceEmailData">
+                </div>
+                <p :class="$style.fieldValidation" v-if="errors.invoice_email">{{ errors.invoice_email }}</p>
               </div>
 
               <!-- confirm order button -->
-              <div class="confirmButton">
-                <button :class="['Button', 'Button--confirmOrder', {'Button--disable': disableConfirmOrder}]" v-html="i18nText.confirmOrder" @click="confirmOrder()" :disabled="disableConfirmOrder"></button>
+              <div :class="$style.field">
+                <button :class="[$style.btn, $style.btnPrimary, {[$style.btnMuted]: disableConfirmOrder}]" @click="confirmOrder()" :disabled="disableConfirmOrder">{{ i18nText.confirmOrder }}</button>
               </div>
-              <p :class="$style.agreeStatement">
-                  {{ i18nText.termOfService1 }}
-                  <i18n-link :class="$style.link" :to="'/docs/terms'" target="_blank">
-                    {{ i18nText.termOfService2 }}
-                  </i18n-link>
-                  {{ i18nText.termOfService3 }}
-              </p>
             </template>
 
           </div>
         </div>
-        <div :class="[$style.checkoutStep, $style.process]">
-            <div :class="[$style.processTitle, $style.title]">
-              <div :class="$style.titleStep">{{ i18nText.checkoutSteps3 }}</div>
-              <div :class="$style.titleText">{{ i18nText.checkoutStepsPayment }}</div>
-            </div>
+        <div :class="$style.checkoutStep">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.checkoutStepsPayment }}</div>
         </div>
       </div>
     </div>
@@ -396,7 +325,7 @@
 </template>
 
 <script>
-
+  import Cart from '~/components/layouts/Cart'
   import isEmpty from 'lodash/isEmpty'
   import find from 'lodash/find'
   import last from 'lodash/last'
@@ -1100,6 +1029,7 @@
       }
     },
     components: {
+      Cart,
       CustomMultiselect,
       i18nLink,
       AddressDisplay,
@@ -1108,327 +1038,364 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  @import "shared/alerts"
-  @import "shared/button"
-
-  .alert
-    position: relative
-    padding: 15px 15px 30px
-    border-top: 1px solid #dddddd
-    // +phablet
-      padding: 15px 20px 30px
-    +tablet
-      position: relative
-      display: flex
-      padding: 30px 30px 40px
-
-    &::before,
-    &::after
-      content: ""
-      position: absolute
-      top: 0
-      height: 3px
-      width: 15px
-      margin-top: -2px
-      background-color: white
-      // +phablet
-        display: none
-    &::before
-      left: 0
-    &::after
-      right: 0
-
-  .customerinfo
-    position: relative
-    padding: 5px 0px
-    &__text
-      font-size: 13px
-      font-weight: 400
-      line-height: 1.66
-      color: #b9b9b9
-      fill: #b9b9b9
-    &__name
-      font-size: 16px
-      line-height: 1.66
-      font-weight: 400
-      color: $text
-      fill: $text
-    &__mobile
-      font-size: 15px
-      font-weight: inherit
-      line-height: inherit
-      color: inherit
-    +tablet
-      flex: 1
-
-  .customer
-    position: relative
-    // max-width: 230px
-    +tablet
-      flex: 1
-
-
-    &--body
-      border: 1px solid #dddddd
-      background-color: #f6f6f6
-      height: 62px
-      margin-top: 10px
-      border-radius: 3px
-      padding: 22px 15px
-      display: flex
-      flex-flow: row wrap
-      &__text
-        font-size: 14px
-        font-weight: 400
-        color: $text
-        fill: $text
-        flex: 1
-
-    .Button
-      &--click
-        border: 1px solid #d9d9d9
-        color: $text
-        fill: $text
-        height: 32px
-        padding: 0px 10px
-        border-radius: 0
-        font-size: 13px
-        font-weight: 400
-        line-height: 1.66
-        background-color: #fff
-        border-radius: 2px
-        margin-top: -8px
-
-        &:hover,
-        &:focus
-          color: inherit
-
-</style>
 
 <style lang="sass" module>
-  @import "sass/shared/checkout/checkout.sass"
   @import "shared/button"
+  @import "shared/field"
+  @import "sass/shared/checkout/checkout"
 
-  .AgreeStatement
-    margin-top: 15px
-    font-size: 13px
-    color: rgba($black, .44)
-    fill: rgba($black, .44)
-    text-align: right
-    .Link
-      font-size: inherit
-      color: inherit
-      fill: inherit
-      text-decoration: underline
+  .dm-option
+    position: relative
+    display: flex
+    flex-direction: row
+    &-btn
+      width: auto
+      padding-left: $gutter
+      padding-right: $gutter
+      margin-right: $gutter/2
+      border-radius: 500em
+      height: 38px
+      &-active
+        background-color: $light
 
-  .Button
-    &--addNewCustomer
-      font-size: 14px
-      height: 32px
-      padding: 0 10px
-      margin-left: auto
-      +button
+  .title,
+  .sub-title
+    font-size: 14px
+    font-weight: $weight-bold
+  .sub-title
+    color: rgba($black, .55)
+  .copy
+    font-size: 14px
+    font-weight: $weight-medium
+    &-delivery-charge
+      margin-top: 10px
+      padding-left: $gutter
+      color: rgba($black, .55)
+
+  .btn--back
+    width: auto
+    padding-left: $gutter
+    padding-right: $gutter*1.5
+    svg
+      transform: rotate(180deg)
+  .mt0
+    margin-top: 0 !important
 
 
+  // .AgreeStatement
+  //   margin-top: 15px
+  //   font-size: 13px
+  //   color: rgba($black, .44)
+  //   fill: rgba($black, .44)
+  //   text-align: right
+  //   .Link
+  //     font-size: inherit
+  //     color: inherit
+  //     fill: inherit
+  //     text-decoration: underline
+
+  // .Button
+  //   &--addNewCustomer
+  //     font-size: 14px
+  //     height: 32px
+  //     padding: 0 10px
+  //     margin-left: auto
+  //     +button
+</style>
+
+<style lang="sass" scoped>
+  // @import "shared/alerts"
+  // @import "shared/button"
+
+  // .alert
+  //   position: relative
+  //   padding: 15px 15px 30px
+  //   border-top: 1px solid #dddddd
+  //   // +phablet
+  //     padding: 15px 20px 30px
+  //   +tablet
+  //     position: relative
+  //     display: flex
+  //     padding: 30px 30px 40px
+
+  //   &::before,
+  //   &::after
+  //     content: ""
+  //     position: absolute
+  //     top: 0
+  //     height: 3px
+  //     width: 15px
+  //     margin-top: -2px
+  //     background-color: white
+  //     // +phablet
+  //       display: none
+  //   &::before
+  //     left: 0
+  //   &::after
+  //     right: 0
+
+  // .customerinfo
+  //   position: relative
+  //   padding: 5px 0px
+  //   &__text
+  //     font-size: 13px
+  //     font-weight: 400
+  //     line-height: 1.66
+  //     color: #b9b9b9
+  //     fill: #b9b9b9
+  //   &__name
+  //     font-size: 16px
+  //     line-height: 1.66
+  //     font-weight: 400
+  //     color: $text
+  //     fill: $text
+  //   &__mobile
+  //     font-size: 15px
+  //     font-weight: inherit
+  //     line-height: inherit
+  //     color: inherit
+  //   +tablet
+  //     flex: 1
+
+  // .customer
+  //   position: relative
+  //   // max-width: 230px
+  //   +tablet
+  //     flex: 1
+
+
+  //   &--body
+  //     border: 1px solid #dddddd
+  //     background-color: #f6f6f6
+  //     height: 62px
+  //     margin-top: 10px
+  //     border-radius: 3px
+  //     padding: 22px 15px
+  //     display: flex
+  //     flex-flow: row wrap
+  //     &__text
+  //       font-size: 14px
+  //       font-weight: 400
+  //       color: $text
+  //       fill: $text
+  //       flex: 1
+
+  //   .Button
+  //     &--click
+  //       border: 1px solid #d9d9d9
+  //       color: $text
+  //       fill: $text
+  //       height: 32px
+  //       padding: 0px 10px
+  //       border-radius: 0
+  //       font-size: 13px
+  //       font-weight: 400
+  //       line-height: 1.66
+  //       background-color: #fff
+  //       border-radius: 2px
+  //       margin-top: -8px
+
+  //       &:hover,
+  //       &:focus
+  //         color: inherit
 
 </style>
 
 <style lang="sass" scoped>
-  @import "shared/alerts"
-  @import "shared/form/field"
-  @import "shared/button"
+  // @import "shared/alerts"
+  // @import "shared/form/field"
+  // @import "shared/button"
 
-  .Alert
-    margin-top: 15px
-    margin-bottom: -15px
-    &--hasCartError
-      margin-top: 0
-      margin-bottom: 15px
-      +widescreen
-        display: none
-    &--guidedText
-      margin-top: 0
-      margin-bottom: 15px
-    &--preferredDeliveryAddress
-      margin-bottom: 15px
-      margin-top: 0
-      +tablet
-        margin-top: -10px
-    // // +phablet
-      // margin-bottom: 0
+  // .Alert
+  //   margin-top: 15px
+  //   margin-bottom: -15px
+  //   &--hasCartError
+  //     margin-top: 0
+  //     margin-bottom: 15px
+  //     +widescreen
+  //       display: none
+  //   &--guidedText
+  //     margin-top: 0
+  //     margin-bottom: 15px
+  //   &--preferredDeliveryAddress
+  //     margin-bottom: 15px
+  //     margin-top: 0
+  //     +tablet
+  //       margin-top: -10px
+  //   // // +phablet
+  //     // margin-bottom: 0
 
-  .Field
-    &__input
-      background-color: $white
-    &--invoice
-      margin-bottom: 25px
+  // .Field
+  //   &__input
+  //     background-color: $white
+  //   &--invoice
+  //     margin-bottom: 25px
 
-  .DeliveryLocation
-    display: flex
-    flex-flow: row wrap
-    &__city
-      flex: 1 100%
-      margin-bottom: 20px
-      +tablet
-        flex: 1
-        padding-right: 10px
-    &__area
-      flex: 1 100%
-      margin-bottom: 20px
-      +tablet
-        flex: 1
-        padding-left: 10px
+  // .DeliveryLocation
+  //   display: flex
+  //   flex-flow: row wrap
+  //   &__city
+  //     flex: 1 100%
+  //     margin-bottom: 20px
+  //     +tablet
+  //       flex: 1
+  //       padding-right: 10px
+  //   &__area
+  //     flex: 1 100%
+  //     margin-bottom: 20px
+  //     +tablet
+  //       flex: 1
+  //       padding-left: 10px
 
-  // .address
-  //   font-style: normal
+  // // .address
+  // //   font-style: normal
+  // //   margin-bottom: 10px
+  // //   &__h4
+  // //     font-weight: 400
+  // //     text-decoration: underline
+  // //     font-size: 13px
+  // //   &__p
+  // //     font-weight: 400
+  // //     font-size: 13px
+  // //     &--marginTop10
+  // //       margin-top: 10px
+
+  // .reciver
+  //   display: flex
+  //   flex-flow: row wrap
+  //   &__name
+  //     flex: 1 100%
+  //     margin-bottom: 20px
+  //     +tablet
+  //       flex: 1
+  //       padding-right: 10px
+  //   &__phone
+  //     flex: 1 100%
+  //     margin-bottom: 20px
+  //     +tablet
+  //       flex: 1
+  //       padding-left: 10px
+
+  // .multiAddress
   //   margin-bottom: 10px
-  //   &__h4
-  //     font-weight: 400
-  //     text-decoration: underline
+  //   display: flex
+  //   flex-flow: column-reverse wrap
+  //   // +phablet
+  //     flex-flow: row wrap
+  //   &__select
+  //     // +phablet
+  //       flex: 1
+  //       // padding-right: 20px
+  //   &__useAnother
+  //     margin-bottom: 10px
+  //     // +phablet
+  //       margin-bottom: 0
+  //       flex: 180px 0
+  //       margin-left: 20px
+
+  // .selectedAddress
+  //   padding: 15px 15px 10px
+  //   background-color: $white
+  //   margin-bottom: 10px
+  //   border: 1px solid #e5e5e5
+
+  // .selectedAddress--error
+  //   border: 1px solid #ee395f
+
+  // .invoice
+  //   position: relative
+  //   // padding-top: 20px
+
+  // .checkbox
+  //   position: relative
+  //   &__input[type=checkbox]
+  //       position: absolute
+  //       z-index: 1
+  //       top: 50%
+  //       left: 0
+  //       transform: translateY(-50%)
+
+  //   &__label
+  //       display: inline-block
+  //       position: relative
+  //       cursor: pointer
+  //       padding: 10px 20px
+  //       font-size: 16px
+
+  // .confirmButton
+  //   text-align: right
+  //   margin-top: 30px
+
+  // .Button
+  //   &--useAnother
+  //     height: 36px
   //     font-size: 13px
-  //   &__p
-  //     font-weight: 400
+  //     display: block
+  //     width: 100%
+  //     color: #555
+  //     fill: #555
+  //     +button
+
+  //   &--confirmOrder
+  //     +button
+  //     width: 210px
+  //     height: 44px
+  //     font-size: 16px
+  //     +tablet
+  //       width: 310px
+
+  //   &--disable
+  //     cursor: not-allowed
+  //     opacity: .5
+
+  //   &--useDifferentAddress
+  //     border: 1px solid #d9d9d9
+  //     height: 32px
+  //     padding: 0 10px
   //     font-size: 13px
-  //     &--marginTop10
-  //       margin-top: 10px
-
-  .reciver
-    display: flex
-    flex-flow: row wrap
-    &__name
-      flex: 1 100%
-      margin-bottom: 20px
-      +tablet
-        flex: 1
-        padding-right: 10px
-    &__phone
-      flex: 1 100%
-      margin-bottom: 20px
-      +tablet
-        flex: 1
-        padding-left: 10px
-
-  .multiAddress
-    margin-bottom: 10px
-    display: flex
-    flex-flow: column-reverse wrap
-    // +phablet
-      flex-flow: row wrap
-    &__select
-      // +phablet
-        flex: 1
-        // padding-right: 20px
-    &__useAnother
-      margin-bottom: 10px
-      // +phablet
-        margin-bottom: 0
-        flex: 180px 0
-        margin-left: 20px
-
-  .selectedAddress
-    padding: 15px 15px 10px
-    background-color: $white
-    margin-bottom: 10px
-    border: 1px solid #e5e5e5
-
-  .selectedAddress--error
-    border: 1px solid #ee395f
-
-  .invoice
-    position: relative
-    // padding-top: 20px
-
-  .checkbox
-    position: relative
-    &__input[type=checkbox]
-        position: absolute
-        z-index: 1
-        top: 50%
-        left: 0
-        transform: translateY(-50%)
-
-    &__label
-        display: inline-block
-        position: relative
-        cursor: pointer
-        padding: 10px 20px
-        font-size: 16px
-
-  .confirmButton
-    text-align: right
-    margin-top: 30px
-
-  .Button
-    &--useAnother
-      height: 36px
-      font-size: 13px
-      display: block
-      width: 100%
-      color: #555
-      fill: #555
-      +button
-
-    &--confirmOrder
-      +button
-      width: 210px
-      height: 44px
-      font-size: 16px
-      +tablet
-        width: 310px
-
-    &--disable
-      cursor: not-allowed
-      opacity: .5
-
-    &--useDifferentAddress
-      border: 1px solid #d9d9d9
-      height: 32px
-      padding: 0 10px
-      font-size: 13px
-      color: #333
-      fill: #333
-      margin-top: 15px
-      margin-bottom: 25px
-    &--goBack
-      height: 32px
-      padding: 0 15px 0 10px
-      font-size: 13px
-      font-weight: 400
-      margin-bottom: 20px
-      +button
-      .Button__icon
-        display: inline-flex
-        padding-right: 6px
-    &--selectPDA
-      height: 32px
-      padding: 0 10px
-      font-size: 13px
-      // font-weight: $weight-medium
-      +button
+  //     color: #333
+  //     fill: #333
+  //     margin-top: 15px
+  //     margin-bottom: 25px
+  //   &--goBack
+  //     height: 32px
+  //     padding: 0 15px 0 10px
+  //     font-size: 13px
+  //     font-weight: 400
+  //     margin-bottom: 20px
+  //     +button
+  //     .Button__icon
+  //       display: inline-flex
+  //       padding-right: 6px
+  //   &--selectPDA
+  //     height: 32px
+  //     padding: 0 10px
+  //     font-size: 13px
+  //     // font-weight: $weight-medium
+  //     +button
 
 
-  .disabled
-    background: red
+  // .disabled
+  //   background: red
 
-  .hubAddress
-    background-color: $white
+  // .hubAddress
+  //   background-color: $white
 
-  .delivery-method
-    border: 1px solid blue
-    padding-left: 30px
-    padding-right: 30px
+  // .delivery-method
+  //   border: 1px solid blue
+  //   padding-left: 30px
+  //   padding-right: 30px
 
-  .pick-up
-    border: 1px solid red
+  // .pick-up
+  //   border: 1px solid red
 
-  .home-delivery
-    border: 1px solid red
+  // .home-delivery
+  //   border: 1px solid red
 
-  .lockup
-    border: 1px solid red
-  .notification
-    &__copy
-      border: 1px solid red
+  // .lockup
+  //   border: 1px solid red
+  // .notification
+  //   &__copy
+  //     border: 1px solid red
 
 </style>

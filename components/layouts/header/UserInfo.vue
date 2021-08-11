@@ -160,7 +160,8 @@
       top: 0
       right: 0
       margin-top: -10px
-      background-color: $red
+      // background-color: $red
+      background-color: transparent
     &::after
       content: " "
       position: absolute

@@ -1,34 +1,37 @@
 <template>
   <header :class="$style.header">
-    <button
-      :class="[$style.headerHamburger, $style.btn]"
-      id="Menu"
-      type="button" name="button"
-      @click.stop="toggleOverlay(overlays.aside1)">
+    <button v-if="!pageMode.checkoutMode" :class="[$style.headerHamburger, $style.btn]" @click.stop="toggleOverlay(overlays.aside1)">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <use xlink:href="/svg/icons.svg?#i-menu"></use>
       </svg>
       <span :class="$style.btnLabel">Catalog</span>
     </button>
+    <!-- <button v-if="pageMode.checkoutMode" :class="[$style.headerBack, $style.btn]" @click.stop="goBackPrevPage()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+      </svg>
+      <span :class="$style.btnLabel">Back</span>
+    </button> -->
     <div :class="$style.headerLogoComponent">
       <logo></logo>
     </div>
-    <button :class="[$style.headerSearch, $style.btn]" v-if="!pageMode.checkoutMode" @click.stop="toggleOverlay(overlays.aside3)">
+
+    <button :class="[$style.headerSearch, $style.btn]" @click.stop="toggleOverlay(overlays.aside3)">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <use xlink:href="/svg/icons.svg?#i-search"></use>
       </svg>
       <span :class="$style.btnLabel">Search</span>
     </button>
 
-    <slot name="cartIcon" v-if="!isStaticMode">
-      <cart-icon :class="[$style.headerCart, $style.btn]"></cart-icon>
+    <slot name="cartIcon">
+      <cart-icon :class="[$style.headerCart, $style.btn, {[$style.headerCartCheckout]: pageMode.checkoutMode}]"></cart-icon>
     </slot>
 
-    <template v-if="(isCustomerMode && !customer) || (isAgentMode && !agent)">
-      <login-link :class="[$style.headerSignIn, $style.btn, $style.btnPrimary]" v-if="!pageMode.checkoutMode"></login-link>
+    <template v-if="!customer">
+      <login-link :class="[$style.headerSignIn, $style.btn, $style.btnPrimary]"></login-link>
     </template>
-    <template v-if="(isCustomerMode && customer)">
-      <user-info class="user"></user-info>
+    <template v-if="customer">
+      <user-info :class="$style.headerUserAvatar"></user-info>
     </template>
   </header>
 </template>
@@ -108,6 +111,13 @@
         display: none
         +tablet
           display: block
+    &__back
+      width: auto
+      padding-left: 6px
+      padding-right: 16px
+      margin-right: $gutter
+      svg
+        transform: rotate(180deg)
     &__logo-component
       // background-color: rgba($black, 0.1)
       position: relative
@@ -135,8 +145,9 @@
       overflow: visible
       +tablet
         margin-right: $gutter
-
-      // border-radius: 500em
+      &--checkout
+        +desktop
+          display: none
     &__signIn
       position: relative
       padding-left: 20px
@@ -145,4 +156,8 @@
       display: none
       +tablet
         display: block
+    &__userAvatar
+      display: none
+      +tablet
+        display: flex
 </style>

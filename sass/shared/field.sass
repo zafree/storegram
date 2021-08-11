@@ -13,6 +13,12 @@ select::-ms-expand
   &__control
     position: relative
     text-align: left
+  &__checkbox
+    border: 1px solid red
+    float: left
+    margin-top: 2px
+    + #{$root}__label
+      padding-left: 20px
   &__input
     position: relative
     display: flex
@@ -35,15 +41,25 @@ select::-ms-expand
       outline: none
     +placeholder
         color: rgba($black, .33)
+    &--textarea
+      height: auto
+      min-height: 38px
+      outline: none
+      overflow: auto
+      white-space: nowrap
+      resize: none
+      padding-top: 9px
+      padding-bottom: 9px
+
 
   &__help,
   &__validation
     font-size: 14px
     line-height: 1.6
-    color: rgba($black, .55)
     margin-top: $gutter/2
 
   &__help
+    color: rgba($black, .55)
     border: 1px solid $light
     padding: $gutter
     border-radius: $gutter/3
@@ -51,6 +67,12 @@ select::-ms-expand
       margin-top: $gutter*.75
   &__validation
     color: $red
+  &__info
+    font-size: 14px
+    line-height: 1.6
+    // color: #0099cc
+    color: $primary
+
 
   // modifires
   &--error

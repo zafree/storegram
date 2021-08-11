@@ -1,67 +1,53 @@
 <template>
-  <div :class="['customMultiselect', {'customMultiselect--isactive': showOptionsList}, 'customMultiselect--above', 'customMultiselect--disabled']" v-on-click-outside="deactivate">
-    <div class="customMultiselect__container">
-      <!-- INPUT FIELD -->
-      <div 
-        class="customMultiselect__label"
-        :class="{'customMultiselect__label--active':showOptionsList}">
-        <input
-          class="customMultiselect__input"
-          :value="searchInput"
-          @input="searchInput = $event.target.value"
-          @focus.prevent="activate()"
-          @keydown.down.prevent="downNavigation()"
-          @keydown.up.prevent="upNavigation()"
-          @keydown.enter.prevent="selectOptionViaEnterKey()"
-          @keyup.esc="deactivate()"
-          type="text" 
-          :placeholder="placeholder"
-          ref="inputField"
-        >
-          
-      </div>
-      <!-- LIST FIELD -->
-      <template v-if="showOptionsList && filteredOptions.length">
-        <div  class="customMultiselect__wrapper customMultiselect__wrapper--select customMultiselect__wrapper--disabled">
-          <ul class="customMultiselect__wrapper--content">
-            <template >
-              <li
-                v-for="(option, index) in filteredOptions" 
-                :key="option.id" 
-                @click="selectOption()"
-                @mouseover="onHover(index)"
-                :class='{"customMultiselect__list--active": currentItem === index, "customMultiselect__list--selected": isSelected(option)}'
-                class="customMultiselect__list">
-                <span class="customMultiselect__option">
-                  {{ __(option.name) }}
-                </span>
-                <!-- <span v-if="!option.is_active" class="customMultiselect__comingSoon">
-                  Coming Soon!
-                </span> -->
-              </li>
-            </template>
-          </ul>
-        </div>
-      </template>
-      <template v-if="resultNotFound" > 
-        <div class="customMultiselect__wrapper customMultiselect__wrapper--select customMultiselect__wrapper--disabled">
-          <ul class="customMultiselect__wrapper--content">
-            <li class="customMultiselect__list--notfound">
-              <span class="customMultiselect__option--notfound">No elements found. Consider changing the search query.</span>
-            </li>
-          </ul>
-        </div>
-      </template>
-    </div> <!-- ./customMultiselect__container -->
+  <!-- <div :class="['customMultiselect', {'customMultiselect--isactive': showOptionsList}, 'customMultiselect--above', 'customMultiselect--disabled']" v-on-click-outside="deactivate"> -->
+  <div :class="$style.fieldControl" v-on-click-outside="deactivate">
+
+    <input
+      :class="$style.fieldInput"
+      :value="searchInput"
+      @input="searchInput = $event.target.value"
+      @focus.prevent="activate()"
+      @keydown.down.prevent="downNavigation()"
+      @keydown.up.prevent="upNavigation()"
+      @keydown.enter.prevent="selectOptionViaEnterKey()"
+      @keyup.esc="deactivate()"
+      type="text"
+      :placeholder="placeholder"
+      ref="inputField"
+      >
+
+    <template v-if="showOptionsList && filteredOptions.length">
+      <ul :class="$style.list">
+        <template >
+          <li
+            v-for="(option, index) in filteredOptions"
+            :key="option.id"
+            @click="selectOption()"
+            @mouseover="onHover(index)"
+            :class="[$style.listItem, {[$style.listItemSelected]: isSelected(option)}]">
+            {{ __(option.name) }}
+          </li>
+        </template>
+      </ul>
+    </template>
+    <template v-if="resultNotFound || (showOptionsList && filteredOptions.length === 0)" >
+      <ul :class="$style.list">
+        <li :class="$style.listItem">No elements found.</li>
+      </ul>
+    </template>
+
     <button
       @click.prevent="toggleList"
       @keydown.down.prevent="downNavigation()"
       @keydown.up.prevent="upNavigation()"
       @keydown.enter.prevent="selectOption()"
       @keyup.esc="deactivate()"
-      class="Button Button__select"
-      :class='{"Button__select--focus": showOptionsList}'
-    ></button>
+      :class="[$style.btn, $style.btnDropdown, {[$style.btnDropdownOpen]: showOptionsList}]"
+    >
+    <svg :class="$style.btnIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+      <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+    </svg>
+    </button>
   </div>
 </template>
 
@@ -193,25 +179,69 @@
   }
 </script>
 
+<style lang="sass" module>
+  @import "shared/button"
+  @import "shared/field"
+  .btn-dropdown
+    width: 34px
+    height: 34px
+    position: absolute
+    top: 0
+    right: 0
+    margin-top: 2px
+    margin-right: 2px
+    border-radius: 2px
+    .btn-icon
+      transform: rotate(90deg)
+  .field__input
+    padding-right: 48px
+
+  .list
+    padding: 0
+    margin: 0
+    margin-top: $gutter/2
+    list-style: none
+    display: flex
+    flex-direction: column
+    background-color: $light
+    padding: $gutter $gutter*1.5
+    max-height: 300px
+    overflow-y: auto
+    border-radius: $gutter/4
+    &__item
+      padding-top: $gutter/2
+      padding-bottom: $gutter/2
+      font-size: 14px
+      font-weight: $weight-medium
+      cursor: pointer
+      &:hover
+        color: $primary
+      &--selected
+        color: $primary
+
+
+</style>
+
 <style lang="sass" scoped>
   @import "shared/button"
   .customMultiselect
+    border: 2px solid $red
     width: 100%
-    position: relative 
+    position: relative
     display: flex
     align-items: center
     box-sizing: content-box
     min-height: 40px
-    height: 40px 
+    height: 40px
     text-align: left
     color: #35495E
     &--isactive
       min-width: 100%
       z-index: 9
-    &__container 
+    &__container
       flex: 1
-    &__label 
-      width: 100% 
+    &__label
+      width: 100%
       min-height: 40px
       display: block
       border-top-left-radius: 2px
@@ -223,30 +253,30 @@
       &:active
         outline: none
       &--active
-        outline: none 
+        outline: none
         border-color: $primary
     &__input
       position: relative
       width: 100%
-      border: none 
-      border-radius: 2px 
+      border: none
+      border-radius: 2px
       padding: 12px
-      box-sizing: border-box 
-      font-size: 14px 
+      box-sizing: border-box
+      font-size: 14px
       transition: border 0.1s ease
-      &::placeholder 
+      &::placeholder
         color: #35495E
-      &:focus, 
-      &:active 
-        outline: none 
-        &::placeholder 
+      &:focus,
+      &:active
+        outline: none
+        &::placeholder
           color: #ADADAD
-    &__wrapper 
+    &__wrapper
       position: absolute
       display: block
       cussor: pointer
       background: #fff
-      width: 100% 
+      width: 100%
       max-height: 300px
       overflow: auto
       border-left: 1px solid #E8E8E8
@@ -256,7 +286,7 @@
       border-bottom-right-radius: 5px
       z-index: 99
       -webkit-overflow-scrolling: touch
-      &--content 
+      &--content
         list-style: none
         display: inline-block
         padding: 0
@@ -265,16 +295,16 @@
         vertical-align: top
       &--disabled
       &--select
-    &__list 
-      font-size: 14px 
+    &__list
+      font-size: 14px
       padding: 12px
-      position: relative 
-      display: flex 
-      align-items: center 
-      overflow: auto 
-      &:hover 
+      position: relative
+      display: flex
+      align-items: center
+      overflow: auto
+      &:hover
         background-color: rgba($black, .1)
-        cursor: pointer 
+        cursor: pointer
       &--active
         background-color: rgba($black, .1)
         cursor: pointer
@@ -284,29 +314,29 @@
           font-weight: 400
           color: #41b468
       &--notfound
-        padding: 12px 
+        padding: 12px
         // width: 280px
-        min-width: 100% 
-        overflow: auto 
+        min-width: 100%
+        overflow: auto
     &__option
       text-decoration: none
       text-transform: none
       vertical-align: middle
       cursor: pointer
       white-space: nowrap
-      overflow: auto 
-      flex: 1 
+      overflow: auto
+      flex: 1
       &--notfound
         display: block
         // white-space: nowrap
-    &__comingSoon 
-      color: $red 
-  .Button 
-    position: relative 
-    &__select 
-      line-height: 16px 
-      width: 40px 
-      height: 40px 
+    &__comingSoon
+      color: $red
+  .Button
+    position: relative
+    &__select
+      line-height: 16px
+      width: 40px
+      height: 40px
       position: absolute
       display: flex
       top: 0
@@ -317,7 +347,7 @@
       justify-content: center
       cursor: pointer
       transition: transform 0.2s ease
-      &::before 
+      &::before
         position: relative
         right: 0
         top: 0
@@ -329,13 +359,13 @@
         content: ""
       &--focus
         top: 2px
-        border: none 
-        outline: none 
+        border: none
+        outline: none
         transform: rotateZ(180deg)
 
-  *[dir="rtl"] .Button__select 
+  *[dir="rtl"] .Button__select
       right: auto
       left: 1px
-  
+
 </style>
 

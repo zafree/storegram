@@ -301,7 +301,7 @@ delivery_process:
   pickup_contact_label: "Contact"
   # agents_delivery_label: "Pickup from Nearest Deligram Agent"
   # agents_delivery_sub_label: "Order online, we will deliver the order to your nearest Deligram Agent. We will call you as soon as your order is ready for pickup"
-  home_delivery_label: "Home Delivery Service"
+  home_delivery_label: "Home Delivery"
   home_delivery_sub_label: "Your order will be delivered right to your doorstep by our delivery team!"
   home_delivery_location: "Location"
   home_delivery_area: "Area"

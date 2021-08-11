@@ -1,29 +1,22 @@
 <template>
   <div :class="$style.checkout">
-    <div :class="$style.checkoutContainer">
-      <div :class="$style.checkoutRow">
-        <div :class="[$style.checkoutStep, $style.process]">
-            <div :class="[$style.processTitle, $style.title, $style.active]">
-              <div :class="$style.titleStep">{{ i18nText.step1 }}</div>
-              <div :class="$style.titleText">{{ i18nText.customerDetails }}</div>
-            </div>
-            <div :class="$style.process__body">
-              <div :class="$style.verify">
-                <login :success-callback="nextStep"></login>
-              </div>
-            </div>
+    <h1 :class="$style.checkoutPageTitle">Checkout</h1>
+    <div :class="$style.checkoutRow">
+      <div :class="$style.checkoutCol1">
+        <cart :class="[$style.checkoutStep, $style.checkoutStepCart]"></cart>
+      </div>
+      <div :class="$style.checkoutCol2">
+        <div :class="[$style.checkoutStep, $style.checkoutStepActive]">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.customerDetails }}</div>
+          <div :class="$style.checkoutStepBody">
+            <login :success-callback="nextStep"></login>
+          </div>
         </div>
-        <div :class="[$style.checkoutStep, $style.process]">
-            <div :class="[$style.processTitle, $style.title]">
-              <div :class="$style.titleStep">{{ i18nText.step2 }}</div>
-              <div :class="$style.titleText">{{ i18nText.deliveryDetails }}</div>
-            </div>
+        <div :class="$style.checkoutStep">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.deliveryDetails }}</div>
         </div>
-        <div :class="[$style.checkoutStep, $style.process]">
-            <div :class="[$style.processTitle, $style.title]">
-              <div :class="$style.titleStep">{{ i18nText.step3 }}</div>
-              <div :class="$style.titleText">{{ i18nText.payment }}</div>
-            </div>
+        <div :class="$style.checkoutStep">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.payment }}</div>
         </div>
       </div>
     </div>
@@ -31,6 +24,7 @@
 </template>
 
 <script>
+  import Cart from '~/components/layouts/Cart'
   import Login from '~/components/Login/LoginCustomer'
   import CustomerLoginWithAgent from '~/components/Login/CustomerLoginWithAgent'
   import i18nKeys from '~/pages/_lang/checkout/verify-user.i18n.yaml'
@@ -75,6 +69,7 @@
       }
     },
     components: {
+      Cart,
       Login,
       CustomerLoginWithAgent
     },
@@ -93,51 +88,5 @@
 </script>
 
 <style lang="sass" module>
-  @import "sass/shared/checkout/checkout.sass"
-  .heroImage
-    position: absolute
-    top: 0
-    right: 0
-    height: 100%
-    max-width: 1000px
-    width: auto
-    +widescreen
-      margin-right: -10px
-
-  .verify
-    position: relative
-    +tablet
-      padding-left: 32px + 40
-    // border: 1px solid red
-    // display: flex
-    // flex-flow: column wrap
-    // +tablet
-    //   flex-flow: row wrap
-    //   padding: 0 10px
-    // &__hero
-    //   display: none
-    //   +tablet
-    //     // background-color: $primary
-    //     position: relative
-    //     overflow: hidden
-    //     display: flex
-    //     justify-content: flex-end
-    //     align-items: center
-    //     flex: 1
-    //     width: 320px
-    //     max-width: 320px
-    //   +desktop
-    //     width: 420px
-    //     max-width: 420px
-    //   +widescreen
-    //     width: 320px
-    //     max-width: 320px
-
-    // &__body
-    //   +tablet
-    //     flex: 1
-    // &__contain
-    //   +tablet
-    //     padding: 20px 0 20px 30px
-
+  @import "sass/shared/checkout/checkout"
 </style>
