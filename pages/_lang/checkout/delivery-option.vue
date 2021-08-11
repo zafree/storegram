@@ -74,10 +74,10 @@
                 <div :class="$style.field">
                   <label :class="$style.fieldLabel">{{ i18nText.deliveryMethod }}</label>
                   <div :class="$style.dmOption">
-                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, $style.dmOptionBtnActive]">Home Delivery</button>
-                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine]">Pickup from outlet</button>
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, $style.dmOptionBtnActive]" @click="pickedDeliveryMethod = PICKED_DELIVERY_METHODS.CUSTOMER">Home Delivery</button>
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine]" @click="pickedDeliveryMethod = PICKED_DELIVERY_METHODS.HUB">Pickup from outlet</button>
                   </div>
-                  <div :class="$style.dmOptionBody">
+                  <div :class="$style.dmOptionBody" v-if="isDeliveryMethodHome">
                     <p :class="[$style.copy, $style.copyDeliveryCharge]">Delivery charge Tk. 20</p>
                     <div :class="[$style.field, {[$style.fieldError]: errors.delivery_address }, {[$style.fieldSuccess]: errors.delivery_address === false }]">
                       <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryAddressLabel }}</label>
@@ -108,7 +108,7 @@
                       <p :class="$style.fieldValidation" v-if="errors.receiver_number">{{ errors.receiver_number }}</p>
                     </div>
                   </div>
-                  <div>Input field</div>
+                  <div v-if="isDeliveryMethodHub">Input field</div>
                 </div>
               </template>
 
