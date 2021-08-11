@@ -2,7 +2,7 @@ import axios from '~/plugins/axios'
 import location from '~/api/mock/location.json'
 import { categories } from '~/api/mock/categories'
 import { getCategoryProducts } from '~/api/mock/products/getCategoryProducts'
-
+import { mockSaveCart, mockValidateCart } from './mock/cart'
 import {
   API_END_POINTS as API,
   FB_LOGIN_ERROR,
@@ -14,7 +14,7 @@ import extend from 'lodash/extend'
 import omit from 'lodash/omit'
 import get from 'lodash/get'
 // import map from 'lodash/map'
-import some from 'lodash/some'
+// import some from 'lodash/some'
 import trim from 'lodash/trim'
 
 import logger from '~/utils/logger'
@@ -187,12 +187,8 @@ export function callMockApi (requestConfig) {
     case 'updateCustomer':
       // return updateCustomer()
       return callApi(requestConfig)
-    case 'validateCartItemsOfLocalStorage':
-      // return validateCartItemsOfLocalStorage()
-      return callApi(requestConfig)
-    case 'saveCart':
-      // return saveCart()
-      return callApi(requestConfig)
+    case 'saveOrValidateCart':
+      return saveOrValidateCart(requestConfig)
     case 'getPickupPoints':
       // return getPickupPoints()
       return callApi(requestConfig)
@@ -556,43 +552,20 @@ export function updateCustomer (authToken, attributes) {
 }
 
 function validateCartItemsOfLocalStorage (authToken, cart) {
-  const requestConfig = {
-    access_token: authToken,
-    url: API.CART_VALIDATE,
-    method: 'post',
-    data: cart,
-    cancellable: true
-  }
-  return callApi(requestConfig).then((data) => {
-    if (some(data, 'error')) {
-      invalidateApiCache()
-    }
-    return data
-  })
+  const response = mockValidateCart(cart)
+  return Promise.resolve(response)
 }
 
 function saveCart (authToken, cart) {
-  const requestConfig = {
-    access_token: authToken,
-    url: API.CART_SAVE,
-    method: 'post',
-    data: cart,
-    cancellable: true
-  }
-
-  return callApi(requestConfig).then((data) => {
-    if (some(data, 'error')) {
-      invalidateApiCache()
-    }
-    return data
-  })
+  const response = mockSaveCart(cart)
+  return Promise.resolve(response)
 }
 
-export function saveOrValidateCart (cart, authToken, agentMode = false) {
-  if (!cart.is_emi && !agentMode && authToken) {
-    return saveCart(authToken, cart)
+export function saveOrValidateCart (requestConfig) {
+  if (!requestConfig.data.is_emi && requestConfig.access_token) {
+    return saveCart(requestConfig.access_token, requestConfig.data)
   }
-  return validateCartItemsOfLocalStorage(authToken, cart)
+  return validateCartItemsOfLocalStorage(requestConfig.access_token, requestConfig.data)
 }
 
 export function getPickupPoints (params) {
