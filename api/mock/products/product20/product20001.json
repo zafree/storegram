@@ -1,0 +1,31 @@
+{
+  "id":11402,
+  "categoryId": 207,
+  "name":{
+    "en":"Khero Khata Salfet Green",
+    "bn":"\u0996\u09c7\u09b0\u09cb \u0996\u09be\u09a4\u09be - \u09b8\u09be\u09b2\u09ab\u09c7\u099f \u0997\u09cd\u09b0\u09bf\u09a8"
+  },
+  "slug":"khero-khata-salfet-green",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "image_info":[
+    {
+        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/product-11402.jpeg",
+        "width":800,
+        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_800_600.jpeg 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_669_501.jpeg 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_560_420.jpeg 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_468_351.jpeg 468w",
+        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_468_351.jpeg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":220,
+  "unit_price":220,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[
+    
+  ],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

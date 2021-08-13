@@ -208,6 +208,7 @@ export function getProductBySlug (slug, authToken) {
 export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
   const requestConfig = {
     name: 'getCategoryProducts',
+    categoryId: (currentCategory ? currentCategory.id : null),
     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: (currentCategory ? currentCategory.id : null)}),
     params: {
       special_categories: map(specialCategories, 'id'),
@@ -222,6 +223,7 @@ export function getCategoryProducts (currentCategory, specialCategories, subCate
 export function getSpecialCategoryProducts (specialCategory, currentCategory, authToken, from, take, brandId) {
   const requestConfig = {
     name: 'getSpecialCategoryProducts',
+    categoryId: specialCategory.id,
     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: specialCategory.id}),
     params: {
       context_id: (currentCategory ? currentCategory.id : null),
