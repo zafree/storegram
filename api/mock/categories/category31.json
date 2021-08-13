@@ -1,0 +1,21 @@
+{
+  "id": 274,
+  "slug": "phones-tablets-smart-phones-iphone",
+  "name": {
+    "en": "Apple",
+    "bn": "অ্যাপেল"
+  },
+  "parent_id": 155,
+  "featured_categories": [],
+  "is_portrait_enable": 0,
+  "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/339305/category-274.jpeg",
+  "featured_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/373615/category-274.png",
+  "home_category_logo_url": null,
+  "promotion_label": null,
+  "display_in": [
+    "category_menu"
+  ],
+  "hide_banner_in_category_summary": false,
+  "full_list_in_summary": 0,
+  "children": []
+}

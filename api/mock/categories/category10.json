@@ -1,0 +1,22 @@
+ {
+  "id": 125,
+  "slug": "men-s-fashion",
+  "name": {
+    "en": "Men's Fashion",
+    "bn": "ছেলেদের ফ্যাশন"
+  },
+  "parent_id": null,
+  "featured_categories": [],
+  "is_portrait_enable": 0,
+  "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/212025/category-125.jpeg",
+  "featured_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/303442/category-125.png",
+  "home_category_logo_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/430810/category-125.png",
+  "promotion_label": null,
+  "display_in": [
+    "category_menu",
+    "home_featured"
+  ],
+  "hide_banner_in_category_summary": true,
+  "full_list_in_summary": 0,
+  "children": []
+}

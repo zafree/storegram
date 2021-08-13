@@ -143,10 +143,10 @@
           return { brands }
         })
     },
-    watch: {
-      'specialCategories': 'reloadDataIfRequired',
-      'subCategories': 'reloadDataIfRequired'
-    },
+    // watch: {
+    //   'specialCategories': 'reloadDataIfRequired',
+    //   'subCategories': 'reloadDataIfRequired'
+    // },
     data () {
       return {
         loadedCategory: null,

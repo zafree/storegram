@@ -1,0 +1,29 @@
+{
+  "id":1416,
+  "categoryId": 207,
+  "name":{
+    "en":"Khero Khata-Tareq Masud",
+    "bn":"\u0996\u09c7\u09b0\u09cb \u0996\u09be\u09a4\u09be- \u09a4\u09be\u09b0\u09c7\u0995 \u09ae\u09be\u09b8\u09c1\u09a6"
+  },
+  "slug":"kharu-khata-tareq-masud",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "image_info":[
+    {
+        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/product-1416.jpg",
+        "width":800,
+        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_800_600.jpg 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_669_501.jpg 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_560_420.jpg 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_468_351.jpg 468w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_391_293.jpg 391w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_327_245.jpg 327w",
+        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/2887\/responsive-images\/product-1416___medialibrary_original_468_351.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":180,
+  "unit_price":180,
+  "available_qty":7,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

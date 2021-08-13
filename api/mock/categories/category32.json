@@ -1,0 +1,21 @@
+{
+  "id": 275,
+  "slug": "phones-tablets-smart-phones-nokia",
+  "name": {
+    "en": "Nokia",
+    "bn": "নোকিয়া"
+  },
+  "parent_id": 155,
+  "featured_categories": [],
+  "is_portrait_enable": 0,
+  "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/339308/category-275.jpeg",
+  "featured_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/373607/category-275.png",
+  "home_category_logo_url": null,
+  "promotion_label": null,
+  "display_in": [
+    "category_menu"
+  ],
+  "hide_banner_in_category_summary": false,
+  "full_list_in_summary": 1,
+  "children": []
+}

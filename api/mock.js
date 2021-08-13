@@ -1,4 +1,8 @@
 import axios from '~/plugins/axios'
+import location from '~/api/mock/location.json'
+import { categories } from '~/api/mock/categories'
+import { mockSaveCart, mockValidateCart } from './mock/cart'
+import { getCategoryProducts, getProductBySlug } from '~/api/mock/products/getCategoryProducts'
 
 import {
   API_END_POINTS as API,
@@ -10,28 +14,13 @@ import isString from 'lodash/isString'
 import extend from 'lodash/extend'
 import omit from 'lodash/omit'
 import get from 'lodash/get'
-import map from 'lodash/map'
-import some from 'lodash/some'
 import trim from 'lodash/trim'
 
 import logger from '~/utils/logger'
 
 import {
-  callMockApi
-} from '~/api/mock'
-
-import {
   getUrlFromTemplate
 } from '~/utils'
-
-/*
-  Do not remove following functions that were commented our temporarily:
-
-  - cancellableRequest(requestConfig)
-  - chainCancellable(promise)
-
-  These functions will be enabled & used again sometimes later.
- */
 
 function cancellableRequest (requestConfig) {
   if (requestConfig.cancellable === false || !process.browser) {
@@ -89,10 +78,6 @@ function chainCancellable (promise) {
 let cacheInvalidatingTimestamp = Date.now()
 
 function callApi (requestConfig) {
-  if (process.env.MOCK_API === 'true') {
-    return callMockApi(requestConfig)
-  }
-
   if (process.env.API_ROOT) {
     if (isString(requestConfig)) {
       requestConfig = {
@@ -138,40 +123,150 @@ function callApi (requestConfig) {
   }
   throw new Error('process.env.API_ROOT must be defined')
 }
+export function callMockApi (requestConfig) {
+  switch (requestConfig.name) {
+    case 'getLocationsWithArea':
+      return getLocationsWithArea()
+    case 'getCategories':
+      return getCategories()
+    case 'getBrands':
+      // return getBrands()
+      return callApi(requestConfig)
+    case 'getBrandDetailsBySlug':
+      // return getBrandDetailsBySlug()
+      return callApi(requestConfig)
+    case 'getProductBySlug':
+      return getProductBySlug(requestConfig)
+    case 'getCategoryProducts':
+      return getCategoryProducts(requestConfig)
+      // return callApi(requestConfig)
+    case 'getSpecialCategoryProducts':
+      return getCategoryProducts(requestConfig)
+      // return callApi(requestConfig)
+    case 'createOtp':
+      // return createOtp()
+      return callApi(requestConfig)
+    case 'changePassword':
+      // return changePassword()
+      return callApi(requestConfig)
+    case 'getAgentByAuthToken':
+      // return getAgentByAuthToken()
+      return callApi(requestConfig)
+    case 'getUserByAuthToken':
+      // return getUserByAuthToken()
+      return callApi(requestConfig)
+    case 'loginWithOTP':
+      // return loginWithOTP()
+      return callApi(requestConfig)
+    case 'loginWithPassword':
+      // return loginWithPassword()
+      return callApi(requestConfig)
+    case 'facebookConnect':
+      // return facebookConnect()
+      return callApi(requestConfig)
+    case 'facebookDisconnect':
+      // return facebookDisconnect()
+      return callApi(requestConfig)
+    case 'registerWithOTP':
+      // return registerWithOTP()
+      return callApi(requestConfig)
+    case 'saveCustomerAddress':
+      // return saveCustomerAddress()
+      return callApi(requestConfig)
+    case 'deleteCustomerAddress':
+      // return deleteCustomerAddress()
+      return callApi(requestConfig)
+    case 'deleteCustomerMobile':
+      // return deleteCustomerMobile()
+      return callApi(requestConfig)
+    case 'saveNewCustomerMobile':
+      // return saveNewCustomerMobile()
+      return callApi(requestConfig)
+    case 'updateCustomer':
+      // return updateCustomer()
+      return callApi(requestConfig)
+    case 'saveOrValidateCart':
+      return saveOrValidateCart(requestConfig)
+    case 'getPickupPoints':
+      // return getPickupPoints()
+      return callApi(requestConfig)
+    case 'getOrderSummaries':
+      // return getOrderSummaries()
+      return callApi(requestConfig)
+    case 'getOrderSummaryById':
+      // return getOrderSummaryById()
+      return callApi(requestConfig)
+    case 'createOrder':
+      // return createOrder()
+      return callApi(requestConfig)
+    case 'confirmPaymentMethod':
+      // return confirmPaymentMethod()
+      return callApi(requestConfig)
+    case 'createPortWalletInvoice':
+      // return createPortWalletInvoice()
+      return callApi(requestConfig)
+    case 'verifyBkashPaymentWithRef':
+      // return verifyBkashPaymentWithRef()
+      return callApi(requestConfig)
+    case 'verifyBkashPaymentWithTrxId':
+      // return verifyBkashPaymentWithTrxId()
+      return callApi(requestConfig)
+    case 'productRequest':
+      // return productRequest()
+      return callApi(requestConfig)
+    case 'getSearchItems':
+      // return getSearchItems()
+      return callApi(requestConfig)
+    case 'getAgentCommission':
+      // return getAgentCommission()
+      return callApi(requestConfig)
+    case 'getSupportRequests':
+      // return getSupportRequests()
+      return callApi(requestConfig)
+    case 'getRequestDetailsById':
+      // return getRequestDetailsById()
+      return callApi(requestConfig)
+    case 'updateSupportRequestById':
+      // return updateSupportRequestById()
+      return callApi(requestConfig)
+    case 'reSendOtp':
+      // return reSendOtp()
+      return callApi(requestConfig)
+    case 'verifyOrderForPickupWithOTP':
+      // return verifyOrderForPickupWithOTP()
+      return callApi(requestConfig)
+    case 'collectDonation':
+      // return collectDonation()
+      return callApi(requestConfig)
+    case 'getServiceReview':
+      // return getServiceReview()
+      return callApi(requestConfig)
+    case 'updateServiceReview':
+      // return updateServiceReview()
+      return callApi(requestConfig)
+    case 'getBlocks':
+      // return getBlocks()
+      return callApi(requestConfig)
+  }
+}
+
 export function invalidateApiCache () {
   cacheInvalidatingTimestamp = Date.now()
 }
 
 export function getLocationsWithArea () {
-  return callApi({
-    name: 'getLocationsWithArea',
-    url: API.LOCATION,
-    cancellable: false
-  })
+  return Promise.resolve(location)
 }
 
 export function getCategories (authToken) {
-  let requestConfig = {
-    name: 'getCategories',
-    url: API.CATEGORY,
-    cancellable: false
-  }
-  if (authToken) {
-    requestConfig.access_token = authToken
-  }
-  return callApi(requestConfig)
+  return Promise.resolve(categories)
   .then(response => {
-    console.log('**********************************')
-    console.log(process.env.MOCK_API)
-    console.log(response)
-    console.log('**********************************')
     return injectCollapsed(response)
   })
 }
 
 export function getBrands (params) {
   let requestConfig = {
-    name: 'getBrands',
     url: API.BRAND,
     params
   }
@@ -180,7 +275,6 @@ export function getBrands (params) {
 
 export function getBrandDetailsBySlug (slug) {
   let requestConfig = {
-    name: 'getBrandDetailsBySlug',
     url: getUrlFromTemplate(API.BRAND_DETAILS, { slug })
   }
   return callApi(requestConfig)
@@ -200,35 +294,29 @@ function injectCollapsed (catTree) {
   return catTree
 }
 
-export function getProductBySlug (slug, authToken) {
-  let requestConfig = {
-    name: 'getProductBySlug',
-    slug,
-    url: getUrlFromTemplate(API.PRODUCT_BY_SLUG, {slug})
-  }
-  authToken ? requestConfig.access_token = authToken : null
-  return callApi(requestConfig)
-}
+// export function getProductBySlug (slug, authToken) {
+//   let requestConfig = {
+//     url: getUrlFromTemplate(API.PRODUCT_BY_SLUG, {slug})
+//   }
+//   authToken ? requestConfig.access_token = authToken : null
+//   return callApi(requestConfig)
+// }
 
-export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
-  const requestConfig = {
-    name: 'getCategoryProducts',
-    categoryId: (currentCategory ? currentCategory.id : null),
-    url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: (currentCategory ? currentCategory.id : null)}),
-    params: {
-      special_categories: map(specialCategories, 'id'),
-      sub_categories: map(subCategories, 'id')
-    }
-  }
-  authToken ? requestConfig.access_token = authToken : null
+// export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
+//   const requestConfig = {
+//     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: (currentCategory ? currentCategory.id : null)}),
+//     params: {
+//       special_categories: map(specialCategories, 'id'),
+//       sub_categories: map(subCategories, 'id')
+//     }
+//   }
+//   authToken ? requestConfig.access_token = authToken : null
 
-  return callApi(requestConfig)
-}
+//   return callApi(requestConfig)
+// }
 
 export function getSpecialCategoryProducts (specialCategory, currentCategory, authToken, from, take, brandId) {
   const requestConfig = {
-    name: 'getSpecialCategoryProducts',
-    categoryId: specialCategory.id,
     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: specialCategory.id}),
     params: {
       context_id: (currentCategory ? currentCategory.id : null),
@@ -244,7 +332,6 @@ export function getSpecialCategoryProducts (specialCategory, currentCategory, au
 
 export function createOtp (authToken, mobileNumber, facebookId) {
   return callApi({
-    name: 'createOtp',
     access_token: authToken,
     url: API.CUSTOMER_OTP,
     method: 'post',
@@ -257,7 +344,6 @@ export function createOtp (authToken, mobileNumber, facebookId) {
 
 export function changePassword (authToken, data) {
   return callApi({
-    name: 'changePassword',
     access_token: authToken,
     url: API.CHANGE_PASSWORD,
     method: 'post',
@@ -267,7 +353,6 @@ export function changePassword (authToken, data) {
 
 export function getAgentByAuthToken (authToken) {
   return callApi({
-    name: 'getAgentByAuthToken',
     access_token: authToken,
     url: API.AGENT
   })
@@ -275,7 +360,6 @@ export function getAgentByAuthToken (authToken) {
 
 export function getUserByAuthToken (authToken) {
   return callApi({
-    name: 'getUserByAuthToken',
     access_token: authToken,
     url: API.USER
   })
@@ -283,7 +367,6 @@ export function getUserByAuthToken (authToken) {
 
 export function loginWithOTP (number, otp, agentToken, accessToken, userId) {
   return callApi({
-    name: 'loginWithOTP',
     access_token: agentToken,
     url: API.CUSTOMER_LOGIN,
     method: 'post',
@@ -299,7 +382,6 @@ export function loginWithOTP (number, otp, agentToken, accessToken, userId) {
 
 export function loginWithPassword (mobile, password) {
   return callApi({
-    name: 'loginWithPassword',
     url: API.AGENT_LOGIN,
     method: 'post',
     data: {
@@ -311,7 +393,6 @@ export function loginWithPassword (mobile, password) {
 
 function facebookConnect (data, authToken, resolve, reject) {
   const req = {
-    name: 'facebookConnect',
     access_token: authToken,
     url: API.FACEBOOK_CONNECT,
     method: 'post',
@@ -400,7 +481,6 @@ export function connectLoginOrRegisterWithFacebook (sdk, authToken) {
 
 export function facebookDisconnect (authToken) {
   return callApi({
-    name: 'facebookDisconnect',
     access_token: authToken,
     url: API.FACEBOOK_DISCONNECT,
     method: 'post'
@@ -409,7 +489,6 @@ export function facebookDisconnect (authToken) {
 
 export function registerWithOTP (name, number, otp, agentToken, userId, accessToken) {
   return callApi({
-    name: 'registerWithOTP',
     access_token: agentToken,
     url: API.CUSTOMER_REGISTER,
     method: 'post',
@@ -429,7 +508,6 @@ export function saveCustomerAddress (authToken, data) {
   const url = data.id ? `${API.ADDRESS}/${data.id}` : API.ADDRESS
   const method = data.id ? 'put' : 'post'
   return callApi({
-    name: 'saveCustomerAddress',
     access_token: authToken,
     url,
     method,
@@ -439,7 +517,6 @@ export function saveCustomerAddress (authToken, data) {
 
 export function deleteCustomerAddress (authToken, id) {
   return callApi({
-    name: 'deleteCustomerAddress',
     access_token: authToken,
     url: `${API.ADDRESS}/${id}`,
     method: 'delete'
@@ -448,7 +525,6 @@ export function deleteCustomerAddress (authToken, id) {
 
 export function deleteCustomerMobile (authToken, id) {
   return callApi({
-    name: 'deleteCustomerMobile',
     access_token: authToken,
     url: `${API.MOBILE}/${id}`,
     method: 'delete'
@@ -457,7 +533,6 @@ export function deleteCustomerMobile (authToken, id) {
 
 export function saveNewCustomerMobile (authToken, data) {
   return callApi({
-    name: 'saveNewCustomerMobile',
     access_token: authToken,
     url: API.MOBILE,
     method: 'post',
@@ -467,7 +542,6 @@ export function saveNewCustomerMobile (authToken, data) {
 
 export function updateCustomer (authToken, attributes) {
   return callApi({
-    name: 'updateCustomer',
     access_token: authToken,
     url: API.USER,
     method: 'put',
@@ -476,50 +550,24 @@ export function updateCustomer (authToken, attributes) {
 }
 
 function validateCartItemsOfLocalStorage (authToken, cart) {
-  const requestConfig = {
-    name: 'saveOrValidateCart',
-    access_token: authToken,
-    url: API.CART_VALIDATE,
-    method: 'post',
-    data: cart,
-    cancellable: true
-  }
-  return callApi(requestConfig).then((data) => {
-    if (some(data, 'error')) {
-      invalidateApiCache()
-    }
-    return data
-  })
+  const response = mockValidateCart(cart)
+  return Promise.resolve(response)
 }
 
 function saveCart (authToken, cart) {
-  const requestConfig = {
-    name: 'saveOrValidateCart',
-    access_token: authToken,
-    url: API.CART_SAVE,
-    method: 'post',
-    data: cart,
-    cancellable: true
-  }
-
-  return callApi(requestConfig).then((data) => {
-    if (some(data, 'error')) {
-      invalidateApiCache()
-    }
-    return data
-  })
+  const response = mockSaveCart(cart)
+  return Promise.resolve(response)
 }
 
-export function saveOrValidateCart (cart, authToken, agentMode = false) {
-  if (!cart.is_emi && !agentMode && authToken) {
-    return saveCart(authToken, cart)
+export function saveOrValidateCart (requestConfig) {
+  if (!requestConfig.data.is_emi && requestConfig.access_token) {
+    return saveCart(requestConfig.access_token, requestConfig.data)
   }
-  return validateCartItemsOfLocalStorage(authToken, cart)
+  return validateCartItemsOfLocalStorage(requestConfig.access_token, requestConfig.data)
 }
 
 export function getPickupPoints (params) {
   return callApi({
-    name: 'getPickupPoints',
     url: API.PICKUP_POINT,
     params
   })
@@ -527,7 +575,6 @@ export function getPickupPoints (params) {
 
 export function getOrderSummaries (authToken, params) {
   return callApi({
-    name: 'getOrderSummaries',
     access_token: authToken,
     url: API.ORDER,
     params
@@ -536,7 +583,6 @@ export function getOrderSummaries (authToken, params) {
 
 export function getOrderSummaryById (authToken, orderId) {
   return callApi({
-    name: 'getOrderSummaryById',
     access_token: authToken,
     url: `${API.ORDER}/${orderId}`
   })
@@ -544,7 +590,6 @@ export function getOrderSummaryById (authToken, orderId) {
 
 export function createOrder (authToken, orderAttributes) {
   const requestConfig = {
-    name: 'createOrder',
     access_token: authToken,
     url: API.ORDER,
     method: 'post',
@@ -558,7 +603,6 @@ export function createOrder (authToken, orderAttributes) {
 
 export function confirmPaymentMethod (authToken, id, prefferedPaymentChannel) {
   const requestConfig = {
-    name: 'confirmPaymentMethod',
     access_token: authToken,
     url: getUrlFromTemplate(API.CONFIRM_PAYMENT_CHANNEL, {id}),
     method: 'post',
@@ -580,7 +624,6 @@ export function cancelOrder (attr) {
 
 export function createPortWalletInvoice (authToken, orderId, data) {
   const requestConfig = {
-    name: 'createPortWalletInvoice',
     access_token: authToken,
     url: getUrlFromTemplate(API.CREATE_PORT_WALLET_INVOICE, {orderId}),
     method: 'post',
@@ -591,7 +634,6 @@ export function createPortWalletInvoice (authToken, orderId, data) {
 
 export function verifyBkashPaymentWithRef (authToken, orderId, refNo, amount) {
   const requestConfig = {
-    name: 'verifyBkashPaymentWithRef',
     access_token: authToken,
     url: getUrlFromTemplate(API.VERIFY_BKASH_PAYMENT, {orderId}),
     method: 'post',
@@ -605,7 +647,6 @@ export function verifyBkashPaymentWithRef (authToken, orderId, refNo, amount) {
 
 export function verifyBkashPaymentWithTrxId (authToken, orderId, trxId, refNo, amount) {
   const requestConfig = {
-    name: 'verifyBkashPaymentWithTrxId',
     access_token: authToken,
     url: getUrlFromTemplate(API.VERIFY_BKASH_PAYMENT, {orderId}),
     method: 'post',
@@ -622,7 +663,6 @@ export function verifyBkashPaymentWithTrxId (authToken, orderId, trxId, refNo, a
 
 export function productRequest (authToken, productId) {
   const requestConfig = {
-    name: 'productRequest',
     access_token: authToken,
     url: getUrlFromTemplate(API.PRODUCT_REQUEST, {id: productId}),
     method: 'post'
@@ -637,7 +677,6 @@ export function getSearchItems (query, params, authToken) {
     return Promise.resolve([])
   }
   const requestConfig = {
-    name: 'getSearchItems',
     url: getUrlFromTemplate(API.PRODUCTS_BY_QUERY, { query })
   }
   params && params.limit === 0 && params.offset === 0 ? requestConfig.params = params : null
@@ -648,7 +687,6 @@ export function getSearchItems (query, params, authToken) {
 
 export function getAgentCommission (authToken) {
   const requestConfig = {
-    name: 'getAgentCommission',
     url: API.AGENT_COMMISSION,
     access_token: authToken
   }
@@ -659,7 +697,6 @@ export function getAgentCommission (authToken) {
 
 export function getSupportRequests (authToken) {
   const requestConfig = {
-    name: 'getSupportRequests',
     url: API.SUPPORT_TICKETS,
     access_token: authToken
   }
@@ -668,7 +705,6 @@ export function getSupportRequests (authToken) {
 
 export function getRequestDetailsById (authToken, id, localization) {
   const requestConfig = {
-    name: 'getRequestDetailsById',
     url: getUrlFromTemplate(API.TICKET_BY_ID, { id }),
     access_token: authToken,
     localization: localization
@@ -685,7 +721,6 @@ export function getRequestDetailsById (authToken, id, localization) {
 
 export function updateSupportRequestById (authToken, id, receive) {
   const requestConfig = {
-    name: 'updateSupportRequestById',
     method: 'post',
     access_token: authToken,
     url: getUrlFromTemplate(API.TICKET_BY_ID, { id }),
@@ -698,7 +733,6 @@ export function updateSupportRequestById (authToken, id, receive) {
 
 export function reSendOtp (orderId, authToken) {
   return callApi({
-    name: 'reSendOtp',
     access_token: authToken,
     url: API.RESEND_OTP,
     method: 'post',
@@ -710,7 +744,6 @@ export function reSendOtp (orderId, authToken) {
 
 export function verifyOrderForPickupWithOTP (authToken, orderId, otp) {
   return callApi({
-    name: 'verifyOrderForPickupWithOTP',
     access_token: authToken,
     url: API.VERIFY_ORDER,
     method: 'post',
@@ -723,7 +756,6 @@ export function verifyOrderForPickupWithOTP (authToken, orderId, otp) {
 
 export function collectDonation (authToken, orderId, donationStatus) {
   return callApi({
-    name: 'collectDonation',
     access_token: authToken,
     url: getUrlFromTemplate(API.CONFIRM_DONATION, {orderId}),
     method: 'post',
@@ -735,7 +767,6 @@ export function collectDonation (authToken, orderId, donationStatus) {
 
 export function getServiceReview (authToken) {
   return callApi({
-    name: 'getServiceReview',
     access_token: authToken,
     url: API.SERVICE_REVIEW,
     method: 'get'
@@ -744,7 +775,6 @@ export function getServiceReview (authToken) {
 
 export function updateServiceReview (authToken, reviewId, params) {
   return callApi({
-    name: 'updateServiceReview',
     access_token: authToken,
     url: getUrlFromTemplate(API.SERVICE_REVIEW_BY_ID, {reviewId}),
     method: 'put',
@@ -754,7 +784,6 @@ export function updateServiceReview (authToken, reviewId, params) {
 
 export function getBlocks (contextType, contextValue, section) {
   let requestConfig = {
-    name: 'getBlocks',
     url: `${API.BLOCKS}/${contextType}/${contextValue}/${section}`
   }
 

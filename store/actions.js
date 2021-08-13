@@ -132,6 +132,7 @@ const actions = {
     if (platform) {
       commit(SET_PLATFORM, parseInt(platform))
     }
+
     actions.push(dispatch(LOAD_CATEGORIES, agentAccessToken))
     return Promise.all(actions)
   },

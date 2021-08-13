@@ -1,0 +1,21 @@
+{
+  "id": 207,
+  "slug": "books-stationeries",
+  "name": {
+    "en": "Books & Stationeries",
+    "bn": "বই ও স্টেশনারি"
+  },
+  "parent_id": null,
+  "featured_categories": [],
+  "is_portrait_enable": 1,
+  "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/469666/category-207.jpeg",
+  "featured_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/374601/category-207.png",
+  "home_category_logo_url": null,
+  "promotion_label": null,
+  "display_in": [
+    "category_menu"
+  ],
+  "hide_banner_in_category_summary": false,
+  "full_list_in_summary": 0,
+  "children": []
+}

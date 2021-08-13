@@ -1,0 +1,35 @@
+{
+  "id":73770,
+  "categoryId": 331,
+  "name":{
+    "en":"EQ White & Blue Striped Cotton Formal Shirt",
+    "bn":"EQ White & Blue Striped Cotton Formal Shirt"
+  },
+  "slug":"eq-white-blue-striped-cotton-formal-shirt",
+  "variant_slug":"l-2340",
+  "emi_tenures":[
+    
+  ],
+  "image_info":[
+    {
+        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/product-73769.png",
+        "width":800,
+        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_800_600.png 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_669_501.png 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_560_420.png 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_468_351.png 468w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_391_293.png 391w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_327_245.png 327w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_274_205.png 274w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_229_171.png 229w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_192_144.png 192w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_160_120.png 160w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_134_100.png 134w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_112_84.png 112w",
+        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385078\/responsive-images\/product-73769___medialibrary_original_468_351.png"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":699.5,
+  "unit_price":1399,
+  "available_qty":0,
+  "out_of_stock":true,
+  "varies_on":[
+    
+  ],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[
+    
+  ]
+}
