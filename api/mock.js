@@ -2,7 +2,7 @@ import axios from '~/plugins/axios'
 import location from '~/api/mock/location.json'
 import { categories } from '~/api/mock/categories'
 import { mockSaveCart, mockValidateCart } from './mock/cart'
-import { getCategoryProducts } from '~/api/mock/products/getCategoryProducts'
+import { getCategoryProducts, getProductBySlug } from '~/api/mock/products/getCategoryProducts'
 
 import {
   API_END_POINTS as API,
@@ -14,8 +14,6 @@ import isString from 'lodash/isString'
 import extend from 'lodash/extend'
 import omit from 'lodash/omit'
 import get from 'lodash/get'
-// import some from 'lodash/some'
-// import map from 'lodash/map'
 import trim from 'lodash/trim'
 
 import logger from '~/utils/logger'
@@ -138,15 +136,12 @@ export function callMockApi (requestConfig) {
       // return getBrandDetailsBySlug()
       return callApi(requestConfig)
     case 'getProductBySlug':
-      // return getProductBySlug()
-      return callApi(requestConfig)
+      return getProductBySlug(requestConfig)
     case 'getCategoryProducts':
-      return getCategoryProducts()
+      return getCategoryProducts(requestConfig)
       // return callApi(requestConfig)
     case 'getSpecialCategoryProducts':
-      console.log('am i getting called?')
-      console.log('getCategoryProducts', getCategoryProducts())
-      return getCategoryProducts()
+      return getCategoryProducts(requestConfig)
       // return callApi(requestConfig)
     case 'createOtp':
       // return createOtp()
@@ -299,13 +294,13 @@ function injectCollapsed (catTree) {
   return catTree
 }
 
-export function getProductBySlug (slug, authToken) {
-  let requestConfig = {
-    url: getUrlFromTemplate(API.PRODUCT_BY_SLUG, {slug})
-  }
-  authToken ? requestConfig.access_token = authToken : null
-  return callApi(requestConfig)
-}
+// export function getProductBySlug (slug, authToken) {
+//   let requestConfig = {
+//     url: getUrlFromTemplate(API.PRODUCT_BY_SLUG, {slug})
+//   }
+//   authToken ? requestConfig.access_token = authToken : null
+//   return callApi(requestConfig)
+// }
 
 // export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
 //   const requestConfig = {

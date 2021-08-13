@@ -36,7 +36,7 @@
 //   'suggestion': null
 // }
 
-import { products } from './products'
+import { products } from '~/api/mock/products/getCategoryProducts'
 export const mockSaveCart = (cartPayload) => {
   return mockValidateCart(cartPayload)
 }
@@ -55,21 +55,6 @@ export const mockValidateCart = (cartPayload) => {
 
   console.log(products)
   console.log(products.map(x => x.id))
-  // cartResponse.items = cartPayload.items.map(x => {
-  //   const product = products.find(p => p.id === x.id)
-  //   return {
-  //     request_item: x,
-  //     item_details: product,
-  //     error: x.qty > product.available_qty
-  //   }
-  // })
-// cartItemInfo.error === 'NOT_ENOUGH_QTY'
-// cartItemInfo.error === 'OUT_OF_STOCK'
-// cartItemInfo.error === 'DISCONTINUED'
-// cartItemInfo.error === 'PRICE_CHANGED'
-// cartItemInfo.error === 'NOT_FOUND'
-// cartItemInfo.error === 'NOT_DELIVERABLE_TO_AGENT'
-// cartItemInfo.error === 'NOT_DELIVERABLE_TO_LOCKER'
 
   for (let index = 0; index < cartPayload.items.length; index++) {
     const curr = cartPayload.items[index]
@@ -79,12 +64,16 @@ export const mockValidateCart = (cartPayload) => {
         productWanted = products[jendex]
         break
       } else if (products[jendex] && products[jendex].variants && products[jendex].variants.length) {
+        console.log(products[jendex])
+        console.log(products[jendex].variants.map(v => v.id))
+        console.log(curr.id)
         productWanted = products[jendex].variants.find(v => v.id === curr.id)
-        break
+        if (productWanted) break
       }
     }
     let error = false
-    if (productWanted.available_qty === 0) error = 'OUT_OF_STOCK'
+    if (!productWanted) error = 'NOT_FOUND'
+    else if (productWanted.available_qty === 0) error = 'OUT_OF_STOCK'
     else if (curr.qty > productWanted.available_qty) error = 'NOT_ENOUGH_QTY'
 
     cartResponse.items.push({

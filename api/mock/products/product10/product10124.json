@@ -1,167 +1,34 @@
 {
-  "slug": "eq-steel-blue-cotton-formal-shirt",
-  "meta": [],
-  "name": {
-    "en": "EQ Steel Blue Cotton Formal Shirt",
-    "bn": "EQ Steel Blue Cotton Formal Shirt"
+  "id":65818,
+  "categoryId": 331,
+  "name":{
+     "en":"Men's Special Formal Shirt - HH026"
   },
-  "description": {
-    "en": "<ul>\r\n\t<li>Dynamic Regular Fit&nbsp;</li>\r\n\t<li>Made from the best quality cotton fabric</li>\r\n\t<li>Double fusing spread collar for maximum durability</li>\r\n\t<li>Has the best quality you can see and feel</li>\r\n\t<li>Each button has been stitched perfectly so it is extra secure</li>\r\n\t<li>EQ branded original product</li>\r\n\t<li>Designed at EQ Design Studio</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<div>\r\n<h3><strong>Size Chart:</strong></h3>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); border-color:rgb(0, 0, 0); text-align:center; vertical-align:bottom\">&nbsp; &nbsp;<strong>&nbsp;Size&nbsp; &nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Chest&nbsp; &nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp;Full Length&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Neck length - Collar&nbsp; &nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Sleeve Length&nbsp; &nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; &nbsp;Unit&nbsp; &nbsp; &nbsp;</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>M</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>40</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>29</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>15.5</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>25</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>L</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>42</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>30</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>16</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>25</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>XL</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>44</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>30</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>16.5</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>26</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>XXL</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>46</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>31</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>17</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>26</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n</div>",
-    "bn": "<ul>\r\n\t<li>Dynamic Regular Fit&nbsp;</li>\r\n\t<li>Made from the best quality cotton fabric</li>\r\n\t<li>Double fusing spread collar for maximum durability</li>\r\n\t<li>Has the best quality you can see and feel</li>\r\n\t<li>Each button has been stitched perfectly so it is extra secure</li>\r\n\t<li>EQ branded original product</li>\r\n\t<li>Designed at EQ Design Studio</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h3><strong>Size Chart:</strong></h3>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); border-color:rgb(0, 0, 0); text-align:center; vertical-align:bottom\">&nbsp; &nbsp;<strong>&nbsp;Size&nbsp; &nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Chest&nbsp; &nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp;Full Length&nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Neck length - Collar&nbsp; &nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Sleeve Length&nbsp; &nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; &nbsp;Unit&nbsp; &nbsp; &nbsp;</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>M</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>40</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>29</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>15.5</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>25</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>L</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>42</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>30</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>16</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>25</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>XL</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>44</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>30</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>16.5</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>26</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>XXL</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>46</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>31</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>17</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>26</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>"
-  },
-  "description_md": {
-    "en": "- Dynamic Regular Fit\n- Made from the best quality cotton fabric\n- Double fusing spread collar for maximum durability\n- Has the best quality you can see and feel\n- Each button has been stitched perfectly so it is extra secure\n- EQ branded original product\n- Designed at EQ Design Studio\n\n<div>### **Size Chart:**\n\n <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\"><tbody><tr><td style=\"background-color:rgb(217, 217, 217); border-color:rgb(0, 0, 0); text-align:center; vertical-align:bottom\">  **Size** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Chest** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Full Length** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Neck length - Collar** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Sleeve Length** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Unit** </td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**M**</td> <td style=\"text-align:center; vertical-align:bottom\">**40**</td> <td style=\"text-align:center; vertical-align:bottom\">**29**</td> <td style=\"text-align:center; vertical-align:bottom\">**15.5**</td> <td style=\"text-align:center; vertical-align:bottom\">**25**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**L**</td> <td style=\"text-align:center; vertical-align:bottom\">**42**</td> <td style=\"text-align:center; vertical-align:bottom\">**30**</td> <td style=\"text-align:center; vertical-align:bottom\">**16**</td> <td style=\"text-align:center; vertical-align:bottom\">**25**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**XL**</td> <td style=\"text-align:center; vertical-align:bottom\">**44**</td> <td style=\"text-align:center; vertical-align:bottom\">**30**</td> <td style=\"text-align:center; vertical-align:bottom\">**16.5**</td> <td style=\"text-align:center; vertical-align:bottom\">**26**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**XXL**</td> <td style=\"text-align:center; vertical-align:bottom\">**46**</td> <td style=\"text-align:center; vertical-align:bottom\">**31**</td> <td style=\"text-align:center; vertical-align:bottom\">**17**</td> <td style=\"text-align:center; vertical-align:bottom\">**26**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td></tr></tbody></table>\n\n</div>",
-    "bn": "- Dynamic Regular Fit\n- Made from the best quality cotton fabric\n- Double fusing spread collar for maximum durability\n- Has the best quality you can see and feel\n- Each button has been stitched perfectly so it is extra secure\n- EQ branded original product\n- Designed at EQ Design Studio\n\n### **Size Chart:**\n\n <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\"><tbody><tr><td style=\"background-color:rgb(217, 217, 217); border-color:rgb(0, 0, 0); text-align:center; vertical-align:bottom\">  **Size** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Chest** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Full Length** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Neck length - Collar** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Sleeve Length** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Unit** </td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**M**</td> <td style=\"text-align:center; vertical-align:bottom\">**40**</td> <td style=\"text-align:center; vertical-align:bottom\">**29**</td> <td style=\"text-align:center; vertical-align:bottom\">**15.5**</td> <td style=\"text-align:center; vertical-align:bottom\">**25**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**L**</td> <td style=\"text-align:center; vertical-align:bottom\">**42**</td> <td style=\"text-align:center; vertical-align:bottom\">**30**</td> <td style=\"text-align:center; vertical-align:bottom\">**16**</td> <td style=\"text-align:center; vertical-align:bottom\">**25**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**XL**</td> <td style=\"text-align:center; vertical-align:bottom\">**44**</td> <td style=\"text-align:center; vertical-align:bottom\">**30**</td> <td style=\"text-align:center; vertical-align:bottom\">**16.5**</td> <td style=\"text-align:center; vertical-align:bottom\">**26**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**XXL**</td> <td style=\"text-align:center; vertical-align:bottom\">**46**</td> <td style=\"text-align:center; vertical-align:bottom\">**31**</td> <td style=\"text-align:center; vertical-align:bottom\">**17**</td> <td style=\"text-align:center; vertical-align:bottom\">**26**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td></tr></tbody></table>"
-  },
-  "offers": [],
-  "summary": null,
-  "coupon_details": null,
-  "id": 73763,
-  "variant_slug": "xl-2278",
-  "status": 1,
-  "created_at": "2019-12-15T12:11:18+06:00",
-  "updated_at": "2021-04-17T00:20:29+06:00",
-  "is_deliverable_to_agent": false,
-  "is_deliverable_to_locker": true,
-  "stock_record_id": 72903,
-  "sku": "EQFSW0006-2",
-  "unit_price": 1399,
-  "available_qty": 13,
-  "out_of_stock": false,
-  "discount_rule_id": 3010,
-  "discounted_price": 699.5,
-  "code": "DG-5-000000-737635",
-  "fix_delivery_time": {
-    "min": 5,
-    "max": 8
-  },
-  "stock_record_in_stock_qty": 13,
-  "max_delivery_time": 0,
-  "variant_name": {
-    "en": "XL"
-  },
-  "image_info": [
-    {
-      "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/product-73761.png",
-      "width": 800,
-      "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_800_600.png 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_669_501.png 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_560_420.png 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_468_351.png 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_391_293.png 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_327_245.png 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_274_205.png 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_229_171.png 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_192_144.png 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_160_120.png 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_134_100.png 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_112_84.png 112w",
-      "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/responsive-images/product-73761___medialibrary_original_468_351.png"
-    },
-    {
-      "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/product-73761.jpeg",
-      "width": 800,
-      "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_392_294.jpeg 392w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_112_84.jpeg 112w",
-      "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/responsive-images/product-73761___medialibrary_original_468_351.jpeg"
-    },
-    {
-      "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/product-73761.jpeg",
-      "width": 800,
-      "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_134_100.jpeg 134w",
-      "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/responsive-images/product-73761___medialibrary_original_468_351.jpeg"
-    },
-    {
-      "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/product-73761.jpeg",
-      "width": 800,
-      "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_112_84.jpeg 112w",
-      "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/responsive-images/product-73761___medialibrary_original_468_351.jpeg"
-    },
-    {
-      "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/product-73761.jpeg",
-      "width": 800,
-      "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_192_144.jpeg 192w",
-      "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/responsive-images/product-73761___medialibrary_original_468_351.jpeg"
-    }
+  "slug":"men-s-special-formal-shirt-hh026",
+  "variant_slug":"m-1479",
+  "emi_tenures":[
+     
   ],
-  "images": [
-    "https://d1zk0te1r027w9.cloudfront.net/storage/media/385076/product-73761.png",
-    "https://d1zk0te1r027w9.cloudfront.net/storage/media/381665/product-73761.jpeg",
-    "https://d1zk0te1r027w9.cloudfront.net/storage/media/381667/product-73761.jpeg",
-    "https://d1zk0te1r027w9.cloudfront.net/storage/media/381666/product-73761.jpeg",
-    "https://d1zk0te1r027w9.cloudfront.net/storage/media/381664/product-73761.jpeg"
+  "image_info":[
+     {
+        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/product-65818.jpeg",
+        "width":800,
+        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_800_600.jpeg 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_669_501.jpeg 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_560_420.jpeg 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_468_351.jpeg 468w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_391_293.jpeg 391w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_327_245.jpeg 327w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_274_205.jpeg 274w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_229_171.jpeg 229w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_192_144.jpeg 192w",
+        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/333780\/responsive-images\/product-65818___medialibrary_original_468_351.jpeg"
+     }
   ],
-  "policies": [
-    {
-      "id": 1,
-      "name": "7 Days Return Facility",
-      "description": "Return any products to Deligram within 7 days of delivery.",
-      "type": 2,
-      "duration": 7,
-      "unit": 1,
-      "creator_id": 11,
-      "creator_type": "App\\Models\\AdminUser",
-      "editor_id": 10,
-      "editor_type": "App\\Models\\AdminUser",
-      "created_at": "2019-01-19T13:30:16+06:00",
-      "updated_at": "2019-10-16T11:45:07+06:00"
-    },
-    {
-      "id": 5,
-      "name": "Warranty Not Applicable",
-      "description": "Warranty not applicable",
-      "type": 3,
-      "duration": 0,
-      "unit": 1,
-      "creator_id": 10,
-      "creator_type": "App\\Models\\AdminUser",
-      "editor_id": 10,
-      "editor_type": "App\\Models\\AdminUser",
-      "created_at": "2019-10-16T11:39:57+06:00",
-      "updated_at": "2019-10-16T11:46:50+06:00"
-    },
-    {
-      "id": 9,
-      "name": "7 Days Replacement",
-      "description": "7 Days Replacement",
-      "type": 1,
-      "duration": 7,
-      "unit": 1,
-      "creator_id": 10,
-      "creator_type": "App\\Models\\AdminUser",
-      "editor_id": 10,
-      "editor_type": "App\\Models\\AdminUser",
-      "created_at": "2019-10-16T12:25:49+06:00",
-      "updated_at": "2019-10-16T12:25:49+06:00"
-    }
+  "coupon_details":null,
+  "discounted_price":600,
+  "unit_price":600,
+  "available_qty":0,
+  "out_of_stock":true,
+  "varies_on":[
+     
   ],
-  "attributes": [
-    {
-      "code": "apparel-size",
-      "type": "dropdown",
-      "is_varying": 1,
-      "name": {
-        "bn": "সাইজ",
-        "en": "Size"
-      },
-      "value_prefix": null,
-      "value_suffix": null,
-      "is_featured": 0,
-      "i18n_value": null,
-      "unit": null,
-      "sort_position": 0,
-      "value": "XL",
-      "i18n_unit": null
-    }
-  ],
-  "emi_supported_banks": [
-    {
-      "name": "The City Bank Limited (CBL)",
-      "logo": ""
-    },
-    {
-      "name": "Eastern Bank Limited (EBL)",
-      "logo": ""
-    },
-    {
-      "name": "BRAC Bank Limited (BBL)",
-      "logo": ""
-    },
-    {
-      "name": "Dhaka Bank Limited (DBL)",
-      "logo": ""
-    },
-    {
-      "name": "Dutch Bangla Bank Limited (DBBL)",
-      "logo": ""
-    }
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[
+     
   ]
 }

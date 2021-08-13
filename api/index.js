@@ -161,6 +161,10 @@ export function getCategories (authToken) {
   }
   return callApi(requestConfig)
   .then(response => {
+    console.log('**********************************')
+    console.log(process.env.MOCK_API)
+    console.log(response)
+    console.log('**********************************')
     return injectCollapsed(response)
   })
 }
@@ -199,6 +203,7 @@ function injectCollapsed (catTree) {
 export function getProductBySlug (slug, authToken) {
   let requestConfig = {
     name: 'getProductBySlug',
+    slug,
     url: getUrlFromTemplate(API.PRODUCT_BY_SLUG, {slug})
   }
   authToken ? requestConfig.access_token = authToken : null
@@ -208,6 +213,7 @@ export function getProductBySlug (slug, authToken) {
 export function getCategoryProducts (currentCategory, specialCategories, subCategories, authToken) {
   const requestConfig = {
     name: 'getCategoryProducts',
+    categoryId: (currentCategory ? currentCategory.id : null),
     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: (currentCategory ? currentCategory.id : null)}),
     params: {
       special_categories: map(specialCategories, 'id'),
@@ -222,6 +228,7 @@ export function getCategoryProducts (currentCategory, specialCategories, subCate
 export function getSpecialCategoryProducts (specialCategory, currentCategory, authToken, from, take, brandId) {
   const requestConfig = {
     name: 'getSpecialCategoryProducts',
+    categoryId: specialCategory.id,
     url: getUrlFromTemplate(API.PRODUCTS_BY_CATEGORY, {categoryId: specialCategory.id}),
     params: {
       context_id: (currentCategory ? currentCategory.id : null),
