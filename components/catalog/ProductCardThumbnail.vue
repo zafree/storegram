@@ -1,7 +1,6 @@
 <template>
   <div :class="$style.item" v-if="product">
     <i18n-link :class="$style.product" :to="detailPageUrl">
-      <!-- hero -->
       <div :class="[$style.img]">
         <div :class="$style.imgAspectRatio">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
@@ -10,7 +9,6 @@
         </div>
         <div :class="$style.imgImage">
           <computed-image v-if="productImages.length"
-            :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
             :meta="productImages[0]"
             :animate="false"
             :alt="__(product.name)"
@@ -18,8 +16,6 @@
             @imageLoaded="imageIsLoaded = true"/>
         </div>
       </div>
-
-      <!-- stream -->
       <div :class="$style.productInfo">
         <div :class="$style.productInfoItem">
           <h4 :class="$style.productTitle">{{__(product.name)}}</h4>

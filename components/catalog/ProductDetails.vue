@@ -1,22 +1,20 @@
 <template>
   <div :class="$style.product" v-if="currentVariant">
-
     <div :class="$style.productName">
       <span :class="$style.label">ID# {{currentVariant.id}}</span>
       <h1 :class="$style.title">{{ name }}</h1>
     </div>
     <div :class="$style.productDetails">
       <div :class="[$style.productGallery, $style.gallery]">
-        <div :class="[$style.img]">
+        <div :class="$style.img">
           <div :class="$style.imgAspectRatio">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
               <use xlink:href="/svg/icons.svg?#i-camera"></use>
             </svg>
           </div>
-          <div :class="$style.imgImage">
-            <lazy-image
+          <div :class="[$style.imgImage, $style.uZoomIn]">
+            <computed-image
               :meta="currentImage"
-              :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
               :animate="false"
               @click="openProductImageZoomMode()"
               :alt="name"
@@ -28,14 +26,21 @@
           <li
             v-for="(img, index) in productImages"
             :key="img.url"
-            :class="[$style.galleryItem, {[$style.galleryItemActive]: (index === currentProductImageIndex)}]"
+            :class="[$style.img, $style.galleryItem, {[$style.galleryItemActive]: (index === currentProductImageIndex)}]"
             @click="changeProductHeroImg(index)">
-            <div :class="$style.heroImageAspectRatio"></div>
-            <lazy-image :class="[$style.galleryImage, $style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
-              :meta="img"
-              :animate="false"
-              :alt="name"
-              :title="name"/>
+
+            <div :class="$style.imgAspectRatio">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <use xlink:href="/svg/icons.svg?#i-camera"></use>
+              </svg>
+            </div>
+            <div :class="$style.imgImage">
+              <computed-image
+                :meta="img"
+                :animate="false"
+                :alt="name"
+                :title="name"/>
+            </div>
           </li>
         </ul>
       </div>
@@ -95,17 +100,21 @@
     <div :class="[$style.modal, $style.modalZoomImage]" v-show="productImageInZoomMode">
       <div :class="$style.modalOverlay" @click="closeProductImageZoomMode()"></div>
       <div :class="$style.modalContent">
-        <div :class="$style.image">
-          <div :class="$style.imagePlaceholder"></div>
-          <lazy-image
-            :meta="currentImage"
-            :class="[$style.imageImage, {[$style.imageLoaded]: imageIsLoaded}]"
-            :animate="false"
-            :alt="name"
-            :title="name"
-            @imageLoaded="imageIsLoaded = true"/>
+        <div :class="$style.img">
+          <div :class="$style.imgAspectRatio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+              <use xlink:href="/svg/icons.svg?#i-camera"></use>
+            </svg>
+          </div>
+          <div :class="$style.imgImage">
+            <computed-image
+              :meta="currentImage"
+              :animate="false"
+              :alt="name"
+              :title="name"
+              @imageLoaded="imageIsLoaded = true"/>
+          </div>
         </div>
-
         <button :class="$style.modalClose" @click="closeProductImageZoomMode()">
           <svg viewBox="0 0 32 32">
             <path d="M26.3,7.9l-2.1-2.1L16,13.9L7.9,5.7L5.7,7.9l8.1,8.1l-8.1,8.1l2.1,2.1l8.1-8.1l8.1,8.1l2.1-2.1
@@ -133,6 +142,7 @@
   import pick from 'lodash/pick'
   import i18nLink from '~/components/i18nLink'
   import LazyImage from '~/components/LazyImage'
+  import ComputedImage from '~/components/ComputedImage'
   import DeliverableInfo from '~/components/catalog/DeliverableInfo'
   import enumMixinFactory from '~/utils/enum_mixin_factory'
   import OfferLogoImage from '~/components/catalog/OfferLogoImage.vue'
@@ -617,6 +627,7 @@
     },
     components: {
       LazyImage,
+      ComputedImage,
       i18nLink,
       DeliverableInfo,
       OfferLogoImage
@@ -629,6 +640,10 @@
   @import "shared/modal"
   @import "shared/img"
   @import "shared/category_summary/product_details"
+
+  .u-zoom-in
+    cursor: zoom-in
+
 
   .copy
     font-size: 14px
