@@ -46,11 +46,23 @@
     +tablet
       margin-bottom: $gutter*2
       padding: $gutter*2
+    &-done
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 24px
+      height: 24px
+      border-radius: 500em
+      background-color: $light
+      fill: rgba($black, .55)
     &-title
       font-size: 18px
       line-height: 1.33
       color: rgba($black, .55)
       font-weight: $weight-black
+      display: flex
+      justify-content: space-between
+      align-items: center
       +tablet
         font-size: 24px
     &-body

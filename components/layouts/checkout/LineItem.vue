@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.cart">
-    Cart
+    Where are you cart?
     <div :class="$style.cartKeek">
       <div :class="$style.cartHero">
         <div :class="$style.cartImageAspectRatio"></div>
@@ -93,29 +93,5 @@
 </script>
 
 <style lang="sass" module>
-  @import "shared/cart-item"
-
-  .cart
-    &__amount
-      height: 30px
-</style>
-
-
-<style lang="sass" scoped>
-  .cart__line-item
-    position: relative
-    background-color: #fff
-    .close-button
-      position: absolute
-      top: 2px
-      right: 2px
-
-
-    .item-total
-      font-weight: bold
-
-    .bottom-row
-      color: #ccc
-
-
+  // @import "shared/cart-item"
 </style>

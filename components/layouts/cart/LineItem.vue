@@ -1,38 +1,57 @@
 <template>
-  <div :class="['item', {'error': !!cartItemInfo.error}]">
-    <div class="item__image">
-      <computed-image :meta="productImageInfo" :alt="__(cartItemInfo.name)"/>
-    </div>
-    <div class="item__content">
-      <h3 class="item__title">{{__(cartItemInfo.name)}}</h3>
-      <div class="item__stream">
-        <button class="minus" @click="decreaseQuantity()" :disabled="isMinusButtonDisabled"></button>
-        <span class="count">{{cartItem.qty}}</span>
-        <button class="plus" @click="increaseQuantity()" :disabled="isPlusButtonDisabled"></button>
-        <span class="multiply"></span>
-        <span class="price">Tk. {{ __$(totalPrice) }}</span>
+  <div :class="[$style.item, {[$style.itemError]: !!cartItemInfo.error}]">
+    <div :class="$style.itemImage">
+      <div :class="$style.img">
+        <div :class="$style.imgAspectRatio">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+            <use xlink:href="/svg/icons.svg?#i-camera"></use>
+          </svg>
+        </div>
+        <div :class="$style.imgImage">
+          <computed-image :meta="productImageInfo" :alt="__(cartItemInfo.name)"/>
+        </div>
       </div>
     </div>
-    <button class="item__delete" @click="removeItem()">
-      <svg viewBox="0 0 32 32" width="14px" height="14px">
-        <g>
-          <path d="M22.2,4.8V2.1c0-1.2-0.9-2.1-2.1-2.1h-8.2c-1.2,0-2.1,0.9-2.1,2.1v2.7H1.1v2.5h2.6l2.1,23.5
-            C5.8,31.5,6.4,32,7,32h17.9c0.6,0,1.2-0.5,1.2-1.1l2.1-23.5h2.7V4.8H22.2z M12.3,2.5h7.4v2.3h-7.4V2.5z M23.8,29.5H8.2l-2-22.2
-            h19.5L23.8,29.5z"/>
-          <rect x="11.9" y="17.1" transform="matrix(3.667855e-02 -0.9993 0.9993 3.667855e-02 0.231 37.0335)" width="14.8" height="2.5"/>
-          <rect x="11.4" y="11" transform="matrix(0.9993 -3.666115e-02 3.666115e-02 0.9993 -0.6661 0.477)" width="2.5" height="14.8"/>
-        </g>
-      </svg>
-    </button>
+    <div :class="$style.itemInfo">
+      <h3 :class="$style.itemInfoTitle">{{__(cartItemInfo.name)}}</h3>
+      <div :class="$style.itemInfoStream">
+        <template v-if="cartItem.qty > 1">
+          <button :class="[$style.itemInfoBtn, $style.btn]" @click="decreaseQuantity()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+              <use xlink:href="/svg/icons.svg?#i-minus"></use>
+            </svg>
+          </button>
+        </template>
+        <template v-else>
+          <button :class="[$style.itemInfoBtn, $style.btn]" @click="removeItem()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+              <use xlink:href="/svg/icons.svg?#i-delete"></use>
+            </svg>
+          </button>
+        </template>
+        <span :class="$style.itemInfoCount">{{cartItem.qty}}</span>
+        <button :class="[$style.itemInfoBtn, $style.btn, {[$style.btnMuted]: cartItemInfo.error}]" @click="increaseQuantity()" :disabled="cartItemInfo.error">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+            <use xlink:href="/svg/icons.svg?#i-plus"></use>
+          </svg>
+        </button>
+        <span :class="[$style.itemInfoMultiply, $style.btn]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10">
+            <use xlink:href="/svg/icons.svg?#i-close"></use>
+          </svg>
+        </span>
+        <span :class="$style.itemInfoPrice">Tk. {{ __$(totalPrice) }}</span>
+      </div>
+    </div>
     <template v-if="cartItemInfo.error">
-      <div class="item__validation" v-if="cartItemInfo.error === 'NOT_ENOUGH_QTY' && productUpdateStatus !== 'Updated'">
-        <p>{{ i18nText.desiredQuantity }}</p>
-        <button @click="updateItem">{{ i18nText.update }}</button>
+      <div :class="$style.itemValidation" v-if="cartItemInfo.error === 'NOT_ENOUGH_QTY' && productUpdateStatus !== 'Updated'">
+        <p :class="$style.itemValidationCopy">{{ i18nText.desiredQuantity }}</p>
+        <button :class="[$style.itemValidationBtn, $style.btn, $style.btnPrimary]" @click="updateItem">{{ i18nText.update }}</button>
       </div>
 
-      <div class="item__validation" v-if="cartItemInfo.error === 'OUT_OF_STOCK' && productUpdateStatus !== 'Requested'">
-        <p>{{ i18nText.outStock }}</p>
-        <button @click="requestForProduct">{{ i18nText.request }}</button>
+      <div :class="$style.itemValidation" v-if="cartItemInfo.error === 'OUT_OF_STOCK' && productUpdateStatus !== 'Requested'">
+        <p :class="$style.itemValidationCopy">{{ i18nText.outStock }}</p>
+        <button :class="[$style.itemValidationBtn, $style.btn, $style.btnPrimary]" @click="requestForProduct">{{ i18nText.request }}</button>
       </div>
     </template>
   </div>
@@ -251,236 +270,9 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .item__validation
-    z-index: 11
-    position: relative
-    width: 100%
-    display: flex
-    flex-flow: row wrap
-    align-items: center
-    margin-top: 5px
-    margin-bottom: 10px
-    p
-      font-size: 12px
-      color: $red
-      flex: 1
-      // margin-top: 1px
-    button
-      +button
-      padding: 0 12px
-      height: 28px
-      background-color: $red
-      color: $white
-      font-size: 12px
-      border-radius: 0
-      // margin-top: 4px
-      font-weight: $weight-medium
-      margin-left: 5px
-
-  .item
-    margin-top: 20px
-    position: relative
-    display: flex
-    flex-flow: row wrap
-    // background-color: rgba($black, 0.03)
-    &.error
-      &::after
-        content: ""
-        z-index: 10
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        background-color: rgba($white, 0.5)
-      .item__delete
-        z-index: 11
-        fill: $red
-    &__image
-      width: 70px
-      height: 70px
-      min-width: 70px
-      min-height: 70px
-      background-color: #EBEBEB
-      overflow: hidden
-    &__content
-      flex: 1
-      position: relative
-      // background-color: rgba($black, 0.03)
-      width: 100%
-      padding-left: 10px
-    &__title
-      font-size: 14px
-      line-height: 1.33
-      max-width: 160px
-    &__stream
-      margin-top: 8px
-      position: relative
-      display: inline-flex
-      width: 100%
-      // background-color: rgba($primary, 0.1)
-      .minus,
-      .plus
-        +button
-        padding: 0
-        height: 21px
-        width: 21px
-        background-color: #EBEBEB
-        &:disabled
-          cursor: default
-        &::before
-          content: ""
-          position: absolute
-          top: 0
-          left: 0
-          width: 9px
-          height: 1px
-          background-color: $black
-          margin-top: 10px
-          margin-left: 6px
-      .plus
-        &::after
-          content: ""
-          position: absolute
-          top: 0
-          left: 0
-          width: 1px
-          height: 9px
-          background-color: $black
-          margin-top: 6px
-          margin-left: 10px
-      .count,
-      .price
-        display: block
-        height: 21px
-        font-size: 12px
-        line-height: 22px
-      .count
-        width: 21px
-        color: $black
-        text-align: center
-      .multiply
-        position: relative
-        display: block
-        width: 21px
-        height: 21px
-        // background-color: rgba($primary, 0.1)
-        margin-left: 4px
-        &::before,
-        &::after
-          content: ""
-          position: absolute
-          top: 0
-          left: 0
-          width: 7px
-          height: 1px
-          background-color: #666666
-          margin-top: 11px
-          margin-left: 7px
-          transform-origin: center center
-        &::before
-          transform: rotate(45deg)
-        &::after
-          transform: rotate(135deg)
-      .price
-        margin-left: -3px
-        color: #666666
-    &__delete
-      +button
-      position: absolute
-      top: 0
-      right: 0
-      padding: 0
-      // background-color: rgba($black, 0.1)
-      height: 22px
-      width: 22px
-      display: inline-flex
-      justify-content: center
-      align-items: center
-      margin-right: -3px
-      fill: #aaaaaa
-
-    // svg
-    //   background-color: rgba($primary, 0.1)
-
-</style>
-
-<style lang="sass" scoped>
-  .hint
-    &__brief
-      &--mobileOnly
-        +desktop
-          display: none
-      &--desktopOnly
-        display: none
-        +desktop
-          display: block
-
-</style>
-
 
 <style lang="sass" module>
-  @import "shared/cart-item"
   @import "shared/button"
-
-  .Button
-    &__close
-      position: absolute
-      right: 0
-      top: 0
-      // background-color: rgba($black, .1)
-      height: 30px
-      width: 30px
-      display: inline-flex
-      justify-content: center
-      z-index: 2
-      padding: 0
-    &__IconTimes
-      position: relative
-      width: 9px
-      height: 9px
-      &::before,
-      &::after
-        content: ''
-        position: absolute
-        width: 11px
-        height: 1px
-        left: 0
-        margin-top: 4px
-        margin-left: -1px
-        background-color: #aaa
-        transform-origin: center
-      &::before
-        transform: rotate(45deg)
-      &::after
-        transform: rotate(135deg)
-
-    &__iconMinus,
-    &__iconPlus
-      position: relative
-      width: 9px
-      height: 1px
-      background-color: rgba($black, .33)
-    &__iconPlus
-      &::after
-        content: ''
-        position: absolute
-        width: 9px
-        height: 1px
-        left: 0
-        background-color: rgba($black, .33)
-        transform-origin: center center
-        transform: rotate(90deg)
-    &--count
-      background-color: rgba($black, .1)
-      display: inline-flex
-      justify-content: center
-      height: 30px
-      width: 24px
-      border-radius: 0
-    &--disabled
-      pointer-events: none
-      opacity: .55
-
+  @import "shared/img"
+  @import "shared/cart-item"
 </style>

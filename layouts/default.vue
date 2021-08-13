@@ -5,11 +5,7 @@
 
         <div :class="[$style.appHeader, {[$style.appHeaderCheckout]: pageMode.checkoutMode}]">
           <slot name="header">
-            <site-header>
-              <template slot="cartIcon" v-if="pageMode.paymentMode">
-                <button :class="[$style.button, $style.buttonOrderSummary]" @click.stop="toggleOverlay(overlays.aside2)">{{this.$t('cart.order_summary')}}</button>
-              </template>
-            </site-header>
+            <site-header></site-header>
           </slot>
         </div>
 

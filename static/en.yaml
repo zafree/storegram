@@ -16,12 +16,12 @@ preferred_delivery_point:
   select_area: You can select your area above, to find your nearest {deliveryMethod} point easily.
   selected_address: "Selected {deliveryMethod}:"
   selected_home_delivery_address: "Selected delivery address"
-  address_found: 'We found the following {deliveryMethod}s for {place}. Please select your nearest one:'
-  no_address_found: 'Sorry, no {deliveryMethod}s found in selected {place}. Want to see a {deliveryMethod} near you? Email us at'
+  address_found: "We found the following {deliveryMethod}s for {place}. Please select your nearest one:"
+  no_address_found: "Sorry, no {deliveryMethod}s found in selected {place}. Want to see a {deliveryMethod} near you? Email us at"
   login_to_see_home_addresses: Please sign in to add your home delivery address or see your saved addresses
   found_no_home_address: There are no saved addresses in your profile.
   click_here_to_create_home_address: Add address
-  your_home_addresses: 'Your delivery addresses:'
+  your_home_addresses: "Your delivery addresses:"
 deliverable_info:
   agent_store: dgAgent stores
   agent: dgAgent
@@ -31,7 +31,7 @@ deliverable_info:
   deliverable_to: Deliverable to
   not_deliverable_to: Not deliverable to
   not_deliverable_to_preferred_point: Not deliverable to your preferred delivery point
-  not_deliverable_to_agent_point:  Not deliverable to your Agent delivery point
+  not_deliverable_to_agent_point: Not deliverable to your Agent delivery point
   but_you_can_still_add: But you can still add this item in your cart and use a different delivery point while placing order.
 no_product:
   # in_category_list: "No product yet for this category list"
@@ -88,15 +88,15 @@ profile:
   address_init_message: "Save your address so that you can easily checkout when placing an order"
   add_address: "Add address"
   delete_address_warning: "Remove this address?"
-  change_password_label: 'Change Password'
-  current_password_label: 'Current Password'
-  new_password_label: 'New Password'
-  confirm_password_label: 'Confirm Password'
-  commission_label: 'Commission'
-  show_details: 'Show Details'
-  hide_details: 'Hide Details'
-  show: 'Show'
-  hide: 'Hide'
+  change_password_label: "Change Password"
+  current_password_label: "Current Password"
+  new_password_label: "New Password"
+  confirm_password_label: "Confirm Password"
+  commission_label: "Commission"
+  show_details: "Show Details"
+  hide_details: "Hide Details"
+  show: "Show"
+  hide: "Hide"
   preferred_delivery_point: Preferred Delivery Point
   preferred_delivery_point_guided_text: Your preferred delivery point will be saved & automatically set as your delivery address during checkout. You can change this anytime.
   set_delivery_point: Set delivery point
@@ -191,12 +191,12 @@ content_top:
 # primary_promo_top:
 #   title: "Welcome to the future of shopping"
 # primary_promo_bottom:
-  # point1: "Explore New Products"
-  # brief1: "Browse hundreds of unique local & import products"
-  # point2: "Save Money"
-  # brief2: "Find the best products at the best prices"
-  # point3: "Easy Delivery & Service"
-  # brief3: "Visit our hubs for delivery pickup or after sales service"
+# point1: "Explore New Products"
+# brief1: "Browse hundreds of unique local & import products"
+# point2: "Save Money"
+# brief2: "Find the best products at the best prices"
+# point3: "Easy Delivery & Service"
+# brief3: "Visit our hubs for delivery pickup or after sales service"
 # location:
 #   not_selected: "Location not set"
 #   title: "Please select your location"
@@ -286,7 +286,7 @@ delivery_process:
   location_placeholder: "Select Location"
   # area_palceholder: "Select Area"
   area_label: "Area"
-  delivery_method: "Delivery Method"
+  delivery_method: "Select Delivery Method"
   pickup_label: "Pickup from Nearest Outlet"
   pickup_sub_label: "The fastest option to receive your orders. Plus, it's free! We will call you as soon as your order is ready for pickup"
   locker_pickup_label: "Pickup from Nearest Deligram Locker"
@@ -344,7 +344,7 @@ delivery_process:
   current_customer: "Currently logged in customer"
   another_customer: "Not this customer?"
   click_here: "Click here"
-  change: 'Change'
+  change: "Change"
   select_agent_address: Select Agent
   select_locker_address: Select Locker
   select_hub_address: Select Hub
@@ -477,8 +477,8 @@ ready_for_pickup_orders:
   order: "Order"
   name: "Name"
   order_total: "Total"
-  due_amount : "Due Amount"
-  action : "Actions"
+  due_amount: "Due Amount"
+  action: "Actions"
   enter_otp: "Enter OTP"
   verify: "Verify"
   resend_otp: "Re-send OTP"
@@ -531,7 +531,7 @@ static:
   translation_not_found: "No translation found."
 api_errors:
   facebook_exists: "The facebook account you are trying to connect with is associated with another account."
-  default_error: 'Something went wrong'
+  default_error: "Something went wrong"
   number_in_use: "{field} is already linked with another account"
   account_not_found: "No account found using provided {field}"
   otp_mismatch: "{field} is incorrect or expired."
@@ -544,10 +544,10 @@ api_errors:
   total_usage_limit_exceeded: "Coupon Expired"
   user_usage_limit_exceeded: "Coupon Expired"
   coupon_code_required: "Coupon Code Required"
-  fixed_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail fixed ৳ {discountAmount} discount"
-  free_delivery_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail Free delivery"
-  percentage_of_subtotal_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail {discountAmount}% discount of subtotal"
-  percentage_of_subtotal_or_max_coupon_min_subtotal_not_match: "Shop ৳ {restAmount} more to avail {discountAmount}% discount of subtotal or max ৳ {maxDiscountmount} discount"
+  fixed_coupon_min_subtotal_not_match: "Shop Tk.{restAmount} more to avail fixed Tk.{discountAmount} discount"
+  free_delivery_coupon_min_subtotal_not_match: "Shop Tk.{restAmount} more to avail Free delivery"
+  percentage_of_subtotal_coupon_min_subtotal_not_match: "Shop Tk.{restAmount} more to avail {discountAmount}% discount of subtotal"
+  percentage_of_subtotal_or_max_coupon_min_subtotal_not_match: "Shop Tk.{restAmount} more to avail {discountAmount}% discount of subtotal or max Tk.{maxDiscountmount} discount"
   number_not_found: "No account found using provided {field}"
   user_not_found: "No account found using provided {field}"
   order_not_found: "Order not found"
@@ -765,8 +765,8 @@ error_page:
 vacation:
   title: "ঘরে থাকুন!"
   sub_title: "করোনা ভাইরাস থেকে নিজে ও আশেপাশের মানুষকে সুরক্ষিত রাখতে নিতান্ত প্রয়োজন ছাড়া বাসার বাইরে বের হবেন না"
-  message: 'করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।'
-  notice: 'করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।'
+  message: "করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।"
+  notice: "করোনা ভাইরাস সংক্রমণ প্রতিরোধে প্রদত্ত সরকারি বিজ্ঞপ্তি অনুসারে আগামী ২৬/৩/২০২০ হতে ৪/৪/২০২০ পর্যন্ত আমাদের সকল কার্যক্রম বন্ধ থাকবে। দেশের সার্বিক পরিস্থিতির উপর অর্ডারের প্রসেসিং ও ডেলিভারি সময় নির্ভর করবে।"
 network_offline:
   title: "No Internet Connection"
   copy: "This message will be removed automatically when internet connection is available again."

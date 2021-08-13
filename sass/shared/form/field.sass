@@ -224,6 +224,8 @@ select::-ms-expand
 
         // background-color: rgba(black, .02)
 
+
+
 .lable
     position: relative
     $root: &;
@@ -253,16 +255,14 @@ select::-ms-expand
     &__title
         font-size: 14px
         line-height: 1.44
-        font-weight: 700
-        color: #555
-        fill: #555
+        font-weight: $weight-bold
         padding-right: 50px
     &__sub
         font-size: 13px
         line-height: 1.66
-        font-weight: 400
-        color: #aaa
+        font-weight: $weight-medium
         margin-top: 5px
+        color: rgba($black, .55)
         +tablet
             padding-right: 90px
         &--dark
@@ -275,8 +275,7 @@ select::-ms-expand
                 padding-right: 0px
     &__price
         font-size: 20px
-        font-weight: 400
-        color: #fe5175
+        font-weight: $weight-black
         position: absolute
         top: 0
         right: 0
@@ -289,8 +288,9 @@ select::-ms-expand
             transform: translateY(-50%)
         &__paynow
             font-size: 12px
-            color: #555
+            color: rgba($black, .55)
             display: block
+            font-weight: $weight-medium
     &__image
         position: absolute
         top: 50%
@@ -344,8 +344,10 @@ select::-ms-expand
 
 .option
     position: relative
-    border: 1px solid #e5e5e5
-    background-color: #fcfcfc
+    border: 2px solid $light
+    background-color: $white
+    border-radius: $gutter/2
+    margin-bottom: $gutter/2
 
     &__check
         position: absolute
@@ -359,7 +361,7 @@ select::-ms-expand
         border-width: 2px
         border-style: solid
         background-color: $white
-        border-color: $green
+        border-color: $light
         transition: none $speed $easing $speed*0.5
         transition-property: border-color
         &::before,
@@ -387,7 +389,7 @@ select::-ms-expand
             border-radius: 3px
         &::after
             border-width: 3px
-            border-color: darken($green, 5%)
+            border-color: $black
             margin-left: 1px
             margin-top: -3px
         &--active

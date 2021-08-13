@@ -1,234 +1,66 @@
-.cart
-    position: relative
-    border: 1px solid green
-    // box-shadow: 0 1px 3px rgba($black, 0.1)
-    // padding: 10px 10px 0
-    &--requestModal
-      padding: 10px
-      margin-top: 20px
-    &:not(:last-child)
-        margin-bottom: 20px
-    &::before
-        content: ""
-        position: absolute
-        left: 0
-        top: 0
-        bottom: 0
-        margin-bottom: -1px
-        width: 5px
-        background-color: $green
-        border-radius: $gutter/4 0 0 4px
-        margin-left: -5px
-        margin-top: -1px
-        box-sizing: border-box
-
-    &__keek
-        // background-color: rgba($black, .1)
-        display: flex
-        flex-direction: row
-        align-items: flex-start
-    &__hero
-        overflow: hidden
-        position: relative
-        background-color: rgba($black, .2)
-        width: 70px
-        min-width: 70px
-        height: 53px
-        min-height: 53px
-    // &__imageAspectRatio
-    //     padding-bottom: 75%
-    &__image
-        width: 100%
-        // position: absolute
-        // top: 50%
-        // left: 0
-        // transform: translateY(-50%)
-        // min-width: 100%
-    &__title
-        display: flex
-        width: 100%
-        // background-color: rgba($black, .1)
-        padding: 0 9px 0 10px
-        &-link
-            text-decoration: none
-            color: #3a8bbb
-            font-weight: 400
-            font-size: 13px
-
-    &__amount
-        // background-color: rgba($black, .15)
-        border-top: 1px solid #eee
-        margin-top: 10px
-        display: flex
-        flex-direction: row
-        align-items: center
-        color: #888
-        fill: #888
-        font-size: 14px
-        &-price,
-        &-count,
-        &-total
-            flex: 1
-        &-price
-            // background-color: rgba($black, .1)
-            color: inherit
-            font-size: inherit
-        &-count
-            // background-color: rgba($black, .15)
-            color: inherit
-            fill: inherit
-            font-size: inherit
-            display: inline-flex
-            align-items: center
-        &-label
-            padding-left: 5px
-            font-size: 12px
-        &-quantity
-            padding: 0 5px
-        &-total
-            // background-color: rgba($black, .2)
-            color: #555
-            font-size: 16px
-            text-align: right
-
-    &__reduction
-        // background-color: rgba($black, .2)
-        border-top: 1px solid #eee
-        color: #888888
-        font-size: 13px
-        height: 31px
-        display: flex
-        align-items: center
-
-    &__validation
-        display: block
-        font-size: 12px
-        padding: 11px 10px 10px
-        margin-left: -10px
-        margin-right: -10px
-        color: #777
-        fill: #777
-        background-color: #f5f5f5
-        border-top: 1px solid #eee
-        z-index: 2
-        position: relative
-        .Button
-            font-size: 13px
-            height: 32px
-            padding-top: 0
-            padding-bottom: 0
-            border: 1px solid rgba($black, 0.44)
-            margin-left: 5px
-            box-sizing: border-box
-    &__warning
-        display: block
-        font-size: 12px
-        padding: 11px 10px 10px
-        margin-left: -10px
-        margin-right: -10px
-        color: #777
-        fill: #777
-        background-color: blue
-        border-top: 1px solid #eee
-        z-index: 2
-        position: relative
-        .Button
-            font-size: 13px
-            height: 32px
-            padding-top: 0
-            padding-bottom: 0
-            border: 1px solid rgba($black, 0.44)
-            margin-left: 5px
-            box-sizing: border-box
-
-    $root: &;
-
-    // warning state
-    &--warning
-        box-shadow: 0 1px 3px rgba($yellow, 0.1)
-        border-color: rgba($yellow, 0.55)
-        // background-color: rgba($yellow,.12)
-        box-sizing: border-box
-        &::before
-            background-color: rgba($yellow, 0.05)
-            border-width: 1px 0 1px 1px
-            border-style: solid
-            border-color: rgba($yellow, 0.55)
-        // &::after
-        //     content: ""
-        //     position: absolute
-        //     left: 0
-        //     top: 0
-        //     bottom: 0
-        //     right: 0
-        //     background-color: rgba($white, 0.6)
-        //     box-sizing: border-box
-        //     z-index: 1
-
-        #{$root}__validation
-            color: darken($yellow, 25%)
-            fill: darken($yellow, 25%)
-            background-color: rgba($yellow, 0.05)
-            border-top-color: rgba($yellow, 0.55)
-            .Button
-                border-color: $yellow
-                background-color: $yellow
-                color: $white
-                fill: $white
-                &--line
-                    border-color: rgba($yellow, 0.44)
-                    background-color: transparent
-                    color: rgba($yellow, 0.66)
-                    fill: rgba($yellow, 0.66)
-
-    // error state
-    &--error
-        box-shadow: 0 1px 3px rgba($red, 0.1)
-        border-color: rgba($red, 0.2)
-        // background-color: rgba($red,.12)
-        box-sizing: border-box
-        &::before
-            background-color: rgba($red, 0.12)
-            border-width: 1px 0 1px 1px
-            border-style: solid
-            border-color: rgba($red, 0.2)
-        &::after
-            content: ""
-            position: absolute
-            left: 0
-            top: 0
-            bottom: 0
-            right: 0
-            background-color: rgba($white, 0.6)
-            box-sizing: border-box
-            z-index: 1
-
-        #{$root}__validation
-            color: $red
-            fill: $red
-            background-color: rgba($red, 0.12)
-            border-top-color: rgba($red, 0.12)
-            .Button
-                border-color: $red
-                background-color: $red
-                color: $white
-                fill: $white
-                &--line
-                    border-color: rgba($red, 0.44)
-                    background-color: transparent
-                    color: rgba($red, 0.66)
-                    fill: rgba($red, 0.66)
+.item
+  position: relative
+  background-color: $white
+  padding: $gutter*.375
+  border-radius: $gutter/2
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  border: 1px solid $light
+  margin-bottom: $gutter/2
+  &-image
+    width: 60px
+    margin-right: $gutter/2
+  &-info
+    flex-grow: 1
+    flex-shrink: 1
+    flex-basis: 0%
+    &-stream
+      display: flex
+      flex-direction: row
+      margin-top: $gutter/3
+    &-title
+      font-size: 12px
+      padding-right: $gutter*2
+    &-btn,
+    &-count,
+    &-multiply
+      margin-right: $gutter/4
+    &-count,
+    &-multiply,
+    &-price
+      font-size: 12px
+      font-weight: $weight-medium
+    &-btn,
+    &-multiply
+      width: 18px
+      height: 18px
+    &-count
+      min-width: $gutter/2
+      text-align: center
+    &-multiply
+      background-color: $white
+      fill: rgba($black, .55)
 
 
-.hint
-    display: flex
-    flex-flow: row wrap
-    align-items: center
-    position: relative
-    text-align: left
-    font-size: inherit
-    color: inherit
-    &__brief
-        flex: 1
-    &__inlineButton
-        flex: 0 auto
+    &-price
+
+  &--error
+    padding: $gutter
+    border-width: 2px
+    // border-color: $red
+
+  &-validation
+    width: 100%
+    // border-top: 1px solid $light
+    // margin-top: $gutter/1.5
+    padding-top: $gutter/2
+    &-copy
+      font-size: 14px
+      line-height: 1.33
+      font-weight: $weight-medium
+      color: $red
+      padding-right: $gutter*2
+      margin-bottom: $gutter/2
+    &-btn
+      margin-top: $gutter/4

@@ -1,16 +1,35 @@
 <template>
-  <address class="address">
-    <h4 class="address__h4">{{ addressTitle }}</h4>
+  <div :class="$style.address">
+    <div :class="$style.addressCol">
+      <h4 :class="$style.addressTitle">{{ addressTitle }}</h4>
+      <p :class="$style.addressCopy" v-if="!isFreeDelivery">Delivery charge Tk. {{ __$(address.delivery_charge) }}</p>
+      <p :class="$style.addressCopy" v-else-if="isFreeDelivery">{{ $t('delivery_process.free_delivery') }}</p>
+    </div>
+    <div :class="$style.addressCol">
+      <h4 :class="$style.addressTitle" v-if="showContacts">{{ address.contact_name }}, {{ address.contact_number }}</h4>
+      <h4 :class="$style.addressTitle" v-else>{{ __(address.owner_name) }}</h4>
+      <p :class="$style.addressCopy">{{ address.address }}</p>
+      <p :class="$style.addressCopy">{{ address.area }}, {{ address.location }}</p>
+      <!-- <p :class="$style.addressCopy"></p> -->
+
+      <!-- <p class="address__p" v-if="showContacts">{{ address.contact_name }} ({{ address.contact_number }})</p>
+      <p class="address__p" v-else>{{ __(address.owner_name) }}</p>
+      <p class="address__p">{{ address.address }}</p>
+      <p class="address__p">{{ address.area }}, {{ address.location }}</p> -->
+    </div>
+
+
+    <!-- <h4 class="address__h4">{{ addressTitle }}</h4>
     <template v-if="showDeliveryCharge">
       <p class="address__deliveryCharge" v-if="!isFreeDelivery">{{ $t('sidebar.cart.delivery_charge') }}: ৳ {{ __$(address.delivery_charge) }}</p>
       <p class="address__deliveryCharge" v-else-if="isFreeDelivery">{{ $t('sidebar.cart.delivery_charge') }}: {{ $t('delivery_process.free_delivery') }}</p>
-    </template>
+    </template> -->
 
     <!-- <p class="address__deliveryCharge" v-if="preferredDeliveryAddress && preferredDeliveryAddress.max_delivery_time">{{ $t('shipping_info.estimated_title') }}:
       {{ (preferredDeliveryAddress.max_delivery_time <= 1 ? $t('shipping_info.one_day') : $t('shipping_info.multiple_days', {days: __$(preferredDeliveryAddress.max_delivery_time)})) }}
     </p> -->
 
-    <div class="address__glance">
+    <!-- <div class="address__glance">
       <div class="address__images">
         <div class="address__images__shopImage" :class="bannerRandomColor">
           <computed-image v-if="address.banner_image" :src="address.banner_image"/>
@@ -27,8 +46,8 @@
         <p class="address__p">{{ address.address }}</p>
         <p class="address__p">{{ address.area }}, {{ address.location }}</p>
       </div>
-    </div>
-  </address>
+    </div>-->
+  </div>
 </template>
 
 <script>
@@ -106,7 +125,26 @@
 </script>
 
 <style lang="sass" module>
-
+  .address
+    position: relative
+    padding: $gutter
+    border: 2px solid $light
+    border-radius: $gutter/2 $gutter/2 0 0
+    // border: 1px solid red
+    &-col
+      &:not(:first-child)
+        border-top: 1px solid $light
+        margin-top: $gutter
+        padding-top: $gutter
+    &-title
+      font-size: 16px
+      line-height: 1.3
+      font-weight: $weight-medium
+    &-copy
+      font-size: 14px
+      line-height: 1.3
+      font-weight: $weight-medium
+      color: rgba($black, .55)
 </style>
 <style lang="sass" scoped>
   // @import "shared/banner"

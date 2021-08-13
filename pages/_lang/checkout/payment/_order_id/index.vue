@@ -3,17 +3,33 @@
     <h1 :class="$style.checkoutPageTitle">Checkout</h1>
     <div :class="$style.checkoutRow">
       <div :class="$style.checkoutCol1">
-        <order-summary :orderSummary="orderSummary"></order-summary>
+        <order-summary :class="[$style.checkoutStep, $style.checkoutStepCart]" :orderSummary="orderSummary"></order-summary>
       </div>
       <div :class="$style.checkoutCol2">
         <div :class="$style.checkoutStep">
-          <div :class="$style.checkoutStepTitle">{{ i18nText.customerDetails }}</div>
+          <div :class="$style.checkoutStepTitle">
+            <span>{{ i18nText.customerDetails }}</span>
+            <span :class="$style.checkoutStepDone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <use xlink:href="/svg/icons.svg?#i-done"></use>
+              </svg>
+            </span>
+          </div>
         </div>
         <div :class="$style.checkoutStep">
-          <div :class="$style.checkoutStepTitle">{{ i18nText.deliveryDetails }}</div>
+          <div :class="$style.checkoutStepTitle">
+            <span>{{ i18nText.deliveryDetails }}</span>
+            <span :class="$style.checkoutStepDone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <use xlink:href="/svg/icons.svg?#i-done"></use>
+              </svg>
+            </span>
+          </div>
         </div>
         <div :class="[$style.checkoutStep, $style.checkoutStepActive]">
-          <div :class="$style.checkoutStepTitle">{{ i18nText.payment }}</div>
+          <div :class="$style.checkoutStepTitle">
+            <span>{{ i18nText.payment }}</span>
+          </div>
           <div :class="$style.checkoutStepBody">
             <!-- Error message -->
             <div :class="[$style.announcement, $style.announcementError]" v-if="paymentError">
@@ -35,9 +51,9 @@
             <div class="payment">
               <!-- Payment options-->
               <div class="payment__col1">
-                <div class="Field">
-                  <label class="Field__label Field__label--uppercase Field__label--bold">{{ i18nText.paymentOption }}</label>
-                  <div class="Field__control">
+                <div class="field">
+                  <label class="field__label">{{ i18nText.paymentOption }}</label>
+                  <div class="field__control">
                     <!-- radio EMI checkout  -->
                     <div class="radio option" v-if="isEmi && !partialEmiIsPaid">
                       <div class="option__check" :class="{'option__check--active': paymentOption === PaymentOptions.EMI}"></div>
@@ -143,18 +159,18 @@
                 </div>
 
                 <div v-if="paymentOption === PaymentOptions.CASH_ON_DELIVERY">
-                  <button class="Button Button--paywithCard" @click="confirmPaymentMethod(PrefferedPaymentChannel.CASH_ON_DELIVERY)">{{ i18nText.confirmCashDelivery }}</button>
+                  <button :class="[$style.btn, $style.btnPrimary]" @click="confirmPaymentMethod(PrefferedPaymentChannel.CASH_ON_DELIVERY)">{{ i18nText.confirmCashDelivery }}</button>
                 </div>
                 <div  v-else-if="paymentOption === PaymentOptions.BKASH_ON_DELIVERY">
-                  <button class="Button Button--paywithCard" @click="confirmPaymentMethod(PrefferedPaymentChannel.BKASH_ON_DELIVERY)">{{ i18nText.confirmBkashashDelivery }}</button>
+                  <button :class="[$style.btn, $style.btnPrimary]" @click="confirmPaymentMethod(PrefferedPaymentChannel.BKASH_ON_DELIVERY)">{{ i18nText.confirmBkashashDelivery }}</button>
                 </div>
               </div>
 
               <!-- Payment methods -->
               <div class="payment__col2">
-                <div class="Field" v-if="showPaymentMethods">
-                  <label class="Field__label Field__label--uppercase Field__label--bold">{{ i18nText.paymentMethod }}</label>
-                  <div class="Field__control">
+                <div class="field" v-if="showPaymentMethods">
+                  <label class="field__label">{{ i18nText.paymentMethod }}</label>
+                  <div class="field__control">
                     <!-- radio payment method card -->
                     <div class="radio option">
                       <div class="option__check" :class="{'option__check--active': isPaymentMethodCard}"></div>
@@ -180,7 +196,7 @@
                           <input class="checkbox__input" type="checkbox" id="agree_terms" v-model="agreedOnTermsAndService">
                           <label class="checkbox__label" for="agree_terms">{{ i18nText.termsService1 }} <i18n-link :class="$style.link" :to="'/docs/terms'" target="_blank">{{ i18nText.termsService2 }}</i18n-link> {{ i18nText.termsService3 }}</label>
                         </div>
-                        <button :class="['Button', 'Button--paywithCard', {'Button--disable': !agreedOnTermsAndService}]" @click="payViaGateway" :disabled="!agreedOnTermsAndService">{{ i18nText.payCreditDebitCard }}</button>
+                        <button :class="[$style.btn, $style.btnPrimary, {[$style.btnMuted]: !agreedOnTermsAndService}]" @click="payViaGateway" :disabled="!agreedOnTermsAndService">{{ i18nText.payCreditDebitCard }}</button>
                         <!-- <p :class="$style.agreeStatement">
                           {{ i18nText.termsService1 }}
                           <i18n-link :class="$style.link" :to="'/docs/terms'" target="_blank">{{ i18nText.termsService2 }}</i18n-link>
@@ -543,11 +559,14 @@
 </script>
 
 <style lang="sass" module>
+  @import "shared/button"
+  @import "shared/field"
   @import "shared/checkout/checkout"
 </style>
 
 <style lang="sass" scoped>
   @import "shared/alerts"
+  @import "shared/field"
   @import "shared/form/field"
 
   .checkbox

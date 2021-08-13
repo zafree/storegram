@@ -88,5 +88,5 @@
 </script>
 
 <style lang="sass" module>
-  @import "sass/shared/checkout/checkout"
+  @import "shared/checkout/checkout"
 </style>

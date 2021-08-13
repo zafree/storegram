@@ -16,16 +16,23 @@
       <logo></logo>
     </div>
 
-    <button :class="[$style.headerSearch, $style.btn]" @click.stop="toggleOverlay(overlays.aside3)">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-        <use xlink:href="/svg/icons.svg?#i-search"></use>
-      </svg>
-      <span :class="$style.btnLabel">Search</span>
-    </button>
+    <template v-if="!pageMode.paymentMode">
+      <button :class="[$style.headerSearch, $style.btn]" @click.stop="toggleOverlay(overlays.aside3)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <use xlink:href="/svg/icons.svg?#i-search"></use>
+        </svg>
+        <span :class="$style.btnLabel">Search</span>
+      </button>
+      <slot name="cartIcon">
+        <cart-icon :class="[$style.headerCart, $style.btn, {[$style.headerCartCheckout]: pageMode.checkoutMode}]"></cart-icon>
+      </slot>
+    </template>
+    <template v-else>
+      <button :class="[$style.btn, $style.btnAuto, {[$style.headerCartCheckout]: pageMode.checkoutMode}]" @click.stop="toggleOverlay(overlays.aside2)">{{this.$t('cart.order_summary')}}</button>
+    </template>
 
-    <slot name="cartIcon">
-      <cart-icon :class="[$style.headerCart, $style.btn, {[$style.headerCartCheckout]: pageMode.checkoutMode}]"></cart-icon>
-    </slot>
+
+
 
     <template v-if="!customer">
       <login-link :class="[$style.headerSignIn, $style.btn, $style.btnPrimary]"></login-link>

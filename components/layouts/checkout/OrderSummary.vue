@@ -1,43 +1,28 @@
 <template>
-  <div>
-    Order Summary
-    <div :class="$style.contain">
-      <div :class="$style.title" v-if="pageMode.checkoutMode">{{ i18nText.orderSummary }}</div>
-      <template v-else>{{ '' }}</template>
-      <!-- <div :class="$style.title" v-else>{{ '' }}</div> -->
-    </div>
-    <div :class="[$style.list, { [$style.listNotCheckout]: !pageMode.checkoutMode}, { [$style.listCheckout]: pageMode.checkoutMode}]">
-      <line-item v-for="item in lineItems" :item="item" :key="'line-item-' + item.id"></line-item>
-    </div>
+  <div :class="$style.cart">
+    <h3 :class="$style.cartTitle">{{ i18nText.orderSummary }}</h3>
+    <line-item v-for="item in lineItems" :item="item" :key="'line-item-' + item.id"></line-item>
 
-    <div :class="$style.actions" v-if="lineItems.length">
-      <!-- Subtotal -->
-      <div :class="$style.summary" v-if="subTotal">
-        <label :class="$style.summaryTitle">{{ i18nText.subTotal }}</label>
-        <span :class="$style.summaryAmount">Tk. {{ __$(subTotal) }}</span>
+    <template v-if="lineItems.length">
+      <div :class="[$style.copy, $style.copySubTotal]">
+        <span :class="$style.copyLeft">{{ i18nText.subTotal }}</span>
+        <span :class="$style.copyRight">Tk. {{ __$(subTotal) }}</span>
       </div>
-
-      <!-- Delivery charge -->
-      <div :class="$style.summary" v-if="!isFreeDelivery">
-        <label :class="$style.summaryTitle">{{ i18nText.deliveryCharge }}</label>
-        <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-if="deliveryCharge === 0">{{ i18nText.freeDelivery }}</span>
-        <span :class="$style.summaryAmount" v-else>Tk. {{ __$(deliveryCharge) }}</span>
+      <div :class="$style.copy" v-if="!isFreeDelivery">
+        <span :class="$style.copyLeft">{{ i18nText.deliveryCharge }}</span>
+        <span :class="$style.copyRight" v-if="deliveryCharge === 0">{{ i18nText.freeDelivery }}</span>
+        <span :class="$style.copyRight" v-else>Tk. {{ __$(deliveryCharge) }}</span>
       </div>
-
-      <!-- Coupon discount -->
-      <div :class="$style.summary" v-if="orderSummary.coupon_rule">
-        <label :class="$style.summaryTitle">{{ i18nText.couponDiscount }}</label>
-        <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-if="isFreeDelivery">{{ i18nText.freeDelivery }}</span>
-        <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-else>Tk. {{ __$(couponDiscount) }}</span>
+      <div :class="$style.copy" v-if="orderSummary.coupon_rule">
+        <span :class="$style.copyLeft">{{ i18nText.couponDiscount }}</span>
+        <span :class="$style.copyRight" v-if="isFreeDelivery">{{ i18nText.freeDelivery }}</span>
+        <span :class="$style.copyRight" v-else>Tk. {{ __$(couponDiscount) }}</span>
       </div>
-
-      <!-- Total -->
-      <div :class="[$style.summary, $style.summaryFocus, $style.summaryLast]">
-        <label :class="$style.summaryTitle">{{ i18nText.total }}</label>
-        <span :class="$style.summaryAmount">Tk. {{ __$(total) }}</span>
+      <div :class="[$style.copy, $style.copyTotal]">
+        <span :class="$style.copyLeft">{{ i18nText.total }}</span>
+        <span :class="$style.copyRight">Tk. {{ __$(total) }}</span>
       </div>
-
-    </div>
+    </template>
   </div>
 </template>
 
@@ -85,12 +70,7 @@
   }
 </script>
 
-<style scoped>
-
-</style>
-
 <style lang="sass" module>
-  @import "shared/cart-contain"
   @import "shared/button"
-  @import "shared/summary"
+  @import "shared/cart"
 </style>

@@ -7,10 +7,19 @@
       </div>
       <div :class="$style.checkoutCol2">
         <div :class="$style.checkoutStep">
-          <div :class="$style.checkoutStepTitle">{{ i18nText.checkoutStepsCustomerDetails }}</div>
+          <div :class="$style.checkoutStepTitle">
+            <span>{{ i18nText.checkoutStepsCustomerDetails }}</span>
+            <span :class="$style.checkoutStepDone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <use xlink:href="/svg/icons.svg?#i-done"></use>
+              </svg>
+            </span>
+          </div>
         </div>
         <div :class="[$style.checkoutStep, $style.checkoutStepActive]">
-          <div :class="$style.checkoutStepTitle">{{ i18nText.checkoutStepsDeliveryDetails }}</div>
+          <div :class="$style.checkoutStepTitle">
+            <span>{{ i18nText.checkoutStepsDeliveryDetails }}</span>
+          </div>
           <div :class="$style.checkoutStepBody">
 
 
@@ -26,7 +35,7 @@
                 <p class="Alert__copy" v-html="i18nText.LockerErrorSingle"></p>
               </div>
               <preferred-delivery-point-display :showDeliveryCharge="true" :address="preferredDeliveryAddress" />
-              <button :class="[$style.btn, $style.btnAuto]" @click="togglePreferredAddress">{{ $t('delivery_process.use_different_delivery_point') }}</button>
+              <button :class="[$style.btn, $style.btnUseDiffAddress]" @click="togglePreferredAddress">{{ $t('delivery_process.use_different_delivery_point') }}</button>
             </template>
             <!-- v-if="usePreferredDeliveryAddress" -->
 
@@ -74,41 +83,50 @@
                 <div :class="$style.field">
                   <label :class="$style.fieldLabel">{{ i18nText.deliveryMethod }}</label>
                   <div :class="$style.dmOption">
-                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, $style.dmOptionBtnActive]" @click="pickedDeliveryMethod = PICKED_DELIVERY_METHODS.CUSTOMER">Home Delivery</button>
-                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine]" @click="pickedDeliveryMethod = PICKED_DELIVERY_METHODS.HUB">Pickup from outlet</button>
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, {[$style.dmOptionBtnActive]: isDeliveryMethodHome}]" @click="pickedDeliveryMethod = 'Customer'">Home Delivery</button>
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, {[$style.dmOptionBtnActive]: isDeliveryMethodPickup}]" @click="pickedDeliveryMethod = 'Hub'">Pickup from outlet</button>
                   </div>
-                  <div :class="$style.dmOptionBody" v-if="isDeliveryMethodHome">
-                    <p :class="[$style.copy, $style.copyDeliveryCharge]">Delivery charge Tk. 20</p>
-                    <div :class="[$style.field, {[$style.fieldError]: errors.delivery_address }, {[$style.fieldSuccess]: errors.delivery_address === false }]">
-                      <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryAddressLabel }}</label>
-                      <div :class="$style.fieldControl">
-                        <textarea :class="[$style.fieldInput, $style.fieldInputTextarea]" :placeholder="i18nText.homeDeliveryAddressPlaceholder" v-model="newDeliveryAddress.address" :rows="3"></textarea>
+
+                  <template  v-if="isDeliveryMethodHome">
+                    <div :class="$style.dmOptionBody">
+                      <p :class="[$style.copy, $style.copyDeliveryCharge]">Delivery charge Tk. {{ __$(homeDeliveryCharge) }}</p>
+                      <div :class="[$style.field, {[$style.fieldError]: errors.delivery_address }, {[$style.fieldSuccess]: errors.delivery_address === false }]">
+                        <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryAddressLabel }}</label>
+                        <div :class="$style.fieldControl">
+                          <textarea :class="[$style.fieldInput, $style.fieldInputTextarea]" :placeholder="i18nText.homeDeliveryAddressPlaceholder" v-model="newDeliveryAddress.address" :rows="3"></textarea>
+                        </div>
+                        <p :class="$style.fieldValidation" v-if="errors.delivery_address">{{ errors.delivery_address }}</p>
                       </div>
-                      <p :class="$style.fieldValidation" v-if="errors.delivery_address">{{ errors.delivery_address }}</p>
-                    </div>
-                    <div :class="[$style.field, {[$style.fieldError]: errors.contact_name }, {[$style.fieldSuccess]: errors.contact_name === false }]">
-                      <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryRecieverName }}</label>
-                      <div :class="$style.fieldControl">
-                        <input :class="$style.fieldInput" type="text" :placeholder="i18nText.homeDeliveryRecieverNamePlaceholder" v-model="newDeliveryAddress.contact_name">
+                      <div :class="[$style.field, {[$style.fieldError]: errors.contact_name }, {[$style.fieldSuccess]: errors.contact_name === false }]">
+                        <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryRecieverName }}</label>
+                        <div :class="$style.fieldControl">
+                          <input :class="$style.fieldInput" type="text" :placeholder="i18nText.homeDeliveryRecieverNamePlaceholder" v-model="newDeliveryAddress.contact_name">
+                        </div>
+                        <p :class="$style.fieldValidation" v-if="errors.contact_name">{{ errors.contact_name }}</p>
                       </div>
-                      <p :class="$style.fieldValidation" v-if="errors.contact_name">{{ errors.contact_name }}</p>
-                    </div>
-                    <div :class="[$style.field, {[$style.fieldError]: errors.receiver_number }, {[$style.fieldSuccess]: errors.receiver_number === false }]">
-                      <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryMobileNumber }}</label>
-                      <div :class="$style.fieldControl">
-                        <select :class="$style.fieldInput" v-model="newDeliveryAddress.contact_number" v-if="hasCustomerMultipleNumbers">
-                          <option
-                            v-for="number in mobileNumbers"
-                            :key="number.id"
-                            :value="number.number">{{ number.number }}</option>
-                          <option value="ADD_ANOTHER">{{ i18nText.useAnother }}</option>
-                        </select>
-                        <input v-else :class="$style.fieldInput" type="text" :placeholder="i18nText.homeDeliveryMobileNumberPlaceholder" v-model="newDeliveryAddress.contact_number">
+                      <div :class="[$style.field, {[$style.fieldError]: errors.receiver_number }, {[$style.fieldSuccess]: errors.receiver_number === false }]">
+                        <label :class="$style.fieldLabel">{{ i18nText.homeDeliveryMobileNumber }}</label>
+                        <div :class="$style.fieldControl">
+                          <select :class="$style.fieldInput" v-model="newDeliveryAddress.contact_number" v-if="hasCustomerMultipleNumbers">
+                            <option
+                              v-for="number in mobileNumbers"
+                              :key="number.id"
+                              :value="number.number">{{ number.number }}</option>
+                            <option value="ADD_ANOTHER">{{ i18nText.useAnother }}</option>
+                          </select>
+                          <input v-else :class="$style.fieldInput" type="text" :placeholder="i18nText.homeDeliveryMobileNumberPlaceholder" v-model="newDeliveryAddress.contact_number">
+                        </div>
+                        <p :class="$style.fieldValidation" v-if="errors.receiver_number">{{ errors.receiver_number }}</p>
                       </div>
-                      <p :class="$style.fieldValidation" v-if="errors.receiver_number">{{ errors.receiver_number }}</p>
                     </div>
-                  </div>
-                  <div v-if="isDeliveryMethodHub">Input field</div>
+                  </template>
+                  <template v-if="isDeliveryMethodPickup">
+                    <div :class="$style.dmOptionBody">
+                      <p :class="[$style.copy, $style.copyDeliveryCharge]" v-if="hubDeliveryCharge">Delivery charge Tk. {{ __$(hubDeliveryCharge) }}</p>
+                      <p :class="[$style.copy, $style.copyDeliveryCharge]" v-else>{{ i18nText.freeDelivery }}</p>
+                    </div>
+                  </template>
+                  <!-- <div v-if="isDeliveryMethodPickup">Input field</div> -->
                 </div>
               </template>
 
@@ -119,183 +137,15 @@
                 </div>
                 <p :class="$style.fieldValidation">Error</p>
               </div> -->
-
-
-              <!-- delivery option -->
-
-              <div v-if="deliveryArea" :class="$style.field">
-                <label :class="$style.fieldLabel">{{ i18nText.deliveryMethod }}</label>
-                <div :class="$style.fieldControl">
-
-
-
-                  <!-- radio: home-delivery -->
-                  <div class="radio option">
-                    <div class="option__check" :class="{'option__check--active': isDeliveryMethodHome}"></div>
-                    <div class="option__title">
-                      <input
-                        class="radio__input"
-                        type="radio"
-                        id="radioOption4"
-                        v-model="pickedDeliveryMethod"
-                        value="Customer"
-                      >
-                      <label class="radio__label label" for="radioOption4">
-                        <div class="lable__title" v-html="i18nText.homeDeliveryLabel"></div>
-                        <div class="lable__sub" v-html="i18nText.homeDeliverySubLabel">sub-title</div>
-                        <div class="lable__price" v-if="homeDeliveryCharge">৳ {{ __$(homeDeliveryCharge) }}</div>
-                        <div class="lable__price" v-else>{{ i18nText.freeDelivery }}</div>
-                      </label>
-                    </div>
-                    <div class="option__body" v-if="isDeliveryMethodHome">
-                      <!-- button :: user another address /  use previous address -->
-                      <div class="multiAddress">
-                        <div class="multiAddress__select">
-                          <!-- multi address -->
-                          <div v-if="!shouldDeliveryAddressFormShow && customerAddresses.length > 0" class="Field Field--secondary">
-                            <div class="Field__control">
-                              <select v-model="selectedAddress" class="Field__input Field__input--select">
-                                <option
-                                  v-for="address in customerAddresses"
-                                  :key="address.id"
-                                  :value="address"
-                                >
-                                  {{address.address}}
-                                </option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="multiAddress__useAnother">
-                          <!-- use another button -->
-                          <button class="Button Button--useAnother"
-                            @click="shouldDeliveryAddressFormShowToggle()"
-                            v-if="customerAddresses.length"
-                          >
-                            {{ formToggleButton }}
-                          </button>
-                        </div>
-                      </div>
-                      <div v-if="shouldDeliveryAddressFormShow">
-                        <!-- delivery address -->
-                        <div class="Field Field--secondary" :class="[{'Field--error': errors.delivery_address, 'Field--success': errors.delivery_address === false}]">
-                          <label class="Field__label Field__label--bold" v-html="i18nText.homeDeliveryAddressLabel"></label>
-                          <div class="Field__control">
-                            <textarea
-                              class="Field__input Field__input--textarea"
-                              :placeholder="i18nText.homeDeliveryAddressPlaceholder"
-                              v-model="newDeliveryAddress.address"
-                              rows="3"
-                            >
-                            </textarea>
-                          </div>
-                          <p class="Field__validation" v-if="errors.delivery_address">{{errors.delivery_address}}</p>
-                        </div>
-                        <!-- reciever -->
-                        <div class="reciver">
-                          <div class="reciver__name">
-                            <!-- reciever name -->
-                            <div class="Field Field--secondary" :class="[{'Field--error': errors.contact_name, 'Field--success': errors.contact_name === false}]">
-                              <label class="Field__label Field__label--bold" v-html="i18nText.homeDeliveryRecieverName"></label>
-                              <div class="Field__control">
-                                <input
-                                  class="Field__input"
-                                  type="text"
-                                  :placeholder="i18nText.homeDeliveryRecieverNamePlaceholder"
-                                  v-model="newDeliveryAddress.contact_name"
-                                >
-                              </div>
-                              <p class="Field__validation" v-if="errors.contact_name">{{errors.contact_name}}</p>
-                            </div>
-                          </div>
-                          <div class="reciver__phone">
-                            <!-- reciever phone number -->
-                            <div class="Field Field--secondary" :class="[{'Field--error': errors.receiver_number, 'Field--success': errors.receiver_number === false}]">
-                              <label class="Field__label Field__label--bold" v-html="i18nText.homeDeliveryMobileNumber"></label>
-                              <!-- if hasCustomerMultipleNumbers -->
-                              <div class="Field__control" v-if="hasCustomerMultipleNumbers">
-                                <select v-model="newDeliveryAddress.contact_number" class="Field__input Field__input--select">
-                                  <option
-                                    v-for="number in mobileNumbers"
-                                    :key="number.id"
-                                    :value="number.number">{{ number.number }}</option>
-                                  <option value="ADD_ANOTHER">{{ i18nText.useAnother }}</option>
-                                </select>
-                              </div>
-
-                              <!-- if not hasCustomerMultipleNumbers -->
-                              <div class="Field__control" v-else>
-                                <input
-                                  class="Field__input"
-                                  type="text"
-                                  :placeholder="i18nText.homeDeliveryMobileNumberPlaceholder"
-                                  v-model="newDeliveryAddress.contact_number"
-                                >
-                              </div>
-                              <p class="Field__validation" v-if="errors.receiver_number">{{errors.receiver_number}}</p>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                      <!-- 2nd or 3rd time user :: Multiple Customer Address-->
-                      <div class="selectedAddress" v-else>
-                        <address-display :addressTitle="i18nText.homeDeliveryShowAddressLabel" :address="selectedAddress"/>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- radio: hub pick-up -->
-                  <div class="radio option" v-if="isHubDeliveryEnabledForCustomer">
-                    <div class="option__check" :class="{'option__check--active': isDeliveryMethodPickup}"></div>
-                    <div class="option__title">
-                      <input
-                        class="radio__input"
-                        type="radio"
-                        id="radioOption1"
-                        v-model="pickedDeliveryMethod"
-                        value="Hub"
-                      >
-                      <label class="radio__label" for="radioOption1">
-                        <div class="lable__title">{{ $t('delivery_process.pickup_label', {value: __(deliveryArea.name)}) }}</div>
-                        <div class="lable__sub" v-html="i18nText.pickupSubLabel"></div>
-                        <div class="lable__price" v-if="hubDeliveryCharge">৳ {{ __$(hubDeliveryCharge) }}</div>
-                        <div class="lable__price" v-else>{{ i18nText.freeDelivery }}</div>
-                      </label>
-                    </div>
-                    <div class="option__body" v-if="isDeliveryMethodPickup">
-                      <slot v-if="selectedAddress && selectedAddress.owner_type === 'Hub'">
-                        <div class="selectedAddress">
-                          <address-display :addressTitle="i18nText.pickupAddressLabel" :address="selectedAddress"/>
-                        </div>
-                        <button class="Button Button--selectPDA" @click="openPreferredDeliveryPointModal('Hub')">{{ i18nText.changeButtonLabel }}</button>
-                      </slot>
-                      <slot v-else>
-                        <button class="Button Button--selectPDA" @click="openPreferredDeliveryPointModal('Hub')">{{ i18nText.hub }}</button>
-                      </slot>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
             </template>
 
-            <template v-if="(usePreferredDeliveryAddress && preferredDeliveryAddress) || deliveryArea">
-              <!-- additional note -->
+            <template v-if="isDeliveryMethodHome || isDeliveryMethodPickup">
               <div :class="$style.field">
                 <label :class="$style.fieldLabel">{{ i18nText.additionalNote }}</label>
                 <div :class="$style.fieldControl">
                   <textarea :class="[$style.fieldInput, $style.fieldInputTextarea]" :placeholder="i18nText.additionalNotePlaceHolder" v-model="additional_note" :rows="1"></textarea>
                 </div>
               </div>
-
-              <!-- <div :class="$style.field">
-                <label :class="$style.fieldLabel">{{ name }}</label>
-                <div :class="$style.fieldControl">
-                </div>
-              </div> -->
-
-              <!-- invoice -->
               <div :class="$style.field">
                 <input id="invoice_permission" :class="$style.fieldCheckbox" type="checkbox" v-model="customerWantsInvoice">
                 <label for="invoice_permission" :class="$style.fieldLabel">{{ i18nText.sendInvoice }}</label>
@@ -307,8 +157,6 @@
                 </div>
                 <p :class="$style.fieldValidation" v-if="errors.invoice_email">{{ errors.invoice_email }}</p>
               </div>
-
-              <!-- confirm order button -->
               <div :class="$style.field">
                 <button :class="[$style.btn, $style.btnPrimary, {[$style.btnMuted]: disableConfirmOrder}]" @click="confirmOrder()" :disabled="disableConfirmOrder">{{ i18nText.confirmOrder }}</button>
               </div>
@@ -317,7 +165,9 @@
           </div>
         </div>
         <div :class="$style.checkoutStep">
-          <div :class="$style.checkoutStepTitle">{{ i18nText.checkoutStepsPayment }}</div>
+          <div :class="$style.checkoutStepTitle">
+            <span>{{ i18nText.checkoutStepsPayment }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1042,7 +892,7 @@
 <style lang="sass" module>
   @import "shared/button"
   @import "shared/field"
-  @import "sass/shared/checkout/checkout"
+  @import "shared/checkout/checkout"
 
   .dm-option
     position: relative
@@ -1055,8 +905,11 @@
       margin-right: $gutter/2
       border-radius: 500em
       height: 38px
+      font-weight: $weight-medium
       &-active
-        background-color: $light
+        border-color: $primary
+        // background-color: $black
+
 
   .title,
   .sub-title
@@ -1072,330 +925,16 @@
       padding-left: $gutter
       color: rgba($black, .55)
 
-  .btn--back
-    width: auto
-    padding-left: $gutter
-    padding-right: $gutter*1.5
-    svg
-      transform: rotate(180deg)
+  .btn
+    &-use-diff-address
+      border-radius: 0 0 $gutter/2 $gutter/2
+    &--back
+      width: auto
+      padding-left: $gutter
+      padding-right: $gutter*1.5
+      svg
+        transform: rotate(180deg)
+
   .mt0
     margin-top: 0 !important
-
-
-  // .AgreeStatement
-  //   margin-top: 15px
-  //   font-size: 13px
-  //   color: rgba($black, .44)
-  //   fill: rgba($black, .44)
-  //   text-align: right
-  //   .Link
-  //     font-size: inherit
-  //     color: inherit
-  //     fill: inherit
-  //     text-decoration: underline
-
-  // .Button
-  //   &--addNewCustomer
-  //     font-size: 14px
-  //     height: 32px
-  //     padding: 0 10px
-  //     margin-left: auto
-  //     +button
-</style>
-
-<style lang="sass" scoped>
-  // @import "shared/alerts"
-  // @import "shared/button"
-
-  // .alert
-  //   position: relative
-  //   padding: 15px 15px 30px
-  //   border-top: 1px solid #dddddd
-  //   // +phablet
-  //     padding: 15px 20px 30px
-  //   +tablet
-  //     position: relative
-  //     display: flex
-  //     padding: 30px 30px 40px
-
-  //   &::before,
-  //   &::after
-  //     content: ""
-  //     position: absolute
-  //     top: 0
-  //     height: 3px
-  //     width: 15px
-  //     margin-top: -2px
-  //     background-color: white
-  //     // +phablet
-  //       display: none
-  //   &::before
-  //     left: 0
-  //   &::after
-  //     right: 0
-
-  // .customerinfo
-  //   position: relative
-  //   padding: 5px 0px
-  //   &__text
-  //     font-size: 13px
-  //     font-weight: 400
-  //     line-height: 1.66
-  //     color: #b9b9b9
-  //     fill: #b9b9b9
-  //   &__name
-  //     font-size: 16px
-  //     line-height: 1.66
-  //     font-weight: 400
-  //     color: $text
-  //     fill: $text
-  //   &__mobile
-  //     font-size: 15px
-  //     font-weight: inherit
-  //     line-height: inherit
-  //     color: inherit
-  //   +tablet
-  //     flex: 1
-
-  // .customer
-  //   position: relative
-  //   // max-width: 230px
-  //   +tablet
-  //     flex: 1
-
-
-  //   &--body
-  //     border: 1px solid #dddddd
-  //     background-color: #f6f6f6
-  //     height: 62px
-  //     margin-top: 10px
-  //     border-radius: 3px
-  //     padding: 22px 15px
-  //     display: flex
-  //     flex-flow: row wrap
-  //     &__text
-  //       font-size: 14px
-  //       font-weight: 400
-  //       color: $text
-  //       fill: $text
-  //       flex: 1
-
-  //   .Button
-  //     &--click
-  //       border: 1px solid #d9d9d9
-  //       color: $text
-  //       fill: $text
-  //       height: 32px
-  //       padding: 0px 10px
-  //       border-radius: 0
-  //       font-size: 13px
-  //       font-weight: 400
-  //       line-height: 1.66
-  //       background-color: #fff
-  //       border-radius: 2px
-  //       margin-top: -8px
-
-  //       &:hover,
-  //       &:focus
-  //         color: inherit
-
-</style>
-
-<style lang="sass" scoped>
-  // @import "shared/alerts"
-  // @import "shared/form/field"
-  // @import "shared/button"
-
-  // .Alert
-  //   margin-top: 15px
-  //   margin-bottom: -15px
-  //   &--hasCartError
-  //     margin-top: 0
-  //     margin-bottom: 15px
-  //     +widescreen
-  //       display: none
-  //   &--guidedText
-  //     margin-top: 0
-  //     margin-bottom: 15px
-  //   &--preferredDeliveryAddress
-  //     margin-bottom: 15px
-  //     margin-top: 0
-  //     +tablet
-  //       margin-top: -10px
-  //   // // +phablet
-  //     // margin-bottom: 0
-
-  // .Field
-  //   &__input
-  //     background-color: $white
-  //   &--invoice
-  //     margin-bottom: 25px
-
-  // .DeliveryLocation
-  //   display: flex
-  //   flex-flow: row wrap
-  //   &__city
-  //     flex: 1 100%
-  //     margin-bottom: 20px
-  //     +tablet
-  //       flex: 1
-  //       padding-right: 10px
-  //   &__area
-  //     flex: 1 100%
-  //     margin-bottom: 20px
-  //     +tablet
-  //       flex: 1
-  //       padding-left: 10px
-
-  // // .address
-  // //   font-style: normal
-  // //   margin-bottom: 10px
-  // //   &__h4
-  // //     font-weight: 400
-  // //     text-decoration: underline
-  // //     font-size: 13px
-  // //   &__p
-  // //     font-weight: 400
-  // //     font-size: 13px
-  // //     &--marginTop10
-  // //       margin-top: 10px
-
-  // .reciver
-  //   display: flex
-  //   flex-flow: row wrap
-  //   &__name
-  //     flex: 1 100%
-  //     margin-bottom: 20px
-  //     +tablet
-  //       flex: 1
-  //       padding-right: 10px
-  //   &__phone
-  //     flex: 1 100%
-  //     margin-bottom: 20px
-  //     +tablet
-  //       flex: 1
-  //       padding-left: 10px
-
-  // .multiAddress
-  //   margin-bottom: 10px
-  //   display: flex
-  //   flex-flow: column-reverse wrap
-  //   // +phablet
-  //     flex-flow: row wrap
-  //   &__select
-  //     // +phablet
-  //       flex: 1
-  //       // padding-right: 20px
-  //   &__useAnother
-  //     margin-bottom: 10px
-  //     // +phablet
-  //       margin-bottom: 0
-  //       flex: 180px 0
-  //       margin-left: 20px
-
-  // .selectedAddress
-  //   padding: 15px 15px 10px
-  //   background-color: $white
-  //   margin-bottom: 10px
-  //   border: 1px solid #e5e5e5
-
-  // .selectedAddress--error
-  //   border: 1px solid #ee395f
-
-  // .invoice
-  //   position: relative
-  //   // padding-top: 20px
-
-  // .checkbox
-  //   position: relative
-  //   &__input[type=checkbox]
-  //       position: absolute
-  //       z-index: 1
-  //       top: 50%
-  //       left: 0
-  //       transform: translateY(-50%)
-
-  //   &__label
-  //       display: inline-block
-  //       position: relative
-  //       cursor: pointer
-  //       padding: 10px 20px
-  //       font-size: 16px
-
-  // .confirmButton
-  //   text-align: right
-  //   margin-top: 30px
-
-  // .Button
-  //   &--useAnother
-  //     height: 36px
-  //     font-size: 13px
-  //     display: block
-  //     width: 100%
-  //     color: #555
-  //     fill: #555
-  //     +button
-
-  //   &--confirmOrder
-  //     +button
-  //     width: 210px
-  //     height: 44px
-  //     font-size: 16px
-  //     +tablet
-  //       width: 310px
-
-  //   &--disable
-  //     cursor: not-allowed
-  //     opacity: .5
-
-  //   &--useDifferentAddress
-  //     border: 1px solid #d9d9d9
-  //     height: 32px
-  //     padding: 0 10px
-  //     font-size: 13px
-  //     color: #333
-  //     fill: #333
-  //     margin-top: 15px
-  //     margin-bottom: 25px
-  //   &--goBack
-  //     height: 32px
-  //     padding: 0 15px 0 10px
-  //     font-size: 13px
-  //     font-weight: 400
-  //     margin-bottom: 20px
-  //     +button
-  //     .Button__icon
-  //       display: inline-flex
-  //       padding-right: 6px
-  //   &--selectPDA
-  //     height: 32px
-  //     padding: 0 10px
-  //     font-size: 13px
-  //     // font-weight: $weight-medium
-  //     +button
-
-
-  // .disabled
-  //   background: red
-
-  // .hubAddress
-  //   background-color: $white
-
-  // .delivery-method
-  //   border: 1px solid blue
-  //   padding-left: 30px
-  //   padding-right: 30px
-
-  // .pick-up
-  //   border: 1px solid red
-
-  // .home-delivery
-  //   border: 1px solid red
-
-  // .lockup
-  //   border: 1px solid red
-  // .notification
-  //   &__copy
-  //     border: 1px solid red
-
 </style>
