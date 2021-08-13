@@ -1,28 +1,24 @@
 <template>
   <section :class="$style.section">
-    <div :class="$style.sectionRow">
-      <template v-if="products && products.length">
-        <div v-if="showBanner" :class="[$style.banner]">
-          <i18n-link :class="$style.bannerLink" :to="linkPath">
-            <div :class="$style.bannerImage">
-              <computed-image :src="bannerImageUrl"/>
-            </div>
-          </i18n-link>
-        </div>
-        <heading :name="name" :link-path="linkPath" :show-full-list-in-summary="showFullListInSummary"></heading>
-        <div :class="$style.contain">
-          <div :class="$style.row">
-            <product-card-thumbnail
-              v-for="product in products"
-              :key="category.slug + '-' + product.slug"
-              :product="product"
-              :potraitMode="!!category.is_portrait_enable"
-              :cashbackindex="currentCashbackIndex"
-            ></product-card-thumbnail>
+    <template v-if="products && products.length">
+      <div v-if="showBanner" :class="[$style.banner]">
+        <i18n-link :class="$style.bannerLink" :to="linkPath">
+          <div :class="$style.bannerImage">
+            <computed-image :src="bannerImageUrl"/>
           </div>
-        </div>
-      </template>
-    </div>
+        </i18n-link>
+      </div>
+      <heading :name="name" :link-path="linkPath" :show-full-list-in-summary="showFullListInSummary"></heading>
+      <div :class="$style.sectionList">
+        <product-card-thumbnail
+          v-for="product in products"
+          :key="category.slug + '-' + product.slug"
+          :product="product"
+          :potraitMode="!!category.is_portrait_enable"
+          :cashbackindex="currentCashbackIndex">
+        </product-card-thumbnail>
+      </div>
+    </template>
   </section>
 </template>
 

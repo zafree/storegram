@@ -1,220 +1,72 @@
-$gutter: 20px
-
-.Item
+.item
   position: relative
   width: 50%
-  overflow: hidden
-  // background-color: rgba($primary, 0.1)
   padding: $gutter/2
-  // box-shadow: 0 0 5px rgba($black, 0.3)
-  // +phablet
-  //   padding: 5px
-  //   background-color: transparent
-  //   box-shadow: none
+  // overflow: hidden
+  // box-shadow: 0 0 0 1px $primary
+  // background-color: $white
   +desktop
     width: 25%
     padding: $gutter
 
 
-.Product
+.product
   position: relative
   min-height: 100px
-  // height: 100%
+  height: 100%
   display: flex
   flex-direction: column
-  margin-bottom: 10px
+  padding-bottom: $gutter
   text-decoration: none
   overflow: hidden
-  // background-color: $white
-  // background-color: rgba($primary, 0.1)
-  +phablet
-    margin-bottom: 10px + 5
-    // border-radius: 4px
-    // box-shadow: 0 1px 3px rgba($black, 0.1)
-
-
-.Hero
-  position: relative
-  overflow: hidden
-  // display: flex
-  // align-items: center
-  $root: &;
-
-  &__imageAspectRatio
-    padding-bottom: 100%
-    background-color: #f9f9f9
-    // opacity: .34
-  &__image
-    position: absolute
-    top: 0
-    left: 0
-    opacity: 0
-    visibility: hidden
-    transition: 0.6s all ease-out
-    &--isLoaded
-      opacity: 1
-      visibility: visible
-  &--portrait
-    #{$root}__imageAspectRatio
-        padding-bottom: 150%
-    #{$root}__image
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-        height: 100%
-        width: auto
-    img
-        max-width: none
-
-
-.Stream
-  background-color: transparent
-  // padding-left: 5px
-  padding-right: 20px
-  +phablet
-    // padding-left: 10px
-    padding-right: 30px
-.Id
-  // display: none
-  padding: 0 7px
-  height: 17px
-  font-size: 12px
-  line-height: 1.44
-  background-color: rgba($green, .84)
-  border: 1px solid $green
-  color: $white
-  border-radius: 50px
-  position: absolute
-  top: 0
-  right: 0
-  margin-right: 5px
-  margin-top: 5px
-
-.Coupon
-  position: absolute
-  top: 0
-  left: 0
-  margin-left: 5px
-  margin-top: 5px
-  height: 17px
-  line-height: 17px
-  padding: 1px
-  border: 1px dashed $purple
-  border-radius: 500px
-  display: inline-flex
-  &__text
-    font-size: 10px
-    text-transform: uppercase
-    line-height: 15px
-    height: 13px
-    padding: 0 5px
-    border-radius: 500px
-    background-color: $coupon-bg-color
-    color: $coupon-text-color
-    border-color: $purple
-    font-weight: $weight-bold
-
-.Offers
-  position: relative
-  // display: inline-block
-  // border: 1px solid red
-  &__item
-    // display: flex
-    // flex-direction: column
-    width: 125px
-    height: 58px
-    background-position: 0
-    background-repeat: no-repeat
-    background-size: 125px auto
-    position: absolute
-    transform: translateY(-100%) scale(.75)
-    margin-left: -28px + 5px
-    margin-top: 14px - 5px
-    opacity: 0
-    transition: none $speed*5 $easing
-    transition-property: opacity
-    +phablet
-      transform: translateY(-100%)
-      margin-left: -10px
-      margin-top: 0
-    &--bkash
-      background-image: url(/svg/offers/bkash10.svg)
-    &--amex
-      background-image: url(/svg/offers/amex.svg)
-    &--ebl
-      background-image: url(/svg/offers/ebl.svg)
-    &--mastercard
-      background-image: url(/svg/offers/mastercard.svg)
-    &--isActive
-      opacity: 1
-      transition: none $speed*5 $easing
-      transition-property: opacity
-.Title
-  position: relative
-  color: $black
-  font-weight: $weight-normal
-  font-size: 14px
-  line-height: 1.33
-  margin-top: 10px
-
-.Price
-  position: relative
-  margin-top: 3px
-  display: inline-block
-  &__discounted
-    // font-family: $family-display
-    font-weight: $weight-bold
-    font-size: 18px
-    line-height: 1
+  background-color: $white
+  color: $text
+  // border: 1px solid $light
+  &__info
+    // border: 1px solid $light
+    display: flex
+    flex-direction: column
+  &__infoItem
+    display: flex
+    margin-bottom: $gutter/2
+  &__title
+    position: relative
     color: $black
-    margin-right: 4px
-    display: inline-block
+    font-weight: $weight-medium
+    font-size: 14px
+    line-height: 1.33
+    margin-top: 12px
+    padding-right: $gutter*2
+
+  &__unit,
+  &__discount,
+  &__stockOut,
+  &__moreOptions
+    position: relative
+    font-weight: $weight-medium
+    font-size: 14px
+    display: flex
+    align-items: center
+    padding: 2px 8px
+    border-radius: $gutter/4
+    background-color: $light
+    width: auto
   &__unit
-    font-weight: $weight-normal
-    font-size: 16px
-    color: #777777
-    margin-right: 5px
-    line-height: 1
-    display: inline-block
+    margin-top: -4px
+    margin-bottom: -4px
+    padding: 2px 0
+    background-color: $white
+    color: lighten($black, 50%)
+    &::after
+      position: absolute
+      top: 50%
+      left: 0
+      width: 100%
+      height: 1px
+      background-color: lighten($black, 50%)
+      content: ""
+      transform: translateY(-50%)
+  &__discounted
+    font-weight: $weight-black
+    font-size: 18px
   &__discount
-    font-weight: $weight-normal
-    font-size: 12px
-    color: #FD6D75
-    text-transform: uppercase
-    display: inline-block
-    line-height: 1
-    margin-right: 5px
-    +phablet
-      margin-right: 10px
-  &__stockOut
-    font-size: 12px
-    color: #999999
-    display: inline-block
-    line-height: 1
-    text-transform: uppercase
-  &__agentCommission
-    font-size: 12px
-    color: $green
-    text-transform: uppercase
-    display: inline-block
-    line-height: 1
-
-.Emi
-  position: relative
-  margin-top: 2px
-  &__badge
-    background-color: darken($cyan, 15%)
-    color: white
-    padding: 2px 5px 1px
-    border-radius: 3px
-    font-size: 12px
-    display: inline-block
-
-.Supplemental
-  position: relative
-  margin-top: 8px
-  &__options
-    color: #999
-    font-weight: $weight-normal
-    font-size: 12px
-    text-decoration: none

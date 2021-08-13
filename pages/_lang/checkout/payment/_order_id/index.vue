@@ -1,37 +1,20 @@
 <template>
   <div :class="$style.checkout">
-    <div :class="$style.checkoutContainer">
-      <div :class="$style.checkoutRow">
-        <div :class="[$style.checkoutStep, $style.process]">
-          <div :class="[$style.processTitle, $style.title, $style.done]">
-            <div :class="$style.titleStep">
-              {{ i18nText.step1 }}
-              <svg viewBox="0 0 32 32">
-                <path d="M24.2,10.5c-0.4-0.4-1-0.4-1.4,0c0,0,0,0,0,0l-8.9,8.9l-4.7-4.7c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4
-	                l5.4,5.4c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0l9.6-9.6C24.6,11.5,24.6,10.9,24.2,10.5C24.2,10.5,24.2,10.5,24.2,10.5z"/>
-              </svg>
-            </div>
-            <div :class="$style.titleText">{{ i18nText.customerDetails }}</div>
-          </div>
+    <h1 :class="$style.checkoutPageTitle">Checkout</h1>
+    <div :class="$style.checkoutRow">
+      <div :class="$style.checkoutCol1">
+        <order-summary :orderSummary="orderSummary"></order-summary>
+      </div>
+      <div :class="$style.checkoutCol2">
+        <div :class="$style.checkoutStep">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.customerDetails }}</div>
         </div>
-        <div :class="[$style.checkoutStep, $style.process]">
-          <div :class="[$style.processTitle, $style.title, $style.done]">
-            <div :class="$style.titleStep">
-              {{ i18nText.step2 }}
-              <svg viewBox="0 0 32 32">
-                <path d="M24.2,10.5c-0.4-0.4-1-0.4-1.4,0c0,0,0,0,0,0l-8.9,8.9l-4.7-4.7c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4
-	                l5.4,5.4c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0l9.6-9.6C24.6,11.5,24.6,10.9,24.2,10.5C24.2,10.5,24.2,10.5,24.2,10.5z"/>
-              </svg>
-            </div>
-            <div :class="$style.titleText">{{ i18nText.deliveryDetails }}</div>
-          </div>
+        <div :class="$style.checkoutStep">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.deliveryDetails }}</div>
         </div>
-        <div :class="[$style.checkoutStep, $style.process]">
-          <div :class="[$style.processTitle, $style.title, $style.active]">
-            <div :class="$style.titleStep">{{ i18nText.step3 }}</div>
-            <div :class="$style.titleText">{{ i18nText.payment }}</div>
-          </div>
-          <div :class="$style.process__body">
+        <div :class="[$style.checkoutStep, $style.checkoutStepActive]">
+          <div :class="$style.checkoutStepTitle">{{ i18nText.payment }}</div>
+          <div :class="$style.checkoutStepBody">
             <!-- Error message -->
             <div :class="[$style.announcement, $style.announcementError]" v-if="paymentError">
               <div :class="$style.announcementContainer">
@@ -218,6 +201,7 @@
 </template>
 
 <script>
+  import Cart from '~/components/layouts/Cart'
   import logger from '~/utils/logger'
   import parseInt from 'lodash/parseInt'
   import get from 'lodash/get'
@@ -549,28 +533,17 @@
       }
     },
     components: {
+      Cart,
       i18nLink,
       BkashOnlinePaymentForm,
-      Donation
+      Donation,
+      OrderSummary: () => import('~/components/layouts/checkout/OrderSummary')
     }
   }
 </script>
 
 <style lang="sass" module>
-  @import "shared/checkout/checkout.sass"
-
-  .checkout__row
-    +desktop
-      max-width: 700px
-  .AgreeStatement
-    font-size: 13px
-    color: rgba($black, .44)
-    fill: rgba($black, .44)
-    .Link
-      font-size: inherit
-      color: inherit
-      fill: inherit
-      text-decoration: underline
+  @import "shared/checkout/checkout"
 </style>
 
 <style lang="sass" scoped>
@@ -723,7 +696,7 @@
     padding: 15px 15px 14px 20px
     margin-left: -20px
     margin-top: 25px
-    border-radius: 4px
+    border-radius: $gutter/4
     &__title
       position: absolute
       color: $red
@@ -751,7 +724,7 @@
       background-color: rgba($red, .15)
       color: $red
       padding: 1px 5px
-      border-radius: 4px
+      border-radius: $gutter/4
       letter-spacing: .06em
       margin: 0 2px
 
@@ -835,11 +808,11 @@
       letter-spacing: -0.06em
       height: 26px
       margin-bottom: 25px
-      +btnRed
+      +button
 
     &--inlineLink
       padding: 0
-      color: $dark
+      color: $text
       text-decoration: underline
       line-height: inherit
     &--diagram
@@ -848,7 +821,7 @@
       border: 1px solid rgba($black, .5)
       color: $red
       fill: $red
-      border-radius: 4px
+      border-radius: $gutter/4
       margin-top: 20px
       white-space: normal
       text-align: left
@@ -867,10 +840,10 @@
       border-radius: 6px
       font-size: 13px
       font-weight: $weight-medium
-      +btnRed
+      +button
 
     &--paywithCard
-      +buttonPrimary
+      +button
       justify-content: center
       width: 100%
       font-size: 15px
@@ -878,7 +851,7 @@
       padding: 0 15px
       margin-bottom: 10px
     &--bkashShowDetailsModal
-      +buttonPrimary
+      +button
       justify-content: center
       width: 100%
       font-size: 15px
@@ -897,7 +870,7 @@
       border: 1px solid #ddd
       background-color: $white
       overflow: hidden
-      border-radius: 4px
+      border-radius: $gutter/4
       background-position: 0 center
       background-repeat: no-repeat
       background-size: 56px auto

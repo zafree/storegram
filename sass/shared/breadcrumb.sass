@@ -6,10 +6,6 @@
   +desktop
     margin-top: 40px
     margin-bottom: 30px
-  &__container
-    +container
-  &__row
-    position: relative
   &__title
     font-size: 24px
     font-weight: 700
@@ -19,3 +15,28 @@
     +desktop
       font-size: 40px
       margin-bottom: 6px
+  &__list,
+  &__item
+    list-style: none
+  &__list
+    margin: 0
+    padding: 0
+    display: flex
+    flex-flow: row wrap
+  &__item
+    margin-right: 8px
+  &__link
+    padding-left: 12px
+    padding-right: 6px
+  &__span
+    cursor: default
+    padding-left: 12px
+    padding-right: 12px
+
+.btn
+  &__label
+    margin-left: 0
+    margin-right: 4px
+  &__icon
+    // margin-right: -5px
+

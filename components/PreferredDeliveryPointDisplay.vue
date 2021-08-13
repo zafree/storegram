@@ -1,6 +1,6 @@
 <template>
   <address class="address">
-    <label class="address__h4">{{ addressTitle }}</label>
+    <h4 class="address__h4">{{ addressTitle }}</h4>
     <template v-if="showDeliveryCharge">
       <p class="address__deliveryCharge" v-if="!isFreeDelivery">{{ $t('sidebar.cart.delivery_charge') }}: ৳ {{ __$(address.delivery_charge) }}</p>
       <p class="address__deliveryCharge" v-else-if="isFreeDelivery">{{ $t('sidebar.cart.delivery_charge') }}: {{ $t('delivery_process.free_delivery') }}</p>
@@ -105,61 +105,64 @@
   }
 </script>
 
+<style lang="sass" module>
+
+</style>
 <style lang="sass" scoped>
-  @import "shared/banner"
+  // @import "shared/banner"
 
-  .address
-    position: relative
-    font-style: normal
-    line-height: 1.44
-    color: #333333
-    &__h4
-      font-size: 16px
-      font-weight: 400
-      color: inherit
-      display: block
-    &__deliveryCharge
-      font-size: 15px
-      color: #999
+  // .address
+  //   position: relative
+  //   font-style: normal
+  //   line-height: 1.44
+  //   color: #333333
+  //   &__h4
+  //     font-size: 16px
+  //     font-weight: 400
+  //     color: inherit
+  //     display: block
+  //   &__deliveryCharge
+  //     font-size: 15px
+  //     color: #999
 
-    &__glance
-      position: relative
-      margin-top: 8px
-      display: flex
-      flex-flow: row nowrap
-    &__images
-      position: relative
-      &__shopImage
-        width: 80px
-        height: 80px
-        border-radius: 8px
-        overflow: hidden
-        // background-color: #eee
-      &__personImage
-        width: 50px
-        height: 50px
-        border: 5px solid $white
-        border-radius: 38px
-        // background-color: #ccc
-        position: absolute
-        top: 0
-        right: 0
-        margin-top: 35px
-        margin-right: -5px
-        overflow: hidden
-        &__avatar
-          width: 100%
-    &__text
-      position: relative
-      color: inherit
-      line-height: 1.66
-      flex: 1
-      padding-left: 10px
-      overflow: hidden
-      margin-top: 3px
+  //   &__glance
+  //     position: relative
+  //     margin-top: 8px
+  //     display: flex
+  //     flex-flow: row nowrap
+  //   &__images
+  //     position: relative
+  //     &__shopImage
+  //       width: 80px
+  //       height: 80px
+  //       border-radius: 8px
+  //       overflow: hidden
+  //       // background-color: #eee
+  //     &__personImage
+  //       width: 50px
+  //       height: 50px
+  //       border: 5px solid $white
+  //       border-radius: 38px
+  //       // background-color: #ccc
+  //       position: absolute
+  //       top: 0
+  //       right: 0
+  //       margin-top: 35px
+  //       margin-right: -5px
+  //       overflow: hidden
+  //       &__avatar
+  //         width: 100%
+  //   &__text
+  //     position: relative
+  //     color: inherit
+  //     line-height: 1.66
+  //     flex: 1
+  //     padding-left: 10px
+  //     overflow: hidden
+  //     margin-top: 3px
 
-    &__p
-      font-weight: 400
-      font-size: 14px
-      color: inherit
+  //   &__p
+  //     font-weight: 400
+  //     font-size: 14px
+  //     color: inherit
 </style>

@@ -45,7 +45,7 @@
   import Modal from '~/components/Modal'
   import { overlayMixin } from '~/utils'
   import { mapState } from 'vuex'
-  
+
   export default {
     mixins: [overlayMixin],
     components: {
@@ -71,9 +71,9 @@
     display: flex
     flex-flow: row wrap
     margin-top: -20px
-    margin-left: -15px 
-    margin-right: -15px 
-    +phablet
+    margin-left: -15px
+    margin-right: -15px
+    // +phablet
       padding-left: 15px
       padding-right: 15px
     +tablet
@@ -94,7 +94,7 @@
       padding: 12px 0px 0px
       font-size: 14px
       +tablet
-        padding-bottom: 20px 
+        padding-bottom: 20px
   .attrList
     margin: 0
     padding: 0
@@ -129,14 +129,14 @@
       list-style: none
   .price
     &__amount
-      font-size: 16px 
+      font-size: 16px
 
     &__perMonth
       color: #aaa
-      font-size: 12px 
+      font-size: 12px
 
-  .Button 
-    flex: 1 
+  .Button
+    flex: 1
     &__iconSvg
       width: 14px
       height: 14px

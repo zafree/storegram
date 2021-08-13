@@ -1,5 +1,6 @@
 <template>
-  <aside-content>
+  <div>
+    Order Summary
     <div :class="$style.contain">
       <div :class="$style.title" v-if="pageMode.checkoutMode">{{ i18nText.orderSummary }}</div>
       <template v-else>{{ '' }}</template>
@@ -37,12 +38,11 @@
       </div>
 
     </div>
-  </aside-content>
+  </div>
 </template>
 
 <script>
   import LineItem from '~/components/OrderDetailsLineItem'
-  import AsideContent from '~/components/layouts/AsideContent'
   import i18nKeys from '~/components/layouts/checkout/OrderSummary.i18n.yaml'
   import {
     i18nMixin
@@ -80,7 +80,6 @@
       }
     },
     components: {
-      AsideContent,
       LineItem
     }
   }

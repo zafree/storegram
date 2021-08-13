@@ -1,168 +1,145 @@
 <template>
-  <aside-content>
-    <div class="wrapper">
-      <div :class="$style.title">{{ i18nText.cartTitle }}</div>
+  <div :class="$style.cart">
 
-      <template v-if="cart.cart_items_display_info.length">
-        <div :class="[$style.list, { [$style.listNotCheckout]: !pageMode.checkoutMode}, { [$style.listCheckout]: pageMode.checkoutMode}]">
-          <div :class="$style.cartGlobalError" v-if="cart.cartError">
-            <p :class="$style.cartGlobalErrorText">{{ i18nText.issueWarning }}</p>
-          </div>
-          <line-item v-for="item in cart.cart_items_display_info" :cartItemInfo="item" :key="'line-item-' + item.id"></line-item>
+    <h3 v-if="cart.cart_items_display_info.length" :class="$style.cartTitle">{{ i18nText.cartTitle }}</h3>
+    <template v-else>
+      <h3 :class="$style.cartTitle">{{ i18nText.noItemTitle }}</h3>
+      <p :class="$style.cartCopy">{{ i18nText.noItemText }}</p>
+      <button :class="[$style.btn, $style.btnPrimary]" @click="backToShop()">{{ i18nText.backShopButton }}</button>
+    </template>
+
+    <template v-if="cart.cart_items_display_info.length">
+      <div :class="[$style.cartList, { [$style.listNotCheckout]: !pageMode.checkoutMode}, { [$style.listCheckout]: pageMode.checkoutMode}]">
+        <div :class="$style.cartGlobalError" v-if="cart.cartError">
+          <p :class="$style.cartGlobalErrorText">{{ i18nText.issueWarning }}</p>
+        </div>
+        <line-item v-for="item in cart.cart_items_display_info" :cartItemInfo="item" :key="'line-item-' + item.id"></line-item>
+      </div>
+      <div :class="$style.actions">
+
+        <!-- Subtotal -->
+        <div :class="[$style.summary, {[$style.summaryLast]: !pageMode.checkoutMode || !(pageMode.checkoutMode && customer)}]">
+          <label :class="$style.summaryTitle">{{ i18nText.subTotal }}</label>
+          <span :class="$style.summaryAmount">Tk. {{ __$(subTotal) }}</span>
         </div>
 
-        <div :class="$style.actions">
-
-          <!-- Subtotal -->
-          <!-- <div :class="[$style.summary, {[$style.summaryFocus]: !pageMode.checkoutMode}, {[$style.summarySubtotal]: !pageMode.checkoutMode}]"> -->
-          <div :class="[$style.summary, {[$style.summaryLast]: !pageMode.checkoutMode || !(pageMode.checkoutMode && customer)}]">
-            <label :class="$style.summaryTitle">{{ i18nText.subTotal }}</label>
-            <span :class="$style.summaryAmount">Tk. {{ __$(subTotal) }}</span>
+        <!-- if checkout mode only -->
+        <template v-if="pageMode.checkoutMode && customer">
+          <!-- Delivery charge -->
+          <div :class="$style.summary" v-if="!isFreeDelivery && deliveryCharge !== null">
+            <label :class="$style.summaryTitle">{{ i18nText.deliveryCharge }}</label>
+            <span :class="$style.summaryAmount" v-if="deliveryCharge !== 0">Tk. {{ __$(deliveryCharge) }}</span>
+            <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-else>{{ i18nText.freeDelivery }}</span>
+          </div>
+          <!-- Coupon discount -->
+          <div :class="$style.summary" v-if="showCouponDiscount">
+            <label :class="$style.summaryTitle">{{ i18nText.couponDiscount }}</label>
+            <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-if="isFreeDelivery">{{ i18nText.freeDelivery }}</span>
+            <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-else>Tk. {{ __$(couponDiscount) }}</span>
+          </div>
+          <!-- Total -->
+          <div :class="[$style.summary, $style.summaryFocus, , $style.summaryLast]" v-if="deliveryCharge === 0 || deliveryCharge">
+            <label :class="$style.summaryTitle">{{ i18nText.cartTotal }}</label>
+            <span :class="$style.summaryAmount">Tk. {{ __$(cartTotal) }}</span>
           </div>
 
-          <!-- if checkout mode only -->
-          <template v-if="pageMode.checkoutMode && customer">
-            <!-- Delivery charge -->
-            <div :class="$style.summary" v-if="!isFreeDelivery && deliveryCharge !== null">
-              <label :class="$style.summaryTitle">{{ i18nText.deliveryCharge }}</label>
-              <span :class="$style.summaryAmount" v-if="deliveryCharge !== 0">Tk. {{ __$(deliveryCharge) }}</span>
-              <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-else>{{ i18nText.freeDelivery }}</span>
+          <!-- Coupon -->
+          <div :class="[$style.field, $style.fieldCoupon, {[$style.fieldError]: errors.coupon}, {[$style.fieldSuccess]: errors.coupon === false}]" v-if="showCouponField">
+            <div :class="$style.fieldControl">
+              <input :class="$style.fieldInput" type="text" v-model="couponCode" @keyup.enter="applyCoupon" :placeholder="i18nText.promoCodePlaceholder" >
+              <button :class="$style.button" @click="applyCoupon()">{{ i18nText.applyCouponButton }}</button>
             </div>
-            <!-- Coupon discount -->
-            <div :class="$style.summary" v-if="showCouponDiscount">
-              <label :class="$style.summaryTitle">{{ i18nText.couponDiscount }}</label>
-              <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-if="isFreeDelivery">{{ i18nText.freeDelivery }}</span>
-              <span :class="[$style.summaryAmount, $style.summaryAmountRed]" v-else>Tk. {{ __$(couponDiscount) }}</span>
-            </div>
-            <!-- Total -->
-            <div :class="[$style.summary, $style.summaryFocus, , $style.summaryLast]" v-if="deliveryCharge === 0 || deliveryCharge">
-              <label :class="$style.summaryTitle">{{ i18nText.cartTotal }}</label>
-              <span :class="$style.summaryAmount">Tk. {{ __$(cartTotal) }}</span>
-            </div>
-
-            <!-- Coupon -->
-            <div :class="[$style.field, $style.fieldCoupon, {[$style.fieldError]: errors.coupon}, {[$style.fieldSuccess]: errors.coupon === false}]" v-if="showCouponField">
-              <div :class="$style.fieldControl">
-                <input :class="$style.fieldInput" type="text" v-model="couponCode" @keyup.enter="applyCoupon" :placeholder="i18nText.promoCodePlaceholder" >
-                <button :class="$style.button" @click="applyCoupon()">{{ i18nText.applyCouponButton }}</button>
-              </div>
-              <p :class="$style.fieldValidation" v-if="errors.coupon">{{ __e(errors.coupon) }}</p>
-            </div>
-            <!-- Coupon applied :: make it translatable-->
-            <div :class="$style.appliedCoupon" v-if="showCouponDescription">
-              <template v-if="cart.applied_coupon">
-                <h4 :class="$style.appliedCouponTitle">{{ i18nText.appliedCoupon }} — <span :class="$style.appliedCouponCode">{{ appliedCouponCode }}</span>
-                </h4>
-                <p :class="$style.appliedCouponCopy">{{ couponDescription }}</p>
-                <button :class="[$style.button, $style.appliedCouponRemoveButton]" @click="removeCoupon">{{ i18nText.removeAppliedCoupon }}</button>
-              </template>
-              <p :class="[$style.appliedCouponCopy, $style.appliedCouponCopyInfo]" v-if="minSubTotalCtx.minSubtotalRequired">{{ $t(minSubTotalCtx.trMsg, minSubTotalCtx) }}</p>
-            </div>
-
-            <!-- Agent balance, adjusted balance, net payable  -->
-            <!-- <template v-if="isAgentMode">
-              <div :class="$style.currentBalance">
-                <span :class="$style.currentBalanceText">{{ $t('sidebar.cart.current_balance')}}:</span>
-                <span :class="$style.currentBalanceMoney">Tk. {{agentCommissionbalance}}</span>
-              </div>
-              <div :class="$style.adjustedBalance">
-                <span :class="$style.adjustedBalanceText">{{ $t('sidebar.cart.adjusted_balance')}}:</span>
-                <span :class="$style.adjustedBalanceMoney">Tk. {{adjustedBalance}}</span>
-              </div>
-              <div :class="$style.netPayable">
-                <span :class="$style.netPayableText">{{ $t('sidebar.cart.net_payable')}}:</span>
-                <span :class="$style.netPayableMoney">Tk. {{netPayable}}</span>
-              </div>
-            </template> -->
-          </template>
-
-          <!-- desktop only alert -->
-          <div class="Alert Alert--warning Alert--desktopOnly" v-if="!pageMode.checkoutMode && !cart.cartError && cartWarningExists">
-            <p class="Alert__copy">
-              <span v-if="isCustomerMode">{{ $t('sidebar.cart.line_item_deliverable_warning_1', { field: preferredDeliveryPointType } ) }}</span>
-              <span v-else>{{ $t('sidebar.cart.line_item_deliverable_warning_1_agentmode', { field: preferredDeliveryPointType } ) }}</span>
-              <span>&nbsp;</span>
-              <span :class="[{'underline': isCustomerMode}]" @click="openPreferredDeliveryPointModal">{{ i18nText.deliverableWarning2 }}</span>
-              {{ i18nText.deliverableWarning3 }}
-            </p>
+            <p :class="$style.fieldValidation" v-if="errors.coupon">{{ __e(errors.coupon) }}</p>
+          </div>
+          <!-- Coupon applied :: make it translatable-->
+          <div :class="$style.appliedCoupon" v-if="showCouponDescription">
+            <template v-if="cart.applied_coupon">
+              <h4 :class="$style.appliedCouponTitle">{{ i18nText.appliedCoupon }} — <span :class="$style.appliedCouponCode">{{ appliedCouponCode }}</span>
+              </h4>
+              <p :class="$style.appliedCouponCopy">{{ couponDescription }}</p>
+              <button :class="[$style.button, $style.appliedCouponRemoveButton]" @click="removeCoupon">{{ i18nText.removeAppliedCoupon }}</button>
+            </template>
+            <p :class="[$style.appliedCouponCopy, $style.appliedCouponCopyInfo]" v-if="minSubTotalCtx.minSubtotalRequired">{{ $t(minSubTotalCtx.trMsg, minSubTotalCtx) }}</p>
           </div>
 
-          <!-- Coupon applied in checkout -->
-          <div :class="$style.couponGuideText" v-if="!pageMode.checkoutMode || !customer">
-            <p :class="$style.couponGuideTextCopy">{{ i18nText.couponGuide }}</p>
-            <!-- <i18n-link v-if="!pageMode.checkoutMode && !cart.cartError" :to="'/checkout/verify-user'" :class="[$style.button, $style.couponGuideTextLink]">{{ i18nText.applyCoupon }}</i18n-link>
-            <button v-else type="button" :class="[$style.button, $style.couponGuideTextLink, $style.buttonDisable]" disabled>{{ i18nText.applyCoupon }}</button> -->
-          </div>
+          <!-- Agent balance, adjusted balance, net payable  -->
+          <!-- <template v-if="isAgentMode">
+            <div :class="$style.currentBalance">
+              <span :class="$style.currentBalanceText">{{ $t('sidebar.cart.current_balance')}}:</span>
+              <span :class="$style.currentBalanceMoney">Tk. {{agentCommissionbalance}}</span>
+            </div>
+            <div :class="$style.adjustedBalance">
+              <span :class="$style.adjustedBalanceText">{{ $t('sidebar.cart.adjusted_balance')}}:</span>
+              <span :class="$style.adjustedBalanceMoney">Tk. {{adjustedBalance}}</span>
+            </div>
+            <div :class="$style.netPayable">
+              <span :class="$style.netPayableText">{{ $t('sidebar.cart.net_payable')}}:</span>
+              <span :class="$style.netPayableMoney">Tk. {{netPayable}}</span>
+            </div>
+          </template> -->
+        </template>
 
-          <div :class="$style.orderAction" v-if="!pageMode.checkoutMode">
-            <i18n-link
-              @click.native="placeOrderButtonHandler()"
-              v-if="!$store.state.cart.cartError && isCustomerMode"
-              :to="'/checkout/verify-user'"
-              :class="[$style.button, $style.buttonPlaceOrder]"
-            >
-              {{ i18nText.placeOrder }}
-            </i18n-link>
-
-            <i18n-link
-              @click.native="placeOrderButtonHandler()"
-              v-else-if="!$store.state.cart.cartError && isAgentMode && agent"
-              :to="'/checkout/verify-user'"
-              :class="[$style.button, $style.buttonPlaceOrder]"
-            >
-              {{ i18nText.placeOrder }}
-            </i18n-link>
-
-            <button
-              v-else-if="!$store.state.cart.cartError && isAgentMode && !agent"
-              @click="placeOrderButtonHandler()"
-              :class="[$style.button, $style.buttonPlaceOrder]"
-            >
-              {{ i18nText.placeOrder }}
-            </button>
-
-            <button
-              v-if="$store.state.cart.cartError"
-              type="button"
-              :class="[$style.button, $style.buttonPlaceOrder, $style.buttonDisable]"
-              disabled
-            >
-              {{ i18nText.placeOrder }}
-            </button>
-          </div>
+        <!-- desktop only alert -->
+        <div class="Alert Alert--warning Alert--desktopOnly" v-if="!pageMode.checkoutMode && !cart.cartError && cartWarningExists">
+          <p class="Alert__copy">
+            <span v-if="isCustomerMode">{{ $t('sidebar.cart.line_item_deliverable_warning_1', { field: preferredDeliveryPointType } ) }}</span>
+            <span v-else>{{ $t('sidebar.cart.line_item_deliverable_warning_1_agentmode', { field: preferredDeliveryPointType } ) }}</span>
+            <span>&nbsp;</span>
+            <span :class="[{'underline': isCustomerMode}]" @click="openPreferredDeliveryPointModal">{{ i18nText.deliverableWarning2 }}</span>
+            {{ i18nText.deliverableWarning3 }}
+          </p>
         </div>
-      </template>
 
-      <!-- Cart empty -->
-      <div v-else :class="$style.empty">
-        <div :class="$style.emptyIcon">
-          <!-- <img src="/svg/cart-empty.svg" alt=""> -->
-          <svg viewBox="0 0 32 32">
-            <path d="M28.8,11.3l-2.4,6.9c-0.1,0.4-0.5,0.6-0.9,0.6l-14.2,0.1c-0.5,0-0.8-0.3-0.9-0.8l0,0l-1.2-6.7L8.4,7.6l-1-5.4L0.6,0L0,1.8
-              l5.8,1.9l3.1,17c0.2,1.2,0.9,2.2,1.8,2.9C9.1,25,9,27.3,10.3,28.9s3.7,1.7,5.3,0.4c1.4-1.2,1.7-3.2,0.8-4.7h4.8
-              c-0.3,0.6-0.5,1.2-0.5,1.9c0,2.1,1.7,3.8,3.8,3.8s3.8-1.7,3.8-3.8s-1.7-3.8-3.8-3.8h-11c-1.2,0-2.3-0.8-2.6-1.9
-              c0.1,0,0.3,0.1,0.4,0.1h14.3c1.2,0,2.3-0.8,2.7-1.9L32,7.6l-2,0L28.8,11.3z M25,5.5c-0.3-0.8-0.7-1.6-1.3-2.3
-              c-0.5-0.6-1.2-1.2-2-1.5c-1.6-0.7-3.4-0.7-4.9,0c-0.7,0.4-1.4,0.9-1.9,1.5c-0.6,0.7-1,1.5-1.3,2.3c-0.6,1.9-0.6,3.9,0,5.8
-              c0.3,0.8,0.7,1.6,1.3,2.3c0.5,0.6,1.2,1.1,1.9,1.5c1.6,0.7,3.4,0.7,4.9,0c0.8-0.4,1.4-0.9,2-1.5c0.6-0.7,1-1.5,1.3-2.3
-              C25.6,9.4,25.6,7.4,25,5.5L25,5.5z M22,10.2c-0.1,0.5-0.3,0.9-0.6,1.4c-0.2,0.4-0.6,0.7-0.9,0.9c-0.4,0.2-0.8,0.3-1.2,0.3
-              c-0.4,0-0.8-0.1-1.2-0.3c-0.4-0.2-0.7-0.5-0.9-0.9c-0.3-0.4-0.5-0.9-0.6-1.4c-0.1-0.6-0.2-1.2-0.2-1.7c0-0.6,0.1-1.2,0.2-1.8
-              c0.1-0.5,0.3-1,0.6-1.4c0.2-0.4,0.6-0.7,0.9-0.9c0.4-0.2,0.8-0.3,1.2-0.3c0.4,0,0.8,0.1,1.2,0.3c0.4,0.2,0.7,0.5,0.9,0.9
-              c0.3,0.4,0.5,0.9,0.6,1.4c0.1,0.6,0.2,1.2,0.2,1.8C22.2,9,22.2,9.6,22,10.2z"/>
-          </svg>
+        <!-- Coupon applied in checkout -->
+        <div :class="$style.couponGuideText" v-if="!pageMode.checkoutMode || !customer">
+          <p :class="$style.couponGuideTextCopy">{{ i18nText.couponGuide }}</p>
+          <!-- <i18n-link v-if="!pageMode.checkoutMode && !cart.cartError" :to="'/checkout/verify-user'" :class="[$style.button, $style.couponGuideTextLink]">{{ i18nText.applyCoupon }}</i18n-link>
+          <button v-else type="button" :class="[$style.button, $style.couponGuideTextLink, $style.buttonDisable]" disabled>{{ i18nText.applyCoupon }}</button> -->
         </div>
-        <div :class="$style.emptyText">
-          <!-- {{ $t('sidebar.cart.no_item') }} -->
-          <h4 :class="$style.emptyTextTitle">{{ i18nText.noItemTitle }}</h4>
-          <p :class="$style.emptyTextSub">{{ i18nText.noItemText }}</p>
-          <button :class="[$style.button, $style.buttonBackToShopping]" @click="backToShop()">{{ i18nText.backShopButton }}</button>
+
+        <div :class="$style.orderAction" v-if="!pageMode.checkoutMode">
+          <i18n-link
+            @click.native="placeOrderButtonHandler()"
+            v-if="!$store.state.cart.cartError && isCustomerMode"
+            :to="'/checkout/verify-user'"
+            :class="[$style.button, $style.buttonPlaceOrder]"
+          >
+            {{ i18nText.placeOrder }}
+          </i18n-link>
+
+          <i18n-link
+            @click.native="placeOrderButtonHandler()"
+            v-else-if="!$store.state.cart.cartError && isAgentMode && agent"
+            :to="'/checkout/verify-user'"
+            :class="[$style.button, $style.buttonPlaceOrder]"
+          >
+            {{ i18nText.placeOrder }}
+          </i18n-link>
+
+          <button
+            v-else-if="!$store.state.cart.cartError && isAgentMode && !agent"
+            @click="placeOrderButtonHandler()"
+            :class="[$style.button, $style.buttonPlaceOrder]"
+          >
+            {{ i18nText.placeOrder }}
+          </button>
+
+          <button
+            v-if="$store.state.cart.cartError"
+            type="button"
+            :class="[$style.button, $style.buttonPlaceOrder, $style.buttonDisable]"
+            disabled
+          >
+            {{ i18nText.placeOrder }}
+          </button>
         </div>
       </div>
-    </div>
-  </aside-content>
+    </template>
+
+  </div>
 </template>
 
 <script>
-  import AsideContent from '~/components/layouts/AsideContent'
   import LineItem from '~/components/layouts/cart/LineItem'
   import { mixin as onClickOutside } from 'vue-on-click-outside'
   import i18nLink from '~/components/i18nLink'
@@ -282,7 +259,6 @@
       // }
     },
     components: {
-      AsideContent,
       LineItem,
       i18nLink
     },
@@ -463,175 +439,165 @@
   }
 </script>
 
-<style scoped>
-  .underline {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-</style>
-
-<style lang="sass" scoped>
-  .wrapper
-    margin-top: 26px
-    padding-left: 40px
-    padding-right: 40px
-    +tablet
-      margin-top: 66px
-</style>
-
-
-<style lang="sass" scoped>
-  @import "shared/alerts"
-
-  .Alert
-    &--desktopOnly
-      display: none
-      +desktop
-        display: block
-        margin-top: 10px
-</style>
-
-
 <style lang="sass" module>
-  @import "shared/cart-contain"
-  @import "shared/form/field"
   @import "shared/button"
   @import "shared/summary"
-
-  .disabled
-    background: red
-
-  // markup hide
-  .adjustedBalance
+  .cart
     position: relative
-    display: flex
-    flex-direction: row
-    justify-content: flex-end
-    align-items: center
-    padding-top: 15px
-    padding-bottom: 15px
-    border-top: 1px solid #ddd
-    color: #777
-    &__text
+    padding: $gutter $gutter*2 $gutter*2
+    &-title
       font-size: 14px
-      // font-weight: 700
-      line-height: 1
-      padding-right: 10px
-    &__money
-      font-size: 18px
-      line-height: 1
-
-  // markup hide
-  .netPayable
-    position: relative
-    display: flex
-    flex-direction: row
-    justify-content: flex-end
-    align-items: center
-    padding-top: 15px
-    padding-bottom: 15px
-    border-top: 1px solid #ddd
-    &__text
-      font-size: 16px
-      font-weight: 700
-      line-height: 1
-      padding-right: 10px
-    &__money
-      font-size: 20px
-      line-height: 1
-
-
-  .Button
-    &--placeOrder
-      +buttonPrimary
-      border-radius: 50em
+      font-weight: $weight-bold
+      margin-bottom: $gutter
+    &-copy
       font-size: 14px
       font-weight: $weight-medium
-      padding: 0 40px
-      height: 48px
-      text-transform: uppercase
-      display: flex
-      justify-content: center
-      align-items: center
-      margin-top: 20px
-    &--backToShopping
-      +buttonPrimary
-      width: 100%
-      font-size: 16px
-      height: 56px
-      border-radius: 0
+      margin-bottom: $gutter
+      color: rgba($black, .55)
+      padding-right: $gutter*2
+    &-list
+      border: 1px solid red
 
-  .Empty
-    display: flex
-    flex-flow: column wrap
-    align-items: center
-    // padding: 0 15px
-    &__icon
-      display: block
-      width: 100px
-      height: 100px
-      fill: #ddd
-      margin-left: -20px
-      margin-top: 50px
-      margin-bottom: 50px
-    &__text
-      text-align: center
-      &__title
-        font-size: 21px
-        color: $text
-        // margin-top: 20px
-      &__sub
-        font-size: 16px
-        line-height: 1.4
-        color: #bbbbbb
-        margin-top: 10px
-        margin-bottom: 20px
-        max-width: 220px
 
-  .CartGlobalError
-    display: block
-    font-size: 14px
-    margin-top: 6px
-    margin-bottom: 0
-    color: $white
-    fill: $white
-    background-color: $red
-    border-radius: 2px
-    padding: 14px 20px
-    margin-bottom: 30px
-    &__text
-      font-size: inherit
-      color: inherit
-      fill: inherit
+  // @import "shared/cart-contain"
+  // @import "shared/form/field"
+  // @import "shared/button"
+  // @import "shared/summary"
 
-  .Field
-    &--coupon
-      margin-top: 30px
-      padding-bottom: 30px
-      .Field__input
-        padding-left: 12px
-        padding-right: 65px
-        border-color: #777
-      &.Field--error
-        .Field__input
-          border-color: $red
-      .Button
-        position: absolute
-        top: 0
-        right: 0
-        padding: 0 15px
-        font-size: 12px
-        background-color: #333
-        color: $white
-        margin-top: 2px
-        margin-right: 2px
-        height: 32px
-        &:hover
-          color: $white
-          background-color: #222
-        &:focus,
-        &:active
-          color: $white
-          background-color: #111
+  // .disabled
+  //   background: red
+
+  // // markup hide
+  // .adjustedBalance
+  //   position: relative
+  //   display: flex
+  //   flex-direction: row
+  //   justify-content: flex-end
+  //   align-items: center
+  //   padding-top: 15px
+  //   padding-bottom: 15px
+  //   border-top: 1px solid #ddd
+  //   color: #777
+  //   &__text
+  //     font-size: 14px
+  //     // font-weight: 700
+  //     line-height: 1
+  //     padding-right: 10px
+  //   &__money
+  //     font-size: 18px
+  //     line-height: 1
+
+  // // markup hide
+  // .netPayable
+  //   position: relative
+  //   display: flex
+  //   flex-direction: row
+  //   justify-content: flex-end
+  //   align-items: center
+  //   padding-top: 15px
+  //   padding-bottom: 15px
+  //   border-top: 1px solid #ddd
+  //   &__text
+  //     font-size: 16px
+  //     font-weight: 700
+  //     line-height: 1
+  //     padding-right: 10px
+  //   &__money
+  //     font-size: 20px
+  //     line-height: 1
+
+
+  // .Button
+  //   &--placeOrder
+  //     +button
+  //     border-radius: 50em
+  //     font-size: 14px
+  //     font-weight: $weight-medium
+  //     padding: 0 40px
+  //     height: 48px
+  //     text-transform: uppercase
+  //     display: flex
+  //     justify-content: center
+  //     align-items: center
+  //     margin-top: 20px
+  //   &--backToShopping
+  //     +button
+  //     width: 100%
+  //     font-size: 16px
+  //     height: 56px
+  //     border-radius: 0
+
+  // .Empty
+  //   display: flex
+  //   flex-flow: column wrap
+  //   align-items: center
+  //   // padding: 0 15px
+  //   &__icon
+  //     display: block
+  //     width: 100px
+  //     height: 100px
+  //     fill: #ddd
+  //     margin-left: -20px
+  //     margin-top: 50px
+  //     margin-bottom: 50px
+  //   &__text
+  //     text-align: center
+  //     &__title
+  //       font-size: 21px
+  //       color: $text
+  //       // margin-top: 20px
+  //     &__sub
+  //       font-size: 16px
+  //       line-height: 1.4
+  //       color: #bbbbbb
+  //       margin-top: 10px
+  //       margin-bottom: 20px
+  //       max-width: 220px
+
+  // .CartGlobalError
+  //   display: block
+  //   font-size: 14px
+  //   margin-top: 6px
+  //   margin-bottom: 0
+  //   color: $white
+  //   fill: $white
+  //   background-color: $red
+  //   border-radius: 2px
+  //   padding: 14px 20px
+  //   margin-bottom: 30px
+  //   &__text
+  //     font-size: inherit
+  //     color: inherit
+  //     fill: inherit
+
+  // .Field
+  //   &--coupon
+  //     margin-top: 30px
+  //     padding-bottom: 30px
+  //     .Field__input
+  //       padding-left: 12px
+  //       padding-right: 65px
+  //       border-color: #777
+  //     &.Field--error
+  //       .Field__input
+  //         border-color: $red
+  //     .Button
+  //       position: absolute
+  //       top: 0
+  //       right: 0
+  //       padding: 0 15px
+  //       font-size: 12px
+  //       background-color: #333
+  //       color: $white
+  //       margin-top: 2px
+  //       margin-right: 2px
+  //       height: 32px
+  //       &:hover
+  //         color: $white
+  //         background-color: #222
+  //       &:focus,
+  //       &:active
+  //         color: $white
+  //         background-color: #111
 
 </style>

@@ -9,6 +9,7 @@
   visibility: hidden
   transition: none $speed*5 ease
   transition-property: opacity, visibility
+  $root: &
   &__overlay
     position: fixed
     top: 0
@@ -24,9 +25,31 @@
     background: $white
     max-height: 100%
     overflow-y: auto
+    transition: none $speed*2 ease
+    transition-property: transform
+    &--fullHeight
+      height: 100%
+    &--fromLeft
+      transform: translateX(-100%)
+    &--fromRight
+      transform: translateX(100%)
+    &--fromTop
+      transform: translateY(-100%)
+
 
   // modifier
   &--open
     opacity: 1
     visibility: visible
+    #{$root}__content
+      transition: none $speed*3 ease
+      transition-property: transform
+      transition-delay: $speed*2
+      &--fromLeft
+        transform: translateX(0)
+      &--fromRight
+        transform: translateX(0)
+      &--fromTop
+        transform: translateY(0)
+
 

@@ -82,7 +82,7 @@ import { mixin as onClickOutside } from 'vue-on-click-outside'
 import ComputedImage from '~/components/ComputedImage'
 import i18nLink from '~/components/i18nLink'
 
-import { i18nRedirect } from '~/utils'
+import { i18nRedirect, overlayMixin } from '~/utils'
 
 const productRouteRE = /^(lang-)?product-/
 const searchRouteRE = /^(lang-)?search-/
@@ -92,7 +92,7 @@ import {
 } from '~/api'
 
 export default {
-  mixins: [onClickOutside],
+  mixins: [onClickOutside, overlayMixin],
   data () {
     return {
       searchInput: null,
@@ -175,6 +175,7 @@ export default {
       } else if (this.currentItem > -1) {
         this.goToSelectedResultPage(this.searchResult[this.currentItem])
       }
+      this.closeAnyOverlayIfOpen()
     },
     goToSelectedResultPage (value) {
       let clonedValue = cloneDeep(value)
@@ -268,168 +269,168 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "sass/shared/button"
-  @import "sass/global/_vue-multiselect"
+  // @import "sass/shared/button"
+  // @import "sass/global/_vue-multiselect"
 
-  .Search
-    position: relative
-    width: 100%
-    // overflow-x: hidden
-    +desktop
-      padding-right: 10px
-      padding-left: 10px
-    &__wrapper
-      +container
-      padding-top: 32px
-      padding-bottom: 30px
-      padding-left: 44px + 16
-      padding-right: 30px
-      position: fixed
-      top: 0
-      left: 0
-      width: 100%
-      z-index: 9
-      display: flex
-      background-color: $white
-      +desktop
-        position: absolute
-        padding-top: 10px
-        padding-bottom: 10px
-        padding-left: 10px
-        padding-right: 10px
-        margin-top: -64px
+  // .Search
+  //   position: relative
+  //   width: 100%
+  //   // overflow-x: hidden
+  //   +desktop
+  //     padding-right: 10px
+  //     padding-left: 10px
+  //   &__wrapper
+  //     +container
+  //     padding-top: 32px
+  //     padding-bottom: 30px
+  //     padding-left: 44px + 16
+  //     padding-right: 30px
+  //     position: fixed
+  //     top: 0
+  //     left: 0
+  //     width: 100%
+  //     z-index: 9
+  //     display: flex
+  //     background-color: $white
+  //     +desktop
+  //       position: absolute
+  //       padding-top: 10px
+  //       padding-bottom: 10px
+  //       padding-left: 10px
+  //       padding-right: 10px
+  //       margin-top: -64px
 
-      &.isActive
-        border-bottom: 1px solid #ddd
-    &__input
-      padding-left: 30px
-      position: relative
-      vertical-align: top
-      border: 1px solid $black
-      background-color: $white
-      border-radius: 500em
-      box-shadow: none
-      height: 44px
-      padding-left: 20px
-      padding-right: 62px
-      color: #333
-      fill: #333
-      box-shadow: none
-      max-width: 100%
-      width: 100%
-      font-size: 16px
-      font-weight: 400
-      line-height: 1.5
-      transition: all 0.1s ease-out
-      +desktop
-        // height: 56px
+  //     &.isActive
+  //       border-bottom: 1px solid #ddd
+  //   &__input
+  //     padding-left: 30px
+  //     position: relative
+  //     vertical-align: top
+  //     border: 1px solid $black
+  //     background-color: $white
+  //     border-radius: 500em
+  //     box-shadow: none
+  //     height: 44px
+  //     padding-left: 20px
+  //     padding-right: 62px
+  //     color: #333
+  //     fill: #333
+  //     box-shadow: none
+  //     max-width: 100%
+  //     width: 100%
+  //     font-size: 16px
+  //     font-weight: 400
+  //     line-height: 1.5
+  //     transition: all 0.1s ease-out
+  //     +desktop
+  //       // height: 56px
 
-      &:focus,
-      &:active
-        // border-color: #777
-        border-color: $primary
-        box-shadow: none
-        outline: none
-        background-color: #fff
+  //     &:focus,
+  //     &:active
+  //       // border-color: #777
+  //       border-color: $primary
+  //       box-shadow: none
+  //       outline: none
+  //       background-color: #fff
 
-      +placeholder
-        color: #bbbbbb
+  //     +placeholder
+  //       color: #bbbbbb
 
-    &__enter
-      +button
-      margin-top: 32px
-      margin-right: 30px
-      height: 44px
-      position: absolute
-      right: 0
-      top: 0
-      font-size: 10px
-      color: $black
-      // background-color: rgba(blue, 0.5)
-      border-radius: 22px
-      padding-right: 20px
-      padding-left: 20px
-      +desktop
-        margin-top: 10px
-        margin-right: 10px
-    &__loading
-      // background-color: rgba(green, 0.5)
-      z-index: 10
-      height: 36px
-      width: 44px
-      margin-top: 34px
-      margin-right: 32px
-      border-radius: 50px
-      +desktop
-        margin-top: 12px
-        margin-right: 12px
-      &::after,
-      &::before
-        border-color: $primary transparent transparent
+  //   &__enter
+  //     +button
+  //     margin-top: 32px
+  //     margin-right: 30px
+  //     height: 44px
+  //     position: absolute
+  //     right: 0
+  //     top: 0
+  //     font-size: 10px
+  //     color: $black
+  //     // background-color: rgba(blue, 0.5)
+  //     border-radius: 22px
+  //     padding-right: 20px
+  //     padding-left: 20px
+  //     +desktop
+  //       margin-top: 10px
+  //       margin-right: 10px
+  //   &__loading
+  //     // background-color: rgba(green, 0.5)
+  //     z-index: 10
+  //     height: 36px
+  //     width: 44px
+  //     margin-top: 34px
+  //     margin-right: 32px
+  //     border-radius: 50px
+  //     +desktop
+  //       margin-top: 12px
+  //       margin-right: 12px
+  //     &::after,
+  //     &::before
+  //       border-color: $primary transparent transparent
 
 
-  .item-list
-    position: relative
-    // padding-bottom: 40px
-    margin-left: -5px
-    margin-right: -5px
-    padding-left: 20px
-    padding-right: 20px
-    +desktop
-      +desktop
-        // border: 10px solid red
-        // padding-top: 44px + 20
-        max-height: 380px - 44 - 20
-        overflow-y: auto
-  .item-wrapper
-    position: relative
-    margin-top: 20px
-    border-radius: 2px
-    &:last-child
-      margin-bottom: 40px
-    +desktop
-      margin-top: 10px
-    &.active
-      cursor: pointer
-      background-color: #f9f9f9
-      // border-color: $primary
+  // .item-list
+  //   position: relative
+  //   // padding-bottom: 40px
+  //   margin-left: -5px
+  //   margin-right: -5px
+  //   padding-left: 20px
+  //   padding-right: 20px
+  //   +desktop
+  //     +desktop
+  //       // border: 10px solid red
+  //       // padding-top: 44px + 20
+  //       max-height: 380px - 44 - 20
+  //       overflow-y: auto
+  // .item-wrapper
+  //   position: relative
+  //   margin-top: 20px
+  //   border-radius: 2px
+  //   &:last-child
+  //     margin-bottom: 40px
+  //   +desktop
+  //     margin-top: 10px
+  //   &.active
+  //     cursor: pointer
+  //     background-color: #f9f9f9
+  //     // border-color: $primary
 
-  .item
-    padding: 5px
-    position: relative
-    display: flex
-    flex-flow: row wrap
-    text-decoration: none
-    color: $black
-    // background-color: rgba($black, 0.03)
-    &__image
-      width: 70px
-      height: 70px
-      min-width: 70px
-      min-height: 70px
-      background-color: #f9f9f9
-    &__content
-      flex: 1
-      position: relative
-      // background-color: rgba($black, 0.03)
-      width: 100%
-      padding-left: 10px
-      padding-top: 6px
-    &__title
-      font-size: 14px
-      line-height: 1.33
-      max-width: 160px
+  // .item
+  //   padding: 5px
+  //   position: relative
+  //   display: flex
+  //   flex-flow: row wrap
+  //   text-decoration: none
+  //   color: $black
+  //   // background-color: rgba($black, 0.03)
+  //   &__image
+  //     width: 70px
+  //     height: 70px
+  //     min-width: 70px
+  //     min-height: 70px
+  //     background-color: #f9f9f9
+  //   &__content
+  //     flex: 1
+  //     position: relative
+  //     // background-color: rgba($black, 0.03)
+  //     width: 100%
+  //     padding-left: 10px
+  //     padding-top: 6px
+  //   &__title
+  //     font-size: 14px
+  //     line-height: 1.33
+  //     max-width: 160px
 
-  .copy
-    padding: 20px 0 40px
-    line-height: 16px
-    font-size: 14px
-    text-decoration: none
-    text-transform: none
-    position: relative
-    cursor: pointer
-    white-space: nowrap
-    &.primary
-      color: $primary
+  // .copy
+  //   padding: 20px 0 40px
+  //   line-height: 16px
+  //   font-size: 14px
+  //   text-decoration: none
+  //   text-transform: none
+  //   position: relative
+  //   cursor: pointer
+  //   white-space: nowrap
+  //   &.primary
+  //     color: $primary
 </style>
 

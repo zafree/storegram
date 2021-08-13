@@ -245,22 +245,7 @@ export default {
     &--disable
       cursor: not-allowed
       opacity: .5
-    &--purple
-      padding-left: 15px
-      padding-right: 15px
-      border-style: solid
-      border-width: 1px
-      color: #fff
-      fill: #fff
-      background-color: $btn-purple
-      border-color: darken($btn-purple, 5%) darken($btn-purple, 10%) darken($btn-purple, 15%)
-      background: linear-gradient(to bottom, lighten($btn-purple, 18%), $btn-purple)
-      box-shadow: 0 1px 0 rgba($white, 0.4) inset
-      &:hover
-        color: #fff
-        fill: #fff
-        background-color: darken($btn-purple, 5%)
-        background: linear-gradient(to bottom, $btn-purple, $btn-purple)
+    
   .RequestRefundDetails
     position: relative
     background-color: $white
@@ -269,7 +254,7 @@ export default {
     margin-left: -15px
     margin-right: -15px
     height: 100%
-    +phablet
+    // +phablet
       margin-left: 0
       margin-right: 0
       padding: 20px 30px 30px
@@ -280,7 +265,7 @@ export default {
       font-weight: 400
       color: #333
       line-height: 1.3
-      +phablet
+      // +phablet
         font-size: 24px
     &__date
       font-size: 14px
@@ -325,7 +310,7 @@ export default {
     &__body
       margin-top: 10px
       margin-bottom: 10px
-    &__copy 
+    &__copy
       color: purple
       font-size: 14px
       line-height: 1.33
@@ -373,7 +358,7 @@ export default {
       background-color: #fff
     &__check
       &--actived
-        border-color: $btn-green
+        border-color: $black
         &::before,
         &::after
           opacity: 1

@@ -1,5 +1,7 @@
 .CategoryBanner
   position: relative
+  // min-height: 100px
+  // border: 1px solid green
   &__container
     +container
   &__row
@@ -11,7 +13,7 @@
   background-color: $white
   // box-shadow: 0 1px 3px rgba($black, .1)
   // border: 1px solid #d9d9d9
-  +phablet
+  // +phablet
     margin-left: 0
     margin-right: 0
     // border-top: none
@@ -19,7 +21,7 @@
     height: 420px
 
   &--purple
-    background-color: rgba($purple, .5)
+    background-color: rgba($primary, .5)
   &--yellow
     background-color: rgba($yellow, .5)
   &--red
@@ -27,10 +29,10 @@
   &--green
     background-color: rgba($green, .5)
   &--cyan
-    background-color: rgba($cyan, .5)
+    background-color: rgba($blue, .5)
 
   &--purpleLt
-    background-color: rgba($purple, .4)
+    background-color: rgba($primary, .4)
   &--yellowLt
     background-color: rgba($yellow, .4)
   &--redLt
@@ -38,10 +40,10 @@
   &--greenLt
     background-color: rgba($green, .4)
   &--cyanLt
-    background-color: rgba($cyan, .4)
+    background-color: rgba($blue, .4)
 
   &--purpleDk
-    background-color: rgba($purple, .6)
+    background-color: rgba($primary, .6)
   &--yellowDk
     background-color: rgba($yellow, .6)
   &--redDk
@@ -49,7 +51,7 @@
   &--greenDk
     background-color: rgba($green, .6)
   &--cyanDk
-    background-color: rgba($cyan, .6)
+    background-color: rgba($blue, .6)
 
   &__link
       display: block

@@ -1,75 +1,48 @@
 <template>
-  <div :class="$style.login">
+  <div :class="$style.loginWrapper">
     <template v-if="!phoneNumberMode && !customer">
-      <p :class="$style.oneClickStatement" v-if="!requestedProduct" v-html="i18nText.facebookLoginHint"></p>
-      <p :class="$style.oneClickStatement" v-if="requestedProduct" v-html="i18nText.productRequestLoginHint"></p>
-      <!-- <button :class="[$style.button, $style.buttonContinueWithFacebook]" v-if="isFbSdkReady" @click="loginWithFacebook">
-        <svg viewBox="0 0 28 28">
-          <g>
-            <path fill="#FFFFFF" d="M28,14c0-7.7-6.3-14-14-14S0,6.3,0,14c0,6.9,5,12.8,11.8,13.8V18H8.3v-4h3.6v-3.1
-              c0-3.5,2.1-5.4,5.3-5.4c1,0,2.1,0.1,3.1,0.3v3.4h-1.8c-1.1-0.1-2.1,0.6-2.3,1.7c0,0.1,0,0.3,0,0.4V14h3.9l-0.6,4h-3.3v9.8
-              C23,26.8,28,20.9,28,14z"/>
-            <path fill="#1878F2" d="M19.4,18l0.6-4h-3.9v-2.6c-0.1-1.1,0.7-2.1,1.8-2.2c0.1,0,0.3,0,0.4,0h1.8V5.7
-              c-1-0.2-2.1-0.3-3.1-0.3c-3.2,0-5.3,1.9-5.3,5.4V14H8.3v4h3.6v9.8c1.4,0.2,2.9,0.2,4.4,0V18L19.4,18z"/>
-          </g>
-        </svg>
-        <span>{{ facebookLoginText }}</span>
-      </button> -->
-      <button :class="[$style.button, $style.buttonLoginWithPhone]" @click.prevent="switchToPhoneNumberMode()">
-        {{ i18nText.signInUpWithPhone }}
-      </button>
+      <p :class="$style.copy" v-if="!requestedProduct" v-html="i18nText.facebookLoginHint"></p>
+      <p :class="$style.copy" v-if="requestedProduct" v-html="i18nText.productRequestLoginHint"></p>
+      <button :class="[$style.loginBtn, $style.btn, $style.btnPrimary]" @click.prevent="switchToPhoneNumberMode()">{{ i18nText.signInUpWithPhone }}</button>
+
     </template>
     <template v-else>
-      <p :class="$style.oneClickStatement" v-if="userNeedsUpdate" v-html="verificationHint"></p>
-      <p :class="$style.oneClickStatement" v-if="requestedProduct" v-html="requestedProductVerificationHint"></p>
+      <p :class="$style.copy" v-if="userNeedsUpdate" v-html="verificationHint"></p>
+      <p :class="$style.copy" v-if="requestedProduct" v-html="requestedProductVerificationHint"></p>
 
-      <div :class="[$style.field, {[$style.fieldError]: errors.phoneNumber, [$style.fieldSuccess]: errors.phoneNumber === false}]">
-          <label :class="$style.fieldLabel">{{ i18nText.phoneLabel }}</label>
-          <div :class="$style.fieldControl">
-            <input :class="$style.fieldInput" type="tel" :value="phoneNumber" :placeholder="i18nText.customerPhonePlaceHolder" @keyup.enter="processRequest()" @input="updatePhoneNumber" v-focus>
-          </div>
-          <p :class="$style.fieldValidation" v-if="errors.phoneNumber">{{errors.phoneNumber}}</p>
+      <div :class="[$style.field, $style.fieldFirst, {[$style.fieldError]: errors.phoneNumber, [$style.fieldSuccess]: errors.phoneNumber === false}]">
+        <label :class="$style.fieldLabel">{{ i18nText.phoneLabel }}</label>
+        <div :class="$style.fieldControl">
+          <input :class="$style.fieldInput" type="tel" :value="phoneNumber" :placeholder="i18nText.customerPhonePlaceHolder" @keyup.enter="processRequest()" @input="updatePhoneNumber" v-focus>
+        </div>
+        <p :class="$style.fieldValidation" v-if="errors.phoneNumber">{{errors.phoneNumber}}</p>
       </div>
 
-      <div v-if="requireName" :class="[$style.Field, {[$style.fieldError]: errors.name, [$style.fieldSuccess]: errors.name === false}]">
-          <label :class="$style.fieldLabel">{{ i18nText.nameLabel }}</label>
-          <div :class="$style.fieldControl">
-              <input ref="name" :class="$style.fieldInput" type="text" v-model="name" :placeholder="i18nText.namePlaceholder" @keyup.enter="processRequest()">
-          </div>
-          <p v-if="errors.name" :class="$style.fieldValidation">{{errors.name}}</p>
+      <div v-if="requireName" :class="[$style.field, {[$style.fieldError]: errors.name, [$style.fieldSuccess]: errors.name === false}]">
+        <label :class="$style.fieldLabel">{{ i18nText.nameLabel }}</label>
+        <div :class="$style.fieldControl">
+          <input ref="name" :class="$style.fieldInput" type="text" v-model="name" :placeholder="i18nText.namePlaceholder" @keyup.enter="processRequest()">
+        </div>
+        <p v-if="errors.name" :class="$style.fieldValidation">{{errors.name}}</p>
       </div>
 
-      <div v-if="requireOtp" :class="[$style.Field, {[$style.fieldError]: errors.otp, [$style.fieldSuccess]: errors.otp === false}]">
-          <label :class="$style.fieldLabel">{{ i18nText.otpLabel }}</label>
-          <div :class="$style.fieldControl">
-              <input :class="$style.fieldInput" type="number" v-model="otp" :placeholder="i18nText.otpPlaceholder" @keyup.enter="processRequest()">
-          </div>
-          <p v-if="errors.otp" :class="$style.fieldValidation">{{errors.otp}}</p>
-          <p :class="$style.fieldHelp">
-            {{ i18nText.otpSentMessage }} {{ phoneNumber }}. {{ i18nText.didNotGetOtp }}
-            <a :class="[$style.link, {[$style.linkMuted]: waitingForOtpLinkTobeActive} ]" href="#" @click="requestForAnotherOTP(false)">
-              <span v-if="waitingForOtpLinkTobeActive">{{ $t('login_modal.request_otp_again_after') }}</span>
-              <span v-else>{{ i18nText.requestOtpAgain }}</span>
-            </a>
-          </p>
+      <div v-if="requireOtp" :class="[$style.field, {[$style.fieldError]: errors.otp, [$style.fieldSuccess]: errors.otp === false}]">
+        <label :class="$style.fieldLabel">{{ i18nText.otpLabel }}</label>
+        <div :class="$style.fieldControl">
+          <input :class="$style.fieldInput" type="number" v-model="otp" :placeholder="i18nText.otpPlaceholder" @keyup.enter="processRequest()">
+        </div>
+        <p v-if="errors.otp" :class="$style.fieldValidation">{{errors.otp}}</p>
+        <div :class="$style.fieldHelp">
+          <p :class="$style.fieldHelpText"> {{ i18nText.otpSentMessage }} {{ phoneNumber }}. {{ i18nText.didNotGetOtp }}</p>
+          <button :class="[$style.fieldHelpBtn, $style.btn, {[$style.btnMuted]: waitingForOtpLinkTobeActive}]" @click="requestForAnotherOTP(false)" >
+            <span v-if="waitingForOtpLinkTobeActive">{{ $t('login_modal.request_otp_again_after') }}</span>
+            <span v-else>{{ i18nText.requestOtpAgain }}</span>
+          </button>
+        </div>
       </div>
 
       <div :class="$style.field">
-        <button :class="[$style.button, $style.buttonLogin]" @click="processRequest()">{{ processButtonLabel }}</button>
-        <!-- <template v-if="isFbSdkReady && !customer && !isAgentMode && !customerInfoAfterFacebookLoginTry">
-          <button :class="[$style.button, $style.buttonLoginWithFacebook]" @click="loginWithFacebook">
-            <svg viewBox="0 0 28 28">
-              <g>
-                <path fill="#FFFFFF" d="M28,14c0-7.7-6.3-14-14-14S0,6.3,0,14c0,6.9,5,12.8,11.8,13.8V18H8.3v-4h3.6v-3.1
-                  c0-3.5,2.1-5.4,5.3-5.4c1,0,2.1,0.1,3.1,0.3v3.4h-1.8c-1.1-0.1-2.1,0.6-2.3,1.7c0,0.1,0,0.3,0,0.4V14h3.9l-0.6,4h-3.3v9.8
-                  C23,26.8,28,20.9,28,14z"/>
-                <path fill="#1878F2" d="M19.4,18l0.6-4h-3.9v-2.6c-0.1-1.1,0.7-2.1,1.8-2.2c0.1,0,0.3,0,0.4,0h1.8V5.7
-                  c-1-0.2-2.1-0.3-3.1-0.3c-3.2,0-5.3,1.9-5.3,5.4V14H8.3v4h3.6v9.8c1.4,0.2,2.9,0.2,4.4,0V18L19.4,18z"/>
-              </g>
-            </svg>
-            <span>{{ facebookLoginText }}</span>
-          </button>
-        </template> -->
+        <button :class="[$style.btn, $style.btnPrimary]" @click="processRequest()">{{ processButtonLabel }}</button>
       </div>
     </template>
   </div>
@@ -429,110 +402,13 @@
 
 <style lang="sass" module>
   @import "shared/button"
-  @import "shared/form/field"
-
+  @import "shared/field"
   .login
-    position: relative
-    .Field__label
-      padding-left: 0
-      font-size: 16px
-      margin-bottom: 10px
-      letter-spacing: 0
-    .Field__input
-      height: 44px
-      font-size: 16px
-      border-radius: 0
-      background-color: $white
-      border-color: #777
-      // border-color: $black
-      &:focus
-        border-color: $primary
-    .Field__help
-      padding-left: 0
-
-  .LinkPurple
-    color: $purple
-    fill: $purple
-
-  .SvgIconFacebook
-    width: 22px
-    height: 22px
-
-  .Button
-    &--continueWithFacebook
-      height: 56px
-      background-color: #1878F2
-      display: inline-flex
-      align-items: center
-      justify-content: center
-      font-size: 18px
-      font-weight: 400
-      color: $white
-      width: 100%
-      border-radius: 0
-      padding: 0 20px
-      svg
-        position: absolute
-        left: 0
-        top: 50%
-        width: 28px
-        height: 28px
-        transform: translateY(-50%)
-        margin-left: 12px
-      &:hover,
-      &:focus
-        color: $white
-
-    &--loginWithPhone
-      +buttonPrimary
-      height: 56px
-      width: 100%
-      font-size: 18px
-      font-weight: 400
-      margin-top: 10px
-      &:hover,
-      &:focus
-        color: $white
-
-    &--loginWithFacebook
-      margin-top: 10px
-      height: 56px
-      background-color: #1878F2
-      display: inline-flex
-      align-items: center
-      justify-content: center
-      font-size: 18px
-      font-weight: 400
-      color: $white
-      width: 100%
-      border-radius: 0
-      padding: 0 20px
-      svg
-        position: absolute
-        left: 0
-        top: 50%
-        width: 28px
-        height: 28px
-        transform: translateY(-50%)
-        margin-left: 12px
-      &:hover,
-      &:focus
-        color: $white
-
-    &--login
-      +buttonPrimary
-      border-radius: 0
-      height: 56px
-      width: 100%
-      font-size: 18px
-      padding: 0 20px
-
-  .oneClickStatement
+    &-wrapper
+      position: relative
+    &-btn
+      margin-top: $gutter*1.25
+  .copy
     font-size: 14px
-    line-height: 1.66
-    color: #999
-    // margin-top: 0
-    margin-bottom: 15px
-    // max-width: 330px
-
+    padding-right: $gutter*2
 </style>

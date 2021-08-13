@@ -1,9 +1,5 @@
 <template>
   <login-customer v-if="isCustomerMode" :success-callback="successCallback" :request-product="requestedProduct"/>
-  <!-- <div>
-    <login-customer v-if="isCustomerMode" :success-callback="successCallback" :request-product="requestedProduct"/>
-    <login-agent v-if="isAgentMode" :success-callback="successCallback" :requested-product="requestedProduct"/>
-  </div> -->
 </template>
 
 <script>

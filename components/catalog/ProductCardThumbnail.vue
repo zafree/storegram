@@ -2,58 +2,42 @@
   <div :class="$style.item" v-if="product">
     <i18n-link :class="$style.product" :to="detailPageUrl">
       <!-- hero -->
-      <div :class="[$style.hero, {[$style.heroPortrait]: potraitMode}]">
-        <!-- <div :class="[$style.heroImageAspectRatio, randomColorClass]"></div> -->
-        <div :class="[$style.heroImageAspectRatio]"></div>
-        <computed-image v-if="productImages.length"
-          :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
-          :meta="productImages[0]"
-          :animate="false"
-          :alt="__(product.name)"
-          :title="__(product.name)"
-          @imageLoaded="imageIsLoaded = true"/>
+      <div :class="[$style.img]">
+        <div :class="$style.imgAspectRatio">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+            <use xlink:href="/svg/icons.svg?#i-camera"></use>
+          </svg>
+        </div>
+        <div :class="$style.imgImage">
+          <computed-image v-if="productImages.length"
+            :class="[$style.heroImage, {[$style.heroImageIsLoaded]: imageIsLoaded}]"
+            :meta="productImages[0]"
+            :animate="false"
+            :alt="__(product.name)"
+            :title="__(product.name)"
+            @imageLoaded="imageIsLoaded = true"/>
+        </div>
       </div>
 
       <!-- stream -->
-      <div :class="$style.stream">
-        <!-- product id -->
-        <span :class="$style.id" v-if="isAgentMode">ID# {{product.id}}</span>
-        <!-- coupon  -->
-        <span :class="$style.coupon" v-if="product.coupon_details">
-          <span :class="$style.couponText">{{ i18nText.coupon }}</span>
-        </span>
-        <!-- product offers -->
-        <div :class="$style.offers" v-if="product.offers && product.offers.length">
-          <div v-for="(offer,index) in product.offers" :key="index" :class="[$style.offersItem, { [$style.offersItemIsActive]: index === currentIndexOfferImage }]">
-            <offer-logo-image v-if="offer.logo_image" :imageLink="offer.logo_image"></offer-logo-image>
-          </div>
+      <div :class="$style.productInfo">
+        <div :class="$style.productInfoItem">
+          <h4 :class="$style.productTitle">{{__(product.name)}}</h4>
         </div>
-
-        <!-- product title -->
-        <h4 :class="$style.title">{{__(product.name)}}</h4>
-        <!-- product price -->
-        <div :class="$style.price">
-          <!-- <span :class="$style.priceDiscounted">৳{{ __$(product.discounted_price) }}</span> -->
-          <span :class="$style.priceDiscounted">Tk. {{ __$(product.discounted_price) }}</span>
-          <template v-if="!product.out_of_stock && discount">
-            <del :class="$style.priceUnit">{{ __$(product.unit_price) }}</del>
-            <span :class="$style.priceDiscount">{{ i18nText.save }} {{ __$(discount) }}</span>
-          </template>
-          <span :class="$style.priceStockOut" v-if="product.out_of_stock">{{ i18nText.outStock  }}</span>
-          <span :class="$style.priceAgentCommission" v-else-if="toggleCommission && !product.out_of_stock">{{ i18nText.commissionLabel }} {{ __$(product.commission) }}</span>
+        <div :class="$style.productInfoItem" v-if="!product.out_of_stock && discount">
+          <span :class="$style.productUnit">Tk. {{ __$(product.unit_price) }}</span>
         </div>
-
-        <!-- product emi -->
-        <div :class="$style.emi" v-if="emiStartsFrom && !product.out_of_stock">
-          <span :class="$style.emiBadge">{{ $t('product.emi_from',{ amount: __$(emiStartsFrom)}) }}</span>
+        <div :class="$style.productInfoItem">
+          <span :class="$style.productDiscounted">Tk. {{ __$(product.discounted_price) }}</span>
         </div>
-
-        <!-- product variants -->
-        <div :class="$style.supplemental" v-if="product.variant_count">
-          <span :class="$style.supplementalOptions">
-            +{{ product.variant_count - 1 }} {{ i18nText.more }} {{ i18nText.option }}
-          </span>
-
+        <div :class="$style.productInfoItem" v-if="!product.out_of_stock && discount">
+          <span :class="$style.productDiscount">{{ i18nText.save }} Tk. {{ __$(discount) }}</span>
+        </div>
+        <div :class="$style.productInfoItem" v-if="product.out_of_stock">
+          <span :class="$style.productStockOut" >{{ i18nText.outStock  }}</span>
+        </div>
+        <div :class="$style.productInfoItem" v-if="product.variant_count">
+          <span :class="$style.productMoreOptions">+{{ product.variant_count - 1 }} {{ i18nText.more }} {{ i18nText.option }}</span>
         </div>
       </div>
     </i18n-link>
@@ -68,14 +52,11 @@
   import {
     overlayMixin,
     i18nMixin,
-    makeDefaultImageMeta,
     getRandomColorCssClass,
     calculateEmi
   } from '~/utils'
 
   import { mapState, mapGetters } from 'vuex'
-
-  const DEFAULT_IMAGE_SVG = ('/clients/bronx/icons/default-image-md.svg')
 
   export default {
     mixins: [i18nMixin('ProductCardThumbnail'), overlayMixin],
@@ -141,9 +122,7 @@
         if (this.product && this.product.image_info && this.product.image_info.length) {
           return this.product.image_info
         } else {
-          return [
-            makeDefaultImageMeta(DEFAULT_IMAGE_SVG)
-          ]
+          return []
         }
       },
       randomColorClass () {
@@ -161,5 +140,6 @@
 <style lang="sass" module>
   @import "shared/banner"
   @import "shared/button"
+  @import "shared/img"
   @import "shared/category_summary/product_thumbnail"
 </style>

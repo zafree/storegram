@@ -209,10 +209,10 @@ export default {
     &__copy
       fon-size: 14px
       line-height: 1.66
-      color: $gray
+      color: $black
     &__msg
       font-size: 14px
-      color: $gray
+      color: $black
       line-height: 1.55
       // display: none
 </style>

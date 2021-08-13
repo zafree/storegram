@@ -310,7 +310,7 @@
     &__list
       padding-left: 15px
       margin: 0
-      +phablet
+      // +phablet
         padding-left: 30px
     &__item
       margin-bottom: 10px
@@ -318,21 +318,7 @@
 
 </style>
 
-
 <style lang="sass" module>
-  // @import "shared/category_summary/product_contain"
-
-  // .Product
-  //   &-contain
-  //     +phablet
-  //       margin-top: 0
-  //   &-row
-  //     padding: 0
-  //     +phablet
-  //       padding: 0 15px
-  //     +tablet
-  //       padding: 0 15px 15px
-
   .Product
     position: relative
     &__container
@@ -345,9 +331,7 @@
       position: relative
       display: flex
       flex-flow: row wrap
-      margin-top: 70px
-      +desktop
-        margin-top: 100px
+      // margin-top: 70px
     &__col1
       width: 100%
       +desktop
@@ -366,7 +350,7 @@
     display: flex
     flex-flow: row wrap
     margin-top: 20px
-    +phablet
+    // +phablet
       padding-left: 15px
       padding-right: 15px
     +tablet
@@ -377,13 +361,11 @@
       box-shadow: 0 1px 3px rgba($black, .1)
 
     &__title
-      font-size: 30px
-      font-weight: 700
+      font-size: 32px
+      font-weight: $weight-black
       color: $black
       line-height: 1.22
       // font-family: $family-display
-      +phablet
-        font-size: 40px
     &__body
       margin-top: 20px
       color: $black

@@ -17,7 +17,7 @@
     <template name="actions">
       <button :class="[$style.button, $style.buttonModalClose]" type="button" name="button" @click="closeDonationModal">
         <img :class="[$style.buttonIconSvg, $style.buttonIconSvgLeft]" src="/svg/icon-donation.svg" alt="Modal Close">
-      </button>        
+      </button>
       <template v-if="!currentDonationStatus">
         <div class="checkbox">
           <input class="checkbox__input" type="checkbox" v-model="confirmDonateStatus" id="confirm-to-donate">
@@ -117,7 +117,7 @@
       height: 44px
       font-size: 16px
       line-height: 44px
-      +btnYellow
+      +button
     &--modalCloseBottomText
       border: 1px solid #d9d9d9
       height: 32px

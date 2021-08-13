@@ -143,7 +143,7 @@ export default {
       text-decoration: none
       width: 64px
       margin: 10px
-      +phablet
+      // +phablet
         width: 82px
         margin: 15px
     &__imageWrapper
@@ -153,7 +153,7 @@ export default {
       position: relative
       // padding: 3px
       border-radius: 500em
-      +phablet
+      // +phablet
         width: 82px
         height: 82px
     &__image
@@ -174,7 +174,7 @@ export default {
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
-      +phablet
+      // +phablet
         font-size: 14px
         margin-top: 8px
   .searchbar
@@ -203,29 +203,29 @@ export default {
         outline: none
       +placeholder
         color: #999999
-      +tablet 
+      +tablet
         padding-left: 45px
-      +desktop 
-        padding-left: 55px 
+      +desktop
+        padding-left: 55px
       +widescreen
-        padding-left: 45px 
+        padding-left: 45px
     &__icon
       position: absolute
       top: 0
       left: 0
       width: 26px
       height: 26px
-      margin-top: 25px 
+      margin-top: 25px
       margin-left: 20px + 55
       opacity: 0.34
-      cursor: pointer 
+      cursor: pointer
       // background-color: rgba($red, .3)
       border-radius: 50%
-      +phablet 
+      // +phablet
         margin-left: 20px + 55
       +tablet
         margin-left: 20px + 45
-      +desktop 
+      +desktop
         margin-left: 20px + 65
     &__enter
       // +button
@@ -236,7 +236,7 @@ export default {
       height: 44px
       margin-right: 55px
       font-size: 12px
-      margin-top: 15px 
+      margin-top: 15px
       text-transform: uppercase
       border-radius: 500px
       padding-left: 16px
@@ -252,15 +252,15 @@ export default {
       margin-right: 105px
       opacity: 0.74
       border-radius: 500px
-      border: none 
-      margin-top: 15px 
+      border: none
+      margin-top: 15px
       background-color: transparent
-      +phablet 
+      // +phablet
         margin-right: 110px
-      +tablet 
+      +tablet
         margin-right: 125px
-      +desktop 
-        margin-right: 150px 
+      +desktop
+        margin-right: 150px
     &__clearButtonInnerImage
       width: 20px
       height: 20px

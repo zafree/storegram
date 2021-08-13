@@ -1,8 +1,9 @@
 <template>
-  <ul :class="$style.menuList">
-    <!-- <p>Menu list 2</p> -->
-    <li :class="$style.menuItem" v-for="route in linkRoutes" :key="route.id">
-      <i18n-link :class="$style.menuLink" :to="route.path">{{route.text}}</i18n-link>
+  <ul :class="$style.list">
+    <li :class="$style.item" v-for="route in linkRoutes" :key="route.id">
+      <i18n-link :class="[$style.itemLink, $style.btn]" :to="route.path">
+        <span>{{route.text}}</span>
+      </i18n-link>
     </li>
   </ul>
 </template>
@@ -43,25 +44,8 @@
 </script>
 
 <style lang="sass" module>
-  .Menu
-    &__list
-      padding: 0
-      margin: 0
-    &__item
-      list-style: none
-      position: relative
-    &__link
-      display: flex
-      width: 100%
-      flex-flow: row nowrap
-      align-items: center
-      position: relative
-      text-align: center
-      text-decoration: none
-      color: $gray
-      line-height: 1.5
-      min-height: 50px
-      padding: 11px 15px
-      font-size: 13px
-      border-top: 1px solid #ebebeb
+  @import "shared/button"
+  @import "shared/sidebar-category-list"
+  .item-link
+    background-color: $white
 </style>

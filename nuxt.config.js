@@ -58,7 +58,7 @@ let nuxtConfig = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fcbf14', height: '3px' },
+  loading: { color: '#000000', height: '2px' },
 
   modules: [
     '@nuxtjs/sentry',

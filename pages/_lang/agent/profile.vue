@@ -359,7 +359,7 @@
     box-shadow: 0 1px 3px rgba($black, 0.1)
     margin-left: -15px
     margin-right: -15px
-    +phablet
+    // +phablet
       margin-left: 0
       margin-right: 0
       padding: 20px 30px 30px

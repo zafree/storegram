@@ -274,8 +274,8 @@
   @import "shared/form/field"
 
   .LinkPurple
-    color: $purple
-    fill: $purple
+    color: $primary
+    fill: $primary
   
   .SvgIconFacebook
     width: 22px
@@ -335,7 +335,7 @@
       justify-content: center
       align-item: center
       width: 100%
-      +btnGreen
+      +button
 
   .oneClickStatement
     font-size: 13px

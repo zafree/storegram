@@ -1,38 +1,15 @@
 <template>
-  <div :class="$style.userAvatar">
-    <div :class="$style.profileLink">
-      <div :class="$style.avatar">
-        <svg :class="$style.avatarSvgIcon" viewBox="0 0 14 14">
-          <circle cx="7" cy="3.5" r="3.5"/>
-          <path d="M8.2,7H5.8C2.6,7,0,9.6,0,12.8V14h14v-1.2C14,9.6,11.4,7,8.2,7C8.2,7,8.2,7,8.2,7z"/>
-        </svg>
-        <!-- <img v-if="userAvatar" :src="userAvatar" :alt="userName">
-        <img :class="$style.avatarSvgIcon" src="/svg/delivery-point/dgMan.svg" alt=""> -->
-      </div>
-    </div>
-    <ul v-if="isCustomerMode" :class="$style.profileMenu" role="tabs">
-        <li><i18n-link class="url" :to="'/customer/profile'">{{ i18nText.hi }} {{customer.name}}</i18n-link></li>
-        <li :class="$style.separator"><i18n-link class="url" :to="'/customer/profile'">{{ i18nText.yourProfile }}</i18n-link></li>
-        <li><i18n-link class="url" :to="'/customer/orders'">{{ i18nText.yourOrders }}</i18n-link></li>
-        <li><i18n-link class="url" :to="'/customer/delivery-addresses'">{{ i18nText.yourAddress }}</i18n-link></li>
-        <!-- <li><i18n-link class="url" :to="'/customer/support-tickets'" >{{ $t('user_info.support_tickets') }}</i18n-link></li> -->
-        <li><a rel="nofollow" href="#" @click.prevent="logoutCustomer()">{{ i18nText.signOut }}</a></li>
-    </ul>
-    <ul v-if="isAgentMode && !pageMode.checkoutMode" :class="$style.profileMenu" role="tabs">
-        <li><i18n-link class="url" :to="'/agent/profile'">{{ i18nText.hi }} {{ __(agent.name) }}</i18n-link></li>
-        <li :class="$style.separator"><i18n-link class="url" :to="'/agent/profile'">{{ i18nText.yourProfile }}</i18n-link></li>
-        <li><i18n-link class="url" :to="'/agent/orders'">{{ i18nText.yourOrders }}</i18n-link></li>
-        <li><i18n-link class="url" :to="'/agent/commission'">{{ i18nText.yourCommission }}</i18n-link></li>
-        <li><i18n-link class="url" :to="'/agent/ready-for-pickup-orders'">{{ i18nText.readyForPickupOrders }}</i18n-link></li>
-        <li><i18n-link class="url" :to="'/agent/support-tickets'" >{{ $t('user_info.support_tickets') }}</i18n-link></li>
-        <li :class="$style.separator">
-          <div :class="$style.checkbox">
-            <input :class="$style.checkboxInput" type="checkbox" id="checkbox_showOrHideProductCommision" @change="toggle" v-model="toggleCommissionChecked">
-            <label :class="$style.checkboxLabel" for="checkbox_showOrHideProductCommision">{{ i18nText.commissionLabel }}<small>({{ $t(commisionAction) }})</small></label>
-          </div>
-        </li>
-        <!-- <li><i18n-link class="url" :to="'/agent/support-requests'" >{{ $t('user_info.support_requests') }}</i18n-link></li> -->
-        <li><a rel="nofollow" href="#" @click.prevent="logoutAgent()">{{ i18nText.signOut }}</a></li>
+  <div :class="$style.btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+      <use xlink:href="/svg/icons.svg?#i-avatar"></use>
+    </svg>
+    <ul v-if="isCustomerMode" :class="$style.dropdown" role="tabs">
+      <li><i18n-link class="url" :to="'/customer/profile'">{{ i18nText.hi }} {{customer.name}}</i18n-link></li>
+      <li :class="$style.separator"><i18n-link class="url" :to="'/customer/profile'">{{ i18nText.yourProfile }}</i18n-link></li>
+      <li><i18n-link class="url" :to="'/customer/orders'">{{ i18nText.yourOrders }}</i18n-link></li>
+      <li><i18n-link class="url" :to="'/customer/delivery-addresses'">{{ i18nText.yourAddress }}</i18n-link></li>
+      <!-- <li><i18n-link class="url" :to="'/customer/support-tickets'" >{{ $t('user_info.support_tickets') }}</i18n-link></li> -->
+      <li><a rel="nofollow" href="#" @click.prevent="logoutCustomer()">{{ i18nText.signOut }}</a></li>
     </ul>
   </div>
 </template>
@@ -144,61 +121,46 @@
 </script>
 
 <style lang="sass" module>
-
-  .userAvatar
-    position: relative
-    height: 44px
+  @import "shared/button"
+  .btn
+    overflow: visible
     width: 44px
-    display: flex
-    flex-flow: row wrap
-    justify-content: center
-    align-items: center
-    cursor: pointer
-    margin-right: -6px
-    +tablet
-      height: 56px
-      width: 56px
-      margin-right: -10px
+    border-radius: 500em
     &:hover,
     &:focus,
     &:active
-      .profileMenu
+      border-color: $green
+      .dropdown
         visibility: visible
         opacity: 1
 
-  .profileMenu
+  .dropdown
     position: absolute
     // display: none
     float: left
     top: 100%
     right: 0
     width: 180px
-    margin-right: 1px
     margin-top: 10px
     padding: 10px 0 15px
-    // background-color: rgba(47, 47, 47, .98)
     background-color: $black
     border-radius: 6px
-    // border-top-left-radius: 0
-    // border-top-right-radius: 0
-    box-shadow: 1px 1px 1px rgba($black, 0.3)
-    background-clip: padding-box
+    // box-shadow: 1px 1px 1px rgba($black, 0.3)
     z-index: 999
-    font-size: 13px
-    font-weight: 400
+    font-size: 14px
+    font-weight: $weight-medium
     visibility: hidden
     opacity: 0
     transition: all $speed $easing
-    +tablet
-      margin-right: 6px
     &::before
       content: " "
       position: absolute
-      width: 45px
+      width: 44px
       height: 10px
       top: 0
       right: 0
       margin-top: -10px
+      // background-color: $red
       background-color: transparent
     &::after
       content: " "
@@ -233,47 +195,5 @@
         border-top: 1px solid rgba($white, .14)
         margin-top: 5px
         padding-top: 5px
-
-  .profileLink
-    display: flex
-    // flex-flow: row wrap
-    justify-content: center
-    align-items: center
-    height: 32px
-    width: 32px
-    border-radius: 50%
-    border: 1px solid rgba($black, 0.66)
-    background-color: rgba($primary, 1)
-    +tablet
-      height: 36px
-      width: 36px
-    .avatar
-      height: 20px
-      width: 20px
-      position: relative
-      border-radius: 50%
-      overflow: hidden
-      white-space: nowrap
-      text-overflow: ellipsis
-      color: $white
-      fill: $white
-      &__svgIcon
-        fill: $black
-
-  .checkbox
-    position: relative
-    &__input[type=checkbox]
-      position: absolute
-      z-index: 1
-      top: 0
-      left: 0
-      margin-left: 15px
-      margin-top: 8px
-    &__label
-      display: block
-      position: relative
-      cursor: pointer
-      padding: 5px 15px 5px 32px
-      color: #aaa
 </style>
 

@@ -1,150 +1,39 @@
 <template>
   <header :class="$style.header">
-    <div :class="$style.headerMenuComponent">
-      <button
-        :class="[$style.btn]"
-        id="Menu"
-        type="button" name="button"
-        @click.stop="toggleOverlay(overlays.aside1)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-          <use xlink:href="/svg/icons.svg?#i-menu"></use>
-        </svg>
-        <span>Menu</span>
-      </button>
-    </div>
+    <button v-if="!pageMode.checkoutMode" :class="[$style.headerHamburger, $style.btn]" @click.stop="toggleOverlay(overlays.aside1)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <use xlink:href="/svg/icons.svg?#i-menu"></use>
+      </svg>
+      <span :class="$style.btnLabel">Catalog</span>
+    </button>
+    <!-- <button v-if="pageMode.checkoutMode" :class="[$style.headerBack, $style.btn]" @click.stop="goBackPrevPage()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+      </svg>
+      <span :class="$style.btnLabel">Back</span>
+    </button> -->
     <div :class="$style.headerLogoComponent">
-      <svg viewBox="0 0 40 40" height="44" width="44"></svg>
-    </div>
-    <div :class="$style.headerUserBlock">
-      <button :class="[$style.headerSearch, $style.button]" v-if="!pageMode.checkoutMode" @click.stop="toggleOverlay(overlays.aside3)">
-        <svg viewBox="0 0 32 32" width="32" height="32">
-          <path d="M25.1,30l-6.9-6.9c-4.9,2.7-11.1,1-13.9-3.9S3.3,8,8.2,5.3c4.9-2.7,11.1-1,13.9,3.9
-            c1.7,3.1,1.7,6.9,0,9.9l6.9,6.9L25.1,30z M13.2,5.9c-4.6,0-8.3,3.7-8.3,8.3c0,4.6,3.7,8.3,8.3,8.3s8.3-3.7,8.3-8.3l0,0
-            C21.5,9.6,17.8,5.9,13.2,5.9z"/>
-        </svg>
-      </button>
-
-      <slot name="cartIcon" v-if="!isStaticMode">
-        <cart-icon :class="[$style.headerCart, $style.btn]"></cart-icon>
-      </slot>
-
-      <template v-if="(isCustomerMode && !customer) || (isAgentMode && !agent)">
-        <login-link :class="[$style.headerSignIn, $style.btn]" v-if="!pageMode.checkoutMode"></login-link>
-      </template>
-      <template v-if="(isCustomerMode && customer)">
-        <user-info class="user"></user-info>
-      </template>
-    </div>
-  </header>
-  <!-- <div class="wrapper">
-    <div class="col">
-      <button v-if="pageMode.checkoutMode"
-        type="button" name="button"
-        class="link back"
-        @click="goBackPrevPage()">
-        <svg viewBox="0 0 32 32" width="32px" height="32px">
-          <path d="M28,14.5H9.7l8.4-8.4L16,4L4,16l12,12l2.1-2.1l-8.4-8.4H28V14.5z"/>
-        </svg>
-        <span>Back</span>
-      </button>
-      <template v-if="!pageMode.checkoutMode">
-        <button
-          id="Menu"
-          type="button" name="button"
-          class="link hamburger"
-          @click.stop="toggleOverlay(overlays.aside1)">
-          <svg viewBox="0 0 32 32" width="32px" height="32px">
-            <g>
-              <rect x="3" y="26" width="26" height="3"/>
-              <rect x="3" y="14.5" width="26" height="3"/>
-              <rect x="3" y="3" width="26" height="3"/>
-            </g>
-          </svg>
-          <span>Categories</span>
-        </button>
-        <i18n-link class="link store" to="/docs/about">About</i18n-link>
-      </template>
-    </div>
-    <div :class="['col', 'center', {'sm': pageMode.checkoutMode}]">
       <logo></logo>
     </div>
-    <div :class="['col', {'isCart': pageMode.checkoutMode}]">
-      <template v-if="(isCustomerMode && !customer) || (isAgentMode && !agent)">
-        <login-link v-if="!pageMode.checkoutMode"></login-link>
-      </template>
 
-      <button class="link search" v-if="!pageMode.checkoutMode" @click.stop="toggleOverlay(overlays.aside3)">
-        <svg viewBox="0 0 32 32" width="32px" height="32px">
-          <path d="M25.1,30l-6.9-6.9c-4.9,2.7-11.1,1-13.9-3.9S3.3,8,8.2,5.3c4.9-2.7,11.1-1,13.9,3.9
-            c1.7,3.1,1.7,6.9,0,9.9l6.9,6.9L25.1,30z M13.2,5.9c-4.6,0-8.3,3.7-8.3,8.3c0,4.6,3.7,8.3,8.3,8.3s8.3-3.7,8.3-8.3l0,0
-            C21.5,9.6,17.8,5.9,13.2,5.9z"/>
-        </svg>
-      </button>
-
-      <slot name="cartIcon" v-if="!isStaticMode">
-        <cart-icon></cart-icon>
-      </slot>
-
-      <template v-if="(isCustomerMode && customer)">
-        <user-info class="user"></user-info>
-      </template>
-    </div>
-  </div> -->
-  <!-- <div :class="[$style.appHeaderInner, {[$style.appHeaderInnerIsStaticMode]: isStaticMode}]">
-    <div :class="[$style.hamburger, { [$style.hamburgerIsStaticMode]: isStaticMode }]" v-if="!pageMode.checkoutMode">
-      <button
-        id="Menu"
-        type="button" name="button"
-        :class="[$style.hamburgerButton, {[$style.isActive]: isOverlayOpen(overlays.aside1)}]"
-        @click.stop="toggleOverlay(overlays.aside1)"
-      >
-        <img :src="getImage" alt="">
-      </button>
-    </div>
-    <button
-      id="Menu"
-      type="button" name="button"
-      :class="$style.hamburger"
-      @click.stop="toggleOverlay(overlays.aside1)">
-      <svg viewBox="0 0 32 32" width="32px" height="32px"></svg>
+    <button :class="[$style.headerSearch, $style.btn]" @click.stop="toggleOverlay(overlays.aside3)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <use xlink:href="/svg/icons.svg?#i-search"></use>
+      </svg>
+      <span :class="$style.btnLabel">Search</span>
     </button>
 
-    <div v-if="pageMode.checkoutMode" :class="$style.back">
-      <button type="button" name="button" @click="goBackPrevPage()" :class="$style.backButton">
-        <img src="/svg/back.svg" alt="">
-      </button>
-    </div>
-
-    <div :class="[$style.logo, {[$style.uPaddingLeft0]: pageMode.checkoutMode}]">
-      <logo></logo>
-    </div>
-
-    <ul :class="$style.nav">
-      <template v-if="!pageMode.checkoutMode">
-        <li :class="$style.navSearch" role="search" v-if="!isStaticMode">
-          <location v-show="!isAgentMode"></location>
-          <search></search>
-        </li>
-
-        <li :class="$style.navLanguageSwitcher" role="language switcher">
-          <language-switcher></language-switcher>
-        </li>
-
-        <li v-if="(isCustomerMode && !customer) || (isAgentMode && !agent)" :class="$style.navSignin" role="Sign in or sign up">
-          <login-link></login-link>
-        </li>
-
-        <li v-else :class="[$style.navProfile, $style.navProfileHasSub]" role="profile">
-          <user-info></user-info>
-        </li>
-      </template>
-    </ul>
-
-    <slot name="cartIcon" v-if="!isStaticMode">
-      <cart-icon></cart-icon>
+    <slot name="cartIcon">
+      <cart-icon :class="[$style.headerCart, $style.btn, {[$style.headerCartCheckout]: pageMode.checkoutMode}]"></cart-icon>
     </slot>
 
-  </div> -->
+    <template v-if="!customer">
+      <login-link :class="[$style.headerSignIn, $style.btn, $style.btnPrimary]"></login-link>
+    </template>
+    <template v-if="customer">
+      <user-info :class="$style.headerUserAvatar"></user-info>
+    </template>
+  </header>
 </template>
 
 <script>
@@ -200,48 +89,75 @@
 <style lang="sass" module>
   @import "shared/button"
   .header
-    background-color: rgba($black, 0.1)
+    // background-color: rgba($black, 0.03)
+    +container
+    width: 100%
     height: 100%
     display: flex
     align-items: center
-    &__menu-component
-      position: relative
-      height: 44px
-      margin-right: 5px
-      background-color: rgba($black, 0.3)
-      color: $white
-      fill: $white
-      .btn
-        height: 100%
-        background-color: transparent
-
-    &__logo-component
-      position: relative
-      height: 44px
-      margin-right: 5px
-      background-color: rgba($black, 0.3)
-    &__user-block
-      position: relative
-      background-color: rgba($black, 0.3)
-      display: flex
-    &__search
-      position: relative
-      height: 44px
-      margin-right: 5px
-      background-color: rgba($black, 0.3)
-    &__cart
+    &__hamburger
+      // background-color: rgba($black, 0.1)
       position: relative
       width: 44px
-      height: 44px
-      margin-right: 5px
-      background-color: rgba($black, 0.1)
+      margin-right: $gutter
+      color: $text
+      fill: $text
+      font-weight: $weight-medium
+      +tablet
+        width: auto
+        padding-left: 12px
+        padding-right: 16px
+      .btn__label
+        display: none
+        +tablet
+          display: block
+    &__back
+      width: auto
+      padding-left: 6px
+      padding-right: 16px
+      margin-right: $gutter
+      svg
+        transform: rotate(180deg)
+    &__logo-component
+      // background-color: rgba($black, 0.1)
+      position: relative
+      display: inline-flex
+      margin-right: auto
+      align-items: center
+    &__search
+      // background-color: rgba($black, 0.1)
+      position: relative
+      width: 44px
+      margin-right: $gutter
+      font-weight: $weight-medium
+      +tablet
+        width: auto
+        padding-left: 12px
+        padding-right: 14px
+      .btn__label
+        display: none
+        +tablet
+          display: block
+    &__cart
+      // background-color: rgba($black, 0.1)
+      position: relative
+      width: 44px
+      overflow: visible
+      +tablet
+        margin-right: $gutter
+      &--checkout
+        +desktop
+          display: none
     &__signIn
       position: relative
-      height: 44px
-      background-color: rgba($white, 1)
-      color: $primary
-      font-size: 14px
-
-
-
+      padding-left: 20px
+      padding-right: 20px
+      width: auto
+      display: none
+      +tablet
+        display: block
+    &__userAvatar
+      display: none
+      +tablet
+        display: flex
 </style>

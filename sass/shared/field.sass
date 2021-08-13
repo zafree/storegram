@@ -1,0 +1,87 @@
+select::-ms-expand
+  display: none
+.field
+  position: relative
+  $root: &
+  &:not(:first-child)
+    margin-top: $gutter*1.25
+  &__label
+    display: block
+    font-size: 14px
+    font-weight: $weight-medium
+    margin-bottom: $gutter/2
+  &__control
+    position: relative
+    text-align: left
+  &__checkbox
+    border: 1px solid red
+    float: left
+    margin-top: 2px
+    + #{$root}__label
+      padding-left: 20px
+  &__input
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    max-width: 100%
+    width: 100%
+    border: 2px solid $light
+    border-radius: $gutter/4
+    box-shadow: none
+    font-size: 14px
+    font-weight: $weight-medium
+    height: 38px
+    box-shadow: none
+    padding: 0 $gutter
+    &:focus,
+    &:active
+      border: 1px solid $black
+      box-shadow: none
+      outline: none
+    +placeholder
+        color: rgba($black, .33)
+    &--textarea
+      height: auto
+      min-height: 38px
+      outline: none
+      overflow: auto
+      white-space: nowrap
+      resize: none
+      padding-top: 9px
+      padding-bottom: 9px
+
+
+  &__help,
+  &__validation
+    font-size: 14px
+    line-height: 1.6
+    margin-top: $gutter/2
+
+  &__help
+    color: rgba($black, .55)
+    border: 1px solid $light
+    padding: $gutter
+    border-radius: $gutter/3
+    &-btn
+      margin-top: $gutter*.75
+  &__validation
+    color: $red
+  &__info
+    font-size: 14px
+    line-height: 1.6
+    // color: #0099cc
+    color: $primary
+
+
+  // modifires
+  &--error
+    #{$root}__input
+      border-width: 1px
+      border-color: $red
+  &--success
+    #{$root}__input
+      border-color: $light
+      &:focus,
+      &:active
+        border-color: $black

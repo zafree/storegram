@@ -413,7 +413,7 @@
       height: 32px
       padding: 0 20px
       font-size: 15px
-      +buttonPrimary
+      +button
     &--due
       margin-left: auto
       display: block
@@ -434,7 +434,7 @@
       color: $black
       line-height: 1.3
       margin-top: 20px
-      +phablet
+      // +phablet
         font-size: 18px
     &__type,
     &__date
@@ -474,7 +474,7 @@
         // margin-top: -35px
         // margin-left: -15px
         // margin-right: -15px
-        // +phablet
+        // // +phablet
         //   margin-top: -45px
 
   .payment

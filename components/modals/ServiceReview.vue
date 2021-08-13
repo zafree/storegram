@@ -18,7 +18,7 @@
           </div>
           <div class="Emosi">
             <h3 class="Content__lable">{{ $t(selectedRating.text) }}</h3>
-            <div class="Emosi__emos"> 
+            <div class="Emosi__emos">
               <svg-icon class="Emosi__emos__emo" v-for="(rating, index) in ratings" :key="index" :fileName="selectedRating.rate === rating.rate ? rating.emo : rating.emoMuted" @click.native="selectRating(index)"></svg-icon>
             </div>
           </div>
@@ -137,45 +137,45 @@ export default {
   @import "shared/button"
 </style>
 <style lang="sass" scoped>
-  .Review 
-    position: relative 
+  .Review
+    position: relative
     background-color: #ffffff
-    width: 100% 
+    width: 100%
     // height: 100vh
     overflow: hidden
-    .Header 
+    .Header
       padding: 25px 0 12px
-      position: relative 
-      display: flex 
+      position: relative
+      display: flex
       flex-direction: column
       align-items: center
       justify-content: center
       &__productImage
-        border-radius: 4px
-        width: 62px 
-        height: 62px 
+        border-radius: $gutter/4
+        width: 62px
+        height: 62px
         overflow: hidden
         background-color: #dddddd
-        &img 
-          widht: 100% 
+        &img
+          widht: 100%
           height: 100%
       &__content
         padding: 15px 10px 10px
         max-width: 220px
         width: 100%
         text-align: center
-      &__text 
-        font-size: 14px 
-        line-height: 1.33 
-        color: $black 
-      &__label 
-        font-size: 13px 
-        line-height: 1.33 
+      &__text
+        font-size: 14px
+        line-height: 1.33
+        color: $black
+      &__label
+        font-size: 13px
+        line-height: 1.33
         color: rgba($black, 0.34)
-    .Emosi 
+    .Emosi
       position: relative
-      display: flex 
-      flex-direction: column 
+      display: flex
+      flex-direction: column
       align-items: center
       justify-content: center
       padding: 10px 20px 10px
@@ -188,21 +188,21 @@ export default {
         &__emo
           padding-right: 10px
           cursor: pointer
-    .Content 
-      display: flex 
-      flex-direction: column 
+    .Content
+      display: flex
+      flex-direction: column
       align-items: center
       justify-content: center
       border-top: 1px solid #EDEDED
       margin-top: 25px
       padding: 30px 20px 0
-      &__lable 
-        font-size: 20px 
+      &__lable
+        font-size: 20px
         line-height: 1.55
         color: $black
-      &__text 
-        font-size: 13px 
-        line-height: 1.33 
+      &__text
+        font-size: 13px
+        line-height: 1.33
         color: rgba($black, 0.34)
       &__textarea
         margin-top: 27px
@@ -210,79 +210,79 @@ export default {
         width: 100%
         height: 100px
         padding: 15px 15px 0
-        &:focus 
+        &:focus
           outline: none
-  .Button 
-    background-color: $gray
-    color: #fff 
+  .Button
+    background-color: $black
+    color: #fff
     height: 52px
-    width: 100% 
-    font-size: 18px 
-    border-radius: 4px
+    width: 100%
+    font-size: 18px
+    border-radius: $gutter/4
     margin-top: 40px
     &--active
-      background-color: $purple
+      background-color: $primary
 </style>
 
 <style lang="sass" scoped>
-  .Overlay 
+  .Overlay
     z-index: 400
-    position: fixed 
-    top: 0 
+    position: fixed
+    top: 0
     left: 0
-    width: 100% 
-    height: 100%  
-    margin-left: auto 
-    margin-right: auto 
-    display: flex 
-    justify-content: center 
-    align-items: center 
+    width: 100%
+    height: 100%
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    justify-content: center
+    align-items: center
     // background-color: rgba($black, 0.75)
     overflow: auto
     min-width: 320px
-    height: 100% 
+    height: 100%
     &__close
-      position: absolute 
-      top: 0 
+      position: absolute
+      top: 0
       right: 0
-      color: #ffffff 
-      font-size: 14px 
-      margin-top: 40px 
+      color: #ffffff
+      font-size: 14px
+      margin-top: 40px
       margin-right: 30px
-      cursor: pointer 
+      cursor: pointer
       z-index: 500
-    &__modal 
-      background-color: #ffffff 
+    &__modal
+      background-color: #ffffff
       position: relative
       outline: 0
       overflow: hidden
       padding: 40px 20px
       // box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3)
-      border-radius: 4px
-      margin-left: 20px 
+      border-radius: $gutter/4
+      margin-left: 20px
       margin-right: 20px
       max-width: 400px
-      .Modal 
-        position: relative 
-        &__productImage 
+      .Modal
+        position: relative
+        &__productImage
           width: 80px
           height: 80px
           background-color: #DDDDDD
-          border-radius: 4px
+          border-radius: $gutter/4
           overflow: hidden
           margin-left: 80px
-          &img 
-            width: 100% 
-            height: 100% 
+          &img
+            width: 100%
+            height: 100%
             overflow: hidden
-        &__content 
+        &__content
           padding: 10px 10px 20px
-        &__text 
+        &__text
           font-size: 16px
           line-height: 1.5
-          color: $black 
-          text-align: center 
-          max-width: 220px 
+          color: $black
+          text-align: center
+          max-width: 220px
           width: 100%
         &__emos
           font-size: 2em
@@ -294,25 +294,25 @@ export default {
           &__emo
             padding-right: 10px
             cursor: pointer
-  .ButtonGroup 
+  .ButtonGroup
     blackground-color: rgba(red, 0.3)
-    display: flex 
-    flex-direction: row 
-  .Button 
+    display: flex
+    flex-direction: row
+  .Button
     &__save,
     &__cancel
       border: 1px solid #DFE0E4
       color: #1C7EEB
-      font-size: 16px 
-      font-weight: 400 
+      font-size: 16px
+      font-weight: 400
       width: 100px
       height: 42px
-      border-radius: 4px
-    &__save 
+      border-radius: $gutter/4
+    &__save
       flex: 1
-    &__cancel 
+    &__cancel
       flex: 1
-      margin-left: 20px 
+      margin-left: 20px
 </style>
 
 <style lang="sass">

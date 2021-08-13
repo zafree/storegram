@@ -2,7 +2,6 @@
   <div :class="$style.wrapper">
 
     <home-page-top-block v-if="!currentCategory"></home-page-top-block>
-    <!-- <home-page-mid-block v-if="!currentCategory"></home-page-mid-block> -->
 
     <featured-slider
       v-if="showFeaturedCategories"
@@ -16,20 +15,16 @@
       :imageWrapperModifier="'Circle'"></featured-slider>
 
     <header v-if="currentCategory" :class="$style.breadcrumb">
-      <div :class="$style.breadcrumbContainer">
-        <div :class="$style.breadcrumbRow">
-          <div :class="$style.breadcrumbTitle">{{ __(currentCategory.name) }}</div>
-          <breadcrumb></breadcrumb>
-        </div>
-      </div>
+      <div :class="$style.breadcrumbTitle">{{ __(currentCategory.name) }}</div>
+      <breadcrumb></breadcrumb>
     </header>
 
     <!--Banner image for current category-->
-    <div :class="$style.categoryBanner">
+    <div :class="$style.categoryBanner" v-if="currentCategory">
       <div :class="$style.categoryBannerContainer">
         <div :class="$style.categoryBannerRow">
           <template>
-            <div v-if="currentCategory" :class="[$style.banner, {[bannerBgColor]: !currentCategory.banner_image_url}]">
+            <div :class="[$style.banner, {[bannerBgColor]: !currentCategory.banner_image_url}]">
               <div :class="$style.bannerImage">
                 <computed-image :src="bannerImageUrl"/>
               </div>
@@ -255,16 +250,6 @@
   @import "shared/banner"
 
   .wrapper
-    position: relative
-
-  // .Content
-  //   position: relative
-  //   flex: 1
-  //   max-width: 100%
-  //   padding-bottom: 30px
-  //   +widescreen
-  //     order: 2
-  //     flex: 0 990px
-  //     max-width: 990px
-  //     padding-left: 15px
+    +container
 </style>
+

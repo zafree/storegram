@@ -92,7 +92,7 @@
                     <div class="StreamAddress__images__personImage" :class="pdaRandProfileCssClass">
                       <!-- <img v-if="preferredDeliveryAddress.owner_type === 'Customer' && isCustomerMode && isDeliveryMethodHome && isLoggedIn && customer.avatar_url" :src="customer.avatar_url" :alt="customer.name"> -->
                       <computed-image v-if="preferredDeliveryAddress.profile_image" :src="preferredDeliveryAddress.profile_image" @imageLoaded="profileImageIsLoaded = true"/>
-                      <img src="/svg/delivery-point/dgMan.svg" alt=""> 
+                      <img src="/svg/delivery-point/dgMan.svg" alt="">
                     </div>
                   </div>
                   <div class="StreamAddress__content">
@@ -163,7 +163,7 @@
     </div>
     <template slot="actions">
       <button :class="[$style.button, $style.buttonModalClose]" type="button" name="button" @click="closePreferredDeliveryPointModal">
-        <img :class="[$style.buttonIconSvg, $style.buttonIconSvgLeft ]" src="/svg/icon-emi.svg" alt=""> 
+        <img :class="[$style.buttonIconSvg, $style.buttonIconSvgLeft ]" src="/svg/icon-emi.svg" alt="">
       </button>
     </template>
     <span v-observe-visibility="visibilityChanged" height="1px" width="1px"></span>
@@ -512,14 +512,14 @@
   .Button
     &--link
       padding: 0
-      color: $purple
+      color: $primary
     &--line
       border: 1px solid #d9d9d9
       height: 36px
       padding: 0 10px
       font-size: 14px
-      color: $dark
-      fill: $dark
+      color: $text
+      fill: $text
       display: inline-flex
       align-items: center
   .Field
@@ -556,10 +556,10 @@
         // color: $white
         border-color: $black
       &--isActive
-        border-color: $purple
+        border-color: $primary
         &:hover,
         &:focus
-          border-color: $purple
+          border-color: $primary
       &--isMuted
         border-color: #ddd
         &.radio__label--isActive
@@ -582,7 +582,7 @@
       padding-bottom: 10px
       margin-bottom: -5px
       overflow-x: auto
-      +phablet
+      // +phablet
         margin-left: -30px
         margin-right: -30px
         padding-left: 30px
@@ -593,19 +593,19 @@
       &:last-child
         box-sizing: content-box
         padding-right: 15px
-        +phablet
+        // +phablet
           padding-right: 30px
 
 
   .SetDeliveryPoint
     position: relative
     margin: -30px -30px 0
-    +phablet
+    // +phablet
       margin: 0
     &__Container
       position: relative
       padding: 15px
-      +phablet
+      // +phablet
         padding: 0
 
   .StreamAddress
@@ -619,10 +619,10 @@
       font-size: 13px
       margin-bottom: 10px
       &--info
-        color: darken($cyan, 20%)
+        color: darken($blue, 20%)
       &--isSelected
         margin-top: -10px
-        color: $purple
+        color: $primary
 
     &__list
       list-style: none
@@ -646,11 +646,11 @@
             white-space: normal
       &--isSelected
         border-width: 2px
-        border-color: lighten($purple, 40%)
-        background-color: lighten($purple, 58%)
+        border-color: lighten($primary, 40%)
+        background-color: lighten($primary, 58%)
         margin-bottom: 20px
         .StreamAddress__images__personImage
-          border-color: lighten($purple, 55%)
+          border-color: lighten($primary, 55%)
 
         // display: flex
         // flex-flow: row wrap
@@ -693,7 +693,7 @@
       overflow: hidden
       &__shopName
         font-size: 14px
-        color: $dark
+        color: $text
         line-height: inherit
         margin-top: 3px
         margin-bottom: 1px

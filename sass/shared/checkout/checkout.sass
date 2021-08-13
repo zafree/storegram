@@ -1,87 +1,154 @@
 .checkout
   position: relative
-  padding-bottom: 100px
-  &__container
-    +container
-  &__row
-    position: relative
+  margin-right: auto
+  margin-left: auto
+  min-height: 1px
+  max-width: 600px
+  width: 100%
+  padding-left: $gutter
+  padding-right: $gutter
+  +desktop
+    max-width: 1200px
+  +widescreen
+    max-width: 1200px
+    padding-left: 0
+    padding-right: 0
+  &-page-title
+    font-size: 32px
+    font-weight: $weight-black
+    line-height: 1.33
+    margin-top: $gutter*2
+    margin-bottom: $gutter*2
     +tablet
-      margin-left: 110px
-      max-width: 450px
-  &__step
-    position: relative
-    &:not(:first-child)
-      margin-top: 30px
-
-.process
-  position: relative
-  &__title
+      font-size: 48px
+  &-row
     display: flex
-    align-items: center
-  &__body
-    position: relative
-    padding-top: 20px
-    padding-bottom: 30px
-    // &::before,
-    // &::after
-    //   content: ""
-    //   position: absolute
-    //   top: 0
-    //   height: 3px
-    //   width: 15px
-    //   margin-top: -2px
-    //   background-color: white
-    //   +phablet
-    //     display: none
-    // &::before
-    //   left: 0
-    // &::after
-    //   right: 0
+    flex-direction: column
+    +tablet
+      flex-direction: row-reverse
+      justify-content: space-between
+  &-col1
+    +desktop
+      flex-shrink: 0
+      width: 100%
+      max-width: 380px
+  &-col2
+    flex-grow: 1
+    +desktop
+      margin-right: $gutter*2
 
-.title
-  font-size: 18px
-  font-weight: 400
-  // font-family: $family-display
-  &__step
-    position: relative
-    width: 32px
-    height: 32px
-    border: 1px solid $black
-    display: inline-flex
-    justify-content: center
-    align-items: center
-    font-size: inherit
-    font-weight: inherit
-    &--success
-      background-color: $green
-      color: $white
-      fill: $white
-  &__text
-    font-size: inherit
-    font-weight: inherit
-    padding-left: 20px
+  &-step
+    border: 1px solid $light
+    border-radius: $gutter/2
+    margin-bottom: $gutter
+    padding: $gutter
+    $step: &
+    +tablet
+      margin-bottom: $gutter*2
+      padding: $gutter*2
+    &-title
+      font-size: 18px
+      line-height: 1.33
+      color: rgba($black, .55)
+      font-weight: $weight-black
+      +tablet
+        font-size: 24px
+    &-body
+      margin-top: $gutter*2
+      border: 2px solid $light
+      padding: $gutter
+      border-radius: $gutter/2
+      +tablet
+        padding: $gutter*2
+    &--cart
+      display: none
+      background-color: $light
+      +desktop
+        display: flex
+        flex-direction: column
+        position: sticky
+        top: $gutter*2
+        // align-items: flex-start
+    &--active
+      padding: 0
+      border: none
+      +tablet
+        padding: $gutter*2
+        border: 1px solid $light
+      #{$step}-title
+        margin-bottom: $gutter
+        color: $text
+      #{$step}-body
+        margin-top: 0
+
+// .checkout
+//   position: relative
+//   padding-bottom: 100px
+//   &__container
+//     +container
+//   &__row
+//     position: relative
+//     +tablet
+//       margin-left: 110px
+//       max-width: 450px
+//   &__step
+//     position: relative
+//     &:not(:first-child)
+//       margin-top: 30px
+
+// .process
+//   position: relative
+//   &__title
+//     display: flex
+//     align-items: center
+//   &__body
+//     position: relative
+//     padding-top: 20px
+//     padding-bottom: 30px
+
+// .title
+//   font-size: 18px
+//   font-weight: 400
+//   &__step
+//     position: relative
+//     width: 32px
+//     height: 32px
+//     border: 1px solid $black
+//     display: inline-flex
+//     justify-content: center
+//     align-items: center
+//     font-size: inherit
+//     font-weight: inherit
+//     &--success
+//       background-color: $green
+//       color: $white
+//       fill: $white
+//   &__text
+//     font-size: inherit
+//     font-weight: inherit
+//     padding-left: 20px
 
 
-  &.active
-    color: $primary
-    .title__step
-      border-color: $primary
-    .title__text
-      padding-left: 40px
-  &.done
-    .title__step
-      color: $white
-      background-color: $primary
-      border-color: $primary
-      svg
-        width: 20px
-        height: 20px
-        position: absolute
-        top: 5px
-        left: 0
-        margin-left: -13px
-        background-color: $primary
-        fill: $white
-        border-radius: 20px
-        border: 1px solid $white
+//   &.active
+//     color: $primary
+//     .title__step
+//       border-color: $primary
+//     .title__text
+//       padding-left: 40px
+//   &.done
+//     .title__step
+//       color: $white
+//       background-color: $primary
+//       border-color: $primary
+//       svg
+//         width: 20px
+//         height: 20px
+//         position: absolute
+//         top: 5px
+//         left: 0
+//         margin-left: -13px
+//         background-color: $primary
+//         fill: $white
+//         border-radius: 20px
+//         border: 1px solid $white
 

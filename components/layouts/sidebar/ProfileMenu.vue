@@ -1,32 +1,24 @@
 <template>
-  <div :class="[$style.sidebar, {[$style.isActive]: isActive}, {[$style.notInCustomerPages]: !pageMode.profileMode}, {[$style.isInCustomerPages]: pageMode.profileMode}]">
-    <!-- <h3 :class="$style.sidebarTitle">
-      <i18nLink :class="$style.sidebarTitleLink" to="/">{{ i18nText.backShop }}</i18nLink>
-    </h3> -->
-    <div :class="$style.nav">
-      <ul v-if="isCustomerMode" :class="$style.navList">
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/customer/profile'" >{{ i18nText.yourProfile }}</i18n-link></li>
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/customer/orders'" >{{ i18nText.yourOrders }}</i18n-link></li>
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/customer/delivery-addresses'" >{{ i18nText.yourAddress }}</i18n-link></li>
-        <!-- <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/customer/support-tickets'" >{{ $t('user_info.support_tickets') }}</i18n-link></li> -->
-        <li :class="$style.navItem"><a :class="$style.navLink" rel="nofollow" href="#" @click.prevent="toggleOverlay(overlays.aside1) + logoutUser()">{{ i18nText.signOut }}</a></li>
-      </ul>
-      <ul v-if="isAgentMode" :class="$style.navList">
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/agent/profile'" >{{ i18nText.yourProfile }}</i18n-link></li>
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/agent/orders'" >{{ i18nText.yourOrders  }}</i18n-link></li>
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/agent/commission'" >{{ i18nText.yourCommission }}</i18n-link></li>
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/agent/ready-for-pickup-orders'" >{{ i18nText.readyForPickupOrders }}</i18n-link></li>
-        <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/agent/support-tickets'" >{{ $t('user_info.support_tickets') }}</i18n-link></li>
-        <li :class="$style.navItem">
-          <div :class="$style.checkbox">
-            <input :class="$style.checkboxInput" type="checkbox" id="showOrHideProductCommision" @change="toggle" v-model="toggleCommissionChecked">
-            <label :class="$style.checkboxLabel" for="showOrHideProductCommision">{{ i18nText.commissionLabel }}<small>({{ $t(commisionAction) }})</small></label>
-          </div>
-        </li>
-        <!-- <li :class="$style.navItem"><i18n-link :class="$style.navLink" :to="'/agent/support-requests'" >{{ $t('user_info.support_requests') }}</i18n-link></li> -->
-        <li :class="$style.navItem"><a :class="$style.navLink" rel="nofollow" href="#" @click.prevent="toggleOverlay(overlays.aside1) + logoutUser()">{{ i18nText.signOut }}</a></li>
-      </ul>
-    </div>
+  <div :class="[$style.list, {[$style.listActive]: isActive}]">
+    <i18n-link :class="[$style.listBtn ,$style.btn]" :to="'/customer/profile'">
+      <span>{{ i18nText.yourProfile }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+      </svg>
+    </i18n-link>
+    <i18n-link :class="[$style.listBtn ,$style.btn]" :to="'/customer/orders'">
+      <span>{{ i18nText.yourOrders }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+      </svg>
+    </i18n-link>
+    <i18n-link :class="[$style.listBtn ,$style.btn]" :to="'/customer/delivery-addresses'">
+      <span>{{ i18nText.yourAddress }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <use xlink:href="/svg/icons.svg?#i-arrow"></use>
+      </svg>
+    </i18n-link>
+    <button :class="[$style.listBtn, $style.listBtnSignOut, $style.btn]" @click.prevent="toggleOverlay(overlays.aside1) + logoutUser()">{{ i18nText.signOut }}</button>
   </div>
 </template>
 
@@ -142,109 +134,24 @@
 </script>
 
 <style lang="sass" module>
-  .Sidebar
-    position: relative
+  @import "shared/button"
+  .list
     display: none
-    margin-top: 30px
-    &__title
-      display: none
-      +phablet
-        display: block
-        font-size: 16px
-      &__link
-        padding: 15px
-        min-height: 54px
-        text-decoration: none
-        color: $text
-        fill: $text
-        flex: 1 100%
-        margin: 0
-        display: flex
-        align-items: center
-        flex-flow: row wrap
-        &:hover
-          background-color: rgba($black, .02)
-  .isActive
-    display: block
-    // +phablet
-    //   display: none
-    // &::before
-    //   content: ""
-    //   position: absolute
-    //   top: 0
-    //   right: 0
-    //   width: 50%
-    //   border-top: 1px solid $white
-    //   z-index: 2
-
-  // .notInCustomerPages
-  //   // border: 1px solid pink
-  //    display: none
-  //   // +phablet
-  //   //   display: none
-
-  // .isInCustomerPages
-  //   // border: 1px solid orange
-  //   display: block
-  //   // +phablet
-  //   //   display: block
-
-  .Nav
     position: relative
-    display: block
-    border-bottom: 1px solid $white
-    z-index: 1
-    // +phablet
-      // display: none
-    &__list
-      padding: 0
-      margin: 0
-      border: 0
-      list-style: none
-    &__item
-      position: relative
-      // display: flex
-      // flex-flow: row wrap
-      &:not(:first-child)
-        border-top: 1px solid #ebebeb
-    &__link
-      +button
-      min-height: 62px
-      color: inherit
-      fill: inherit
-      font-size: 16px
-      text-decoration: none
-      // padding: 11px 15px
-      // font-weight: 400
-      flex: 1
-      display: flex
-      align-items: center
-      color: $black
-      &:hover
-        color: $primary
-
-
-  .checkbox
-    position: relative
-    &__input[type=checkbox]
-      position: absolute
-      z-index: 1
-      top: 0
-      left: 0
-      margin-left: 15px
-      margin-top: 19px
-    &__label
-      position: relative
-      cursor: pointer
-      min-height: 50px
-      color: inherit
-      fill: inherit
-      font-size: 13px
-      padding: 11px 15px 11px 32px
-      font-weight: 400
-      flex: 1
-      display: flex
-      align-items: center
-      small
-        padding-left: 3px
+    padding: $gutter*2 0
+    &-btn
+      justify-content: space-between
+      padding-left: $gutter
+      padding-right: $gutter*.625
+      // background-color: $white
+      font-weight: $weight-medium
+      margin-bottom: $gutter*.5
+      &-sign-out
+        width: auto
+        padding-right: $gutter
+        margin-top: $gutter*2
+        background-color: $white
+        border: 2px solid $light
+    &--active
+      display: block
 </style>

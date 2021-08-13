@@ -1,0 +1,101 @@
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 12
+  overflow-y: auto
+  opacity: 0
+  visibility: hidden
+  transition: none $speed*5 ease
+  transition-property: opacity, visibility
+  $root: &
+  &__dialog
+    position: relative
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    +tablet
+      height: auto
+      min-height: 100%
+      justify-content: center
+      align-items: center
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    cursor: pointer
+    background: rgba($black, .33)
+  &__content
+    position: relative
+    z-index: 2
+    background: $white
+    width: 100%
+    min-height: 320px
+    height: 100%
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    transform: translateY(100%)
+    transition: none $speed*4 ease
+    transition-property: transform
+    +tablet
+      max-width: 400px
+      margin-top: $gutter*4
+      margin-bottom: $gutter*4
+      border-radius: $gutter/2
+      transform: translateY(-70px)
+
+  &__header
+    min-height: 50px
+    position: relative
+    z-index: 1
+    padding-left: $gutter*1.25
+    display: flex
+    align-items: center
+    border-bottom: 1px solid $light
+    // background-color: $primary
+    // color: $white
+    &-title
+      padding-top: 12px
+      padding-bottom: 12px
+      padding-right: $gutter*1.25
+      font-size: 14px
+      line-height: 1.33
+      font-weight: $weight-medium
+      flex-grow: 1
+      +text-ellipsis
+    &-close
+      flex-shrink: 0
+      width: 32px
+      height: 32px
+      margin-right: $gutter/2
+  &__hero
+    min-height: 160px
+    position: relative
+    background-color: $light
+    display: flex
+    flex-direction: column
+    justify-content: center
+  &__body
+    padding: $gutter*2
+    min-height: 300px
+    overflow-y: auto
+  &__actions
+    min-height: 56px
+    background-color: $light
+
+
+  // modifier
+  &--open
+    opacity: 1
+    visibility: visible
+    #{$root}__content
+      transform: translateY(0)
+      transition: none $speed*3 ease
+      transition-property: opacity, transform

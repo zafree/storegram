@@ -1,12 +1,10 @@
 <template>
-  <div :class="$style.love">
+  <div :class="$style.wrapper">
     <section :class="$style.section">
-      <div :class="$style.sectionRow">
-        <header>
-          <h1>{{ $t('search.key_title') }}: <span>{{ searchKey }}</span></h1>
-          <p>{{ $t('search.result', {field: __(searchResult.length)}) }}</p>
-        </header>
-      </div>
+      <header :class="$style.header">
+        <h1>{{ $t('search.key_title') }}: <span>{{ searchKey }}</span></h1>
+        <p>{{ $t('search.result', {field: __(searchResult.length)}) }}</p>
+      </header>
     </section>
     <template v-if="searchResult.length > 0">
       <product-list :products="searchResult"></product-list>
@@ -72,10 +70,15 @@
 
 <style lang="sass" module>
   @import "shared/category_summary/product_contain"
-  // @import "sass/shared/breadcrumb"
   @import "sass/shared/emptyState"
 
-  header
+  .wrapper
+    +container
+
+  .section
+    border-bottom: none !important
+
+  .header
     h1
       font-size: 1.6em
       line-height: 1.33
@@ -86,18 +89,13 @@
         font-size: 2.4em
       span
         color: $primary
-
     p
       margin-top: 10px
       font-size: 1.2em
       line-height: 1.33
-      color: #999
+      color: rgba($black, 0.55)
       letter-spacing: 0.01em
       font-weight: 400
       +desktop
         font-size: 1.4em
-
-
-  .Love
-    position: relative
 </style>

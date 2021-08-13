@@ -151,7 +151,7 @@ export default {
     margin-bottom: 0
     box-shadow: none
     border-top: 1px solid #E5E5E5
-    +phablet
+    // +phablet
       margin: 0
     &__sliders
       padding-bottom: 0
@@ -169,7 +169,7 @@ export default {
       max-width: 150px
       cursor: pointer
       &--active
-        color: $purple
+        color: $primary
         &::after
           content: ""
           position: absolute
@@ -179,7 +179,7 @@ export default {
           height: 2px
           margin-left: -10px
           margin-right: -10px
-          background-color: $purple
+          background-color: $primary
 </style>
 
 <style lang="sass" scoped>
@@ -200,7 +200,7 @@ export default {
       margin-left: -15px
       margin-right: -15px
       +clearfix
-      +phablet
+      // +phablet
         margin: 0
     &__image
       width: 64px

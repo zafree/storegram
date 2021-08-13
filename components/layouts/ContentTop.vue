@@ -250,7 +250,7 @@
   .HeroCarousel
     position: relative
     height: 420px
-    background: linear-gradient(310deg, $red 20%, $cyan 120%)
+    background: linear-gradient(310deg, $red 20%, $blue 120%)
     background-color: $red
     color: $white
     +widescreen
@@ -291,7 +291,7 @@
         bottom: 0
         background: linear-gradient(0deg, rgba($black, 0.4) 0%, rgba($black, 0) 30%)
         z-index: 1
-      +phablet
+      // +phablet
         padding-left: 0
         padding-right: 0
       &--isActive
@@ -337,7 +337,7 @@
         padding-left: 0
         padding-right: 0
         z-index: 2
-        +phablet
+        // +phablet
           padding-left: 15px
           padding-right: 15px
           // margin-bottom: 78px + 5 + 20
@@ -355,7 +355,7 @@
           color: $white
           line-height: 1.44
           margin-bottom: 8px
-          // +phablet
+          // // +phablet
           //   font-size: 22px
           //   max-width: 280px
           //   margin-left: 0
@@ -365,7 +365,7 @@
           transform: scale(2.3)
           transform-origin: top left
           margin-bottom: 15px + 75
-          // +phablet
+          // // +phablet
           //   margin-bottom: 34px + 60
           //   transform: scale(3.5)
           //   margin-left: 0
@@ -377,7 +377,7 @@
           color: $white
           line-height: 1.33
           margin-top: 6px
-          // +phablet
+          // // +phablet
           //   font-size: 16px
           //   max-width: 135px
           //   margin-top: 10px
@@ -391,7 +391,7 @@
       flex-direction: row
       transform: translateX(-50%)
       margin-bottom: 15px
-      +phablet
+      // +phablet
         margin-bottom: 20px
       &__dot
         position: relative
@@ -423,7 +423,7 @@
       display: flex
       justify-content: center
       transform: translateX(-50%)
-      +phablet
+      // +phablet
         margin-bottom: 20px
       &--prev
         margin-left: -165px
@@ -444,7 +444,7 @@
 
   .Button
     &--setDeliveryPoint
-      +btnGreen
+      +button
       max-width: 280px
       width: 280px
       // margin-left: auto
@@ -456,7 +456,7 @@
       margin-bottom: -65px
       left: 50%
       transform: translateX(-50%)
-      +phablet
+      // +phablet
         font-size: 16px
         min-height: 40px
 
@@ -522,7 +522,7 @@
       font-size: 42px
       line-height: 1.11
       font-weight: 700
-      color: $purple
+      color: $primary
       text-shadow: 0px 1px 20px rgba($white, .8)
 
     &__content
@@ -550,7 +550,7 @@
         width: 100%
         height: 100%
         opacity: .8
-        background: linear-gradient(310deg,$red 20%,$cyan 120%)
+        background: linear-gradient(310deg,$red 20%,$blue 120%)
         background-color: $red
     &__container
       flex: 1
@@ -560,8 +560,6 @@
       padding-left: 15px
       padding-right: 15px
       text-align: center
-      +phablet
-        max-width: $phablet - 20
       +tablet
         max-width: $tablet - 20
       +desktop
@@ -591,7 +589,7 @@
       width: 100%
       height: 100%
       opacity: .8
-      background: linear-gradient(310deg,$red 20%,$cyan 120%)
+      background: linear-gradient(310deg,$red 20%,$blue 120%)
       background-color: $red
     &__container
       flex: 1
@@ -601,8 +599,6 @@
       padding-left: 15px
       padding-right: 15px
       text-align: center
-      +phablet
-        max-width: $phablet - 20
       +tablet
         max-width: $tablet - 20
       +desktop
@@ -663,7 +659,7 @@
      font-weight: 700
      // letter-spacing: 0.03em
      text-transform: uppercase
-     +phablet
+     // +phablet
        font-size: 52px
      +tablet
        font-size: 62px
@@ -671,7 +667,7 @@
      font-size: 14px
      // font-size: 25px
      line-height: 1.33
-     +phablet
+     // +phablet
        font-size: 18px
      +tablet
        font-size: 22px
@@ -683,7 +679,7 @@
      max-width: 290px
      background-color: rgba($white, .8)
      padding: 20px 15px
-     border-radius: 4px
+     border-radius: $gutter/4
      +tablet
        font-size: 16px
        max-width: 500px

@@ -128,16 +128,16 @@
   @import "shared/form/field"
   .Button
     &--setDeliveryPoint
-      +btnPurple
+      +button
       height: 40px
       font-size: 14px
       display: block
       width: 100%
       border-radius: 6px
       font-weight: $weight-medium
-      +phablet
+      // +phablet
         font-size: 16px
-        height: 44px  
+        height: 44px
   .StreamAddress
     &__glance
       display: flex
@@ -170,7 +170,7 @@
       overflow: hidden
       &__shopName
         font-size: 14px
-        color: $dark
+        color: $text
         line-height: inherit
         margin-top: 3px
         margin-bottom: 1px
@@ -189,6 +189,6 @@
 
     &__action
       position: relative
-      padding: 5px 0 0 
+      padding: 5px 0 0
 </style>
 
