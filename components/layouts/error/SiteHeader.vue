@@ -1,9 +1,5 @@
 <template>
-  <div :class="$style.appHeaderInner">
-      <div :class="$style.logo">
-        <logo></logo>
-      </div> <!-- /.Logo -->
-  </div><!-- /.App__header-inner -->
+  <logo></logo>
 </template>
 
 

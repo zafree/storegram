@@ -537,6 +537,7 @@ export function getOrderSummaries (authToken, params) {
 export function getOrderSummaryById (authToken, orderId) {
   return callApi({
     name: 'getOrderSummaryById',
+    orderId,
     access_token: authToken,
     url: `${API.ORDER}/${orderId}`
   })

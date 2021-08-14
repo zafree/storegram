@@ -3,6 +3,8 @@ import location from '~/api/mock/location.json'
 import { categories } from '~/api/mock/categories'
 import { mockSaveCart, mockValidateCart } from './mock/cart'
 import { getCategoryProducts, getProductBySlug } from '~/api/mock/products/getCategoryProducts'
+import { getOrderSummaryById, getOrderSummaries, createOrder } from '~/api/mock/order/order'
+import portwalletInvoice from '~/api/mock/order/portwalletInvoice.json'
 
 import {
   API_END_POINTS as API,
@@ -191,20 +193,15 @@ export function callMockApi (requestConfig) {
       // return getPickupPoints()
       return callApi(requestConfig)
     case 'getOrderSummaries':
-      // return getOrderSummaries()
-      return callApi(requestConfig)
+      return getOrderSummaries()
     case 'getOrderSummaryById':
-      // return getOrderSummaryById()
-      return callApi(requestConfig)
+      return getOrderSummaryById(requestConfig)
     case 'createOrder':
-      // return createOrder()
-      return callApi(requestConfig)
+      return createOrder()
     case 'confirmPaymentMethod':
-      // return confirmPaymentMethod()
-      return callApi(requestConfig)
+      return Promise.resolve([])
     case 'createPortWalletInvoice':
-      // return createPortWalletInvoice()
-      return callApi(requestConfig)
+      return Promise.resolve(portwalletInvoice)
     case 'verifyBkashPaymentWithRef':
       // return verifyBkashPaymentWithRef()
       return callApi(requestConfig)
@@ -573,45 +570,45 @@ export function getPickupPoints (params) {
   })
 }
 
-export function getOrderSummaries (authToken, params) {
-  return callApi({
-    access_token: authToken,
-    url: API.ORDER,
-    params
-  })
-}
+// export function getOrderSummaries (authToken, params) {
+//   return callApi({
+//     access_token: authToken,
+//     url: API.ORDER,
+//     params
+//   })
+// }
 
-export function getOrderSummaryById (authToken, orderId) {
-  return callApi({
-    access_token: authToken,
-    url: `${API.ORDER}/${orderId}`
-  })
-}
+// export function getOrderSummaryById (authToken, orderId) {
+//   return callApi({
+//     access_token: authToken,
+//     url: `${API.ORDER}/${orderId}`
+//   })
+// }
 
-export function createOrder (authToken, orderAttributes) {
-  const requestConfig = {
-    access_token: authToken,
-    url: API.ORDER,
-    method: 'post',
-    data: orderAttributes
-  }
-  return callApi(requestConfig).catch((error) => {
-    invalidateApiCache()
-    return Promise.reject(error)
-  })
-}
+// export function createOrder (authToken, orderAttributes) {
+//   const requestConfig = {
+//     access_token: authToken,
+//     url: API.ORDER,
+//     method: 'post',
+//     data: orderAttributes
+//   }
+//   return callApi(requestConfig).catch((error) => {
+//     invalidateApiCache()
+//     return Promise.reject(error)
+//   })
+// }
 
-export function confirmPaymentMethod (authToken, id, prefferedPaymentChannel) {
-  const requestConfig = {
-    access_token: authToken,
-    url: getUrlFromTemplate(API.CONFIRM_PAYMENT_CHANNEL, {id}),
-    method: 'post',
-    data: {
-      preferred_payment_channel: prefferedPaymentChannel
-    }
-  }
-  return callApi(requestConfig)
-}
+// export function confirmPaymentMethod (authToken, id, prefferedPaymentChannel) {
+//   const requestConfig = {
+//     access_token: authToken,
+//     url: getUrlFromTemplate(API.CONFIRM_PAYMENT_CHANNEL, {id}),
+//     method: 'post',
+//     data: {
+//       preferred_payment_channel: prefferedPaymentChannel
+//     }
+//   }
+//   return callApi(requestConfig)
+// }
 
 export function cancelOrder (attr) {
   /* TODO: when the cancel order api will be deployed  */

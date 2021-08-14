@@ -1,31 +1,451 @@
 {
-  "id":73758,
   "categoryId": 331,
-  "name":{
-    "en":"EQ Blue Crochet Chequered Cotton Formal Shirt",
-    "bn":"EQ \u09a8\u09c0\u09b2 \u0995\u09cd\u09b0\u09b8\u09c7\u099f \u099a\u09c7\u0995 \u0995\u099f\u09a8 \u09ab\u09b0\u09ae\u09be\u09b2 \u09b6\u09be\u09b0\u09cd\u099f"
+  "slug": "eq-blue-crochet-chequered-cotton-formal-shirt",
+  "meta": [],
+  "name": {
+    "en": "EQ Blue Crochet Chequered Cotton Formal Shirt",
+    "bn": "EQ নীল ক্রসেট চেক কটন ফরমাল শার্ট"
   },
-  "slug":"eq-blue-crochet-chequered-cotton-formal-shirt",
-  "variant_slug":"l-2337",
-  "emi_tenures":[],
-  "image_info":[
+  "description": {
+    "en": "<ul>\r\n\t<li>Dynamic Regular Fit&nbsp;</li>\r\n\t<li>Made from the best quality cotton fabric</li>\r\n\t<li>Double fusing spread collar for maximum durability</li>\r\n\t<li>Has the best quality you can see and feel</li>\r\n\t<li>Each button has been stitched perfectly so it is extra secure</li>\r\n\t<li>EQ branded original product</li>\r\n\t<li>Designed at EQ Design Studio</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h3><strong>Size Chart:</strong></h3>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); border-color:rgb(0, 0, 0); text-align:center; vertical-align:bottom\">&nbsp; &nbsp;<strong>&nbsp;Size&nbsp; &nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Chest&nbsp; &nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp;Full Length&nbsp;&nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Neck length - Collar&nbsp; &nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; Sleeve Length&nbsp; &nbsp;</strong></td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp; &nbsp;Unit&nbsp; &nbsp; &nbsp;</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>M</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>40</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>29</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>15.5</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>25</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>L</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>42</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>30</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>16</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>25</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>XL</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>44</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>30</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>16.5</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>26</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>XXL</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>46</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>31</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>17</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>26</strong></td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\"><strong>Inch</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+    "bn": "<ul>\r\n\t<li>রেগুলার ফিট</li>\r\n\t<li>সেরা গুনগতমানসম্পন্ন কটন কাপড় কাপড় থেকে তৈরি</li>\r\n\t<li>দীর্ঘস্থায়ী ডাবল কলার</li>\r\n\t<li>প্রতিটি বোতাম পৃথকভাবে শক্ত করে লাগানো যাতে আলগা হয়ে না যায়</li>\r\n\t<li>EQ ব্র্যান্ডের অরিজিলান পণ্য</li>\r\n\t<li>EQ ডিজাইন স্টুডিওতে ডিজাইনকৃত</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h3><strong>সাইজ চার্টঃ</strong></h3>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"><strong>&nbsp; &nbsp;&nbsp;</strong>সাইজ&nbsp; &nbsp;</td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\">&nbsp; &nbsp; &nbsp;বুক&nbsp; &nbsp; &nbsp;</td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\">&nbsp; &nbsp; &nbsp;লম্বা&nbsp; &nbsp; &nbsp;</td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\">&nbsp; গলার দৈর্ঘ্য- কলার&nbsp;&nbsp;</td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\">&nbsp; &nbsp;হাতার দৈর্ঘ্য&nbsp; &nbsp;</td>\r\n\t\t\t<td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\">&nbsp; &nbsp; &nbsp;ইউনিট&nbsp; &nbsp;&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">M</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৪০</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">২৯</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">১৫.৫</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">২৫</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">L</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৪২</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৩০</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">১৬</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">২৫</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">XL</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৪৪</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৩০</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">১৬.৫</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">২৬</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">XXL</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৪৬</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">৩১</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">১৭</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">২৬</td>\r\n\t\t\t<td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>"
+  },
+  "description_md": {
+    "en": "- Dynamic Regular Fit\r\n- Made from the best quality cotton fabric\r\n- Double fusing spread collar for maximum durability\r\n- Has the best quality you can see and feel\r\n- Each button has been stitched perfectly so it is extra secure\r\n- EQ branded original product\r\n- Designed at EQ Design Studio\r\n\r\n### **Size Chart:**\r\n\r\n <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\"><tbody><tr><td style=\"background-color:rgb(217, 217, 217); border-color:rgb(0, 0, 0); text-align:center; vertical-align:bottom\">  **Size** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Chest** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Full Length** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Neck length - Collar** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Sleeve Length** </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> **Unit** </td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**M**</td> <td style=\"text-align:center; vertical-align:bottom\">**40**</td> <td style=\"text-align:center; vertical-align:bottom\">**29**</td> <td style=\"text-align:center; vertical-align:bottom\">**15.5**</td> <td style=\"text-align:center; vertical-align:bottom\">**25**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**L**</td> <td style=\"text-align:center; vertical-align:bottom\">**42**</td> <td style=\"text-align:center; vertical-align:bottom\">**30**</td> <td style=\"text-align:center; vertical-align:bottom\">**16**</td> <td style=\"text-align:center; vertical-align:bottom\">**25**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**XL**</td> <td style=\"text-align:center; vertical-align:bottom\">**44**</td> <td style=\"text-align:center; vertical-align:bottom\">**30**</td> <td style=\"text-align:center; vertical-align:bottom\">**16.5**</td> <td style=\"text-align:center; vertical-align:bottom\">**26**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">**XXL**</td> <td style=\"text-align:center; vertical-align:bottom\">**46**</td> <td style=\"text-align:center; vertical-align:bottom\">**31**</td> <td style=\"text-align:center; vertical-align:bottom\">**17**</td> <td style=\"text-align:center; vertical-align:bottom\">**26**</td> <td style=\"text-align:center; vertical-align:bottom\">**Inch**</td></tr></tbody></table>",
+    "bn": "- রেগুলার ফিট\n- সেরা গুনগতমানসম্পন্ন কটন কাপড় কাপড় থেকে তৈরি\n- দীর্ঘস্থায়ী ডাবল কলার\n- প্রতিটি বোতাম পৃথকভাবে শক্ত করে লাগানো যাতে আলগা হয়ে না যায়\n- EQ ব্র্যান্ডের অরিজিলান পণ্য\n- EQ ডিজাইন স্টুডিওতে ডিজাইনকৃত\n\n### **সাইজ চার্টঃ**\n\n <table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:0px\"><tbody><tr><td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> সাইজ </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\"> বুক </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\"> লম্বা </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\"> গলার দৈর্ঘ্য- কলার </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:top\"> হাতার দৈর্ঘ্য </td> <td style=\"background-color:rgb(217, 217, 217); text-align:center; vertical-align:bottom\"> ইউনিট </td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">M</td> <td style=\"text-align:center; vertical-align:bottom\">৪০</td> <td style=\"text-align:center; vertical-align:bottom\">২৯</td> <td style=\"text-align:center; vertical-align:bottom\">১৫.৫</td> <td style=\"text-align:center; vertical-align:bottom\">২৫</td> <td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">L</td> <td style=\"text-align:center; vertical-align:bottom\">৪২</td> <td style=\"text-align:center; vertical-align:bottom\">৩০</td> <td style=\"text-align:center; vertical-align:bottom\">১৬</td> <td style=\"text-align:center; vertical-align:bottom\">২৫</td> <td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">XL</td> <td style=\"text-align:center; vertical-align:bottom\">৪৪</td> <td style=\"text-align:center; vertical-align:bottom\">৩০</td> <td style=\"text-align:center; vertical-align:bottom\">১৬.৫</td> <td style=\"text-align:center; vertical-align:bottom\">২৬</td> <td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td> </tr><tr><td style=\"text-align:center; vertical-align:bottom\">XXL</td> <td style=\"text-align:center; vertical-align:bottom\">৪৬</td> <td style=\"text-align:center; vertical-align:bottom\">৩১</td> <td style=\"text-align:center; vertical-align:bottom\">১৭</td> <td style=\"text-align:center; vertical-align:bottom\">২৬</td> <td style=\"text-align:center; vertical-align:bottom\">ইঞ্চি</td></tr></tbody></table>"
+  },
+  "offers": [],
+  "summary": null,
+  "coupon_details": null,
+  "attributes": [
     {
-        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/product-73757.png",
-        "width":800,
-        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_800_600.png 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_669_501.png 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_560_420.png 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_468_351.png 468w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_391_293.png 391w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_327_245.png 327w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_274_205.png 274w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_229_171.png 229w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_192_144.png 192w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_160_120.png 160w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_134_100.png 134w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_112_84.png 112w",
-        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/385072\/responsive-images\/product-73757___medialibrary_original_468_351.png"
+      "code": "apparel-size",
+      "type": "dropdown",
+      "is_varying": 1,
+      "name": {
+        "bn": "সাইজ",
+        "en": "Size"
+      },
+      "value_prefix": null,
+      "value_suffix": null,
+      "is_featured": 0,
+      "i18n_value": null,
+      "unit": null,
+      "sort_position": 0,
+      "value": "M",
+      "i18n_unit": null
     }
   ],
-  "coupon_details":null,
-  "discounted_price":699.5,
-  "unit_price":1399,
-  "available_qty":0,
-  "out_of_stock":true,
-  "varies_on":[
+  "primary_variant_id": 73758,
+  "varies_on": [
     "apparel-size"
   ],
-  "variant_count":3,
-  "commission":null,
-  "primary_variant_id":73758,
-  "offers":[]
+  "variants": [
+    {
+      "id": 73758,
+      "variant_slug": "l-2337",
+      "status": 1,
+      "created_at": "2019-12-15T11:59:43+06:00",
+      "updated_at": "2021-04-17T00:20:23+06:00",
+      "is_deliverable_to_agent": false,
+      "is_deliverable_to_locker": true,
+      "stock_record_id": 72898,
+      "sku": "EQFSW0005-1",
+      "unit_price": 1399,
+      "available_qty": 3,
+      "out_of_stock": false,
+      "discount_rule_id": 3010,
+      "discounted_price": 699.5,
+      "code": "DG-5-000000-737581",
+      "fix_delivery_time": {
+        "min": 9,
+        "max": 12
+      },
+      "stock_record_in_stock_qty": 0,
+      "max_delivery_time": 4,
+      "variant_name": {
+        "en": "L"
+      },
+      "image_info": [
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/product-73757.png",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_800_600.png 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_669_501.png 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_560_420.png 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_468_351.png 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_391_293.png 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_327_245.png 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_274_205.png 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_229_171.png 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_192_144.png 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_160_120.png 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_134_100.png 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_112_84.png 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_468_351.png"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_112_84.jpeg 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_112_84.jpeg 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        }
+      ],
+      "images": [
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/product-73757.png",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/product-73757.jpeg"
+      ],
+      "attributes": [
+        {
+          "code": "apparel-size",
+          "type": "dropdown",
+          "is_varying": 1,
+          "name": {
+            "bn": "সাইজ",
+            "en": "Size"
+          },
+          "value_prefix": null,
+          "value_suffix": null,
+          "is_featured": 0,
+          "i18n_value": null,
+          "unit": null,
+          "sort_position": 0,
+          "value": "L",
+          "i18n_unit": null
+        }
+      ],
+      "policies": [
+        {
+          "id": 1,
+          "name": "7 Days Return Facility",
+          "description": "Return any products to Deligram within 7 days of delivery.",
+          "type": 2,
+          "duration": 7,
+          "unit": 1,
+          "creator_id": 11,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-01-19T13:30:16+06:00",
+          "updated_at": "2019-10-16T11:45:07+06:00"
+        },
+        {
+          "id": 5,
+          "name": "Warranty Not Applicable",
+          "description": "Warranty not applicable",
+          "type": 3,
+          "duration": 0,
+          "unit": 1,
+          "creator_id": 10,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-10-16T11:39:57+06:00",
+          "updated_at": "2019-10-16T11:46:50+06:00"
+        },
+        {
+          "id": 9,
+          "name": "7 Days Replacement",
+          "description": "7 Days Replacement",
+          "type": 1,
+          "duration": 7,
+          "unit": 1,
+          "creator_id": 10,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-10-16T12:25:49+06:00",
+          "updated_at": "2019-10-16T12:25:49+06:00"
+        }
+      ]
+    },
+    {
+      "id": 73759,
+      "variant_slug": "xl-2277",
+      "status": 1,
+      "created_at": "2019-12-15T12:00:25+06:00",
+      "updated_at": "2021-04-17T00:20:29+06:00",
+      "is_deliverable_to_agent": false,
+      "is_deliverable_to_locker": true,
+      "stock_record_id": 72899,
+      "sku": "EQFSW0005-2",
+      "unit_price": 1399,
+      "available_qty": 0,
+      "out_of_stock": true,
+      "discount_rule_id": 3010,
+      "discounted_price": 699.5,
+      "code": "DG-5-000000-737598",
+      "fix_delivery_time": {
+        "min": 9,
+        "max": 12
+      },
+      "stock_record_in_stock_qty": 0,
+      "max_delivery_time": 4,
+      "variant_name": {
+        "en": "XL"
+      },
+      "image_info": [
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/product-73757.png",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_800_600.png 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_669_501.png 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_560_420.png 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_468_351.png 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_391_293.png 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_327_245.png 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_274_205.png 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_229_171.png 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_192_144.png 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_160_120.png 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_134_100.png 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_112_84.png 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_468_351.png"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_112_84.jpeg 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_112_84.jpeg 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        }
+      ],
+      "images": [
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/product-73757.png",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/product-73757.jpeg"
+      ],
+      "attributes": [
+        {
+          "code": "apparel-size",
+          "type": "dropdown",
+          "is_varying": 1,
+          "name": {
+            "bn": "সাইজ",
+            "en": "Size"
+          },
+          "value_prefix": null,
+          "value_suffix": null,
+          "is_featured": 0,
+          "i18n_value": null,
+          "unit": null,
+          "sort_position": 0,
+          "value": "XL",
+          "i18n_unit": null
+        }
+      ],
+      "policies": [
+        {
+          "id": 1,
+          "name": "7 Days Return Facility",
+          "description": "Return any products to Deligram within 7 days of delivery.",
+          "type": 2,
+          "duration": 7,
+          "unit": 1,
+          "creator_id": 11,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-01-19T13:30:16+06:00",
+          "updated_at": "2019-10-16T11:45:07+06:00"
+        },
+        {
+          "id": 5,
+          "name": "Warranty Not Applicable",
+          "description": "Warranty not applicable",
+          "type": 3,
+          "duration": 0,
+          "unit": 1,
+          "creator_id": 10,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-10-16T11:39:57+06:00",
+          "updated_at": "2019-10-16T11:46:50+06:00"
+        },
+        {
+          "id": 9,
+          "name": "7 Days Replacement",
+          "description": "7 Days Replacement",
+          "type": 1,
+          "duration": 7,
+          "unit": 1,
+          "creator_id": 10,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-10-16T12:25:49+06:00",
+          "updated_at": "2019-10-16T12:25:49+06:00"
+        }
+      ]
+    },
+    {
+      "id": 73760,
+      "variant_slug": "xxl-2114",
+      "status": 1,
+      "created_at": "2019-12-15T12:00:48+06:00",
+      "updated_at": "2021-04-17T00:20:32+06:00",
+      "is_deliverable_to_agent": false,
+      "is_deliverable_to_locker": true,
+      "stock_record_id": 72900,
+      "sku": "EQFSW0005-3",
+      "unit_price": 1399,
+      "available_qty": 0,
+      "out_of_stock": true,
+      "discount_rule_id": 3010,
+      "discounted_price": 699.5,
+      "code": "DG-5-000000-737604",
+      "fix_delivery_time": {
+        "min": 9,
+        "max": 12
+      },
+      "stock_record_in_stock_qty": 0,
+      "max_delivery_time": 4,
+      "variant_name": {
+        "en": "XXL"
+      },
+      "image_info": [
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/product-73757.png",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_800_600.png 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_669_501.png 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_560_420.png 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_468_351.png 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_391_293.png 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_327_245.png 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_274_205.png 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_229_171.png 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_192_144.png 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_160_120.png 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_134_100.png 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_112_84.png 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/responsive-images/product-73757___medialibrary_original_468_351.png"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_112_84.jpeg 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        },
+        {
+          "url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/product-73757.jpeg",
+          "width": 800,
+          "srcset": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_800_600.jpeg 800w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_669_501.jpeg 669w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_560_420.jpeg 560w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_468_351.jpeg 468w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_391_293.jpeg 391w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_327_245.jpeg 327w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_274_205.jpeg 274w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_229_171.jpeg 229w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_192_144.jpeg 192w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_160_120.jpeg 160w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_134_100.jpeg 134w, https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_112_84.jpeg 112w",
+          "thumbnail": "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/responsive-images/product-73757___medialibrary_original_468_351.jpeg"
+        }
+      ],
+      "images": [
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/385072/product-73757.png",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381656/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381655/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381654/product-73757.jpeg",
+        "https://d1zk0te1r027w9.cloudfront.net/storage/media/381653/product-73757.jpeg"
+      ],
+      "attributes": [
+        {
+          "code": "apparel-size",
+          "type": "dropdown",
+          "is_varying": 1,
+          "name": {
+            "bn": "সাইজ",
+            "en": "Size"
+          },
+          "value_prefix": null,
+          "value_suffix": null,
+          "is_featured": 0,
+          "i18n_value": null,
+          "unit": null,
+          "sort_position": 0,
+          "value": "XXL",
+          "i18n_unit": null
+        }
+      ],
+      "policies": [
+        {
+          "id": 1,
+          "name": "7 Days Return Facility",
+          "description": "Return any products to Deligram within 7 days of delivery.",
+          "type": 2,
+          "duration": 7,
+          "unit": 1,
+          "creator_id": 11,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-01-19T13:30:16+06:00",
+          "updated_at": "2019-10-16T11:45:07+06:00"
+        },
+        {
+          "id": 5,
+          "name": "Warranty Not Applicable",
+          "description": "Warranty not applicable",
+          "type": 3,
+          "duration": 0,
+          "unit": 1,
+          "creator_id": 10,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-10-16T11:39:57+06:00",
+          "updated_at": "2019-10-16T11:46:50+06:00"
+        },
+        {
+          "id": 9,
+          "name": "7 Days Replacement",
+          "description": "7 Days Replacement",
+          "type": 1,
+          "duration": 7,
+          "unit": 1,
+          "creator_id": 10,
+          "creator_type": "App\\Models\\AdminUser",
+          "editor_id": 10,
+          "editor_type": "App\\Models\\AdminUser",
+          "created_at": "2019-10-16T12:25:49+06:00",
+          "updated_at": "2019-10-16T12:25:49+06:00"
+        }
+      ]
+    }
+  ],
+  "emi_supported_banks": [
+    {
+      "name": "The City Bank Limited (CBL)",
+      "logo": ""
+    },
+    {
+      "name": "Eastern Bank Limited (EBL)",
+      "logo": ""
+    },
+    {
+      "name": "BRAC Bank Limited (BBL)",
+      "logo": ""
+    },
+    {
+      "name": "Dhaka Bank Limited (DBL)",
+      "logo": ""
+    },
+    {
+      "name": "Dutch Bangla Bank Limited (DBBL)",
+      "logo": ""
+    }
+  ]
 }
