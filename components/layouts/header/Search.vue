@@ -1,74 +1,50 @@
 <template>
-  <div class="Search">
-    <div class="Search__wrapper" :class="{'isActive': isSearchingActive}">
+  <div :class="$style.search">
+    <!-- isSearchingActive -->
+    <div :class="$style.searchInput">
       <input
         :value="searchInput"
         @input="searchInput = $event.target.value"
         type="text"
-        class="Search__input Search__input--isactive"
+        :class="[$style.fieldInput, $style.searchInputInput]"
         :placeholder="searchPlaceholder"
         @keyup.enter="redirection()"
         @focus="showSearchResult = searchResult.length"
         v-on-click-outside="clickOutsideHandler"
         ref="searchInputField">
-      <span v-if="showSpinner" class="multiselect__spinner Search__loading"></span>
-      <button v-if="showSearchResult" class="Search__enter" @click="redirectToSearchListPage()">
-        <span>Enter</span>
-      </button>
+      <!-- <span v-if="showSpinner" class="multiselect__spinner Search__loading">spinner</span> -->
+      <button v-if="showSearchResult" :class="[$style.btn, $style.btnAuto, $style.btnPrimary, $style.searchInputBtn]" @click="redirectToSearchListPage()">Enter</button>
     </div>
-    <div class="item-list" v-if="isSearchingActive">
-        <div class="copy" v-if="isSearching">
+    <div :class="$style.searchList" v-if="isSearchingActive">
+        <div :class="$style.copy" v-if="isSearching">
           <span>{{$t('search.searching')}}</span>
         </div>
-        <div class="copy primary" v-if="noProductFound">
+        <div :class="$style.copy" v-if="noProductFound">
           <span>{{$t('search.no_result')}}</span>
         </div>
       <template v-if="showSearchResult">
-
-        <div class="item-wrapper"
+        <div :class="[$style.item, {[$style.active]: currentItem === index}]"
             v-for="(search, index) in searchResult"
-            :class='{"active": currentItem === index}'
             :key="search.id"
             @mouseover="onHover(index)"
             :id="'item' + index">
-          <i18n-link :to="productUrl(search)" @click.native="resetOnProductClick()" class="item">
-            <div class="item__image">
-              <template v-if="search.image_info && search.image_info.length">
+          <i18n-link :to="productUrl(search)" @click.native="resetOnProductClick()" :class="$style.itemLink">
+
+            <div :class="[$style.itemImg, $style.img]">
+              <div :class="$style.imgAspectRatio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                  <use xlink:href="/svg/icons.svg?#i-camera"></use>
+                </svg>
+              </div>
+              <div :class="$style.imgImage">
                 <computed-image :meta="search.image_info[0]"/>
-              </template>
-              <template v-else>
-                <img src="/clients/bronx/icons/default-image-sm.svg" alt="default image">
-              </template>
+              </div>
             </div>
-            <div class="item__content">
-              <h3 class="item__title">{{ __(search.name) }}</h3>
+            <div :class="$style.itemInfo">
+              <h3 :class="$style.itemInfoTitle">{{ __(search.name) }}</h3>
             </div>
           </i18n-link>
         </div>
-
-        <!-- <ul class="Search__productlist--content">
-          <li
-            class="list"
-            v-for="(search, index) in searchResult"
-            :class='{"list__products--isActive": currentItem === index}'
-            :key="search.id"
-            @mouseover="onHover(index)"
-            :id="'item' + index">
-            <i18n-link :to="productUrl(search)" @click.native="resetOnProductClick()" class="list__products">
-              <div class="list__products--hero">
-                <template v-if="search.image_info && search.image_info.length">
-                  <computed-image :meta="search.image_info[0]"/>
-                </template>
-                <template v-else>
-                  <img class="list__products--image" src="/clients/bronx/icons/default-image.svg" alt="default image">
-                </template>
-              </div>
-              <span class="list__products--option">
-                <span>{{ __(search.name) }}</span>
-              </span>
-            </i18n-link>
-          </li>
-        </ul> -->
       </template>
     </div>
   </div>
@@ -268,169 +244,50 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-  // @import "sass/shared/button"
-  // @import "sass/global/_vue-multiselect"
+<style lang="sass" module>
+  @import "shared/field"
+  @import "shared/button"
+  @import "shared/img"
 
-  // .Search
-  //   position: relative
-  //   width: 100%
-  //   // overflow-x: hidden
-  //   +desktop
-  //     padding-right: 10px
-  //     padding-left: 10px
-  //   &__wrapper
-  //     +container
-  //     padding-top: 32px
-  //     padding-bottom: 30px
-  //     padding-left: 44px + 16
-  //     padding-right: 30px
-  //     position: fixed
-  //     top: 0
-  //     left: 0
-  //     width: 100%
-  //     z-index: 9
-  //     display: flex
-  //     background-color: $white
-  //     +desktop
-  //       position: absolute
-  //       padding-top: 10px
-  //       padding-bottom: 10px
-  //       padding-left: 10px
-  //       padding-right: 10px
-  //       margin-top: -64px
+  .copy
+    font-size: 14px
+    color: $text
 
-  //     &.isActive
-  //       border-bottom: 1px solid #ddd
-  //   &__input
-  //     padding-left: 30px
-  //     position: relative
-  //     vertical-align: top
-  //     border: 1px solid $black
-  //     background-color: $white
-  //     border-radius: 500em
-  //     box-shadow: none
-  //     height: 44px
-  //     padding-left: 20px
-  //     padding-right: 62px
-  //     color: #333
-  //     fill: #333
-  //     box-shadow: none
-  //     max-width: 100%
-  //     width: 100%
-  //     font-size: 16px
-  //     font-weight: 400
-  //     line-height: 1.5
-  //     transition: all 0.1s ease-out
-  //     +desktop
-  //       // height: 56px
+  .search
+    position: relative
+    padding: $gutter $gutter 0
+    &-input
+      position: relative
+      margin-top: -($gutter + 44)
+      margin-right: 44 + $gutter/2
+      display: flex
+      &-input
+        height: 44px
+        // margin-bottom: 0
+      &-btn
+        margin-left: $gutter/2
 
-  //     &:focus,
-  //     &:active
-  //       // border-color: #777
-  //       border-color: $primary
-  //       box-shadow: none
-  //       outline: none
-  //       background-color: #fff
+    &-list
+      position: relative
+      padding: $gutter 0
 
-  //     +placeholder
-  //       color: #bbbbbb
+  .item
+    position: relative
+    padding: $gutter/2
+    border-radius: $gutter/2
+    &.active
+      background-color: lighten($light, 5%)
+    &-link
+      display: flex
+      align-items: center
+      text-decoration: none
 
-  //   &__enter
-  //     +button
-  //     margin-top: 32px
-  //     margin-right: 30px
-  //     height: 44px
-  //     position: absolute
-  //     right: 0
-  //     top: 0
-  //     font-size: 10px
-  //     color: $black
-  //     // background-color: rgba(blue, 0.5)
-  //     border-radius: 22px
-  //     padding-right: 20px
-  //     padding-left: 20px
-  //     +desktop
-  //       margin-top: 10px
-  //       margin-right: 10px
-  //   &__loading
-  //     // background-color: rgba(green, 0.5)
-  //     z-index: 10
-  //     height: 36px
-  //     width: 44px
-  //     margin-top: 34px
-  //     margin-right: 32px
-  //     border-radius: 50px
-  //     +desktop
-  //       margin-top: 12px
-  //       margin-right: 12px
-  //     &::after,
-  //     &::before
-  //       border-color: $primary transparent transparent
-
-
-  // .item-list
-  //   position: relative
-  //   // padding-bottom: 40px
-  //   margin-left: -5px
-  //   margin-right: -5px
-  //   padding-left: 20px
-  //   padding-right: 20px
-  //   +desktop
-  //     +desktop
-  //       // border: 10px solid red
-  //       // padding-top: 44px + 20
-  //       max-height: 380px - 44 - 20
-  //       overflow-y: auto
-  // .item-wrapper
-  //   position: relative
-  //   margin-top: 20px
-  //   border-radius: 2px
-  //   &:last-child
-  //     margin-bottom: 40px
-  //   +desktop
-  //     margin-top: 10px
-  //   &.active
-  //     cursor: pointer
-  //     background-color: #f9f9f9
-  //     // border-color: $primary
-
-  // .item
-  //   padding: 5px
-  //   position: relative
-  //   display: flex
-  //   flex-flow: row wrap
-  //   text-decoration: none
-  //   color: $black
-  //   // background-color: rgba($black, 0.03)
-  //   &__image
-  //     width: 70px
-  //     height: 70px
-  //     min-width: 70px
-  //     min-height: 70px
-  //     background-color: #f9f9f9
-  //   &__content
-  //     flex: 1
-  //     position: relative
-  //     // background-color: rgba($black, 0.03)
-  //     width: 100%
-  //     padding-left: 10px
-  //     padding-top: 6px
-  //   &__title
-  //     font-size: 14px
-  //     line-height: 1.33
-  //     max-width: 160px
-
-  // .copy
-  //   padding: 20px 0 40px
-  //   line-height: 16px
-  //   font-size: 14px
-  //   text-decoration: none
-  //   text-transform: none
-  //   position: relative
-  //   cursor: pointer
-  //   white-space: nowrap
-  //   &.primary
-  //     color: $primary
+    &-img
+      width: 50px
+    &-info
+      padding-left: $gutter
+      &-title
+        text-decoration: none
+        color: $text
+        font-size: 14px
 </style>
-

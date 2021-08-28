@@ -1,34 +1,14 @@
 <template>
-  <div :class="$style.root">
-    <div :class="$style.rootKernel" :style="kernelStyles">
-      <div :class="$style.app">
-        <!-- header -->
-        <header :class="$style.appHeader">
-          <slot name="header">
-            <site-header>
-              <template slot="cartIcon">
-              </template>
-            </site-header>
-          </slot>
-        </header>
-        <div :class="$style.appHeaderClone"></div>
-        <main :class="$style.appMain">
-          <div :class="$style.appMainContainer">
-            <div class="Error">
-              <div class="Error__wrapper">
-                <h2 class="Error__code">{{errorTitle}} ({{translate('code')}}: {{ error.statusCode }})</h2>
-                <h2 class="Error__message" v-html="errorMessage"></h2>
-                <div v-if="!ui.isOffline">
-                  <i18n-link class="Button" :event="internalEvent" v-if="error.statusCode === 404" to="/"><span v-html="buttonText"></span></i18n-link>
-                  <button class="Button" v-else type="button" @click="reloadPage" v-html="buttonText"></button>
-                </div>
-                <div v-else>
-                  <p v-html="offlineMessage" class="Offline"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
+  <div :class="$style.error">
+    <div :class="$style.errorWrapper">
+      <h2 :class="$style.errorCode">{{errorTitle}} ({{translate('code')}}: {{ error.statusCode }})</h2>
+      <h2 :class="$style.errorMessage" v-html="errorMessage"></h2>
+      <div v-if="!ui.isOffline">
+        <i18n-link :class="$style.btn" :event="internalEvent" v-if="error.statusCode === 404" to="/"><span v-html="buttonText"></span></i18n-link>
+        <button :class="$style.btn" v-else type="button" @click="reloadPage" v-html="buttonText"></button>
+      </div>
+      <div v-else>
+        <p v-html="offlineMessage" class="Offline"></p>
       </div>
     </div>
   </div>
@@ -100,29 +80,25 @@
   }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass" module>
   @import "shared/button"
-
-  .Button
-    margin-top: 30px
-    padding-left: 30px
-    padding-right: 30px
-    font-size: 16px
-    +button
 
   .Offline
     margin-top: 30px
     font-size: 16px
 
-  .Error
-    height: calc(100vh - 143px)
-    display: flex
-    width: 100%
-    justify-content: center
-    align-items: center
-    +tablet
-      height: calc(100vh - 94px)
+
+  .error
+    +container
     &__wrapper
+      padding: $gutter*2 $gutter
+      display: flex
+      flex-direction: column
+      max-width: 600px
+      justify-content: center
+      +desktop
+        margin-top: $gutter*4
+        margin-bottom: $gutter*4
     &__code
       font-size: 21px
       line-height: 1.33
@@ -131,59 +107,8 @@
     &__message
       font-size: 32px
       line-height: 1.33
-      color: #333
+      color: $text
+      margin-bottom: $gutter*2
 
 </style>
 
-<style lang="sass" module>
-.Root
-  position: relative
-  &__kernel
-    position: relative
-    display: block
-
-.App
-  position: relative
-  display: flex
-  flex-flow: row wrap
-  font-size: 1.4em
-  justify-content: center
-
-  $root: &;
-
-  &__header,
-  &__footer
-      position: relative
-      flex: 1 100%
-
-  &__header
-    position: fixed
-    width: 100%
-    min-width: 320px
-    background-color: $primary
-    z-index: $z-index-2-header
-    left: 0
-    top: 0
-
-  &__main
-    width: 100%
-    background-color: #f5f5f5
-    position: relative
-    &-container
-      +container
-      display: flex
-      flex-flow: row wrap
-      margin-left: auto
-      margin-right: auto
-      width: 100%
-      padding: 0 15px 0
-
-
-  &__footer
-    position: relative
-    background-color: $white
-    border-top: 1px solid #eeeeee
-    z-index: $z-index-1-footer
-    +clearfix
-
-</style>
