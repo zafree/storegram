@@ -36,7 +36,7 @@
 //   'suggestion': null
 // }
 
-import { products } from '~/api/mock/products/getCategoryProducts'
+import { products } from '~/api/mock/products'
 export const mockSaveCart = (cartPayload) => {
   return mockValidateCart(cartPayload)
 }

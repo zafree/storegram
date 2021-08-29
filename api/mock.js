@@ -4,6 +4,8 @@ import { categories } from '~/api/mock/categories'
 import { mockSaveCart, mockValidateCart } from './mock/cart'
 import { getCategoryProducts, getProductBySlug } from '~/api/mock/products/getCategoryProducts'
 import { getOrderSummaryById, getOrderSummaries, createOrder } from '~/api/mock/order/order'
+import { getSearchItems } from '~/api/mock/products/getSearchItems'
+import { getBlocks } from '~/api/mock/block/getBlocks'
 import portwalletInvoice from '~/api/mock/order/portwalletInvoice.json'
 
 import {
@@ -16,7 +18,6 @@ import isString from 'lodash/isString'
 import extend from 'lodash/extend'
 import omit from 'lodash/omit'
 import get from 'lodash/get'
-import trim from 'lodash/trim'
 
 import logger from '~/utils/logger'
 
@@ -197,7 +198,7 @@ export function callMockApi (requestConfig) {
     case 'getOrderSummaryById':
       return getOrderSummaryById(requestConfig)
     case 'createOrder':
-      return createOrder()
+      return createOrder(requestConfig)
     case 'confirmPaymentMethod':
       return Promise.resolve([])
     case 'createPortWalletInvoice':
@@ -209,11 +210,11 @@ export function callMockApi (requestConfig) {
       // return verifyBkashPaymentWithTrxId()
       return callApi(requestConfig)
     case 'productRequest':
-      // return productRequest()
-      return callApi(requestConfig)
+      return Promise.resolve({})
+      // return callApi(requestConfig)
     case 'getSearchItems':
-      // return getSearchItems()
-      return callApi(requestConfig)
+      return getSearchItems(requestConfig)
+      // return callApi(requestConfig)
     case 'getAgentCommission':
       // return getAgentCommission()
       return callApi(requestConfig)
@@ -242,8 +243,8 @@ export function callMockApi (requestConfig) {
       // return updateServiceReview()
       return callApi(requestConfig)
     case 'getBlocks':
-      // return getBlocks()
-      return callApi(requestConfig)
+      return getBlocks(requestConfig)
+      // return callApi(requestConfig)
   }
 }
 
@@ -669,18 +670,18 @@ export function productRequest (authToken, productId) {
 
 // Search
 
-export function getSearchItems (query, params, authToken) {
-  if (!query || trim(query) === '') {
-    return Promise.resolve([])
-  }
-  const requestConfig = {
-    url: getUrlFromTemplate(API.PRODUCTS_BY_QUERY, { query })
-  }
-  params && params.limit === 0 && params.offset === 0 ? requestConfig.params = params : null
-  authToken ? requestConfig.access_token = authToken : null
+// export function getSearchItems (query, params, authToken) {
+//   if (!query || trim(query) === '') {
+//     return Promise.resolve([])
+//   }
+//   const requestConfig = {
+//     url: getUrlFromTemplate(API.PRODUCTS_BY_QUERY, { query })
+//   }
+//   params && params.limit === 0 && params.offset === 0 ? requestConfig.params = params : null
+//   authToken ? requestConfig.access_token = authToken : null
 
-  return callApi(requestConfig)
-}
+//   return callApi(requestConfig)
+// }
 
 export function getAgentCommission (authToken) {
   const requestConfig = {
@@ -779,10 +780,10 @@ export function updateServiceReview (authToken, reviewId, params) {
   })
 }
 
-export function getBlocks (contextType, contextValue, section) {
-  let requestConfig = {
-    url: `${API.BLOCKS}/${contextType}/${contextValue}/${section}`
-  }
+// export function getBlocks (contextType, contextValue, section) {
+//   let requestConfig = {
+//     url: `${API.BLOCKS}/${contextType}/${contextValue}/${section}`
+//   }
 
-  return callApi(requestConfig)
-}
+//   return callApi(requestConfig)
+// }

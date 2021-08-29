@@ -227,9 +227,9 @@
         this.gaTrackForPlacedOrderClick()
         // *************************************************************************
         // Measuring checkout steps
-        if (this.cart.cart_items_display_info && this.cart.cart_items_display_info.length) {
-          this.addProductForCheckoutMeasurement(this.cart.cart_items_display_info, 1)
-        }
+        // if (this.cart.cart_items_display_info && this.cart.cart_items_display_info.length) {
+        //   this.addProductForCheckoutMeasurement(this.cart.cart_items_display_info, 1)
+        // }
         // *************************************************************************
         if (this.isAgentMode && !this.agent) {
           this.loginAgent()

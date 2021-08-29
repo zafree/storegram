@@ -84,7 +84,7 @@
                   <label :class="$style.fieldLabel">{{ i18nText.deliveryMethod }}</label>
                   <div :class="$style.dmOption">
                     <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, {[$style.dmOptionBtnActive]: isDeliveryMethodHome}]" @click="pickedDeliveryMethod = 'Customer'">Home Delivery</button>
-                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, {[$style.dmOptionBtnActive]: isDeliveryMethodPickup}]" @click="pickedDeliveryMethod = 'Hub'">Pickup from outlet</button>
+                    <button :class="[$style.dmOptionBtn, $style.btn, $style.btnLine, {[$style.dmOptionBtnActive]: isDeliveryMethodPickup}, {[$style.btnMuted]: !deliveryArea.hub_available}]" :disabled="!deliveryArea.hub_available" @click="pickedDeliveryMethod = 'Hub'">Pickup from outlet</button>
                   </div>
 
                   <template  v-if="isDeliveryMethodHome">
@@ -271,9 +271,9 @@
       this.initStates()
       // *************************************************************************
       // Measuring checkout steps
-      if (this.cart.cart_items_display_info && this.cart.cart_items_display_info.length) {
-        this.addProductForCheckoutMeasurement(this.cart.cart_items_display_info, 3)
-      }
+      // if (this.cart.cart_items_display_info && this.cart.cart_items_display_info.length) {
+      //   this.addProductForCheckoutMeasurement(this.cart.cart_items_display_info, 3)
+      // }
       // *************************************************************************
 
       this.$store.dispatch(SAVE_CART, this.$store.state.cart)

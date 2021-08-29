@@ -639,7 +639,8 @@ export function getSearchItems (query, params, authToken) {
   }
   const requestConfig = {
     name: 'getSearchItems',
-    url: getUrlFromTemplate(API.PRODUCTS_BY_QUERY, { query })
+    url: getUrlFromTemplate(API.PRODUCTS_BY_QUERY, { query }),
+    query
   }
   params && params.limit === 0 && params.offset === 0 ? requestConfig.params = params : null
   authToken ? requestConfig.access_token = authToken : null
@@ -756,7 +757,10 @@ export function updateServiceReview (authToken, reviewId, params) {
 export function getBlocks (contextType, contextValue, section) {
   let requestConfig = {
     name: 'getBlocks',
-    url: `${API.BLOCKS}/${contextType}/${contextValue}/${section}`
+    url: `${API.BLOCKS}/${contextType}/${contextValue}/${section}`,
+    contextType,
+    contextValue,
+    section
   }
 
   return callApi(requestConfig)

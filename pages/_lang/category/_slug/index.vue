@@ -101,8 +101,8 @@
   } from '~/store/constants.yaml'
 
   import {
-    getCategoryProducts,
-    getBrands
+    getCategoryProducts
+    // getBrands
   } from '~/api'
 
   import { getRandomColorCssClass, makeDefaultImageMeta } from '~/utils'
@@ -126,23 +126,23 @@
 
   export default {
     mixins: [metaMixin],
-    asyncData ({ store }) {
-      const currentCategoryId = store.state.currentCategory ? store.state.currentCategory.id : null
-      return getBrands({show_featured: 1, category_id: currentCategoryId})
-        .then(response => {
-          if (!currentCategoryId) response = response.filter(x => x.is_featured)
-          let brands = response
-              .map(x => {
-                x.link = `/brand/${x.slug}`
-                x.featured_image_url = x.logo_url
-                return x
-              })
-          if (Array.isArray(brands) && brands.length > 0) {
-            brands = [{ name: { en: 'All Brands', bn: 'সকল ব্র্যান্ড' }, link: '/brand', featured_image_url: '/svg/icons/icon-all-brands.svg' }, ...brands]
-          }
-          return { brands }
-        })
-    },
+    // asyncData ({ store }) {
+    //   const currentCategoryId = store.state.currentCategory ? store.state.currentCategory.id : null
+    //   return getBrands({show_featured: 1, category_id: currentCategoryId})
+    //     .then(response => {
+    //       if (!currentCategoryId) response = response.filter(x => x.is_featured)
+    //       let brands = response
+    //           .map(x => {
+    //             x.link = `/brand/${x.slug}`
+    //             x.featured_image_url = x.logo_url
+    //             return x
+    //           })
+    //       if (Array.isArray(brands) && brands.length > 0) {
+    //         brands = [{ name: { en: 'All Brands', bn: 'সকল ব্র্যান্ড' }, link: '/brand', featured_image_url: '/svg/icons/icon-all-brands.svg' }, ...brands]
+    //       }
+    //       return { brands }
+    //     })
+    // },
     // watch: {
     //   'specialCategories': 'reloadDataIfRequired',
     //   'subCategories': 'reloadDataIfRequired'

@@ -343,9 +343,9 @@
     mounted () {
       // *************************************************************************
       // Measuring checkout steps
-      if (this.orderSummary && this.orderSummary.line_items && this.orderSummary.line_items.length) {
-        this.addProductForCheckoutMeasurement(this.orderSummary.line_items, 4)
-      }
+      // if (this.orderSummary && this.orderSummary.line_items && this.orderSummary.line_items.length) {
+      //   this.addProductForCheckoutMeasurement(this.orderSummary.line_items, 4)
+      // }
       // *************************************************************************
       logger.info('this.$route.fullPath', this.urlOrigin + this.$route.fullPath)
       this.partialEmiAmount = this.mininumPartialEmiAmount

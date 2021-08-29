@@ -316,7 +316,7 @@
     mounted () {
       this.$root.$on(EVENT_OVERLAY_OPENING, this.onOverlayOpening)
       this.$root.$on(EVENT_OVERLAY_CLOSED, this.onOverlayClosed)
-      this.checkForReview()
+      // this.checkForReview()
       this.$nextTick(() => {
         this.$nuxt.$loading.start()
       })

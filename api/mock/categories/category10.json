@@ -1,9 +1,9 @@
  {
   "id": 125,
-  "slug": "men-s-fashion",
+  "slug": "category-1",
   "name": {
-    "en": "Men's Fashion",
-    "bn": "ছেলেদের ফ্যাশন"
+    "en": "Category 1",
+    "bn": "ক্যাটাগরি ১"
   },
   "parent_id": null,
   "featured_categories": [],

@@ -14,17 +14,17 @@ export default ({store, isHMR, redirect, route, params}) => {
   if (isHMR) return
   window.onNuxtReady((nuxt) => {
     nuxt.$loading.start()
-    if (store.getters.isCustomerMode) {
-      let paths = [
-        // 'cart.items',
-        // 'cart.cart_items_backup',
-        // 'cart.updated_at',
-        // 'cart.coupon_code',
-        // 'cart.applied_coupon',
-        // 'selectedPreferredAddress'
-      ]
-      createPersistedState({paths})(store)
-    }
+    // if (store.getters.isCustomerMode) {
+    //   let paths = [
+    //     // 'cart.items',
+    //     // 'cart.cart_items_backup',
+    //     // 'cart.updated_at',
+    //     // 'cart.coupon_code',
+    //     // 'cart.applied_coupon',
+    //     // 'selectedPreferredAddress'
+    //   ]
+    //   createPersistedState({paths})(store)
+    // }
 
     let pathsForSessionStorage
     if (store.getters.isAgentMode) {

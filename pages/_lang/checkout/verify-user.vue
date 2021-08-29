@@ -57,9 +57,9 @@
     mounted () {
       // *************************************************************************
       // Measuring checkout steps
-      if (this.cart.cart_items_display_info && this.cart.cart_items_display_info.length) {
-        this.addProductForCheckoutMeasurement(this.cart.cart_items_display_info, 2)
-      }
+      // if (this.cart.cart_items_display_info && this.cart.cart_items_display_info.length) {
+      //   this.addProductForCheckoutMeasurement(this.cart.cart_items_display_info, 2)
+      // }
       // *************************************************************************
     },
     methods: {
