@@ -1,22 +1,22 @@
  {
   "id": 125,
-  "slug": "category-1",
+  "slug": "category-one",
   "name": {
-    "en": "Category 1",
-    "bn": "ক্যাটাগরি ১"
+    "en": "Category One",
+    "bn": "Category One"
   },
   "parent_id": null,
   "featured_categories": [],
   "is_portrait_enable": 0,
-  "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/212025/category-125.jpeg",
-  "featured_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/303442/category-125.png",
-  "home_category_logo_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/430810/category-125.png",
+  "banner_image_url": null,
+  "featured_image_url": null,
+  "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
     "category_menu",
     "home_featured"
   ],
-  "hide_banner_in_category_summary": true,
+  "hide_banner_in_category_summary": false,
   "full_list_in_summary": 0,
   "children": []
 }

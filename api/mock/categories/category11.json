@@ -1,15 +1,15 @@
 {
   "id": 255,
-  "slug": "men-s-fashion-panjabi",
+  "slug": "sub-category-one-one",
   "name": {
-    "en": "Panjabi",
-    "bn": "পাঞ্জাবী"
+    "en": "Sub Category One One",
+    "bn": "Sub Category One One"
   },
   "parent_id": 125,
   "featured_categories": [],
-  "is_portrait_enable": 1,
+  "is_portrait_enable": 0,
   "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/151545/category-255.png",
-  "featured_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/373434/category-255.png",
+  "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
