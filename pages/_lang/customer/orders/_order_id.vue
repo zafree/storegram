@@ -93,7 +93,7 @@
                   <button
                     v-if="showPayNow"
                     @click="payForThisOrder(orderSummary.id)"
-                    class="Button Button--pay"
+                    class="btn btn--primary btn--auto"
                   >
                     {{ i18nText.payNow }}
                   </button>

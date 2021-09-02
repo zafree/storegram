@@ -66,9 +66,9 @@
                         <span class="tableList__text">{{ orderType(index) }}</span>
                       </td> -->
                       <td class="tableList__td" data-th="Actions">
-                        <span class="tableList__text">
-                          <button class="Button Button--pay" @click="payForThisOrder(orderSummary.id)" v-if="canPay(orderSummary) && showPayNow(index)">{{ i18nText.payNow }}</button>
-                          <button class="Button Button--details" type="button" @click="showOrderDetails(orderSummary.id)">{{ i18nText.details }}</button>
+                        <span class="tableList__text btn-group">
+                          <button class="btn btn--primary btn--auto" @click="payForThisOrder(orderSummary.id)" v-if="canPay(orderSummary) && showPayNow(index)">{{ i18nText.payNow }}</button>
+                          <button class="btn btn--line btn--auto" type="button" @click="showOrderDetails(orderSummary.id)">{{ i18nText.details }}</button>
                         </span>
                       </td>
                     </tr>
@@ -246,14 +246,9 @@
   }
 </script>
 
-<style>
-  /* .order-block{
-    border: 1px solid red;
-    background-color: #fff;
-    padding: 15px;
-  } */
-</style>
 <style lang="sass" scoped>
+  @import "shared/button"
+
   .CustomerOrder
     background-color: $white
     height: 100%
@@ -390,42 +385,15 @@
       min-width: 11%
       max-width: 11%
 
-  @import "shared/button"
-
-  .Button
-    display: inline-flex
-    flex-flow: row wrap
-    align-items: center
-    padding: 0 10px
-    height: 24px
-    border-radius: 2px
-    font-size: 13px
-    background-color: rgba($black, .25)
-    &:not(:first-child)
-      margin-left: 5px
-    &--orderLink
-      padding: 0
-      background-color: transparent
-      color: #3a8bbb
-      +tablet
-        width: 100%
-        display: block
-        white-space: nowrap
-        overflow: hidden
-        text-overflow: ellipsis
-        text-align: left
-      &:hover
-        text-decoration: underline
-        color: darken(#3a8bbb, 3%)
-      &:focus,
-      &:active
-        text-decoration: underline
-        color: darken(#3a8bbb, 5%)
-    &--pay
-      +button
-
-    &--details
-      +button
-
+  .btn-group
+    display: flex
+    width: 100%
+    justify-content: flex-end
+    .btn
+      height: 30px
+      padding-left: $gutter/2
+      padding-right: $gutter/2
+      &:first-child
+        margin-right: $gutter/3
 </style>
 
