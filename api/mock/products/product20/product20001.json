@@ -1,31 +1,243 @@
 {
-  "id":11402,
-  "categoryId": 207,
-  "name":{
-    "en":"Khero Khata Salfet Green",
-    "bn":"\u0996\u09c7\u09b0\u09cb \u0996\u09be\u09a4\u09be - \u09b8\u09be\u09b2\u09ab\u09c7\u099f \u0997\u09cd\u09b0\u09bf\u09a8"
+  "categoryId": 20,
+  "name": {
+    "en": "Juniper"
   },
-  "slug":"khero-khata-salfet-green",
-  "variant_slug":null,
-  "emi_tenures":[],
-  "image_info":[
+  "slug":"product-2001",
+  "variant_count": 3,
+  "meta": [],
+  "description": null,
+  "offers": [],
+  "summary": null,
+  "coupon_details": null,
+  "attributes": [
     {
-        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/product-11402.jpeg",
-        "width":800,
-        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_800_600.jpeg 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_669_501.jpeg 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_560_420.jpeg 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_468_351.jpeg 468w",
-        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/25070\/responsive-images\/product-11402___medialibrary_original_468_351.jpeg"
+      "code": "variant-color",
+      "type": "dropdown",
+      "is_varying": 1,
+      "name": {
+        "en": "Color"
+      },
+      "value_prefix": null,
+      "value_suffix": null,
+      "is_featured": 0,
+      "i18n_value": null,
+      "unit": null,
+      "sort_position": 0,
+      "value": "True blue",
+      "i18n_unit": null
     }
   ],
-  "coupon_details":null,
-  "discounted_price":220,
-  "unit_price":220,
-  "available_qty":2,
-  "out_of_stock":false,
-  "varies_on":[
-    
+  "primary_variant_id": 2001,
+  "varies_on": [
+    "variant-color"
   ],
-  "variant_count":0,
-  "commission":null,
-  "primary_variant_id":null,
-  "offers":[]
+  "variants": [
+    {
+      "variant_count": 3,
+      "id": 2001,
+      "variant_slug": "ivory-limited-edition",
+      "status": 1,
+      "created_at": "2020-05-10T13:56:11+06:00",
+      "updated_at": "2021-04-17T00:20:32+06:00",
+      "is_deliverable_to_agent": false,
+      "is_deliverable_to_locker": true,
+      "stock_record_id": 77720,
+      "sku": "ZYNP004-3",
+      "available_qty": 2,
+      "out_of_stock": false,
+      "unit_price": 2175,
+      "discounted_price": 2175,
+      "code": "DG-5-000000-786039",
+      "fix_delivery_time": {
+        "min": 9,
+        "max": 12
+      },
+      "stock_record_in_stock_qty": 0,
+      "max_delivery_time": 4,
+      "variant_name": {
+        "en": "Ivory Limited Edition"
+      },
+      "description_md": {
+        "en": "It’s not an illusion, we are introducing the new limited edition of our Trendy Series in elegant Ivory color. A complete guide of chic and modern backpacks for the students who needs a practical alternative to the classic backpacks. This contemporary backpack features marl effect exterior with the quilt fabrics for the sporting finish."
+      },
+      "image_info": [
+        {
+          "url": "/api/mock/products/20/product-2001@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001@2x.jpg 800w, /api/mock/products/20/product-2001.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001a@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001a@2x.jpg 800w, /api/mock/products/20/product-2001a.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001a.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001b@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001b@2x.jpg 800w, /api/mock/products/20/product-2001b.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001b.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001c@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001c@2x.jpg 800w, /api/mock/products/20/product-2001c.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001c.jpg"
+        }
+      ],
+      "images": [
+        "/api/mock/products/product-2-v2@2x.jpg"
+      ],
+      "attributes": [
+        {
+          "code": "variant-color",
+          "type": "dropdown",
+          "is_varying": 1,
+          "name": {
+            "en": "Color"
+          },
+          "value_prefix": null,
+          "value_suffix": null,
+          "is_featured": 0,
+          "i18n_value": null,
+          "unit": null,
+          "sort_position": 0,
+          "value": "Ivory Limited Edition",
+          "i18n_unit": null
+        }
+      ]
+    },
+    {
+      "id": 20011,
+      "variant_slug": "pine-green",
+      "status": 1,
+      "created_at": "2020-05-10T13:52:29+06:00",
+      "updated_at": "2021-04-17T00:20:23+06:00",
+      "is_deliverable_to_agent": false,
+      "is_deliverable_to_locker": true,
+      "stock_record_id": 77718,
+      "sku": "ZYNP004-1",
+      "available_qty": 3,
+      "out_of_stock": false,
+      "unit_price": 2175,
+      "discounted_price": 2175,
+      "code": "DG-5-000000-786015",
+      "fix_delivery_time": {
+        "min": 5,
+        "max": 8
+      },
+      "stock_record_in_stock_qty": 3,
+      "max_delivery_time": 0,
+      "variant_name": {
+        "en": "Pine Green"
+      },
+      "description_md": {
+        "en": "The Trendy Series introduces its finest- Juniper, an exceptionally dapper backpack. A carrier bag as this is defined with our MIB Spirit signature detailing and a sporty outlook for comfort and a smart getaway.\nDimension: 17 x 11.5 x 4.5 inch"
+      },
+      "image_info": [
+        {
+          "url": "/api/mock/products/20/product-2001_v1@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v1@2x.jpg 800w, /api/mock/products/20/product-2001_v1.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v1.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001_v1a@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v1a@2x.jpg 800w, /api/mock/products/20/product-2001_v1a.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v1a.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001_v1b@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v1b@2x.jpg 800w, /api/mock/products/20/product-2001_v1b.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v1b.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001_v1c@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v1c@2x.jpg 800w, /api/mock/products/20/product-2001_v1c.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v1c.jpg"
+        }
+      ],
+      "images": [
+        "/api/mock/products/product-2-v1@2x.jpg"
+      ],
+      "attributes": [
+        {
+          "code": "variant-color",
+          "type": "dropdown",
+          "is_varying": 1,
+          "name": {
+            "en": "Color"
+          },
+          "value_prefix": null,
+          "value_suffix": null,
+          "is_featured": 0,
+          "i18n_value": null,
+          "unit": null,
+          "sort_position": 0,
+          "value": "Pine Green",
+          "i18n_unit": null
+        }
+      ]
+    },
+    {
+      "id": 20012,
+      "variant_slug": "true-blue",
+      "status": 1,
+      "created_at": "2020-05-10T13:49:44+06:00",
+      "updated_at": "2021-04-17T00:24:26+06:00",
+      "is_deliverable_to_agent": false,
+      "is_deliverable_to_locker": true,
+      "emi_tenures": [],
+      "stock_record_id": 77717,
+      "sku": "ZYNP004",
+      "available_qty": 3,
+      "out_of_stock": false,
+      "unit_price": 2275,
+      "discounted_price": 2275,
+      "code": "DG-5-000000-786008",
+      "fix_delivery_time": {
+        "min": 9,
+        "max": 12
+      },
+      "stock_record_in_stock_qty": 0,
+      "max_delivery_time": 4,
+      "variant_name": {
+        "en": "True blue"
+      },
+      "description_md": {
+        "en": "A complete guide of chic and modern backpacks for students who need a practical alternative to the classic backpacks, now in colourful quilt fabric. This contemporary backpack features marl effect exterior with the quilt fabrics for the sporting finish."
+      },
+      "image_info": [
+        {
+          "url": "/api/mock/products/20/product-2001_v2@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v2@2x.jpg 800w, /api/mock/products/20/product-2001_v2.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v2.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001_v2a@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v2a@2x.jpg 800w, /api/mock/products/20/product-2001_v2a.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v2a.jpg"
+        },
+        {
+          "url": "/api/mock/products/20/product-2001_v2b@2x.jpg",
+          "width": 800,
+          "srcset": "/api/mock/products/20/product-2001_v2b@2x.jpg 800w, /api/mock/products/20/product-2001_v2b.jpg 400w",
+          "thumbnail": "/api/mock/products/20/product-2001_v2b.jpg"
+        }
+      ],
+      "images": [
+        "/api/mock/products/product-2@2x.jpg",
+        "/api/mock/products/product-2a@2x.jpg",
+        "/api/mock/products/product-2b@2x.jpg"
+      ],
+      "advance_payment": null
+    }
+  ]
 }

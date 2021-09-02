@@ -1,0 +1,29 @@
+{
+  "id": 9005,
+  "categoryId": 90,
+  "name":{
+    "en":"Raven"
+  },
+  "slug":"product-9005",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Carry your travel essentials with Raven! This functional duffel is crafted from quilted woolen fabric and has our MIB Spirit signature detailing embossed to complete the look. The spacious interior and the removable laptop sleeve with multiple pockets gives you ample room to pack smartly for your next quick trip.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/90/product-905@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/90/product-905@2x.jpg 800w, /api/mock/products/90/product-905.jpg 400w",
+      "thumbnail": "/api/mock/products/90/product-905.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":3575,
+  "unit_price":3575,
+  "available_qty":1,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

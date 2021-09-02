@@ -1,9 +1,8 @@
 {
-  "id": 207,
-  "slug": "category-two",
+  "id": 20,
+  "slug": "backpacks",
   "name": {
-    "en": "Category Two",
-    "bn": "Category Two"
+    "en": "Backpacks"
   },
   "parent_id": null,
   "featured_categories": [],

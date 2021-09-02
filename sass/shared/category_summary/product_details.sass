@@ -42,6 +42,9 @@
     .btn--line
       margin-top: 8px
 
+  &__desc
+    max-width: 412px
+    margin-top: $gutter*3
 
 .gallery
   &__list
@@ -179,3 +182,12 @@
       content: ""
       transform: translateY(-50%)
   &__discount
+
+.desc
+  position: relative
+  display: flex
+  flex-direction: column
+  &__heading
+    font-size: 24px
+    font-weight: $weight-bold
+    margin-bottom: $gutter

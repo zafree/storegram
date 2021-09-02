@@ -40,8 +40,8 @@
             "related_id": 4,
             "related_type": "App\\Models\\Category",
             "logo_image": null,
-            "banner_image": "https://store.dglink.co/storage/media/84/offer-9.bin",
-            "related_slug": "face"
+            "banner_image": "/api/mock/categories/category-10.jpg",
+            "related_slug": "category-one"
           },
           {
             "id": 8,
@@ -62,11 +62,11 @@
             "related_id": null,
             "related_type": null,
             "logo_image": null,
-            "banner_image": "https://store.dglink.co/storage/media/83/offer-8.bin",
+            "banner_image": "/api/mock/categories/category-20.jpg",
             "related_slug": null
           },
           {
-            "id": 10,
+            "id": 2,
             "title": {
               "en": "Hero Banner 3"
             },
@@ -84,7 +84,7 @@
             "related_id": 4,
             "related_type": "App\\Models\\Category",
             "logo_image": null,
-            "banner_image": "https://store.dglink.co/storage/media/85/offer-10.bin",
+            "banner_image": "/api/mock/categories/category-30.jpg",
             "related_slug": "face"
           }
         ]

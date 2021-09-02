@@ -1,0 +1,29 @@
+{
+  "id": 1101,
+  "categoryId": 11,
+  "name":{
+    "en":"Sierra Firebrick"
+  },
+  "slug":"product-1101",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Sierra in colorful quilt fabric is quite literally the perfect tote bag for carrying your necessities for the day. With the versatile and spacious Sierra around, you can rest assured.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/10/product-1101@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1101@2x.jpg 800w, /api/mock/products/10/product-1101.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1101.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":1375,
+  "unit_price":1375,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

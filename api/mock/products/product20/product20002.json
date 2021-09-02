@@ -1,24 +1,24 @@
 {
-  "id":11385,
-  "categoryId": 207,
+  "id": 2002,
+  "categoryId": 20,
   "name":{
-     "en":"Khero Khata Vinci-Monalisa",
-     "bn":"\u0996\u09c7\u09b0\u09cb \u0996\u09be\u09a4\u09be - \u09ad\u09bf\u099e\u09cd\u099a\u09bf \u09ae\u09cb\u09a8\u09be\u09b2\u09bf\u09b8\u09be"
+    "en":"Solitude Sepia"
   },
-  "slug":"khero-khata-vinci-monalisa",
+  "slug":"product-2002",
   "variant_slug":null,
   "emi_tenures":[],
+  "description_md": "Inspired by the 1971 spirit and the love for vintage aesthetics, MIB brings you all SOLITUDE, in the Studio Series. This hand crafted backpack comes in Sepia denim. There are two spacious storage options both inside and out along with a large laptop chamber to carry all your essentials in style. Not only that, the bag is also equipped with two sets of organizers and water bottle pockets to keep you ever ready at all times. The adjustable padded shoulder straps adds the dimension of both durability and comfort on your shoulders. Also, with the added double needle leather construction and MIB’s discreet logo detailing this is the perfect hold-all backpack for the working urban souls of the city.",
   "image_info":[
-     {
-        "url":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/product-11385.jpeg",
-        "width":800,
-        "srcset":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_800_600.jpeg 800w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_669_501.jpeg 669w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_560_420.jpeg 560w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_468_351.jpeg 468w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_391_293.jpeg 391w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_327_245.jpeg 327w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_274_205.jpeg 274w, https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_229_171.jpeg 229w",
-        "thumbnail":"https:\/\/d1zk0te1r027w9.cloudfront.net\/storage\/media\/49720\/responsive-images\/product-11385___medialibrary_original_468_351.jpeg"
-     }
+    {
+      "url": "/api/mock/products/20/product-2002@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/20/product-2002@2x.jpg 800w, /api/mock/products/20/product-2002.jpg 400w",
+      "thumbnail": "/api/mock/products/20/product-2002.jpg"
+    }
   ],
   "coupon_details":null,
-  "discounted_price":90,
-  "unit_price":90,
+  "discounted_price":3275,
+  "unit_price":3275,
   "available_qty":2,
   "out_of_stock":false,
   "varies_on":[],

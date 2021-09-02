@@ -1,0 +1,29 @@
+{
+  "id": 1204,
+  "categoryId": 12,
+  "name":{
+    "en":"Zella Teal"
+  },
+  "slug":"product-1204",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "MIB Spirit introduces ZELLA, an alluring silhouette, combined with premium canvas and leather, with an essence of vogue and sophistication. It is designed for the elegant spirits on a daily commute. Its spacious dimension can accommodate everything you need on the go!",
+  "image_info":[
+    {
+      "url": "/api/mock/products/10/product-1204@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1204@2x.jpg 800w, /api/mock/products/10/product-1204.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1204.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":2475,
+  "unit_price":2475,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

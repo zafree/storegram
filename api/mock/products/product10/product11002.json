@@ -1,0 +1,29 @@
+{
+  "id": 1102,
+  "categoryId": 11,
+  "name":{
+    "en":"Sierra Timber green"
+  },
+  "slug":"product-1102",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Sierra tote bag in Timber green cord is from our limited edition trendy series provides ample storage with light and spacious carrying options for school, dance, studio and more.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/10/product-1102@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1102@2x.jpg 800w, /api/mock/products/10/product-1102.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1102.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":1475,
+  "unit_price":1475,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

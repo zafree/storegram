@@ -1,0 +1,29 @@
+{
+  "id": 7001,
+  "categoryId": 70,
+  "name":{
+    "en":"Merino 15 Inch"
+  },
+  "slug":"product-7001",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "MIB Spirit brings you MERINO, a luxurious woolen laptop sleeve with smooth leather detailing and multi-fold spacious chambers. It comes in two classic impression for you to choose from and carry your laptop and essentials in elegance.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/70/product-701@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/70/product-701@2x.jpg 800w, /api/mock/products/70/product-701.jpg 400w",
+      "thumbnail": "/api/mock/products/70/product-701.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":1575,
+  "unit_price":1575,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

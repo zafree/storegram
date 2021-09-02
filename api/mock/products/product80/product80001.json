@@ -1,0 +1,33 @@
+{
+  "id": 8001,
+  "categoryId": 80,
+  "name":{
+    "en":"Fiona Fuchsia"
+  },
+  "slug":"product-8001",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": {
+    "en": "Crafted from premium Fuchsia colored canvas and leather, this compact accessory pouch is fastened by a secure top antique zipper. It’s ideal for organizing smaller travel essentials and cosmetic products."
+  },
+  "image_info":[
+    {
+      "url": "/api/mock/products/80/product-801@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/80/product-801@2x.jpg 800w, /api/mock/products/80/product-801.jpg 400w",
+      "thumbnail": "/api/mock/products/80/product-801.jpg"
+    }
+  ],
+  "coupon_details": null,
+  "discounted_price": 475,
+  "unit_price": 475,
+  "available_qty": 3,
+  "out_of_stock": false,
+  "varies_on": [
+
+  ],
+  "variant_count": 0,
+  "commission": null,
+  "primary_variant_id": null,
+  "offers": []
+}

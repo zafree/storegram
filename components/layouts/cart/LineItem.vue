@@ -53,13 +53,13 @@
         <p :class="$style.itemValidationCopy">{{ i18nText.outStock }}</p>
         <button :class="[$style.itemValidationBtn, $style.btn, $style.btnPrimary]" @click="requestForProduct">{{ i18nText.request }}</button>
       </div>
-      
-      
+
+
       <div class="item__validation" v-if="cartItemInfo.error === 'NOT_FOUND' && productUpdateStatus !== 'Requested'">
         <p>{{ i18nText.outStock }}</p>
         <button @click="requestForProduct">{{ i18nText.request }}</button>
       </div>
-     
+
      <!-- <div class="item__validation" v-if="cartItemInfo.error === 'NOT_FOUND'" :class="$style.hint">
         <div :class="$style.hintBrief">{{ i18nText.notInventory }}</div>
         <div :class="$style.hintInlineButton">

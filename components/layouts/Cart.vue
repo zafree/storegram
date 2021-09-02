@@ -1,6 +1,5 @@
 <template>
   <div :class="$style.cart">
-
     <h3 v-if="cart.cart_items_display_info.length" :class="$style.cartTitle">{{ i18nText.cartTitle }}</h3>
     <template v-else>
       <h3 :class="$style.cartTitle">{{ i18nText.noItemTitle }}</h3>

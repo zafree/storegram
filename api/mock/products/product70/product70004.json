@@ -1,0 +1,29 @@
+{
+  "id": 7004,
+  "categoryId": 70,
+  "name":{
+    "en":"Panacea Sepia"
+  },
+  "slug":"product-7004",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Introducing Panacea a multi-functional laptop commute case crafted in high-quality denim. Simply carry your laptop, notebooks and stationaries by putting the case in your favorite MIB tote or just place the case in your work table for a make-shift work station. Panacea is compatible with Talisman and Sovereign bags.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/70/product-704@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/70/product-704@2x.jpg 800w, /api/mock/products/70/product-704.jpg 400w",
+      "thumbnail": "/api/mock/products/70/product-704.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":1275,
+  "unit_price":1275,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

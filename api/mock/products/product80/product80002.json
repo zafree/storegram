@@ -1,0 +1,29 @@
+{
+  "id": 8002,
+  "categoryId": 80,
+  "name":{
+     "en":"Elm Pine Green"
+  },
+  "slug":"product-8002",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Pair this compact silhouettes with our backpacks or totes and keep all your stationeries organized! This edgy pencil case comes with a top-zip design and our signature MIB Spirit detailing.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/80/product-802@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/80/product-802@2x.jpg 800w, /api/mock/products/80/product-802.jpg 400w",
+      "thumbnail": "/api/mock/products/80/product-802.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":375,
+  "unit_price":375,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

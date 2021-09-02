@@ -94,7 +94,22 @@
             </template>
           </div>
         </div>
+
+        <section :class="[$style.productDesc, $style.desc]" v-if="isDescriptionAvailable">
+          <h2 :class="$style.descHeading">{{$t('product.description_label')}}</h2>
+          <template v-if="descriptionMd">
+            <article>
+              <vue-markdown>{{ descriptionMd }}</vue-markdown>
+            </article>
+          </template>
+          <template v-else>
+            <article v-html="description"></article>
+          </template>
+        </section>
       </div>
+
+
+
     </div>
 
     <div :class="[$style.modal, $style.modalZoomImage]" v-show="productImageInZoomMode">
@@ -146,6 +161,7 @@
   import DeliverableInfo from '~/components/catalog/DeliverableInfo'
   import enumMixinFactory from '~/utils/enum_mixin_factory'
   import OfferLogoImage from '~/components/catalog/OfferLogoImage.vue'
+  import VueMarkdown from 'vue-markdown'
 
   import {
     overlayMixin,
@@ -289,6 +305,15 @@
         'authToken',
         'isLoggedIn'
       ]),
+      description () {
+        return this.__(this.currentVariant.description)
+      },
+      descriptionMd () {
+        return this.__(this.currentVariant.description_md)
+      },
+      isDescriptionAvailable () {
+        return !!(this.description || this.descriptionMd)
+      },
       isVegan () {
         return this.currentVariant.is_vegan
       },
@@ -329,7 +354,7 @@
         return this.$store.getters.userHasVerifiedNumbers
       },
       name () {
-        return this.__(this.currentVariant.name) + (this.hasVariant ? ' (' + this.__(this.currentVariant.variant_name) + ')' : '')
+        return this.__(this.currentVariant.name) + (this.hasVariant ? ' ' + this.__(this.currentVariant.variant_name) : '')
       },
       detailPageUrl () {
         return getVariantLink(this.currentVariant)
@@ -630,7 +655,8 @@
       ComputedImage,
       i18nLink,
       DeliverableInfo,
-      OfferLogoImage
+      OfferLogoImage,
+      VueMarkdown
     }
   }
 </script>
@@ -640,6 +666,8 @@
   @import "shared/modal"
   @import "shared/img"
   @import "shared/category_summary/product_details"
+
+
 
   .u-zoom-in
     cursor: zoom-in
@@ -738,5 +766,22 @@
         margin-left: 44px + 20
         @media screen and (min-width: 968px)
           margin-left: 44px + 400
+
+
+  article
+    max-width: 100%
+    h1,
+    h2,
+    h3,
+    h4
+      margin-bottom: 20px
+      margin-top: 50px
+    p
+      font-size: 16px
+      line-height: 1.8
+    ul
+      li
+        margin-bottom: 10px
+        line-height: 1.33
 
 </style>

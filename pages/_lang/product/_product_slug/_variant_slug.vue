@@ -1,6 +1,5 @@
 <template>
     <div :class="$style.product" v-if="product">
-
       <div :class="$style.productContainer">
         <div :class="$style.productRow">
           <product-details :product="product"
@@ -8,109 +7,6 @@
           </product-details>
         </div>
       </div>
-
-      <!-- details -->
-      <!-- <div :class="$style.productDetails">
-        <div :class="$style.productDetailsColumn" v-if="currentVariant && !currentVariant.out_of_stock">
-          <div :class="$style.productDetailsTitle">Delivery info</div>
-          <div :class="$style.productDetailsBody">
-            <shipping-info :deliveryTime="currentVariant.fix_delivery_time"></shipping-info>
-          </div>
-        </div>
-      </div> -->
-
-      <div v-if="this.offers.length || this.currentVariant.coupon_details" :class="$style.productDetailsColumn">
-        <div :class="$style.productDetailsTitle">{{ $t('product.offers') }}</div>
-        <div v-if="offers && offers.length && !currentVariant.out_of_stock" :class="$style.productDetailsColumn">
-          <!-- <div :class="$style.productDetailsTitle">{{ $t('product.offers') }}</div> -->
-          <div v-for="(offer, index) in offers" :key="index" :class="$style.productDetailsBody" class="offers">
-            <h3 class="offers__heading">{{ __(offer.title) }}</h3>
-            <span v-html="__(offer.details)"></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div :class="$style.productContainer">
-        <div :class="$style.productRow">
-          <div class="ProductDetailsNote">
-            <div class="ProductDetailsNote__item">
-              <svg viewBox="0 0 32 32" width="32px" height="32px">
-                <path d="M32,4H5.4v8.2C1.1,13.8-1.1,18.6,0.5,23s6.5,6.5,10.8,4.9c3-1.1,5-3.8,5.4-6.9H32V4z M7.3,5.9
-                  h22.8v9.4H15.3c-1.8-2.6-4.9-4-8-3.6V5.9z M8.4,26.6c-3.6,0-6.5-2.9-6.5-6.5s2.9-6.5,6.5-6.5s6.5,2.9,6.5,6.5
-                  C14.9,23.6,12,26.6,8.4,26.6z M16.7,19.1c-0.1-0.7-0.2-1.3-0.5-1.9h13.8v1.9L16.7,19.1z"/>
-                <path d="M7.2,20.9L5.3,19l-1.2,1.2l3,3l4.7-4.7l-1.2-1.2L7.2,20.9z"/>
-                <path d="M19.8,8.6h7.6v1.9h-7.6V8.6z"/>
-              </svg>
-              <h3>Secure payment</h3>
-              <p>Don’t worry your money is in secure places</p>
-            </div>
-            <div class="ProductDetailsNote__item">
-              <svg viewBox="0 0 32 32" width="32px" height="32px">
-                <path d="M21.9,24.5c0.5,1.4,2,2.2,3.4,1.8c0.8-0.3,1.5-0.9,1.8-1.8H30v-7l-3.5-7.4h-6.2V5.6H2v19h2.9
-                  c0.5,1.4,2,2.2,3.4,1.8c0.8-0.3,1.5-0.9,1.8-1.8H21.9z M27.9,16.9h-3.5v-5.2h1.1L27.9,16.9z M18.7,7.2V18H3.6V7.2L18.7,7.2z
-                  M7.5,24.8c-0.6,0-1.1-0.5-1.1-1.1c0-0.6,0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1l0,0C8.5,24.3,8.1,24.8,7.5,24.8z M10.1,22.9
-                  c-0.5-1.4-2-2.2-3.4-1.8c-0.8,0.3-1.5,0.9-1.8,1.8H3.6v-3.2h15.1v3.2H10.1z M24.5,24.8c-0.6,0-1.1-0.5-1.1-1.1
-                  c0-0.6,0.5-1.1,1.1-1.1c0.6,0,1.1,0.5,1.1,1.1l0,0C25.6,24.3,25.1,24.8,24.5,24.8L24.5,24.8z M27.1,22.9c-0.5-1.4-2-2.2-3.4-1.8
-                  c-0.8,0.3-1.5,0.9-1.8,1.8h-1.6V11.7h2.4v6.8h5.6v4.3L27.1,22.9z"/>
-              </svg>
-              <h3>Fast &amp; free delivery</h3>
-              <p>Home delivery Tk 20. For free delivery order over Tk 2,000</p>
-            </div>
-            <div class="ProductDetailsNote__item">
-              <svg viewBox="0 0 32 32" width="32px" height="32px">
-                <path d="M22.6,2.3V0l-3.3,3.3l3.3,3.3V4.1c3.7,0,5.8,2.1,5.8,5.8c0,1.9-0.8,3.8-2.3,5.1v-4.8H7V26h19.1
-                  v-8.9c2.5-1.5,4.1-4.3,4.1-7.2C30.2,5.2,27.3,2.3,22.6,2.3z M15.7,11.9h1.7v4.5l-1.7-1.2L15.7,11.9z M24.4,24.3H8.7V11.9h5.2v4.2
-                  l5.2,3.5v-7.7h5.2L24.4,24.3z"/>
-              </svg>
-              <h3>Return policy</h3>
-              <p>No hassle return policy</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-      <div :class="$style.productContainer">
-        <div :class="$style.productRow1">
-
-          <div v-if="currentVariant.attributes && currentVariant.attributes.length" :class="$style.productCol1">
-            <div :class="$style.productDetailsTitle">{{$t('product.features_label')}}</div>
-            <div :class="$style.productDetailsBody">
-              <ul :class="$style.attrList">
-                <li :class="$style.attrListRow" v-for="(attr, index) in currentVariant.attributes" :key="index">
-                  <h4 :class="$style.attrListTitle">{{ __(attr.name) }}</h4>
-                  <ul :class="$style.attrListBody">
-                    <li :class="$style.attrListBrief">
-                      <template v-if="attr.value_prefix">
-                        {{ __(attr.value_prefix) }}
-                      </template>
-                      {{ __(attr.i18n_value)}} {{ __(attr.i18n_unit) }}
-                      <template v-if="attr.value_suffix">
-                        {{ __(attr.value_suffix) }}
-                      </template>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div v-if="isDescriptionAvailable" :class="$style.productCol2">
-            <div :class="$style.productDetailsTitle">{{$t('product.description_label')}}</div>
-            <div :class="$style.productDetailsBody">
-              <template v-if="descriptionMd">
-                <article>
-                  <vue-markdown>{{ descriptionMd }}</vue-markdown>
-                </article>
-              </template>
-              <template v-else>
-                <article v-html="description"></article>
-              </template>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
 </template>
 

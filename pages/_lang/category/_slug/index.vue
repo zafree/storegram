@@ -3,7 +3,7 @@
 
     <home-page-top-block v-if="!currentCategory"></home-page-top-block>
 
-    <featured-slider
+    <!-- <featured-slider
       v-if="showFeaturedCategories"
       :featuredList="featuredCategoriesForSlider"
       :defaultImageSvg="'/svg/default-category-banner.svg'"
@@ -12,7 +12,7 @@
       v-if="showBrands"
       :featuredList="brands"
       :defaultImageSvg="'/svg/default-brand-logo.svg'"
-      :imageWrapperModifier="'Circle'"></featured-slider>
+      :imageWrapperModifier="'Circle'"></featured-slider> -->
 
     <header v-if="currentCategory" :class="$style.breadcrumb">
       <div :class="$style.breadcrumbTitle">{{ __(currentCategory.name) }}</div>

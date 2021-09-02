@@ -1,21 +1,20 @@
 {
-  "id": 331,
-  "slug": "sub-category-one-two",
+  "id": 12,
+  "slug": "designer-series",
   "name": {
-    "en": "Sub Category One Two",
-    "bn": "Sub Category One Two"
+    "en": "Designer Series"
   },
-  "parent_id": 125,
+  "parent_id": 10,
   "featured_categories": [],
   "is_portrait_enable": 0,
-  "banner_image_url": "https://d1zk0te1r027w9.cloudfront.net/storage/media/469655/category-331.png",
+  "banner_image_url": "/api/mock/categories/category-12.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
     "category_menu"
   ],
-  "hide_banner_in_category_summary": false,
+  "hide_banner_in_category_summary": true,
   "full_list_in_summary": 0,
   "children": []
 }

@@ -1,0 +1,29 @@
+{
+  "id": 6002,
+  "categoryId": 60,
+  "name":{
+    "en":"Talisman Sepia"
+  },
+  "slug":"product-6002",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Inspired by free spirits, rebels and dreamers Kafka is crafted in Charcoal colored rugged denim and trimmed in leather for an unexpected mix of old-school craftsmanship and modernism. Kafka is an expandable utility messenger bag designed for the street bike riders, photographers, made with the upmost dedication of craftsmanship, material selection and design practicality. It delivers a simple yet elegant design which expands the interior dimensions of the bag by detaching the front leather fastening strap which creates an urban style. To stabilize the weight center of the bag, we created a detachable auxiliary leather and nylon strap that avoids the bag sliding across the body. The bag comes with organizers, tablet compartment, zip pockets, front handles and a safety lock to keep all your necessities - even a camera and lens in compact and safety. The zipped front pocket makes even more room for mobiles or just about anything to keep you on the go.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/60/product-602@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/60/product-602@2x.jpg 800w, /api/mock/products/60/product-602.jpg 400w",
+      "thumbnail": "/api/mock/products/60/product-602.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":3275,
+  "unit_price":3275,
+  "available_qty":1,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

@@ -1,9 +1,14 @@
 import { products } from '~/api/mock/products'
 
-import product10111 from '~/api/mock/products/product10/product10111.json'
-import product10112 from '~/api/mock/products/product10/product10112.json'
-import product10121 from '~/api/mock/products/product10/product10121.json'
-import product10122 from '~/api/mock/products/product10/product10122.json'
+import product11001 from '~/api/mock/products/product10/product11001.json'
+import product11002 from '~/api/mock/products/product10/product11002.json'
+import product11003 from '~/api/mock/products/product10/product11003.json'
+import product11004 from '~/api/mock/products/product10/product11004.json'
+
+import product12001 from '~/api/mock/products/product10/product12001.json'
+import product12002 from '~/api/mock/products/product10/product12002.json'
+import product12003 from '~/api/mock/products/product10/product12003.json'
+import product12004 from '~/api/mock/products/product10/product12004.json'
 
 export function getProductByID (id) {
   let product = {}
@@ -29,7 +34,7 @@ export function getCategoryProducts ({ categoryId }) {
   categoryProducts[categoryId] = getProductByCategoryId(categoryId)
 
   if (categoryId === 125) {
-    categoryProducts[categoryId] = [product10111, product10112, product10121, product10122].map(x => detailsToListAdapter(x))
+    categoryProducts[categoryId] = [product11001, product11002, product12001, product12002, product11003, product11004, product12003, product12004].map(x => detailsToListAdapter(x))
   }
 
   return categoryProducts

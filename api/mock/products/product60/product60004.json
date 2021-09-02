@@ -1,0 +1,29 @@
+{
+  "id": 6004,
+  "categoryId": 60,
+  "name":{
+    "en":"Sovereign Sepia"
+  },
+  "slug":"product-6004",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Sovereign in Sepia will have you stylishly covered from the nine-to-five and beyond. The front and back chained pockets and accessory pockets are all spacious enough to fit your office essentials and then some! The leather handle and an added adjustable shoulder strap provide both balance and comfort. This convertible carrier made from denim and smooth leather detailing will partner perfectly with a sharp two-piece.\nWhen Panacea, our unique designed portable work station is added with Sovereign becomes the ultimate companion for you.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/60/product-604@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/60/product-604@2x.jpg 800w, /api/mock/products/60/product-604.jpg 400w",
+      "thumbnail": "/api/mock/products/60/product-604.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":4875,
+  "unit_price":4875,
+  "available_qty":0,
+  "out_of_stock":true,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 8004,
+  "categoryId": 80,
+  "name":{
+    "en":"Maria Sienna"
+  },
+  "slug":"product-8004",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Our hand purse in raw Sienna is the very definition of smart style. Rendered in premium quality canvas with leather detailed wristlet, this streamlined silhouette perfectly stores on-the- go essentials like your cell phone, cards and compact.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/80/product-804@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/80/product-804@2x.jpg 800w, /api/mock/products/80/product-804.jpg 400w",
+      "thumbnail": "/api/mock/products/80/product-804.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":1275,
+  "unit_price":1275,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

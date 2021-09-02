@@ -1,0 +1,29 @@
+{
+  "id": 8003,
+  "categoryId": 80,
+  "name":{
+    "en":"Vedo 16 Sepia"
+  },
+  "slug":"product-8003",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Vedo 16 is the premium travel kit bag made out of Sepia colored denim comes with a wristlet for better grip. This bag can be your best travel companion, both stylish and helpful.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/80/product-803@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/80/product-803@2x.jpg 800w, /api/mock/products/80/product-803.jpg 400w",
+      "thumbnail": "/api/mock/products/80/product-803.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":675,
+  "unit_price":675,
+  "available_qty":4,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

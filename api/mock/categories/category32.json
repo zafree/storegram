@@ -2,13 +2,12 @@
   "id": 275,
   "slug": "sub-category-three-two",
   "name": {
-    "en": "Sub Category Three Two",
-    "bn": "Sub Category Three Two"
+    "en": "Designer Editions"
   },
   "parent_id": 155,
   "featured_categories": [],
   "is_portrait_enable": 0,
-  "banner_image_url": null,
+  "banner_image_url": "/api/mock/categories/category-30.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,

@@ -133,72 +133,28 @@
   @import "shared/banner"
 </style>
 
-<style lang="sass" scoped>
-  .carousel
-    margin-bottom: 30px
-    // +phablet
-      padding-bottom: 20px
-    &-cell
-      width: 100%
-      // padding-bottom: 43.75%
-      padding-bottom: 50.32258064516129%
-      background-color: #ddd
-    &-image
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
-      opacity: 0
-      visibility: hidden
-      transition: 0.6s all ease-out
-      &--loaded
-        opacity: 1
-        visibility: visible
-
-    &-button
-      +button
-      display: inline-flex
-      align-items: center
-      justify-content: center
-      background-color: $white
-      height: 28px
-      width: 28px
-      position: absolute
-      top: 50%
-      transform: translateY(-50%)
+<style lang="sass">
+  .HomeHero
+    .flickity-page-dots
+      bottom: $gutter/1.5
       +tablet
-        height: 44px
-        width: 44px
-      svg
-        width: 18px
-        height: 18px
-        +tablet
-          width: auto
-          height: auto
-      &.prev
-        left: 20px
-        +tablet
-          left: 40px
-      &.next
-        right: 20px
-        +tablet
-          right: 40px
-
+        bottom: $gutter*1.5
+      .dot
+        background: rgba($white, 0.3)
+        opacity: 1
+        &.is-selected
+          background: rgba($white, 1)
+          opacity: 1
 </style>
 
 <style lang="sass" scoped>
+
   .CategoryBanner
     position: relative
     background-color: $white
   .HomeHero
     position: relative
     background-color: $white
-    // margin-left: -30px
-    // margin-right: -30px
-    // +desktop
-    //   margin-left: -100px
-    //   margin-right: -100px
     &__container
       position: relative
       margin-right: auto
@@ -241,4 +197,57 @@
       letter-spacing: -0.02em
       color: $text
       padding-top: 20px
+
+  .carousel
+    position: relative
+    overflow: hidden
+    border-radius: $gutter/4
+    &-cell
+      width: 100%
+      // padding-bottom: 43.75%
+      padding-bottom: 50.32258064516129%
+      background-color: #ddd
+    &-image
+      position: absolute
+      width: 100%
+      height: auto
+      top: 50%
+      left: 0
+      opacity: 0
+      transform: translateY(-50%)
+      visibility: hidden
+      transition: 0.6s all ease-out
+      &--loaded
+        opacity: 1
+        visibility: visible
+
+    &-button
+      +button
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      background-color: $white
+      height: 28px
+      width: 28px
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      +tablet
+        height: 44px
+        width: 44px
+      svg
+        width: 18px
+        height: 18px
+        +tablet
+          width: auto
+          height: auto
+      &.prev
+        left: 20px
+        +tablet
+          left: 40px
+      &.next
+        right: 20px
+        +tablet
+          right: 40px
+
 </style>
