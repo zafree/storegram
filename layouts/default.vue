@@ -357,12 +357,16 @@
       margin-top: 80px
     &__sidebar
       width: 100%
-      max-width: 380px
+      max-width: 320px
+      +tablet
+        max-width: 380px
       // height: 100%
     &__cart
       width: 100%
-      max-width: 380px
+      max-width: 320px
       margin-left: auto
+      +tablet
+        max-width: 380px
       &--checkout
         +desktop
           display: none

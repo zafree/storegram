@@ -1,13 +1,13 @@
 {
-  "id": 80,
-  "slug": "purse-and-toiletries-bags",
+  "id": 50,
+  "slug": "health-and-beauty",
   "name": {
-    "en": "Purse and Toiletries Bags"
+    "en": "Health And Beauty"
   },
   "parent_id": null,
   "featured_categories": [],
   "is_portrait_enable": 1,
-  "banner_image_url": "/api/mock/categories/category.jpg",
+  "banner_image_url": "/api/mock/categories/category-50.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,

@@ -1,8 +1,8 @@
  {
-  "id": 125,
-  "slug": "series",
+  "id": 10,
+  "slug": "security-system",
   "name": {
-    "en": "All Series"
+    "en": "Security System"
   },
   "parent_id": null,
   "featured_categories": [],

@@ -1,20 +1,20 @@
 {
-  "id": 12,
-  "slug": "hd-camera",
+  "id": 33,
+  "slug": "sound-system",
   "name": {
-    "en": "HD Camera"
+    "en": "Sound System"
   },
-  "parent_id": 10,
+  "parent_id": 30,
   "featured_categories": [],
   "is_portrait_enable": 0,
-  "banner_image_url": "/api/mock/categories/category-12.jpg",
+  "banner_image_url": "/api/mock/categories/category-33.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
     "category_menu"
   ],
-  "hide_banner_in_category_summary": true,
-  "full_list_in_summary": 0,
+  "hide_banner_in_category_summary": false,
+  "full_list_in_summary": 1,
   "children": []
 }

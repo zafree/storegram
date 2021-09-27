@@ -204,9 +204,10 @@
     border-radius: $gutter/4
     &-cell
       width: 100%
-      // padding-bottom: 43.75%
-      padding-bottom: 50.32258064516129%
-      background-color: #ddd
+      padding-bottom: 66.666666666666667%
+      background-color: $black
+      +tablet
+        padding-bottom: 50.32258064516129%
     &-image
       position: absolute
       width: 100%
@@ -223,7 +224,7 @@
 
     &-button
       +button
-      display: inline-flex
+      // display: inline-flex
       align-items: center
       justify-content: center
       background-color: $white
@@ -232,7 +233,9 @@
       position: absolute
       top: 50%
       transform: translateY(-50%)
+      display: none
       +tablet
+        display: inline-flex
         height: 44px
         width: 44px
       svg

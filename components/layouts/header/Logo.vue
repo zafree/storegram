@@ -1,11 +1,11 @@
 <template>
   <div :class="$style.logo" v-if="enableDoubleClick" @dblclick="reload" @click="redirect">
-    <svg xmlns="http://www.w3.org/2000/svg" width="87" height="18">
+    <svg xmlns="http://www.w3.org/2000/svg" width="146" height="32">
       <use xlink:href="/svg/icons.svg?#i-logo"></use>
     </svg>
   </div>
   <i18n-link :class="$style.logo" v-else to="/" :event="event" @click.native="scrollTop">
-    <svg xmlns="http://www.w3.org/2000/svg" width="87" height="18">
+    <svg xmlns="http://www.w3.org/2000/svg" width="146" height="32">
       <use xlink:href="/svg/icons.svg?#i-logo"></use>
     </svg>
   </i18n-link>

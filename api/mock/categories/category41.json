@@ -1,18 +1,19 @@
 {
-  "id": 12,
-  "slug": "hd-camera",
+  "id": 41,
+  "slug": "tv",
   "name": {
-    "en": "HD Camera"
+    "en": "TV"
   },
-  "parent_id": 10,
+  "parent_id": 40,
   "featured_categories": [],
-  "is_portrait_enable": 0,
-  "banner_image_url": "/api/mock/categories/category-12.jpg",
+  "is_portrait_enable": 1,
+  "banner_image_url": "/api/mock/categories/category-41.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
-    "category_menu"
+    "category_menu",
+    "home_featured"
   ],
   "hide_banner_in_category_summary": true,
   "full_list_in_summary": 0,

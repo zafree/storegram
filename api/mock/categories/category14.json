@@ -1,19 +1,18 @@
 {
-  "id": 70,
-  "slug": "category-seven",
+  "id": 14,
+  "slug": "nvr",
   "name": {
-    "en": "Laptop Bags"
+    "en": "NVR"
   },
-  "parent_id": null,
+  "parent_id": 10,
   "featured_categories": [],
-  "is_portrait_enable": 1,
-  "banner_image_url": "/api/mock/categories/category.jpg",
+  "is_portrait_enable": 0,
+  "banner_image_url": "/api/mock/categories/category-14.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
-    "category_menu",
-    "home_featured"
+    "category_menu"
   ],
   "hide_banner_in_category_summary": true,
   "full_list_in_summary": 0,

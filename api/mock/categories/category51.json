@@ -1,13 +1,13 @@
 {
-  "id": 90,
-  "slug": "duffel-bags",
+  "id": 51,
+  "slug": "medical-equipment",
   "name": {
-    "en": "Duffel Bags"
+    "en": "Medical Equipment"
   },
-  "parent_id": null,
+  "parent_id": 50,
   "featured_categories": [],
   "is_portrait_enable": 1,
-  "banner_image_url": "/api/mock/categories/category.jpg",
+  "banner_image_url": "/api/mock/categories/category-51.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,

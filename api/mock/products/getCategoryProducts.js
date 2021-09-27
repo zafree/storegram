@@ -33,7 +33,7 @@ export function getCategoryProducts ({ categoryId }) {
 
   categoryProducts[categoryId] = getProductByCategoryId(categoryId)
 
-  if (categoryId === 125) {
+  if (categoryId === 10) {
     categoryProducts[categoryId] = [product11001, product11002, product12001, product12002, product11003, product11004, product12003, product12004].map(x => detailsToListAdapter(x))
   }
 

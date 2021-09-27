@@ -1,8 +1,8 @@
 {
   "id": 11,
-  "slug": "studio-series",
+  "slug": "ip-camera",
   "name": {
-    "en": "Studio Series"
+    "en": "IP Camera"
   },
   "parent_id": 10,
   "featured_categories": [],
