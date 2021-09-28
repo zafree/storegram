@@ -1,0 +1,47 @@
+{
+  "id": 1201,
+  "categoryId": 12,
+  "name":{
+    "en":"HD Camera 01"
+  },
+  "slug":"product-1201",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "The perfect blend of style and comfort, tote bags just don't get better than this.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/10/product-1201@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1201@2x.jpg 800w, /api/mock/products/10/product-1201.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1201.jpg"
+    },
+    {
+      "url": "/api/mock/products/10/product-1201a@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1201a@2x.jpg 800w, /api/mock/products/10/product-1201a.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1201a.jpg"
+    },
+    {
+      "url": "/api/mock/products/10/product-1201b@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1201b@2x.jpg 800w, /api/mock/products/10/product-1201b.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1201b.jpg"
+    },
+    {
+      "url": "/api/mock/products/10/product-1201c@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1201c@2x.jpg 800w, /api/mock/products/10/product-1201c.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1201c.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":2875,
+  "unit_price":2875,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

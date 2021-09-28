@@ -3,7 +3,7 @@
     <div :class="$style.footer">
       <div :class="$style.footerIntro">
         <i18n-link :class="$style.footerLogo" to="/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="82" height="18">
+          <svg xmlns="http://www.w3.org/2000/svg" width="146" height="32">
             <use xlink:href="/svg/icons.svg?#i-logo"></use>
           </svg>
         </i18n-link>

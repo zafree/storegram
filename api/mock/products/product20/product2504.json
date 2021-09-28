@@ -1,0 +1,28 @@
+{
+  "id": 2504,
+  "categoryId": 25,
+  "name":{
+    "en":"Samsung 04"
+  },
+  "slug":"product-2504",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "image_info":[
+    {
+      "url": "/api/mock/products/product-2504@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/product-2504@2x.jpg 800w, /api/mock/products/product-2504.jpg 400w",
+      "thumbnail": "/api/mock/products/product-2504.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":180,
+  "unit_price":180,
+  "available_qty":7,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

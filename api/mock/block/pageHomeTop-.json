@@ -41,7 +41,7 @@
             "related_type": "App\\Models\\Category",
             "logo_image": null,
             "banner_image": "/api/mock/categories/category-10.jpg",
-            "related_slug": "category-one"
+            "related_slug": "series"
           },
           {
             "id": 8,
@@ -56,7 +56,7 @@
             "created_at": "2021-07-05T12:47:17+06:00",
             "updated_at": "2021-08-19T19:03:53+06:00",
             "type": 1,
-            "link": "http://bronx.dglink.co/category/hidden-category",
+            "link": "/product/product-2001/ivory-limited-edition",
             "expire_at": "2022-05-20 12:46:28",
             "misc": null,
             "related_id": null,
@@ -84,8 +84,8 @@
             "related_id": 4,
             "related_type": "App\\Models\\Category",
             "logo_image": null,
-            "banner_image": "/api/mock/categories/category-30.jpg",
-            "related_slug": "face"
+            "banner_image": "/api/mock/categories/category-90.jpg",
+            "related_slug": "messenger-bags"
           }
         ]
       }

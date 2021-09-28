@@ -1,0 +1,28 @@
+{
+  "id": 2503,
+  "categoryId": 25,
+  "name":{
+    "en":"Samsung 03"
+  },
+  "slug":"product-2503",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "image_info":[
+    {
+      "url": "/api/mock/products/product-2503@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/product-2503@2x.jpg 800w, /api/mock/products/product-2503.jpg 400w",
+      "thumbnail": "/api/mock/products/product-2503.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":180,
+  "unit_price":180,
+  "available_qty":7,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

@@ -1,0 +1,29 @@
+{
+  "id": 1104,
+  "categoryId": 11,
+  "name":{
+    "en":"IP Camera 04"
+  },
+  "slug":"product-1104",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "We bring you the most sophisticated tote of the Metro series! With a spacious inner chamber, expandable straps and inside & outside pockets, this tote is the complete package. There is no doubt, Ken would be the perfect travel buddy of yours, while exploring the world.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/10/product-1104@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/10/product-1104@2x.jpg 800w, /api/mock/products/10/product-1104.jpg 400w",
+      "thumbnail": "/api/mock/products/10/product-1104.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":3475,
+  "unit_price":3475,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

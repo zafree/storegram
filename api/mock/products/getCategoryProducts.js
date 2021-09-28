@@ -1,14 +1,24 @@
 import { products } from '~/api/mock/products'
 
-import product11001 from '~/api/mock/products/product10/product11001.json'
-import product11002 from '~/api/mock/products/product10/product11002.json'
-import product11003 from '~/api/mock/products/product10/product11003.json'
-import product11004 from '~/api/mock/products/product10/product11004.json'
+import product1101 from '~/api/mock/products/product10/product1101.json'
+import product1102 from '~/api/mock/products/product10/product1102.json'
+import product1103 from '~/api/mock/products/product10/product1103.json'
+import product1104 from '~/api/mock/products/product10/product1104.json'
 
-import product12001 from '~/api/mock/products/product10/product12001.json'
-import product12002 from '~/api/mock/products/product10/product12002.json'
-import product12003 from '~/api/mock/products/product10/product12003.json'
-import product12004 from '~/api/mock/products/product10/product12004.json'
+import product1201 from '~/api/mock/products/product10/product1201.json'
+import product1202 from '~/api/mock/products/product10/product1202.json'
+import product1203 from '~/api/mock/products/product10/product1203.json'
+import product1204 from '~/api/mock/products/product10/product1204.json'
+
+import product2101 from '~/api/mock/products/product20/product2101.json'
+import product2201 from '~/api/mock/products/product20/product2201.json'
+import product2301 from '~/api/mock/products/product20/product2301.json'
+import product2401 from '~/api/mock/products/product20/product2401.json'
+
+import product3101 from '~/api/mock/products/product30/product3101.json'
+import product3201 from '~/api/mock/products/product30/product3201.json'
+import product3301 from '~/api/mock/products/product30/product3301.json'
+import product3401 from '~/api/mock/products/product30/product3401.json'
 
 export function getProductByID (id) {
   let product = {}
@@ -34,7 +44,19 @@ export function getCategoryProducts ({ categoryId }) {
   categoryProducts[categoryId] = getProductByCategoryId(categoryId)
 
   if (categoryId === 10) {
-    categoryProducts[categoryId] = [product11001, product11002, product12001, product12002, product11003, product11004, product12003, product12004].map(x => detailsToListAdapter(x))
+    categoryProducts[categoryId] = [
+      product1101, product1102, product1201, product1202, product1103, product1104, product1203, product1204
+    ].map(x => detailsToListAdapter(x))
+  }
+  if (categoryId === 20) {
+    categoryProducts[categoryId] = [
+      product2101, product2201, product2301, product2401
+    ].map(x => detailsToListAdapter(x))
+  }
+  if (categoryId === 30) {
+    categoryProducts[categoryId] = [
+      product3101, product3201, product3301, product3401
+    ].map(x => detailsToListAdapter(x))
   }
 
   return categoryProducts

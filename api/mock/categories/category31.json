@@ -2,19 +2,19 @@
   "id": 31,
   "slug": "computer",
   "name": {
-    "en": "Computer "
+    "en": "Computer"
   },
   "parent_id": 30,
   "featured_categories": [],
   "is_portrait_enable": 0,
-  "banner_image_url": "/api/mock/categories/category-31.jpg",
+  "banner_image_url": "/api/mock/categories/category.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
   "display_in": [
     "category_menu"
   ],
-  "hide_banner_in_category_summary": false,
+  "hide_banner_in_category_summary": true,
   "full_list_in_summary": 0,
   "children": []
 }

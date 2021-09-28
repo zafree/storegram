@@ -1,0 +1,29 @@
+{
+  "id": 2404,
+  "categoryId": 24,
+  "name":{
+    "en":"Realme 04"
+  },
+  "slug":"product-2404",
+  "variant_slug":null,
+  "emi_tenures":[],
+  "description_md": "Designed for the wanderers, brave and free spirits the aptly named Virago is a go anywhere backpack in premium Sienna colored canvas base. The chic backpack is lightweight with leather detailing and antiqued hardware. This versatile soft structure has zip pockets and compartments that fits all the everyday needs. The adjustable leather shoulder straps adds the dimension of comfort and functionality.",
+  "image_info":[
+    {
+      "url": "/api/mock/products/20/product-2404@2x.jpg",
+      "width": 800,
+      "srcset": "/api/mock/products/20/product-2404@2x.jpg 800w, /api/mock/products/20/product-2404.jpg 400w",
+      "thumbnail": "/api/mock/products/20/product-2404.jpg"
+    }
+  ],
+  "coupon_details":null,
+  "discounted_price":2175,
+  "unit_price":2175,
+  "available_qty":2,
+  "out_of_stock":false,
+  "varies_on":[],
+  "variant_count":0,
+  "commission":null,
+  "primary_variant_id":null,
+  "offers":[]
+}

@@ -2,12 +2,12 @@
   "id": 34,
   "slug": "mobile-accessories",
   "name": {
-    "en": "Mobile  Accessories"
+    "en": "Mobile Accessories"
   },
   "parent_id": 30,
   "featured_categories": [],
   "is_portrait_enable": 0,
-  "banner_image_url": "/api/mock/categories/category-34.jpg",
+  "banner_image_url": "/api/mock/categories/category.jpg",
   "featured_image_url": null,
   "home_category_logo_url": null,
   "promotion_label": null,
