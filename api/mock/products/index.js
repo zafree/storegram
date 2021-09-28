@@ -46,12 +46,34 @@ import product2503 from '~/api/mock/products/product20/product2503.json'
 import product2504 from '~/api/mock/products/product20/product2504.json'
 
 import product3101 from '~/api/mock/products/product30/product3101.json'
+import product3102 from '~/api/mock/products/product30/product3102.json'
+import product3103 from '~/api/mock/products/product30/product3103.json'
+import product3104 from '~/api/mock/products/product30/product3104.json'
 
 import product3201 from '~/api/mock/products/product30/product3201.json'
+import product3202 from '~/api/mock/products/product30/product3202.json'
+import product3203 from '~/api/mock/products/product30/product3203.json'
+import product3204 from '~/api/mock/products/product30/product3204.json'
 
 import product3301 from '~/api/mock/products/product30/product3301.json'
+import product3302 from '~/api/mock/products/product30/product3302.json'
+import product3303 from '~/api/mock/products/product30/product3303.json'
+import product3304 from '~/api/mock/products/product30/product3304.json'
 
 import product3401 from '~/api/mock/products/product30/product3401.json'
+import product3402 from '~/api/mock/products/product30/product3402.json'
+import product3403 from '~/api/mock/products/product30/product3403.json'
+import product3404 from '~/api/mock/products/product30/product3404.json'
+
+import product4101 from '~/api/mock/products/product40/product4101.json'
+import product4201 from '~/api/mock/products/product40/product4201.json'
+import product4301 from '~/api/mock/products/product40/product4301.json'
+import product4401 from '~/api/mock/products/product40/product4401.json'
+
+import product5101 from '~/api/mock/products/product50/product5101.json'
+import product5201 from '~/api/mock/products/product50/product5201.json'
+import product5202 from '~/api/mock/products/product50/product5202.json'
+import product5301 from '~/api/mock/products/product50/product5301.json'
 
 export const products = [
   product1101, product1102, product1103, product1104,
@@ -64,8 +86,15 @@ export const products = [
   product2301, product2302, product2303, product2304,
   product2401, product2402, product2403, product2404,
   product2501, product2502, product2503, product2504,
-  product3101,
-  product3201,
-  product3301,
-  product3401
+  product3101, product3102, product3103, product3104,
+  product3201, product3202, product3203, product3204,
+  product3301, product3302, product3303, product3304,
+  product3401, product3402, product3403, product3404,
+  product4101,
+  product4201,
+  product4301,
+  product4401,
+  product5101,
+  product5201, product5202,
+  product5301
 ]

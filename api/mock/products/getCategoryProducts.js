@@ -1,14 +1,13 @@
 import { products } from '~/api/mock/products'
 
 import product1101 from '~/api/mock/products/product10/product1101.json'
-import product1102 from '~/api/mock/products/product10/product1102.json'
 import product1103 from '~/api/mock/products/product10/product1103.json'
-import product1104 from '~/api/mock/products/product10/product1104.json'
-
-import product1201 from '~/api/mock/products/product10/product1201.json'
 import product1202 from '~/api/mock/products/product10/product1202.json'
-import product1203 from '~/api/mock/products/product10/product1203.json'
 import product1204 from '~/api/mock/products/product10/product1204.json'
+import product1302 from '~/api/mock/products/product10/product1302.json'
+import product1303 from '~/api/mock/products/product10/product1303.json'
+import product1404 from '~/api/mock/products/product10/product1404.json'
+import product1501 from '~/api/mock/products/product10/product1501.json'
 
 import product2101 from '~/api/mock/products/product20/product2101.json'
 import product2201 from '~/api/mock/products/product20/product2201.json'
@@ -19,6 +18,16 @@ import product3101 from '~/api/mock/products/product30/product3101.json'
 import product3201 from '~/api/mock/products/product30/product3201.json'
 import product3301 from '~/api/mock/products/product30/product3301.json'
 import product3401 from '~/api/mock/products/product30/product3401.json'
+
+import product4101 from '~/api/mock/products/product40/product4101.json'
+import product4201 from '~/api/mock/products/product40/product4201.json'
+import product4301 from '~/api/mock/products/product40/product4301.json'
+import product4401 from '~/api/mock/products/product40/product4401.json'
+
+import product5101 from '~/api/mock/products/product50/product5101.json'
+import product5201 from '~/api/mock/products/product50/product5201.json'
+import product5202 from '~/api/mock/products/product50/product5202.json'
+import product5301 from '~/api/mock/products/product50/product5301.json'
 
 export function getProductByID (id) {
   let product = {}
@@ -45,7 +54,8 @@ export function getCategoryProducts ({ categoryId }) {
 
   if (categoryId === 10) {
     categoryProducts[categoryId] = [
-      product1101, product1102, product1201, product1202, product1103, product1104, product1203, product1204
+      product1101, product1202, product1103, product1302,
+      product1501, product1404, product1303, product1204
     ].map(x => detailsToListAdapter(x))
   }
   if (categoryId === 20) {
@@ -56,6 +66,18 @@ export function getCategoryProducts ({ categoryId }) {
   if (categoryId === 30) {
     categoryProducts[categoryId] = [
       product3101, product3201, product3301, product3401
+    ].map(x => detailsToListAdapter(x))
+  }
+  if (categoryId === 40) {
+    categoryProducts[categoryId] = [
+      product4101, product4201, product4301, product4401
+    ].map(x => detailsToListAdapter(x))
+  }
+  if (categoryId === 50) {
+    categoryProducts[categoryId] = [
+      product5101,
+      product5201, product5202,
+      product5301
     ].map(x => detailsToListAdapter(x))
   }
 

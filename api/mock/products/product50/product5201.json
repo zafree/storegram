@@ -1,19 +1,19 @@
 {
-  "id": 3301,
-  "categoryId": 33,
+  "id": 5201,
+  "categoryId": 52,
   "name":{
-    "en":"Sound System 01"
+    "en":"Hair Care 01"
   },
-  "slug":"product-3301",
+  "slug":"product-5201",
   "variant_slug":null,
   "emi_tenures":[],
   "description_md": "Inspired by the 1971 spirit and the love for vintage aesthetics, MIB brings you all SOLITUDE, in the Studio Series. This hand crafted backpack comes in Sepia denim. There are two spacious storage options both inside and out along with a large laptop chamber to carry all your essentials in style. Not only that, the bag is also equipped with two sets of organizers and water bottle pockets to keep you ever ready at all times. The adjustable padded shoulder straps adds the dimension of both durability and comfort on your shoulders. Also, with the added double needle leather construction and MIB’s discreet logo detailing this is the perfect hold-all backpack for the working urban souls of the city.",
   "image_info":[
     {
-      "url": "/api/mock/products/20/product-3301@2x.jpg",
+      "url": "/api/mock/products/20/product-5201@2x.jpg",
       "width": 800,
-      "srcset": "/api/mock/products/20/product-3301@2x.jpg 800w, /api/mock/products/20/product-3301.jpg 400w",
-      "thumbnail": "/api/mock/products/20/product-3301.jpg"
+      "srcset": "/api/mock/products/20/product-5201@2x.jpg 800w, /api/mock/products/20/product-5201.jpg 400w",
+      "thumbnail": "/api/mock/products/20/product-5201.jpg"
     }
   ],
   "coupon_details":null,
